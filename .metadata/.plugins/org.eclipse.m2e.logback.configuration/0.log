@@ -139,3 +139,9 @@
 2022-10-19 20:56:49,525 [Worker-8: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2022-10-19 20:56:49,525 [Worker-8: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Applications/Eclipse_2022-06.app/Contents/bacsTeam/root/backend/src/test/resources
 2022-10-19 21:01:15,201 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-10-19 21:43:13,790 [Worker-22: Check for devtools] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/web-common: vn.com.vti.bus:web-common:0.0.1-SNAPSHOT with classifier  to /web-common/target/classes
+2022-10-19 21:43:13,792 [Worker-22: Check for devtools] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/domain: vn.com.vti.bus:domain:0.0.1-SNAPSHOT with classifier  to /domain/target/classes
+2022-10-19 21:43:13,792 [Worker-22: Check for devtools] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common: vn.com.vti.bus:common:0.0.1-SNAPSHOT with classifier  to /common/target/classes
+2022-10-19 21:43:21,525 [Worker-20: AppFrontend9082 の起動] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/web-common: vn.com.vti.bus:web-common:0.0.1-SNAPSHOT with classifier null to /web-common/target/classes
+2022-10-19 21:43:21,527 [Worker-20: AppFrontend9082 の起動] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/domain: vn.com.vti.bus:domain:0.0.1-SNAPSHOT with classifier null to /domain/target/classes
+2022-10-19 21:43:21,527 [Worker-20: AppFrontend9082 の起動] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common: vn.com.vti.bus:common:0.0.1-SNAPSHOT with classifier null to /common/target/classes
