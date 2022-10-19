@@ -1,0 +1,141 @@
+2022-10-19 20:54:43,790 [Worker-8: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-10-19 20:55:59,237 [Worker-6: ビルド] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: vn.com.vti.job_site:generator:0.0.1-SNAPSHOT @ /Applications/Eclipse_2022-06.app/Contents/bacsTeam/generator/pom.xml.
+2022-10-19 20:55:59,939 [Worker-6: ビルド] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-10-19 20:55:59,943 [Worker-6: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-10-19 20:55:59,948 [Worker-6: ビルド] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-10-19 20:55:59,948 [Worker-6: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-10-19 20:56:00,159 [Worker-6: ビルド] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using NULL lifecycle mapping for MavenProject: vn.com.vti.bus:root:0.0.1-SNAPSHOT @ /Applications/Eclipse_2022-06.app/Contents/bacsTeam/root/pom.xml.
+2022-10-19 20:56:01,400 [Worker-8: ビルド] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-10-19 20:56:01,407 [Worker-8: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-10-19 20:56:01,412 [Worker-8: ビルド] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-10-19 20:56:01,412 [Worker-8: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-10-19 20:56:41,172 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: vn.com.vti.bus:frontend:0.0.1-SNAPSHOT @ /Applications/Eclipse_2022-06.app/Contents/bacsTeam/root/frontend/pom.xml.
+2022-10-19 20:56:42,669 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.5.2/junit-platform-commons-1.5.2.pom のダウンロード中
+2022-10-19 20:56:42,901 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.5.2/junit-platform-commons-1.5.2.pom
+2022-10-19 20:56:43,097 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.pom のダウンロード中
+2022-10-19 20:56:43,240 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.pom
+2022-10-19 20:56:43,377 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/web-common: vn.com.vti.bus:web-common:0.0.1-SNAPSHOT with classifier  to /web-common/target/classes
+2022-10-19 20:56:43,379 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/domain: vn.com.vti.bus:domain:0.0.1-SNAPSHOT with classifier  to /domain/target/classes
+2022-10-19 20:56:43,380 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common: vn.com.vti.bus:common:0.0.1-SNAPSHOT with classifier  to /common/target/classes
+2022-10-19 20:56:43,603 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.5.2/junit-platform-commons-1.5.2.jar のダウンロード中
+2022-10-19 20:56:43,932 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.5.2/junit-platform-commons-1.5.2.jar
+2022-10-19 20:56:43,970 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: vn.com.vti.bus:domain:0.0.1-SNAPSHOT @ /Applications/Eclipse_2022-06.app/Contents/bacsTeam/root/domain/pom.xml.
+2022-10-19 20:56:43,981 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common: vn.com.vti.bus:common:0.0.1-SNAPSHOT with classifier  to /common/target/classes
+2022-10-19 20:56:43,998 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: vn.com.vti.bus:common:0.0.1-SNAPSHOT @ /Applications/Eclipse_2022-06.app/Contents/bacsTeam/root/common/pom.xml.
+2022-10-19 20:56:44,033 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: vn.com.vti.bus:backend:0.0.1-SNAPSHOT @ /Applications/Eclipse_2022-06.app/Contents/bacsTeam/root/backend/pom.xml.
+2022-10-19 20:56:44,042 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/web-common: vn.com.vti.bus:web-common:0.0.1-SNAPSHOT with classifier  to /web-common/target/classes
+2022-10-19 20:56:44,042 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/domain: vn.com.vti.bus:domain:0.0.1-SNAPSHOT with classifier  to /domain/target/classes
+2022-10-19 20:56:44,043 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common: vn.com.vti.bus:common:0.0.1-SNAPSHOT with classifier  to /common/target/classes
+2022-10-19 20:56:44,068 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: vn.com.vti.bus:web-common:0.0.1-SNAPSHOT @ /Applications/Eclipse_2022-06.app/Contents/bacsTeam/root/web-common/pom.xml.
+2022-10-19 20:56:44,073 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/domain: vn.com.vti.bus:domain:0.0.1-SNAPSHOT with classifier  to /domain/target/classes
+2022-10-19 20:56:44,073 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common: vn.com.vti.bus:common:0.0.1-SNAPSHOT with classifier  to /common/target/classes
+2022-10-19 20:56:44,280 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar のダウンロード中
+2022-10-19 20:56:44,438 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar
+2022-10-19 20:56:44,462 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: vn.com.vti.bus:frontend:0.0.1-SNAPSHOT @ /Applications/Eclipse_2022-06.app/Contents/bacsTeam/root/frontend/pom.xml.
+2022-10-19 20:56:44,470 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/web-common: vn.com.vti.bus:web-common:0.0.1-SNAPSHOT with classifier  to /web-common/target/classes
+2022-10-19 20:56:44,470 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/domain: vn.com.vti.bus:domain:0.0.1-SNAPSHOT with classifier  to /domain/target/classes
+2022-10-19 20:56:44,470 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common: vn.com.vti.bus:common:0.0.1-SNAPSHOT with classifier  to /common/target/classes
+2022-10-19 20:56:44,492 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: vn.com.vti.bus:domain:0.0.1-SNAPSHOT @ /Applications/Eclipse_2022-06.app/Contents/bacsTeam/root/domain/pom.xml.
+2022-10-19 20:56:44,497 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common: vn.com.vti.bus:common:0.0.1-SNAPSHOT with classifier  to /common/target/classes
+2022-10-19 20:56:44,517 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: vn.com.vti.bus:backend:0.0.1-SNAPSHOT @ /Applications/Eclipse_2022-06.app/Contents/bacsTeam/root/backend/pom.xml.
+2022-10-19 20:56:44,522 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/web-common: vn.com.vti.bus:web-common:0.0.1-SNAPSHOT with classifier  to /web-common/target/classes
+2022-10-19 20:56:44,522 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/domain: vn.com.vti.bus:domain:0.0.1-SNAPSHOT with classifier  to /domain/target/classes
+2022-10-19 20:56:44,522 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common: vn.com.vti.bus:common:0.0.1-SNAPSHOT with classifier  to /common/target/classes
+2022-10-19 20:56:44,537 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: vn.com.vti.bus:frontend:0.0.1-SNAPSHOT @ /Applications/Eclipse_2022-06.app/Contents/bacsTeam/root/frontend/pom.xml.
+2022-10-19 20:56:44,541 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/web-common: vn.com.vti.bus:web-common:0.0.1-SNAPSHOT with classifier  to /web-common/target/classes
+2022-10-19 20:56:44,541 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/domain: vn.com.vti.bus:domain:0.0.1-SNAPSHOT with classifier  to /domain/target/classes
+2022-10-19 20:56:44,541 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common: vn.com.vti.bus:common:0.0.1-SNAPSHOT with classifier  to /common/target/classes
+2022-10-19 20:56:44,555 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: vn.com.vti.bus:web-common:0.0.1-SNAPSHOT @ /Applications/Eclipse_2022-06.app/Contents/bacsTeam/root/web-common/pom.xml.
+2022-10-19 20:56:44,560 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/domain: vn.com.vti.bus:domain:0.0.1-SNAPSHOT with classifier  to /domain/target/classes
+2022-10-19 20:56:44,560 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common: vn.com.vti.bus:common:0.0.1-SNAPSHOT with classifier  to /common/target/classes
+2022-10-19 20:56:44,575 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: vn.com.vti.bus:frontend:0.0.1-SNAPSHOT @ /Applications/Eclipse_2022-06.app/Contents/bacsTeam/root/frontend/pom.xml.
+2022-10-19 20:56:44,580 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/web-common: vn.com.vti.bus:web-common:0.0.1-SNAPSHOT with classifier  to /web-common/target/classes
+2022-10-19 20:56:44,580 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/domain: vn.com.vti.bus:domain:0.0.1-SNAPSHOT with classifier  to /domain/target/classes
+2022-10-19 20:56:44,580 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common: vn.com.vti.bus:common:0.0.1-SNAPSHOT with classifier  to /common/target/classes
+2022-10-19 20:56:44,602 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: vn.com.vti.bus:backend:0.0.1-SNAPSHOT @ /Applications/Eclipse_2022-06.app/Contents/bacsTeam/root/backend/pom.xml.
+2022-10-19 20:56:44,605 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/web-common: vn.com.vti.bus:web-common:0.0.1-SNAPSHOT with classifier  to /web-common/target/classes
+2022-10-19 20:56:44,606 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/domain: vn.com.vti.bus:domain:0.0.1-SNAPSHOT with classifier  to /domain/target/classes
+2022-10-19 20:56:44,606 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common: vn.com.vti.bus:common:0.0.1-SNAPSHOT with classifier  to /common/target/classes
+2022-10-19 20:56:44,906 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /common/src/main/java
+2022-10-19 20:56:44,907 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /common/src/main/resources
+2022-10-19 20:56:44,908 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /common/src/test/java
+2022-10-19 20:56:44,908 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /common/src/test/resources
+2022-10-19 20:56:44,980 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /domain/src/main/java
+2022-10-19 20:56:44,981 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /domain/src/main/resources
+2022-10-19 20:56:44,981 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /domain/src/test/java
+2022-10-19 20:56:44,981 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /domain/src/test/resources
+2022-10-19 20:56:45,013 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /web-common/src/main/java
+2022-10-19 20:56:45,014 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /web-common/src/main/resources
+2022-10-19 20:56:45,015 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /web-common/src/test/java
+2022-10-19 20:56:45,015 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /web-common/src/test/resources
+2022-10-19 20:56:45,047 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /frontend/src/main/java
+2022-10-19 20:56:45,047 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /frontend/src/main/resources
+2022-10-19 20:56:45,047 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /frontend/src/test/java
+2022-10-19 20:56:45,085 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /backend/src/main/java
+2022-10-19 20:56:45,085 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /backend/src/main/resources
+2022-10-19 20:56:45,086 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /backend/src/test/java
+2022-10-19 20:56:45,110 [Worker-6: Maven プロジェクトのインポート中] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 5 project(s) in 4 sec
+2022-10-19 20:56:45,819 [Worker-12: ソースおよび Javadoc のダウンロード] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/web-common: vn.com.vti.bus:web-common:0.0.1-SNAPSHOT with classifier  to /web-common/target/classes
+2022-10-19 20:56:45,820 [Worker-12: ソースおよび Javadoc のダウンロード] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/domain: vn.com.vti.bus:domain:0.0.1-SNAPSHOT with classifier  to /domain/target/classes
+2022-10-19 20:56:45,820 [Worker-12: ソースおよび Javadoc のダウンロード] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common: vn.com.vti.bus:common:0.0.1-SNAPSHOT with classifier  to /common/target/classes
+2022-10-19 20:56:45,877 [Worker-6: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-19 20:56:45,878 [Worker-6: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-10-19 20:56:45,881 [Worker-6: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-19 20:56:45,881 [Worker-6: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-10-19 20:56:46,584 [Worker-12: ソースおよび Javadoc のダウンロード] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.5.2/junit-platform-commons-1.5.2-sources.jar のダウンロード中
+2022-10-19 20:56:46,783 [Worker-12: ソースおよび Javadoc のダウンロード] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.5.2/junit-platform-commons-1.5.2-sources.jar
+2022-10-19 20:56:46,786 [Worker-12: ソースおよび Javadoc のダウンロード] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.junit.platform:junit-platform-commons:1.5.2
+2022-10-19 20:56:47,010 [Worker-12: ソースおよび Javadoc のダウンロード] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common: vn.com.vti.bus:common:0.0.1-SNAPSHOT with classifier  to /common/target/classes
+2022-10-19 20:56:47,015 [Worker-12: ソースおよび Javadoc のダウンロード] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.junit.platform:junit-platform-commons:1.5.2
+2022-10-19 20:56:47,017 [Worker-12: ソースおよび Javadoc のダウンロード] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.junit.platform:junit-platform-commons:1.5.2
+2022-10-19 20:56:47,280 [Worker-12: ソースおよび Javadoc のダウンロード] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/domain: vn.com.vti.bus:domain:0.0.1-SNAPSHOT with classifier  to /domain/target/classes
+2022-10-19 20:56:47,281 [Worker-12: ソースおよび Javadoc のダウンロード] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common: vn.com.vti.bus:common:0.0.1-SNAPSHOT with classifier  to /common/target/classes
+2022-10-19 20:56:47,287 [Worker-12: ソースおよび Javadoc のダウンロード] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.junit.platform:junit-platform-commons:1.5.2
+2022-10-19 20:56:47,295 [Worker-6: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-19 20:56:47,296 [Worker-6: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-10-19 20:56:47,297 [Worker-6: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-19 20:56:47,298 [Worker-6: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-10-19 20:56:47,369 [Worker-6: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-19 20:56:47,371 [Worker-6: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-10-19 20:56:47,372 [Worker-6: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-19 20:56:47,372 [Worker-6: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-10-19 20:56:47,563 [Worker-6: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-19 20:56:47,564 [Worker-6: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2022-10-19 20:56:47,584 [Worker-6: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-19 20:56:47,585 [Worker-6: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Applications/Eclipse_2022-06.app/Contents/bacsTeam/root/frontend/src/test/resources
+2022-10-19 20:56:47,982 [Worker-12: ソースおよび Javadoc のダウンロード] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0-sources.jar のダウンロード中
+2022-10-19 20:56:48,136 [Worker-6: ビルド] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/web-common: vn.com.vti.bus:web-common:0.0.1-SNAPSHOT with classifier  to /web-common/target/classes
+2022-10-19 20:56:48,136 [Worker-6: ビルド] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/domain: vn.com.vti.bus:domain:0.0.1-SNAPSHOT with classifier  to /domain/target/classes
+2022-10-19 20:56:48,136 [Worker-6: ビルド] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common: vn.com.vti.bus:common:0.0.1-SNAPSHOT with classifier  to /common/target/classes
+2022-10-19 20:56:48,152 [Worker-12: ソースおよび Javadoc のダウンロード] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0-sources.jar
+2022-10-19 20:56:48,156 [Worker-12: ソースおよび Javadoc のダウンロード] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.apiguardian:apiguardian-api:1.1.0
+2022-10-19 20:56:48,156 [Worker-6: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-19 20:56:48,157 [Worker-6: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2022-10-19 20:56:48,160 [Worker-12: ソースおよび Javadoc のダウンロード] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.junit.platform:junit-platform-commons:1.5.2
+2022-10-19 20:56:48,165 [Worker-6: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-19 20:56:48,165 [Worker-6: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Applications/Eclipse_2022-06.app/Contents/bacsTeam/root/backend/src/test/resources
+2022-10-19 20:56:48,433 [Worker-12: ソースおよび Javadoc のダウンロード] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common: vn.com.vti.bus:common:0.0.1-SNAPSHOT with classifier  to /common/target/classes
+2022-10-19 20:56:49,248 [Worker-8: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-19 20:56:49,250 [Worker-8: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-10-19 20:56:49,251 [Worker-8: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-19 20:56:49,252 [Worker-8: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-10-19 20:56:49,318 [Worker-8: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-19 20:56:49,318 [Worker-8: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-10-19 20:56:49,320 [Worker-8: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-19 20:56:49,320 [Worker-8: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-10-19 20:56:49,366 [Worker-8: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-19 20:56:49,366 [Worker-8: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-10-19 20:56:49,369 [Worker-8: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-19 20:56:49,369 [Worker-8: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-10-19 20:56:49,384 [Worker-8: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-19 20:56:49,385 [Worker-8: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-10-19 20:56:49,385 [Worker-8: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-19 20:56:49,386 [Worker-8: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Applications/Eclipse_2022-06.app/Contents/bacsTeam/root/frontend/src/test/resources
+2022-10-19 20:56:49,519 [Worker-8: ビルド] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/web-common: vn.com.vti.bus:web-common:0.0.1-SNAPSHOT with classifier  to /web-common/target/classes
+2022-10-19 20:56:49,520 [Worker-8: ビルド] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/domain: vn.com.vti.bus:domain:0.0.1-SNAPSHOT with classifier  to /domain/target/classes
+2022-10-19 20:56:49,520 [Worker-8: ビルド] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common: vn.com.vti.bus:common:0.0.1-SNAPSHOT with classifier  to /common/target/classes
+2022-10-19 20:56:49,524 [Worker-8: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-19 20:56:49,524 [Worker-8: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-10-19 20:56:49,525 [Worker-8: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-19 20:56:49,525 [Worker-8: ビルド] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Applications/Eclipse_2022-06.app/Contents/bacsTeam/root/backend/src/test/resources
+2022-10-19 21:01:15,201 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1666180482481_0" label="Java メイン・ソース" name="Java Main Sources"/>
+<workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1666180482489_1" label="Java テスト・ソース" name="Java Test Sources"/>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1666180600674_3" label="root" name="root">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/common" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/domain" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/frontend" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/backend" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/web-common" type="4"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1666180482819_2" label="ウィンドウ・ワーキング・セット" name="Aggregate for window 1666180482819"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1666181143465_4" label="ウィンドウ・ワーキング・セット" name="Aggregate for window 1666181143465"/>
+</workingSetManager>

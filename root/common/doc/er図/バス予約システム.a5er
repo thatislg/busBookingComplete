@@ -1,0 +1,185 @@
+﻿# A5:ER FORMAT:13
+# A5:ER ENCODING:UTF8
+# A5:ER Mk-1 Copyright (C)2007 m.matsubara
+# A5:SQL Mk-2 Copyright (C)1997 m.matsubara
+#  https://a5m2.mmatsubara.com
+
+[Manager]
+ProjectName=バス予約システム
+Author=
+MaxEntityRowShow=1000
+ReadOnlyRecommend=0
+Page=Main
+PageInfo="Main",2,"A3Landscape",$FFFFFF
+LogicalView=1
+DecodeDomain=0
+ViewModePageIndividually=1
+ViewMode=2
+ViewFormat=0
+UseNondependenceDashLine=0
+FontName=Tahoma
+FontSize=6
+PaperSize=A4Landscape
+HeaderLeft=
+HeaderCenter=
+HeaderRight=
+FooterLeft=
+FooterCenter=
+FooterRight=
+ShowPageoutRelation=1
+RDBMSType=6
+RDBMSTypeName=PostgreSQL
+DefaultPkName=%0:s_PKC
+DefaultPkIndexName=%0:s_PKI
+DefaultIndexName=%0:s_IX%1:d
+DefaultFkName=%0:s_FK%1:d
+SqlSeparator=0
+ShowTag=1
+ShowCommonAttributes=0
+
+[Entity]
+PName=MANAGER
+LName=運用管理者
+Comment=
+TableOption=
+Page=MAIN
+Left=729
+Top=391
+Field="ID","ID","serial","NOT NULL",0,"","",$FFFFFFFF,""
+Field="ログインID","LOGIN_ID","text","NOT NULL",,"","",$FFFFFFFF,""
+Field="パスワード","PASSWORD","text","NOT NULL",,"","",$FFFFFFFF,""
+Field="管理者氏名","NAME","text","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20200528030641
+Position="MAIN",729,391
+ZOrder=0
+
+[Entity]
+PName=BUS
+LName=バス
+Comment=
+TableOption=
+Page=MAIN
+Left=1009
+Top=289
+Field="ID","ID","serial","NOT NULL",0,"","",$FFFFFFFF,""
+Field="1列あたりシート数","ROW_NUM","integer","NOT NULL",,"","",$FFFFFFFF,""
+Field="シート列数","COLUMN_NUM","integer","NOT NULL",,"","",$FFFFFFFF,""
+Field="ナンバー（地名）","NUMBER_PLACE","text","NOT NULL",,"","",$FFFFFFFF,""
+Field="ナンバー（分類番号）","NUMBER_DIVISION","text","NOT NULL",,"","",$FFFFFFFF,""
+Field="ナンバー（かな）","NUMBER_KANA","text","NOT NULL",,"","",$FFFFFFFF,""
+Field="ナンバー（一連指定番号前半）","NUMBER_FIRST_HALF","text","NOT NULL",,"","",$FFFFFFFF,""
+Field="ナンバー（一連指定番号後半）","NUMBER_LATTER_HALF","text","NOT NULL",,"","",$FFFFFFFF,""
+Index==1,NUMBER_PLACE ,NUMBER_DIVISION ,NUMBER_KANA ,NUMBER_FIRST_HALF ,NUMBER_LATTER_HALF 
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20200601073347
+Position="MAIN",1009,289
+ZOrder=1
+
+[Entity]
+PName=BUS_STOP
+LName=停留所
+Comment=
+TableOption=
+Page=MAIN
+Left=726
+Top=678
+Field="ID","ID","serial","NOT NULL",0,"","",$FFFFFFFF,""
+Field="停留所名","NAME","text","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20200528072206
+Position="MAIN",726,678
+ZOrder=2
+
+[Entity]
+PName=ROUTE
+LName=路線
+Comment=
+TableOption=
+Page=MAIN
+Left=1034
+Top=601
+Field="ID","ID","serial","NOT NULL",0,"","",$FFFFFFFF,""
+Field="出発停留所ID","DEPARTURE_BUS_STOP_ID","integer","NOT NULL",,"","",$FFFFFFFF,""
+Field="到着停留所ID","ARRIVAL_BUS_STOP_ID","integer","NOT NULL",,"","",$FFFFFFFF,""
+Field="出発時刻","DEPARTURE_TIME","time","NOT NULL",,"","",$FFFFFFFF,""
+Field="到着時刻","ARRIVAL_TIME","time","NOT NULL",,"","",$FFFFFFFF,""
+Field="料金","PRICE","integer","NOT NULL",,"","",$FFFFFFFF,""
+Field="バスID","BUS_ID","integer","NOT NULL",,"","",$FFFFFFFF,""
+Field="運行開始日","RUN_START_DATE","date","NOT NULL",,"","",$FFFFFFFF,""
+Field="運行終了日","RUN_END_DATE","date",,,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20200602053303
+Position="MAIN",1034,601
+ZOrder=3
+
+[Relation]
+Entity1=BUS
+Entity2=ROUTE
+RelationType1=2
+RelationType2=3
+Fields1=ID
+Fields2=ID
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,3847,6153,4391,R,R
+Dependence=1
+Caption=
+PName=
+LineMode=0
+Bar1=385
+Bar2=615
+Bar3=439
+TermPos1=R
+TermPos2=R
+ZOrder=4
+
+[Relation]
+Entity1=BUS_STOP
+Entity2=ROUTE
+RelationType1=2
+RelationType2=3
+Fields1=ID
+Fields2=DEPARTURE_BUS_STOP_ID
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,836,6416,3554,R,R
+Dependence=0
+Caption=
+PName=
+LineMode=0
+Bar1=84
+Bar2=642
+Bar3=355
+TermPos1=R
+TermPos2=R
+ZOrder=5
+
+[Relation]
+Entity1=BUS_STOP
+Entity2=ROUTE
+RelationType1=2
+RelationType2=3
+Fields1=ID
+Fields2=ARRIVAL_BUS_STOP_ID
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,4928,6416,4463,R,R
+Dependence=0
+Caption=
+PName=
+LineMode=0
+Bar1=493
+Bar2=642
+Bar3=446
+TermPos1=R
+TermPos2=R
+ZOrder=6

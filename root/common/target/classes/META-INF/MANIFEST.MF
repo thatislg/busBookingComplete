@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: thatislg1720
+Build-Jdk: 17.0.3
+Implementation-Title: common
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: vn.com.vti.bus
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/root/common
+Created-By: Maven Integration for Eclipse
+
