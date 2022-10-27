@@ -73,7 +73,7 @@ create table RESERVE (
 --* RestoreFromTempTable
 create table ROUTE (
   ROUTE_ID SERIAL not null
-  , DEPARTUTE_ID INTEGER not null
+  , DEPARTURE_ID INTEGER not null
   , ARRIVAL_ID INTEGER not null
   , PRICE INTEGER not null
   , BUS_ID INTEGER not null

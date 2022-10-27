@@ -98,7 +98,7 @@ alter table RESERVE
 --* RestoreFromTempTable
 create table ROUTE (
   ROUTE_ID SERIAL not null
-  , DEPARTUTE_ID INTEGER not null
+  , DEPARTURE_ID INTEGER not null
   , ARRIVAL_ID INTEGER not null
   , PRICE INTEGER not null
   , BUS_ID INTEGER not null
@@ -167,7 +167,7 @@ comment on column RESERVE.DEPARTURE_DATE is '出発日';
 
 comment on table ROUTE is '路線';
 comment on column ROUTE.ROUTE_ID is '路線ID';
-comment on column ROUTE.DEPARTUTE_ID is '出発停留所ID';
+comment on column ROUTE.DEPARTURE_ID is '出発停留所ID';
 comment on column ROUTE.ARRIVAL_ID is '到着停留所ID';
 comment on column ROUTE.PRICE is '料金';
 comment on column ROUTE.BUS_ID is 'バスID';
