@@ -1,0 +1,338 @@
+﻿# A5:ER FORMAT:16
+# A5:ER ENCODING:UTF8
+# A5:ER Mk-1 Copyright © 2007 m.matsubara
+# A5:SQL Mk-2 Version 2.17.2 Copyright © 1997 - 2022 m.matsubara
+#  https://a5m2.mmatsubara.com
+
+[Manager]
+ProjectName=bus
+Author=
+MaxEntityRowShow=1000
+ReadOnlyRecommend=0
+Page=Main
+PageInfo="Main",5,"A3Landscape",$FFFFFF
+LogicalView=0
+DecodeDomain=0
+ViewModePageIndividually=1
+ViewMode=5
+ViewFormat=0
+UseNondependenceDashLine=0
+FontName=Tahoma
+FontSize=8
+PaperSize=A4Landscape
+HeaderLeft=
+HeaderCenter=
+HeaderRight=
+FooterLeft=
+FooterCenter=
+FooterRight=
+ShowPageoutRelation=1
+RDBMSType=6
+RDBMSTypeName=PostgreSQL
+CreatePkIndex=1
+FKParentIndex=1
+DefaultPkName=%0:s_PKC
+DefaultPkIndexName=%0:s_PKI
+DefaultIndexName=%0:s_IX%1:d
+DefaultFkName=%0:s_FK%1:d
+SqlSeparator=0
+UpperCaseKeyword=0
+ShowTag=1
+ShowCommonAttributes=0
+BugFixEntityWidth=1
+
+[Entity]
+PName=BUS_STATION
+LName=停留所
+Comment=
+TableOption=
+Page=MAIN
+Left=300
+Top=200
+Field="停留所ID","BUS_STATION_ID","SERIAL","NOT NULL",0,"","",$FFFFFFFF,""
+Field="都道府県","PREFECTURE","VARCHAR(30)","NOT NULL",,"","",$FFFFFFFF,""
+Field="名称","BUS_STATION_NAME","VARCHAR(100)","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20221027131910
+Position="MAIN",300,200,495,174
+ZOrder=2
+
+[Entity]
+PName=ROUTE
+LName=路線
+Comment=
+TableOption=
+Page=MAIN
+Left=1100
+Top=300
+Field="路線ID","ROUTE_ID","SERIAL","NOT NULL",0,"","",$FFFFFFFF,""
+Field="出発停留所ID","DEPARTUTE_ID","INTEGER","NOT NULL",,"","",$FFFFFFFF,""
+Field="到着停留所ID","ARRIVAL_ID","INTEGER","NOT NULL",,"","",$FFFFFFFF,""
+Field="料金","PRICE","INTEGER","NOT NULL",,"","",$FFFFFFFF,""
+Field="バスID","BUS_ID","INTEGER","NOT NULL",,"","",$FFFFFFFF,""
+Field="運行開始日","OPERATION_START_DATE","DATE","NOT NULL",,"","",$FFFFFFFF,""
+Field="運行終了日","OPERATION_END_DATE","DATE","NOT NULL",,"","",$FFFFFFFF,""
+Field="出発予定時刻","SCHEDULED_DEPARTURE_TIME","TIMESTAMP","NOT NULL",,"","",$FFFFFFFF,""
+Field="到着予定時刻","SCHEDULED_ARRIVAL_TIME","TIMESTAMP","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20221027185214
+Position="MAIN",1100,300,679,377
+ZOrder=3
+
+[Entity]
+PName=RESERVE
+LName=予約
+Comment=
+TableOption=
+Page=MAIN
+Left=2000
+Top=200
+Field="予約ID","RESERVE_ID","SERIAL","NOT NULL",0,"","",$FFFFFFFF,""
+Field="会員ID","MEMBER_ID","INTEGER","NOT NULL",,"","",$FFFFFFFF,""
+Field="路線ID","ROUTE_ID","INTEGER","NOT NULL",,"","",$FFFFFFFF,""
+Field="予約日","RESERVED_DATE","TIMESTAMP","NOT NULL",,"","",$FFFFFFFF,""
+Field="出発日","DEPARTURE_DATE","DATE","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20221027193328
+Position="MAIN",2000,200,473,270
+ZOrder=8
+
+[Entity]
+PName=MEMBER
+LName=会員
+Comment=
+TableOption=
+Page=MAIN
+Left=2000
+Top=850
+Field="会員ID","MEMBER_ID","SERIAL","NOT NULL",0,"","",$FFFFFFFF,""
+Field="ログインID","LOGIN_ID","VARCHAR(20)","NOT NULL",,"","",$FFFFFFFF,""
+Field="パスワード","PASSWORD","VARCHAR(30)","NOT NULL",,"","",$FFFFFFFF,""
+Field="氏名","MEMBER_NAME","VARCHAR(30)","NOT NULL",,"","",$FFFFFFFF,""
+Field="メールアドレス","MAIL_ADDRESS","VARCHAR(30)","NOT NULL",,"","",$FFFFFFFF,""
+Field="電話番号","PHONE_NUMBER","CHAR(11)","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20221027182904
+Position="MAIN",2000,850,437,325
+ZOrder=9
+
+[Entity]
+PName=SEAT
+LName=座席
+Comment=
+TableOption=
+Page=MAIN
+Left=1200
+Top=900
+Field="座席ID","SEAT_ID","SERIAL","NOT NULL",0,"","",$FFFFFFFF,""
+Field="バスID","BUS_ID","INTEGER","NOT NULL",,"","",$FFFFFFFF,""
+Field="予約ID","RESERVE_ID","INTEGER","NOT NULL",,"","",$FFFFFFFF,""
+Field="座席番号","SEAT_NUMBER","INTEGER","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20221027131441
+Position="MAIN",1200,900
+ZOrder=10
+
+[Entity]
+PName=BUS
+LName=バス
+Comment=
+TableOption=
+Page=MAIN
+Left=300
+Top=800
+Field="バスID","BUS_ID","SERIAL","NOT NULL",0,"","",$FFFFFFFF,""
+Field="1列あたりシート数","ROW_NUM","INTEGER","NOT NULL",,"","",$FFFFFFFF,""
+Field="シート列数","COLUMN_NUM","INTEGER","NOT NULL",,"","",$FFFFFFFF,""
+Field="ナンバープレート地位名","NUMBER_PLACE","VARCHAR(3)","NOT NULL",,"","",$FFFFFFFF,""
+Field="ナンバープレート類番号","NUMBER_DIVISION","VARCHAR(3)","NOT NULL",,"","",$FFFFFFFF,""
+Field="ナンバープレートひながら","NUMBER_KANA","VARCHAR(1)","NOT NULL",,"","",$FFFFFFFF,""
+Field="ナンバープレート連指定番前半","NUMBER_FIRST_HALF","VARCHAR(3)","NOT NULL",,"","",$FFFFFFFF,""
+Field="ナンバープレート連指定番後半","NUMBER_LATTER_HALF","VARCHAR(3)","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20221027182520
+Position="MAIN",300,800,713,377
+ZOrder=12
+
+[Entity]
+PName=OPERATION_MANAGER
+LName=管理者
+Comment=
+TableOption=
+Page=MAIN
+Left=1200
+Top=1250
+Field="管理者ID","ADMINSTRATOR_ID","SERIAL","NOT NULL",0,"","",$FFFFFFFF,""
+Field="ログインID","LOGIN_ID","VARCHAR(20)","NOT NULL",,"","",$FFFFFFFF,""
+Field="パスワード","PASSWORD","VARCHAR(30)","NOT NULL",,"","",$FFFFFFFF,""
+Field="管理者氏名","ADMINSTRATOR_NAME","VARCHAR(30)","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20221027182743
+Position="MAIN",1200,1250,533,206
+ZOrder=13
+
+[Relation]
+Entity1=ROUTE
+Entity2=RESERVE
+RelationType1=2
+RelationType2=3
+Fields1=ROUTE_ID
+Fields2=ROUTE_ID
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,459,8502,3241,R,R,""
+Dependence=0
+Caption=
+PName=
+LineMode=0
+Bar1=46
+Bar2=850
+Bar3=324
+TermPos1=R
+TermPos2=R
+ZOrder=20
+
+[Relation]
+Entity1=MEMBER
+Entity2=RESERVE
+RelationType1=2
+RelationType2=3
+Fields1=MEMBER_ID
+Fields2=MEMBER_ID
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",5,766,500,2065,R,R,""
+Dependence=0
+Caption=
+PName=
+LineMode=5
+Bar1=77
+Bar2=50
+Bar3=206
+TermPos1=R
+TermPos2=R
+ZOrder=21
+
+[Relation]
+Entity1=BUS
+Entity2=SEAT
+RelationType1=2
+RelationType2=4
+Fields1=BUS_ID
+Fields2=BUS_ID
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,617,6342,4266,R,R,""
+Dependence=0
+Caption=
+PName=
+ModifiedDateTime=20221027222519
+LineMode=0
+Bar1=62
+Bar2=634
+Bar3=427
+TermPos1=R
+TermPos2=R
+ZOrder=24
+
+[Relation]
+Entity1=BUS
+Entity2=ROUTE
+RelationType1=2
+RelationType2=3
+Fields1=BUS_ID
+Fields2=BUS_ID
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",6,334,500,4063,R,R,""
+Dependence=0
+Caption=
+PName=
+NoDDL=1
+ModifiedDateTime=20221027185927
+LineMode=6
+Bar1=33
+Bar2=50
+Bar3=406
+TermPos1=R
+TermPos2=R
+ZOrder=25
+
+[Relation]
+Entity1=RESERVE
+Entity2=SEAT
+RelationType1=2
+RelationType2=3
+Fields1=RESERVE_ID
+Fields2=RESERVE_ID
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,693,7391,6089,R,R,""
+Dependence=0
+Caption=
+PName=
+LineMode=0
+Bar1=69
+Bar2=739
+Bar3=609
+TermPos1=R
+TermPos2=R
+ZOrder=27
+
+[Relation]
+Entity1=BUS_STATION
+Entity2=ROUTE
+RelationType1=2
+RelationType2=3
+Fields1=BUS_STATION_ID
+Fields2=ARRIVAL_ID
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,670,8259,2266,R,R,""
+Dependence=0
+Caption=
+PName=
+ModifiedDateTime=20221027200347
+LineMode=0
+Bar1=67
+Bar2=826
+Bar3=227
+TermPos1=R
+TermPos2=R
+ZOrder=31
+
+[Relation]
+Entity1=BUS_STATION
+Entity2=ROUTE
+RelationType1=2
+RelationType2=3
+Fields1=BUS_STATION_ID
+Fields2=DEPARTUTE_ID
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,569,8229,1226,R,R,""
+Dependence=0
+Caption=
+PName=
+ModifiedDateTime=20221027200405
+LineMode=0
+Bar1=57
+Bar2=823
+Bar3=123
+TermPos1=R
+TermPos2=R
+ZOrder=32

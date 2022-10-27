@@ -1,81 +1,148 @@
+-- Project Name : bus
+-- Date/Time    : 2022/10/27 20:30:02
+-- Author       : Thanh Nhan
+-- RDBMS Type   : PostgreSQL
+-- Application  : A5:SQL Mk-2
 
--- 路線
---* RestoreFromTempTable
-create table ROUTE (
-  ID serial not null
-  , DEPARTURE_BUS_STOP_ID integer not null
-  , ARRIVAL_BUS_STOP_ID integer not null
-  , DEPARTURE_TIME time not null
-  , ARRIVAL_TIME time not null
-  , PRICE integer not null
-  , BUS_ID integer not null
-  , RUN_START_DATE date not null
-  , RUN_END_DATE date
-  , constraint ROUTE_PKC primary key (ID)
-) ;
+/*
+  << 注意！！ >>
+  BackupToTempTable, RestoreFromTempTable疑似命令が付加されています。
+  これにより、drop table, create table 後もデータが残ります。
+  この機能は一時的に $$TableName のような一時テーブルを作成します。
+  この機能は A5:SQL Mk-2でのみ有効であることに注意してください。
+*/
 
--- 停留所
+-- 管理者
 --* RestoreFromTempTable
-create table BUS_STOP (
-  ID serial not null
-  , NAME text not null
-  , constraint BUS_STOP_PKC primary key (ID)
+create table OPERATION_MANAGER (
+  ADMINSTRATOR_ID SERIAL not null
+  , LOGIN_ID VARCHAR(20) not null
+  , PASSWORD VARCHAR(30) not null
+  , ADMINSTRATOR_NAME VARCHAR(30) not null
+  , constraint OPERATION_MANAGER_PKC primary key (ADMINSTRATOR_ID)
 ) ;
 
 -- バス
 --* RestoreFromTempTable
 create table BUS (
-  ID serial not null
-  , ROW_NUM integer not null
-  , COLUMN_NUM integer not null
-  , NUMBER_PLACE text not null
-  , NUMBER_DIVISION text not null
-  , NUMBER_KANA text not null
-  , NUMBER_FIRST_HALF text not null
-  , NUMBER_LATTER_HALF text not null
-  , constraint BUS_PKC primary key (ID)
+  BUS_ID SERIAL not null
+  , ROW_NUM INTEGER not null
+  , COLUMN_NUM INTEGER not null
+  , NUMBER_PLACE VARCHAR(3) not null
+  , NUMBER_DIVISION VARCHAR(3) not null
+  , NUMBER_KANA VARCHAR(1) not null
+  , NUMBER_FIRST_HALF VARCHAR(3) not null
+  , NUMBER_LATTER_HALF VARCHAR(3) not null
+  , constraint BUS_PKC primary key (BUS_ID)
 ) ;
 
-create unique index BUS_IX1
-  on BUS(NUMBER_PLACE,NUMBER_DIVISION,NUMBER_KANA,NUMBER_FIRST_HALF,NUMBER_LATTER_HALF);
-
--- 運用管理者
+-- 座席
 --* RestoreFromTempTable
-create table MANAGER (
-  ID serial not null
-  , LOGIN_ID text not null
-  , PASSWORD text not null
-  , NAME text not null
-  , constraint MANAGER_PKC primary key (ID)
+create table SEAT (
+  SEAT_ID SERIAL not null
+  , BUS_ID INTEGER not null
+  , RESERVE_ID INTEGER not null
+  , SEAT_NUMBER INTEGER not null
+  , constraint SEAT_PKC primary key (SEAT_ID)
 ) ;
 
-comment on table ROUTE is '路線';
-comment on column ROUTE.ID is 'ID';
-comment on column ROUTE.DEPARTURE_BUS_STOP_ID is '出発停留所ID';
-comment on column ROUTE.ARRIVAL_BUS_STOP_ID is '到着停留所ID';
-comment on column ROUTE.DEPARTURE_TIME is '出発時刻';
-comment on column ROUTE.ARRIVAL_TIME is '到着時刻';
-comment on column ROUTE.PRICE is '料金';
-comment on column ROUTE.BUS_ID is 'バスID';
-comment on column ROUTE.RUN_START_DATE is '運行開始日';
-comment on column ROUTE.RUN_END_DATE is '運行終了日';
+-- 会員
+--* RestoreFromTempTable
+create table MEMBER (
+  MEMBER_ID SERIAL not null
+  , LOGIN_ID VARCHAR(20) not null
+  , PASSWORD VARCHAR(30) not null
+  , MEMBER_NAME VARCHAR(30) not null
+  , MAIL_ADDRESS VARCHAR(30) not null
+  , PHONE_NUMBER CHAR(11) not null
+  , constraint MEMBER_PKC primary key (MEMBER_ID)
+) ;
 
-comment on table BUS_STOP is '停留所';
-comment on column BUS_STOP.ID is 'ID';
-comment on column BUS_STOP.NAME is '停留所名';
+-- 予約
+--* RestoreFromTempTable
+create table RESERVE (
+  RESERVE_ID SERIAL not null
+  , MEMBER_ID INTEGER not null
+  , ROUTE_ID INTEGER not null
+  , RESERVED_DATE TIMESTAMP not null
+  , DEPARTURE_DATE DATE not null
+  , constraint RESERVE_PKC primary key (RESERVE_ID)
+) ;
+
+-- 路線
+--* RestoreFromTempTable
+create table ROUTE (
+  ROUTE_ID SERIAL not null
+  , DEPARTUTE_ID INTEGER not null
+  , ARRIVAL_ID INTEGER not null
+  , PRICE INTEGER not null
+  , BUS_ID INTEGER not null
+  , OPERATION_START_DATE DATE not null
+  , OPERATION_END_DATE DATE not null
+  , SCHEDULED_DEPARTURE_TIME TIMESTAMP not null
+  , SCHEDULED_ARRIVAL_TIME TIMESTAMP not null
+  , constraint ROUTE_PKC primary key (ROUTE_ID)
+) ;
+
+-- 停留所
+--* RestoreFromTempTable
+create table BUS_STATION (
+  BUS_STATION_ID SERIAL not null
+  , PREFECTURE VARCHAR(30) not null
+  , BUS_STATION_NAME VARCHAR(100) not null
+  , constraint BUS_STATION_PKC primary key (BUS_STATION_ID)
+) ;
+
+comment on table OPERATION_MANAGER is '管理者';
+comment on column OPERATION_MANAGER.ADMINSTRATOR_ID is '管理者ID';
+comment on column OPERATION_MANAGER.LOGIN_ID is 'ログインID';
+comment on column OPERATION_MANAGER.PASSWORD is 'パスワード';
+comment on column OPERATION_MANAGER.ADMINSTRATOR_NAME is '管理者氏名';
 
 comment on table BUS is 'バス';
-comment on column BUS.ID is 'ID';
+comment on column BUS.BUS_ID is 'バスID';
 comment on column BUS.ROW_NUM is '1列あたりシート数';
 comment on column BUS.COLUMN_NUM is 'シート列数';
-comment on column BUS.NUMBER_PLACE is 'ナンバー（地名）';
-comment on column BUS.NUMBER_DIVISION is 'ナンバー（分類番号）';
-comment on column BUS.NUMBER_KANA is 'ナンバー（かな）';
-comment on column BUS.NUMBER_FIRST_HALF is 'ナンバー（一連指定番号前半）';
-comment on column BUS.NUMBER_LATTER_HALF is 'ナンバー（一連指定番号後半）';
+comment on column BUS.NUMBER_PLACE is 'ナンバープレート地位名';
+comment on column BUS.NUMBER_DIVISION is 'ナンバープレート類番号';
+comment on column BUS.NUMBER_KANA is 'ナンバープレートひながら';
+comment on column BUS.NUMBER_FIRST_HALF is 'ナンバープレート連指定番前半';
+comment on column BUS.NUMBER_LATTER_HALF is 'ナンバープレート連指定番後半';
 
-comment on table MANAGER is '運用管理者';
-comment on column MANAGER.ID is 'ID';
-comment on column MANAGER.LOGIN_ID is 'ログインID';
-comment on column MANAGER.PASSWORD is 'パスワード';
-comment on column MANAGER.NAME is '管理者氏名';
+comment on table SEAT is '座席';
+comment on column SEAT.SEAT_ID is '座席ID';
+comment on column SEAT.BUS_ID is 'バスID';
+comment on column SEAT.RESERVE_ID is '予約ID';
+comment on column SEAT.SEAT_NUMBER is '座席番号';
+
+comment on table MEMBER is '会員';
+comment on column MEMBER.MEMBER_ID is '会員ID';
+comment on column MEMBER.LOGIN_ID is 'ログインID';
+comment on column MEMBER.PASSWORD is 'パスワード';
+comment on column MEMBER.MEMBER_NAME is '氏名';
+comment on column MEMBER.MAIL_ADDRESS is 'メールアドレス';
+comment on column MEMBER.PHONE_NUMBER is '電話番号';
+
+comment on table RESERVE is '予約';
+comment on column RESERVE.RESERVE_ID is '予約ID';
+comment on column RESERVE.MEMBER_ID is '会員ID';
+comment on column RESERVE.ROUTE_ID is '路線ID';
+comment on column RESERVE.RESERVED_DATE is '予約日';
+comment on column RESERVE.DEPARTURE_DATE is '出発日';
+
+comment on table ROUTE is '路線';
+comment on column ROUTE.ROUTE_ID is '路線ID';
+comment on column ROUTE.DEPARTUTE_ID is '出発停留所ID';
+comment on column ROUTE.ARRIVAL_ID is '到着停留所ID';
+comment on column ROUTE.PRICE is '料金';
+comment on column ROUTE.BUS_ID is 'バスID';
+comment on column ROUTE.OPERATION_START_DATE is '運行開始日';
+comment on column ROUTE.OPERATION_END_DATE is '運行終了日';
+comment on column ROUTE.SCHEDULED_DEPARTURE_TIME is '出発予定時刻';
+comment on column ROUTE.SCHEDULED_ARRIVAL_TIME is '到着予定時刻';
+
+comment on table BUS_STATION is '停留所';
+comment on column BUS_STATION.BUS_STATION_ID is '停留所ID';
+comment on column BUS_STATION.PREFECTURE is '都道府県';
+comment on column BUS_STATION.BUS_STATION_NAME is '名称';
+
