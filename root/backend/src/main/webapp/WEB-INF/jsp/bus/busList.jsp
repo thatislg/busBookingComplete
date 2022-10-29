@@ -38,6 +38,10 @@ text-align: center;
 position: relative;
 left: 150px;
 }
+/* input:checked {
+  height: 50px;
+  width: 50px;
+} */
 </style>
 <div id="section">
 	<div id="article">
@@ -56,7 +60,7 @@ left: 150px;
 				</tr>
 				<c:forEach items="${busList}" var="bus">
 				<tr>
-					<td>◯</td>
+					<td><input type="checkbox"></td>
 					<td><c:out value="${bus.busId}"/></td>
 					<td><c:out value="${bus.numberPlace}${bus.numberDivision} ${bus.numberKana} ${bus.numberFirstHalf}-${bus.numberLatterHalf}"/></td>
 					<td><c:out value="${bus.rowNum}"/></td>
