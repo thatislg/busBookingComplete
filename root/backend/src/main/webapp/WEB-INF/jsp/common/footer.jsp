@@ -13,7 +13,7 @@
 }
 </style>
 	<div id="footer">
-		<p class="footer">copyright bac_team</p>
+		<p class="footer">Copyright © 2022 Bacs_team</p>
 	</div>
 </body>
 </html>

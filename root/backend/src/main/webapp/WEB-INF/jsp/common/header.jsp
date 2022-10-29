@@ -78,7 +78,7 @@ a {
 		<ul id="hu">
 			<sec:authorize access="hasRole('ROLE_MANAGER')">
 				<li class="hl"><a href="/busList/index">バス管理</a></li>
-				<li class="hl"><a href="/routeList">路線管理</a></li>
+				<li class="hl"><a href="/routeList/index">路線管理</a></li>
 				<li class="hl"><a href="/memberList">会員管理</a></li>
 			</sec:authorize>
 		</ul>
