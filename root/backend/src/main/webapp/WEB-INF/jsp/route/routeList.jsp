@@ -33,7 +33,32 @@ font-weight: bold;
 <div id="section">
 	<div id="article">
 		<fieldset>
-			<legend class="buslistTitle">路線一覧</legend>
+		<legend class="routeListTitle">路線一覧</legend>
+			<div name="createNewRoute">
+			
+			</div>
+			<hr>
+			<div name="search">
+				<fieldset>
+					<legend>運行日</legend>
+					<form>
+					</form>
+				</fieldset>
+			</div>	
+			<hr>
+			<div name="routeListTable">
+			</div>
+			<hr>
+			<div name="changeStatus">
+			</div>
+		</fieldset>
+	</div>
+</div>
+
+<div id="section">
+	<div id="article">
+		<fieldset>
+			<legend class="routeListTitle">路線一覧</legend>
 			<form action="/busInsert/input">
 				<input class="insertButton" type="submit" value="新規登録">
 			</form>
