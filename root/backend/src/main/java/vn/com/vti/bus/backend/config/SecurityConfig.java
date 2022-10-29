@@ -7,13 +7,13 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
-import vn.com.vti.bus.backend.security.ManagerAuthenticationProvider;
+import vn.com.vti.bus.backend.security.OperationManagerAuthenticationProvider;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
-	private ManagerAuthenticationProvider authenticationProvider;
+	private OperationManagerAuthenticationProvider authenticationProvider;
 
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {

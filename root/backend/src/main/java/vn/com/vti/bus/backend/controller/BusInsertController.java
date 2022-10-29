@@ -59,7 +59,7 @@ public class BusInsertController {
 		bus.setNumberLatterHalf(busForm.getNumberLatterHalf());
 		busMapper.insertSelective(bus);
 
-		//redirectAttributes.addFlashAttribute("message","ID(" + bus.getId() + ")で登録しました。");
+		redirectAttributes.addFlashAttribute("message","ID(" + bus.getBusId() + ")で登録しました。");
 
 		return "redirect:/busList/index";
 	}

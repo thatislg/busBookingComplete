@@ -18,7 +18,7 @@
 			</tr>
 		<c:forEach items="${busList}" var="bus">
 			<tr>
-				<td><c:out value="${bus.id}"/></td>
+				<td><c:out value="${bus.busId}"/></td>
 				<td><c:out value="${bus.numberPlace}${bus.numberDivision} ${bus.numberKana} ${bus.numberFirstHalf}-${bus.numberLatterHalf}"/></td>
 				<td><c:out value="${bus.rowNum}"/></td>
 				<td><c:out value="${bus.columnNum}"/></td>

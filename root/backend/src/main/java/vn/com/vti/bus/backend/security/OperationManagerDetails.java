@@ -5,22 +5,22 @@ import java.util.Collection;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import vn.com.vti.bus.entity.Manager;
+import vn.com.vti.bus.entity.OperationManager;
 
-public class ManagerDetails implements UserDetails{
+public class OperationManagerDetails implements UserDetails{
 	private static final long serialVersionUID = 1L;
 
-	private Manager manager;
+	private OperationManager manager;
 
 	private Collection<? extends GrantedAuthority> authorities;
 
-	public ManagerDetails(Manager manager, Collection<? extends GrantedAuthority> authorities) {
+	public OperationManagerDetails(OperationManager manager, Collection<? extends GrantedAuthority> authorities) {
 		super();
 		this.manager = manager;
 		this.authorities = authorities;
 	}
 
-	public Manager getManager() {
+	public OperationManager getManager() {
 		return manager;
 	}
 

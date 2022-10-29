@@ -12,14 +12,14 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import vn.com.vti.bus.entity.Manager;
-import vn.com.vti.bus.entity.ManagerExample;
-import vn.com.vti.bus.mapper.ManagerMapper;
+import vn.com.vti.bus.entity.OperationManager;
+import vn.com.vti.bus.entity.OperationManagerExample;
+import vn.com.vti.bus.mapper.OperationManagerMapper;
 
 @Configuration
-public class ManagerAuthenticationProvider extends AbstractUserDetailsAuthenticationProvider{
+public class OperationManagerAuthenticationProvider extends AbstractUserDetailsAuthenticationProvider{
 	@Autowired
-	private ManagerMapper managerMapper;
+	private OperationManagerMapper operationManagerMapper;
 
 	@Override
 	protected void additionalAuthenticationChecks(UserDetails userDetails,
@@ -36,16 +36,16 @@ public class ManagerAuthenticationProvider extends AbstractUserDetailsAuthentica
 			throw new BadCredentialsException("ログインIDを入力してください。");
 		}
 
-		ManagerExample managerExample = new ManagerExample();
-		managerExample.createCriteria().andLoginIdEqualTo(username);
+		OperationManagerExample operationManagerExample = new OperationManagerExample();
+		operationManagerExample.createCriteria().andLoginIdEqualTo(username);
 
-		List<Manager> managers = managerMapper.selectByExample(managerExample);
-		if(managers.isEmpty()) {
+		List<OperationManager> operationManagers = operationManagerMapper.selectByExample(operationManagerExample);
+		if(operationManagers.isEmpty()) {
 			throw new BadCredentialsException("ログインIDまたはパスワードに誤りがあります。");
 		}
 		List<SimpleGrantedAuthority> authorities = new ArrayList<>();
 		authorities.add(new SimpleGrantedAuthority("ROLE_MANAGER"));
 
-		return new ManagerDetails(managers.get(0), authorities);
+		return new OperationManagerDetails(operationManagers.get(0), authorities);
 	}
 }

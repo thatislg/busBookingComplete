@@ -21,7 +21,7 @@ public class BusListController {
 	@RequestMapping("/index")
 	public String index(Model model) {
 		BusExample busExample = new BusExample();
-		busExample.setOrderByClause("id");
+		busExample.setOrderByClause("bus_Id");
 		List<Bus> busList = busMapper.selectByExample(busExample);
 
 		model.addAttribute("busList", busList);
