@@ -2,12 +2,22 @@
     pageEncoding="UTF-8"%>
 <%@include file="/WEB-INF/jsp/common/define.jsp"%>
 
-<jsp:include page="/WEB-INF/jsp/common/header.jsp"></jsp:include>
-
-<div id="section">
+<style>
+.loginButton {
+	border: 2px solid darkblue;
+	background-color: #82c5eb;
+	border-radius: 13px;
+	width: 11em;
+	height: 3.5em;
+	font-weight: bold;
+}
+</style>
+<div id="header">
+		<h1>バス予約システム管理</h1>
+	</div>
+	<div id="section">
 	<div id="article">
-
-${SPRING_SECURITY_LAST_EXCEPTION.message}
+	${SPRING_SECURITY_LAST_EXCEPTION.message}
 	<h1>ログイン</h1>
 	<form:form modelAttribute="loginForm" action="auth">
 	<form:errors path="*"/>
@@ -17,9 +27,9 @@ ${SPRING_SECURITY_LAST_EXCEPTION.message}
 		<dt>パスワード</dt>
 		<dd><form:password path="password"/></dd>
 	</dl>
-	<input type="submit" value="ログイン" class="btn">
+	<input class="loginButton" type="submit" value="ログイン"/> <!-- class="btn" -->
 	</form:form>
 
 	</div>
 </div>
-<jsp:include page="/WEB-INF/jsp/common/footer.jsp"></jsp:include>
+	<jsp:include page="/WEB-INF/jsp/common/footer.jsp"></jsp:include>
