@@ -13,7 +13,7 @@
 }
 </style>
 	<div id="footer">
-		<p class="footer">copyright hogehoge</p>
+		<p class="footer">copyright bac_team</p>
 	</div>
 </body>
 </html>

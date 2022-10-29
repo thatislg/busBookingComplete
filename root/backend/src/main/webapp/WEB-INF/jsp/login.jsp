@@ -11,10 +11,12 @@
 	height: 3.5em;
 	font-weight: bold;
 }
+
+h1 {
+	background-color: lightblue;
+	text-align: center;
+}
 </style>
-<div id="header">
-		<h1>バス予約システム管理</h1>
-	</div>
 	<div id="section">
 	<div id="article">
 	${SPRING_SECURITY_LAST_EXCEPTION.message}

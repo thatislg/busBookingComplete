@@ -9,6 +9,7 @@
 <style>
 #hu {
 	text-align: center;
+	margin:0;
 }
 
 .hl {
@@ -24,8 +25,7 @@
 	bottom: 78px;
 }
 
-.loginButton, .insertButton, .deleteButton, .logoutButton, .returnButton
-	{
+.loginButton, .insertButton, .deleteButton, .logoutButton, .returnButton,.okButton{
 	border: 2px solid darkblue;
 	background-color: #82c5eb;
 	border-radius: 13px;
@@ -46,18 +46,14 @@
 }
 
 #nav {
-	padding-bottom: 80px;
 	margin-bottom: 2em;
-	padding-bottom: 2em;
-}
-
-#logout {
+	padding: 0;
 	border-bottom: 2px dashed deepskyblue;
+	background-color: lightblue;
 }
 
 #nav {
-	background-color: lightblue;
-	padding: 0px;
+	
 }
 
 .logoLink {
@@ -73,13 +69,10 @@ a {
 </style>
 </head>
 <body>
-	<div id="header">
-		<h1>バス予約システム管理</h1>
-	</div>
-	<form id="logout" action="/login">
+	<div id="nav">
+		<form id="logout" action="/login">
 		<input class="logoutButton" type="submit" value="ログアウト">
 	</form>
-	<div id="nav">
 		<a class="logoLink" href="/"><img class="logoImg"
 			src="https://www.tmc-creative.jp/works/images/bf64421e58f15749848583244cc66cbe85e7d73e.png" /></a>
 		<ul id="hu">

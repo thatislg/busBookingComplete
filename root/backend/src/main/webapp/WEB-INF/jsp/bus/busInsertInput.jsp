@@ -12,6 +12,10 @@ margin-top: 20px;
 font-size:30px ;
 font-weight: bold;
 }
+#section{
+width: 960px;
+margin: 0 auto;
+}
 </style>
 <div id="section">
 	<div id="article">
@@ -34,9 +38,9 @@ font-weight: bold;
 				<form:errors path="numberLatterHalf" element="p"/>
 				<li><spring:message code="busForm.numberLatterHalf"/>:<form:input path="numberLatterHalf"/></li>			
 			</ul>
+			</fieldset>
 			<input class="insertButton" type="submit" value="登録" formaction="confirm">
 			<input class="returnButton" type="submit" value="戻る" formaction="/busList/index">
-			</fieldset>
 		</form:form>
 	</div>
 </div>

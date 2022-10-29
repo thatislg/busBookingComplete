@@ -17,7 +17,7 @@ table, th, td {
 
 .insertButton {
 	position: relative;
-	left: 52em;
+	left: 65em;
 }
 
 body {
@@ -29,6 +29,15 @@ body {
 font-size:30px ;
 font-weight: bold;
 }
+#section{
+width: 960px;
+margin: 0 auto;
+}
+#buslistTable{
+text-align: center;
+position: relative;
+left: 150px;
+}
 </style>
 <div id="section">
 	<div id="article">
@@ -37,7 +46,7 @@ font-weight: bold;
 			<form action="/busInsert/input">
 				<input class="insertButton" type="submit" value="新規登録">
 			</form>
-			<table>
+			<table id="buslistTable">
 				<tr class="top">
 					<th>選択</th>
 					<th>ID</th>
@@ -55,7 +64,7 @@ font-weight: bold;
 				</tr>
 				</c:forEach>
  			</table>
-			<form action="/busInsert/delete">
+			<form action="/busInsert/deleteConfirm">
 			<input class="deleteButton" type="submit" value="削除">
 		</form>
 		</fieldset>
