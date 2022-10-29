@@ -12,7 +12,6 @@ text-align: center;
 }
 </style>
 	<div id="footer">
-		<p>copyright hogehoge</p>
 		<p class="footer">copyright hogehoge</p>
 	</div>
 </body>

@@ -1,1 +1,9 @@
 /.metadata/
+generator/.classpath
+generator/.classpath
+*.MF
+generator/target/classes/META-INF/maven/vn.com.vti.job_site/generator/pom.properties
+root/backend/target/classes/META-INF/maven/vn.com.vti.bus/backend/pom.properties
+root/backend/target/classes/vn/com/vti/bus/backend/config/SecurityConfig.class
+root/backend/target/classes/vn/com/vti/bus/backend/controller/BusInsertController.class
+root/frontend/target/classes/META-INF/maven/vn.com.vti.bus/frontend/pom.properties
