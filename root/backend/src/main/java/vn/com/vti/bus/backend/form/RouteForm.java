@@ -3,7 +3,7 @@ package vn.com.vti.bus.backend.form;
 import java.security.Timestamp;
 import java.sql.Date;
 
-public class routeForm {
+public class RouteForm {
 	private Integer price;
 	private Date operationStartDate;
 	private Date operationEndDate;
