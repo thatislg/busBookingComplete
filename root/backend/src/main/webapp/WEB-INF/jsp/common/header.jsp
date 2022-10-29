@@ -7,7 +7,6 @@
 <head>
 <meta charset="UTF-8">
 <style>
-
 #hu {
 	text-align: center;
 }
@@ -20,12 +19,13 @@
 	border: 2px solid darkblue;
 	text-align: center;
 	border-radius: 15px;
-	height:2em;
+	height: 2em;
 	position: relative;
 	bottom: 78px;
 }
 
-.loginButton,.insertButton,.deleteButton,.logoutButton,.returnButton {
+.loginButton, .insertButton, .deleteButton, .logoutButton, .returnButton
+	{
 	border: 2px solid darkblue;
 	background-color: #82c5eb;
 	border-radius: 13px;
@@ -33,10 +33,12 @@
 	height: 3.5em;
 	font-weight: bold;
 }
-.logoutButton{
-position:relative;
-left:115em;
+
+.logoutButton {
+	position: relative;
+	left: 115em;
 }
+
 .logoImg {
 	width: 190px;
 	border: 2px solid darkblue;
@@ -48,21 +50,25 @@ left:115em;
 	margin-bottom: 2em;
 	padding-bottom: 2em;
 }
-#logout{
-border-bottom: 2px dashed deepskyblue;
+
+#logout {
+	border-bottom: 2px dashed deepskyblue;
 }
-#nav{
-background-color: lightblue;
-padding: 0px;
+
+#nav {
+	background-color: lightblue;
+	padding: 0px;
 }
-.logoLink{
-margin-left: 7em;
-position: relative;
-top: 16px;
+
+.logoLink {
+	margin-left: 7em;
+	position: relative;
+	top: 16px;
 }
-a{
-text-decoration:none;
-color: black;
+
+a {
+	text-decoration: none;
+	color: black;
 }
 </style>
 </head>
@@ -71,17 +77,17 @@ color: black;
 		<h1>バス予約システム管理</h1>
 	</div>
 	<form id="logout" action="/login">
-			<input class="logoutButton" type="submit" value="ログアウト">
+		<input class="logoutButton" type="submit" value="ログアウト">
 	</form>
 	<div id="nav">
-		<a class="logoLink" href="/"><img class="logoImg" src="https://www.tmc-creative.jp/works/images/bf64421e58f15749848583244cc66cbe85e7d73e.png"/></a>
+		<a class="logoLink" href="/"><img class="logoImg"
+			src="https://www.tmc-creative.jp/works/images/bf64421e58f15749848583244cc66cbe85e7d73e.png" /></a>
 		<ul id="hu">
-		<sec:authorize access="hasRole('ROLE_MANAGER')">
+			<sec:authorize access="hasRole('ROLE_MANAGER')">
 				<li class="hl"><a href="/busList/index">バス管理</a></li>
 				<li class="hl"><a href="/routeList">路線管理</a></li>
 				<li class="hl"><a href="/memberList">会員管理</a></li>
-	</sec:authorize>
+			</sec:authorize>
 		</ul>
 	</div>
-    <p style="margin:auto;width:200px;"><c:out value="${message}"/></p>
- 
+	<p style="margin: auto; width: 200px;"><c:out value="${message}" /></p>

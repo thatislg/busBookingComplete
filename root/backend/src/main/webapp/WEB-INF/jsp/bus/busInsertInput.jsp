@@ -4,49 +4,41 @@
 
 <jsp:include page="/WEB-INF/jsp/common/header.jsp"></jsp:include>
 
+<style>
+.insertButton{
+margin-top: 20px;
+}
+.insertTitle{
+font-size:30px ;
+font-weight: bold;
+}
+</style>
 <div id="section">
 	<div id="article">
-		<form:form modelAttribute="busForm">
-			<dl>
-				<dt><spring:message code="busForm.rowNum"/></dt>
-				<dd>
-					<form:errors path="rowNum" element="p"/>
-					<form:input path="rowNum"/>
-				</dd>
-				<dt><spring:message code="busForm.columnNum"/></dt>
-				<dd>
-					<form:errors path="columnNum" element="p"/>
-					<form:input path="columnNum"/>
-				</dd>
-				<dt><spring:message code="busForm.numberPlace"/></dt>
-				<dd>
-					<form:errors path="numberPlace" element="p"/>
-					<form:input path="numberPlace"/>
-				</dd>
-				<dt><spring:message code="busForm.numberDivision"/></dt>
-				<dd>
-					<form:errors path="numberDivision" element="p"/>
-					<form:input path="numberDivision"/>
-				</dd>
-				<dt><spring:message code="busForm.numberKana"/></dt>
-				<dd>
-					<form:errors path="numberKana" element="p"/>
-					<form:input path="numberKana"/>
-				</dd>
-				<dt><spring:message code="busForm.numberFirstHalf"/></dt>
-				<dd>
-					<form:errors path="numberFirstHalf" element="p"/>
-					<form:input path="numberFirstHalf"/>
-				</dd>
-				<dt><spring:message code="busForm.numberLatterHalf"/></dt>
-				<dd>
-					<form:errors path="numberLatterHalf" element="p"/>
-					<form:input path="numberLatterHalf"/>
-				</dd>
-			</dl>
-			<input type="submit" value="登録" formaction="confirm">
-			<input type="submit" value="戻る" formaction="/busList/index">
+		<form:form modelAttribute="busForm">	
+			<fieldset>
+			<legend class="insertTitle">バス登録</legend>
+			<ul>
+				<form:errors path="rowNum" element="p"/>
+				<li><spring:message code="busForm.rowNum"/>:<form:input path="rowNum"/></li>
+				<form:errors path="columnNum" element="p"/>
+				<li><spring:message code="busForm.columnNum"/>:<form:input path="columnNum"/></li>
+				<form:errors path="numberPlace" element="p"/>
+				<li><spring:message code="busForm.numberPlace"/>:<form:input path="numberPlace"/></li>
+				<form:errors path="numberDivision" element="p"/>
+				<li><spring:message code="busForm.numberDivision"/>:<form:input path="numberDivision"/></li>
+				<form:errors path="numberKana" element="p"/>
+				<li><spring:message code="busForm.numberKana"/>:<form:input path="numberKana"/></li>
+				<form:errors path="numberFirstHalf" element="p"/>
+				<li><spring:message code="busForm.numberFirstHalf"/>:<form:input path="numberFirstHalf"/></li>
+				<form:errors path="numberLatterHalf" element="p"/>
+				<li><spring:message code="busForm.numberLatterHalf"/>:<form:input path="numberLatterHalf"/></li>			
+			</ul>
+			<input class="insertButton" type="submit" value="登録" formaction="confirm">
+			<input class="returnButton" type="submit" value="戻る" formaction="/busList/index">
+			</fieldset>
 		</form:form>
 	</div>
 </div>
 <jsp:include page="/WEB-INF/jsp/common/footer.jsp"></jsp:include>
+
