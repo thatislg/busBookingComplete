@@ -24,6 +24,7 @@ public class RouteForm {
 	@NotNull
 	private Timestamp scheduledDepartureTime;
 	
+	
 	@NotNull
 	private Timestamp scheduledArrivalTime;
 	
@@ -39,12 +40,14 @@ public class RouteForm {
 	public void setArrivalId(Integer arrivalId) {
 		this.arrivalId = arrivalId;
 	}
-	public Timestamp getScheduledDepartureTime() {
-		return scheduledDepartureTime;
-	}
+	
 	public void setScheduledDepartureTime(Timestamp scheduledDepartureTime) {
 		this.scheduledDepartureTime = scheduledDepartureTime;
 	}
+	public Timestamp getScheduledDepartureTime() {
+		return scheduledDepartureTime;
+	}
+	
 	public Integer getPrice() {
 		return price;
 	}
@@ -63,12 +66,7 @@ public class RouteForm {
 	public void setOperationEndDate(Date operationEndDate) {
 		this.operationEndDate = operationEndDate;
 	}
-	public Timestamp getScheduledDeapartureTime() {
-		return scheduledDepartureTime;
-	}
-	public void setScheduledDeapartureTime(Timestamp scheduledDeapartureTime) {
-		this.scheduledDepartureTime = scheduledDeapartureTime;
-	}
+	
 	public Timestamp getScheduledArrivalTime() {
 		return scheduledArrivalTime;
 	}

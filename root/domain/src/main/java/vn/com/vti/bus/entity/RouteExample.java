@@ -1,5 +1,6 @@
 package vn.com.vti.bus.entity;
 
+import java.security.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
@@ -652,8 +653,8 @@ public class RouteExample {
             return (Criteria) this;
         }
 
-        public Criteria andScheduledDepartureTimeEqualTo(Date value) {
-            addCriterion("scheduled_departure_time =", value, "scheduledDepartureTime");
+        public Criteria andScheduledDepartureTimeEqualTo(Timestamp timestamp) {
+            addCriterion("scheduled_departure_time =", timestamp, "scheduledDepartureTime");
             return (Criteria) this;
         }
 
@@ -712,8 +713,8 @@ public class RouteExample {
             return (Criteria) this;
         }
 
-        public Criteria andScheduledArrivalTimeEqualTo(Date value) {
-            addCriterion("scheduled_arrival_time =", value, "scheduledArrivalTime");
+        public Criteria andScheduledArrivalTimeEqualTo(Timestamp timestamp) {
+            addCriterion("scheduled_arrival_time =", timestamp, "scheduledArrivalTime");
             return (Criteria) this;
         }
 

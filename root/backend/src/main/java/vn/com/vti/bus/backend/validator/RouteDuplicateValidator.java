@@ -1,11 +1,14 @@
 package vn.com.vti.bus.backend.validator;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import vn.com.vti.bus.backend.form.RouteForm;
+import vn.com.vti.bus.entity.Route;
 import vn.com.vti.bus.entity.RouteExample;
 import vn.com.vti.bus.mapper.RouteMapper;
 
@@ -29,11 +32,21 @@ public class RouteDuplicateValidator implements Validator{
 		RouteForm routeForm = (RouteForm)target;
 		RouteExample routeExample = new RouteExample();
 		routeExample.createCriteria()
-		.andPriceEqualTo(routeForm.getPrice())
-		.andOperationStartDateEqualTo(routeForm.getOperationStartDate())
-		.andOperationEndDateEqualTo(routeForm.getOperationEndDate())
-		.andScheduledArrivalTimeEqualTo(routeForm.getScheduledArrivalTime());
+			.andArrivalIdEqualTo(routeForm.getArrivalId())
+			.andDepartureIdEqualTo(routeForm.getDepartureId())
+			.andPriceEqualTo(routeForm.getPrice())
+			.andOperationStartDateEqualTo(routeForm.getOperationStartDate())
+			.andOperationEndDateEqualTo(routeForm.getOperationEndDate())
+			.andScheduledDepartureTimeEqualTo(routeForm.getScheduledDepartureTime())
+			.andScheduledArrivalTimeEqualTo(routeForm.getScheduledArrivalTime());
 		
+		List<Route> routeList = routeMapper.selectByExample(routeExample);
+		System.out.print(routeList);
+		
+		
+		if(!routeList.isEmpty()) {
+			errors.rejectValue("ROUTE", "error.alreadyExist", new Object[] {"ナンバープレート"}, null);
+		}
 		
 //		busExample.createCriteria()
 //		.andNumberPlaceEqualTo(busForm.getNumberPlace())
