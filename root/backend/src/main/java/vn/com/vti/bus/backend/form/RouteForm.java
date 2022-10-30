@@ -3,12 +3,48 @@ package vn.com.vti.bus.backend.form;
 import java.security.Timestamp;
 import java.sql.Date;
 
+import javax.validation.constraints.NotNull;
+
 public class RouteForm {
+	@NotNull
+	private Integer departureId;
+	
+	@NotNull
+	private Integer arrivalId;
+	
+	@NotNull
 	private Integer price;
+	
+	@NotNull
 	private Date operationStartDate;
+	
+	@NotNull
 	private Date operationEndDate;
-	private Timestamp scheduledDeapartureTime;
+	
+	@NotNull
+	private Timestamp scheduledDepartureTime;
+	
+	@NotNull
 	private Timestamp scheduledArrivalTime;
+	
+	public Integer getDepartureId() {
+		return departureId;
+	}
+	public void setDepartureId(Integer departureId) {
+		this.departureId = departureId;
+	}
+	public Integer getArrivalId() {
+		return arrivalId;
+	}
+	public void setArrivalId(Integer arrivalId) {
+		this.arrivalId = arrivalId;
+	}
+	public Timestamp getScheduledDepartureTime() {
+		return scheduledDepartureTime;
+	}
+	public void setScheduledDepartureTime(Timestamp scheduledDepartureTime) {
+		this.scheduledDepartureTime = scheduledDepartureTime;
+	}
 	public Integer getPrice() {
 		return price;
 	}
@@ -28,10 +64,10 @@ public class RouteForm {
 		this.operationEndDate = operationEndDate;
 	}
 	public Timestamp getScheduledDeapartureTime() {
-		return scheduledDeapartureTime;
+		return scheduledDepartureTime;
 	}
 	public void setScheduledDeapartureTime(Timestamp scheduledDeapartureTime) {
-		this.scheduledDeapartureTime = scheduledDeapartureTime;
+		this.scheduledDepartureTime = scheduledDeapartureTime;
 	}
 	public Timestamp getScheduledArrivalTime() {
 		return scheduledArrivalTime;

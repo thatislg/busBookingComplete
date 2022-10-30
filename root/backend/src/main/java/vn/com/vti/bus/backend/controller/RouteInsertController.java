@@ -12,4 +12,6 @@ public class RouteInsertController {
 	
 	@Autowired
 	private RouteMapper routeMapper;
+	
+	
 }
