@@ -10,18 +10,18 @@ import vn.com.vti.bus.entity.OperationManager;
 public class OperationManagerDetails implements UserDetails{
 	private static final long serialVersionUID = 1L;
 
-	private OperationManager manager;
+	private OperationManager operationManager;
 
 	private Collection<? extends GrantedAuthority> authorities;
 
-	public OperationManagerDetails(OperationManager manager, Collection<? extends GrantedAuthority> authorities) {
+	public OperationManagerDetails(OperationManager operationManager, Collection<? extends GrantedAuthority> authorities) {
 		super();
-		this.manager = manager;
+		this.operationManager = operationManager;
 		this.authorities = authorities;
 	}
 
 	public OperationManager getManager() {
-		return manager;
+		return operationManager;
 	}
 
 	@Override
@@ -31,12 +31,12 @@ public class OperationManagerDetails implements UserDetails{
 
 	@Override
 	public String getPassword() {
-		return manager.getPassword();
+		return operationManager.getPassword();
 	}
 
 	@Override
 	public String getUsername() {
-		return manager.getLoginId();
+		return operationManager.getLoginId();
 	}
 
 	@Override

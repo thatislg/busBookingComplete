@@ -45,7 +45,7 @@ public class RouteDuplicateValidator implements Validator{
 		
 		
 		if(!routeList.isEmpty()) {
-			errors.rejectValue("ROUTE", "error.alreadyExist", new Object[] {"ナンバープレート"}, null);
+			errors.rejectValue("ROUTE", "error.alreadyExist", new Object[] {"ROUTENAME"}, null);
 		}
 		
 //		busExample.createCriteria()
