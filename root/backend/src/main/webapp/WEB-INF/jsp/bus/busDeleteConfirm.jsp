@@ -18,17 +18,18 @@ margin: 0 auto;
 
 	<dl>
 	  <dt>シート列数</dt>
-	  	<dd>$c:out value="${busInfo.rowNum}"/></dd>
+	  	<dd><c:out value="${busInfo.rowNum}"/></dd>
 	  <dt>１列あたりシート数</dt>
 	  	<dd><c:out value="${busInfo.columnNum}"/></dd>
 	  <dt>ナンバープレート</dt>
 	  	<dd><c:out value="${busInfo.numberPlace}"/></dd>
 	</dl>
 
-	<form>
-		<input class="okButton" type="submit" value="ＯＫ" formaction="/busDelete/delete?busId=${busId}">
-		<input class="returnButton" type="submit" value="戻る" formaction="/busList/index">
+	<form >
+	   <input type="hidden" name="busId" value="${busInfo.busId}">
+	   <input class="okButton" type="submit" value="ＯＫ" formaction="/busDelete/delete">
+	   <input class="returnButton" type="submit" value="戻る" formaction="/busList/index">
 	</form>
 
-
+		
 <jsp:include page="/WEB-INF/jsp/common/footer.jsp"></jsp:include>
