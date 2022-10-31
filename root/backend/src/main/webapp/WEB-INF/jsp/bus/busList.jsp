@@ -60,17 +60,14 @@ left: 150px;
 				</tr>
 				<c:forEach items="${busList}" var="bus">
 				<tr>
-					<td><input type="checkbox"></td>
 					<td><c:out value="${bus.busId}"/></td>
 					<td><c:out value="${bus.numberPlace}${bus.numberDivision} ${bus.numberKana} ${bus.numberFirstHalf}-${bus.numberLatterHalf}"/></td>
 					<td><c:out value="${bus.rowNum}"/></td>
 					<td><c:out value="${bus.columnNum}"/></td>
+					<td><a href="../busDelete/confirm?busId=${bus.busId}">削除</a></td>
 				</tr>
 				</c:forEach>
  			</table>
-			<form action="/busInsert/deleteConfirm">
-			<input class="deleteButton" type="submit" value="削除">
-		</form>
 		</fieldset>
 	</div>
 </div>
