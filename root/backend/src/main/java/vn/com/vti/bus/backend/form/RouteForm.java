@@ -1,6 +1,5 @@
 package vn.com.vti.bus.backend.form;
 
-import java.security.Timestamp;
 import java.sql.Date;
 
 import javax.validation.constraints.NotNull;
@@ -22,11 +21,10 @@ public class RouteForm {
 	private Date operationEndDate;
 	
 	@NotNull
-	private Timestamp scheduledDepartureTime;
-	
+	private Date scheduledDepartureTime;
 	
 	@NotNull
-	private Timestamp scheduledArrivalTime;
+	private Date scheduledArrivalTime;
 	
 	public Integer getDepartureId() {
 		return departureId;
@@ -41,10 +39,11 @@ public class RouteForm {
 		this.arrivalId = arrivalId;
 	}
 	
-	public void setScheduledDepartureTime(Timestamp scheduledDepartureTime) {
+	public void setScheduledDepartureTime(Date scheduledDepartureTime) {
 		this.scheduledDepartureTime = scheduledDepartureTime;
 	}
-	public Timestamp getScheduledDepartureTime() {
+	
+	public Date getScheduledDepartureTime() {
 		return scheduledDepartureTime;
 	}
 	
@@ -67,10 +66,10 @@ public class RouteForm {
 		this.operationEndDate = operationEndDate;
 	}
 	
-	public Timestamp getScheduledArrivalTime() {
+	public Date getScheduledArrivalTime() {
 		return scheduledArrivalTime;
 	}
-	public void setScheduledArrivalTime(Timestamp scheduledArrivalTime) {
+	public void setScheduledArrivalTime(Date scheduledArrivalTime) {
 		this.scheduledArrivalTime = scheduledArrivalTime;
 	}
 }
