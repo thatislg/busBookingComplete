@@ -20,71 +20,66 @@ table, th, td {
 	left: 52em;
 }
 
-body {
-	background-image:
-		url("https://cdn.cloudflare.steamstatic.com/steam/apps/491540/capsule_616x353.jpg?t=1655303686")
-		no-repeat;
-}
-.buslistTitle{
+.routelistTitle{
 font-size:30px ;
 font-weight: bold;
+}
+#form1{
+position: relative;
+left: 19em;
+}
+#form2{
+position: relative;
+right: 103px;
+}
+.updateButton{
+position: relative;
+left: 250px;
+}
+#section{
+width: 1181px;
+margin: 0 auto;
 }
 </style>
 <div id="section">
 	<div id="article">
 		<fieldset>
-		<legend class="routeListTitle">路線一覧</legend>
-			<div name="createNewRoute">
-			
-			</div>
-			<hr>
-			<div name="search">
-				<fieldset>
-					<legend>運行日</legend>
-					<form>
-					</form>
-				</fieldset>
-			</div>	
-			<hr>
-			<div name="routeListTable">
-			</div>
-			<hr>
-			<div name="changeStatus">
-			</div>
-		</fieldset>
-	</div>
-</div>
-
-<div id="section">
-	<div id="article">
-		<fieldset>
-			<legend class="routeListTitle">路線一覧</legend>
-			<form action="/busInsert/input">
-				<input class="insertButton" type="submit" value="新規登録">
+			<legend class="routelistTitle">路線一覧</legend>
+			<div>
+			<form id="form1">
+				<input class="insertButton" type="submit" value="新規登録" formaction="/routeInsert/input">
+				<input class="insertButton" type="submit" value="予約状況" formaction="/reservation/index">
 			</form>
-			<table>
+			</div>
+			<table id="routelistTable">
 				<tr class="top">
-					<th>選択</th>
-					<th>ID</th>
-					<th>ナンバープレート</th>
-					<th><spring:message code="busForm.rowNum"/></th>
-					<th><spring:message code="busForm.columnNum"/></th>
+					<th>路線ID</th>
+					<th>出発</th>
+					<th>到着</th>
+					<th>運行開発日</th>
+					<th>運行終了日</th>
+					<th>料金</th>
+					<th>バスID</th>
+					<th>削除</th>
 				</tr>
-				<c:forEach items="${busList}" var="bus">
+				<c:forEach items="${routeList}" var="route">
 				<tr>
-					<td>◯</td>
-					<td><c:out value="${bus.busId}"/></td>
-					<td><c:out value="${bus.numberPlace}${bus.numberDivision} ${bus.numberKana} ${bus.numberFirstHalf}-${bus.numberLatterHalf}"/></td>
-					<td><c:out value="${bus.rowNum}"/></td>
-					<td><c:out value="${bus.columnNum}"/></td>
+					<td><c:out value="${route.routeId}"/></td>
+					<td><c:out value="${route.departureId}(${route.scheduledDepartureTime})"/></td>
+					<td><c:out value="${route.arrivalId}(${route.scheduledArrivalTime})"/></td>
+					<td><c:out value="${route.operationStartDate}"/></td>
+					<td><c:out value="${route.operationEndDate}"/></td>
+					<td><c:out value="${route.price}"/></td>
+					<td><c:out value="${route.busId}"/></td>
+					<td><a href="../routeDelete/confirm?routeId=${route.routeId}"></a></td>
 				</tr>
 				</c:forEach>
  			</table>
-			<form action="/busInsert/delete">
-			<input class="deleteButton" type="submit" value="削除">
-		</form>
+			<form id="form2">
+			<input class="updateButton" type="submit" value="変更" formaction="/routeUpdate/input">
+			<input class="returnButton" type="submit" value="削除" formaction="/routeDelete/confirm">
+			</form>
 		</fieldset>
 	</div>
 </div>
 <jsp:include page="/WEB-INF/jsp/common/footer.jsp"></jsp:include>
-

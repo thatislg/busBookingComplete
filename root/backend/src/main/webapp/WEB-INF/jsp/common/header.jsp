@@ -25,7 +25,7 @@
 	bottom: 78px;
 }
 
-.loginButton, .insertButton, .deleteButton, .logoutButton, .returnButton,.okButton{
+.loginButton, .insertButton, .deleteButton, .logoutButton, .returnButton,.okButton,.updateButton{
 	border: 2px solid darkblue;
 	background-color: #82c5eb;
 	border-radius: 13px;

@@ -20,11 +20,6 @@ table, th, td {
 	left: 65em;
 }
 
-body {
-	background-image:
-		url("https://cdn.cloudflare.steamstatic.com/steam/apps/491540/capsule_616x353.jpg?t=1655303686")
-		no-repeat;
-}
 .buslistTitle{
 font-size:30px ;
 font-weight: bold;
@@ -52,11 +47,11 @@ left: 150px;
 			</form>
 			<table id="buslistTable">
 				<tr class="top">
-					<th>選択</th>
 					<th>ID</th>
 					<th>ナンバープレート</th>
 					<th><spring:message code="busForm.rowNum"/></th>
 					<th><spring:message code="busForm.columnNum"/></th>
+					<th>削除</th>
 				</tr>
 				<c:forEach items="${busList}" var="bus">
 				<tr>

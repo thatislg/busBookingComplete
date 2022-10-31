@@ -4,12 +4,15 @@ import java.sql.Date;
 
 import javax.validation.constraints.NotNull;
 
-public class RouteForm {
+public class RouteForm{
 	@NotNull
 	private Integer departureId;
 	
 	@NotNull
 	private Integer arrivalId;
+	
+	@NotNull
+	private Integer busId;
 	
 	@NotNull
 	private Integer price;
@@ -26,6 +29,14 @@ public class RouteForm {
 	@NotNull
 	private Date scheduledArrivalTime;
 	
+	
+	
+	public Integer getBusId() {
+		return busId;
+	}
+	public void setBusId(Integer busId) {
+		this.busId = busId;
+	}
 	public Integer getDepartureId() {
 		return departureId;
 	}
