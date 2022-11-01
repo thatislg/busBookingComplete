@@ -38,6 +38,7 @@ left: 150px;
   width: 50px;
 } */
 </style>
+<c:out value="${errMsg}"/>
 <div id="section">
 	<div id="article">
 		<fieldset>

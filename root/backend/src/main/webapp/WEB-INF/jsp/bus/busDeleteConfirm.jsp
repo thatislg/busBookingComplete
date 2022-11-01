@@ -15,7 +15,7 @@ width: 960px;
 margin: 0 auto;
 }
 </style>
-
+	
 	<dl>
 	  <dt>シート列数</dt>
 	  	<dd><c:out value="${busInfo.rowNum}"/></dd>
@@ -25,11 +25,13 @@ margin: 0 auto;
 	  	<dd><c:out value="${busInfo.numberPlace}"/></dd>
 	</dl>
 
-	<form >
+	<form style="float:left">
 	   <input type="hidden" name="busId" value="${busInfo.busId}">
 	   <input class="okButton" type="submit" value="ＯＫ" formaction="/busDelete/delete">
-	   <input class="returnButton" type="submit" value="戻る" formaction="/busList/index">
+	 &nbsp;
 	</form>
-
+	<form >
+		<input class="okButton" type="submit" value="戻る" formaction="/busList/index">
+	</form>
 		
 <jsp:include page="/WEB-INF/jsp/common/footer.jsp"></jsp:include>
