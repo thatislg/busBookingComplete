@@ -28,11 +28,11 @@ public class RouteForm{
 	private Date operationEndDate;
 	
 	@NotNull
-	@DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private Date scheduledDepartureTime;
 	
 	@NotNull
-	@DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private Date scheduledArrivalTime;
 	
 	
