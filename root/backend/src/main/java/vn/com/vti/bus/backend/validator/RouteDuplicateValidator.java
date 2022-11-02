@@ -35,6 +35,7 @@ public class RouteDuplicateValidator implements Validator{
 			.andArrivalIdEqualTo(routeForm.getArrivalId())
 			.andDepartureIdEqualTo(routeForm.getDepartureId())
 			.andPriceEqualTo(routeForm.getPrice())
+			.andBusIdEqualTo(routeForm.getBusId())
 			.andOperationStartDateEqualTo(routeForm.getOperationStartDate())
 			.andOperationEndDateEqualTo(routeForm.getOperationEndDate())
 			.andScheduledDepartureTimeEqualTo(routeForm.getScheduledDepartureTime())
