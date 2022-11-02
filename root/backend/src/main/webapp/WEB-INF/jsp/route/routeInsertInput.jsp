@@ -41,7 +41,7 @@ margin: 0 auto;
 				<li><spring:message code="routeForm.scheduledArrivalTime"/>:<form:input path="scheduledArrivalTime"/></li>			
 			</ul>
 			</fieldset>
-			<input class="insertButton" type="submit" value="登録" formaction="confirm">
+			<input class="insertButton" type="submit" value="登録" formaction="/routeInsert/confirm">
 			<input class="returnButton" type="submit" value="戻る" formaction="/routeList/index">
 		</form:form>
 	</div>

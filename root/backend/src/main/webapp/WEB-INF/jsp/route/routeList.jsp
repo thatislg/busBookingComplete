@@ -67,8 +67,8 @@ margin: 0 auto;
 					<td><c:out value="${route.routeId}"/></td>
 					<td><c:out value="${route.departureId}(${route.scheduledDepartureTime})"/></td>
 					<td><c:out value="${route.arrivalId}(${route.scheduledArrivalTime})"/></td>
-					<td><c:out value="${route.operationStartDate}"/></td>
-					<td><c:out value="${route.operationEndDate}"/></td>
+					<td><fmt:formatDate value="${route.operationStartDate}" pattern="yyyy年MM月dd日"/></td>
+					<td><fmt:formatDate value="${route.operationEndDate}" pattern="yyyy年MM月dd日"/></td>
 					<td><c:out value="${route.price}"/></td>
 					<td><c:out value="${route.busId}"/></td>
 					<td><a href="../routeDelete/confirm?routeId=${route.routeId}"></a></td>

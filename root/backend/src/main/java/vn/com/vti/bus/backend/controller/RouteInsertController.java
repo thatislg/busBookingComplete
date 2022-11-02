@@ -51,14 +51,15 @@ public class RouteInsertController {
 	public String insert(RouteForm routeForm, RedirectAttributes redirectAttributes) {
 		Route route = new Route();
 		
-		route.setArrivalId(routeForm.getArrivalId());
 		route.setDepartureId(routeForm.getDepartureId());
+		route.setArrivalId(routeForm.getArrivalId());
 		route.setPrice(routeForm.getPrice());
-		route.setBusId(routeForm.getDepartureId());
-		route.setOperationEndDate(routeForm.getOperationEndDate());
+		route.setBusId(routeForm.getBusId());
 		route.setOperationStartDate(routeForm.getOperationStartDate());
-		route.setScheduledDepartureTime(routeForm.getScheduledArrivalTime());
+		route.setOperationEndDate(routeForm.getOperationEndDate());
 		route.setScheduledDepartureTime(routeForm.getScheduledDepartureTime());
+		route.setScheduledDepartureTime(routeForm.getScheduledArrivalTime());
+		
 		routeMapper.insertSelective(route);
 
 		redirectAttributes.addFlashAttribute("message","ID(" + route.getRouteId() + ")で登録しました。");

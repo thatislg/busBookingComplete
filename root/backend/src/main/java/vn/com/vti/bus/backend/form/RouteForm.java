@@ -4,6 +4,8 @@ import java.util.Date;
 
 import javax.validation.constraints.NotNull;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class RouteForm{
 	@NotNull
 	private Integer departureId;
@@ -18,15 +20,19 @@ public class RouteForm{
 	private Integer price;
 	
 	@NotNull
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date operationStartDate;
 	
 	@NotNull
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date operationEndDate;
 	
 	@NotNull
+	@DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
 	private Date scheduledDepartureTime;
 	
 	@NotNull
+	@DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
 	private Date scheduledArrivalTime;
 	
 	
