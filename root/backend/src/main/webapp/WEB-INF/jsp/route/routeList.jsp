@@ -71,7 +71,7 @@ margin: 0 auto;
 					<td><fmt:formatDate value="${route.operationEndDate}" pattern="yyyy年MM月dd日"/></td>
 					<td><c:out value="${route.price}"/></td>
 					<td><c:out value="${route.busId}"/></td>
-					<td><a href="../routeDelete/confirm?routeId=${route.routeId}"></a></td>
+					<td><a href="../routeDelete/confirm?routeId=${route.routeId}"><em class="fa fa-trash-o" style="font-size:24px"></em></a></td>
 				</tr>
 				</c:forEach>
  			</table>

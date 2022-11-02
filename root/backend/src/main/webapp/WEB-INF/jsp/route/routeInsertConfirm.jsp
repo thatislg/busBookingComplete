@@ -24,10 +24,10 @@ margin: 0 auto;
 				<li><spring:message code="routeForm.arrivalId"/>:<c:out value="${routeForm.arrivalId}"/></li>
 				<li><spring:message code="routeForm.busId"/>:<c:out value="${routeForm.busId}"/></li>
 				<li><spring:message code="routeForm.price"/>:<c:out value="${routeForm.price}"/></li>
-				<li><spring:message code="routeForm.operationStartDate"/>:<c:out value="${routeForm.operationStartDate}"/></li>
-				<li><spring:message code="routeForm.operationEndDate"/>:<c:out value="${routeForm.operationEndDate}"/></li>
-				<li><spring:message code="routeForm.scheduledDepartureTime"/>:<c:out value="${routeForm.scheduledDepartureTime}"/></li>	
-				<li><spring:message code="routeForm.scheduledArrivalTime"/>:<c:out value="${routeForm.scheduledArrivalTime}"/></li>			
+				<li><spring:message code="routeForm.operationStartDate"/>:<fmt:formatDate value="${routeForm.operationStartDate}" pattern="yyyy年MM月dd日"/></li>
+				<li><spring:message code="routeForm.operationEndDate"/>:<fmt:formatDate value="${routeForm.operationEndDate}" pattern="yyyy年MM月dd日"/></li>
+				<li><spring:message code="routeForm.scheduledDepartureTime"/>:<fmt:formatDate value="${routeForm.scheduledDepartureTime}" pattern="yyyy年MM月dd日 HH:mm:ss"/></li>	
+				<li><spring:message code="routeForm.scheduledArrivalTime"/>:<fmt:formatDate value="${routeForm.scheduledArrivalTime}" pattern="yyyy年MM月dd日 HH:mm:ss"/></li>			
 			</ul>
 			</fieldset>
 	</div>
@@ -40,8 +40,8 @@ margin: 0 auto;
 		<form:hidden path="operationEndDate"/>
 		<form:hidden path="scheduledDepartureTime"/>
 		<form:hidden path="scheduledArrivalTime"/>
-		<input class="okButton" type="submit" value="ＯＫ" formaction="insert">
-		<input class="returnButton" type="submit" value="戻る" formaction="input">
+		<input class="okButton" type="submit" value="ＯＫ" formaction="/routeInsert/insert">
+		<input class="returnButton" type="submit" value="戻る" formaction="/routeInsert/input">
 	</form:form>
 </div>
 <jsp:include page="/WEB-INF/jsp/common/footer.jsp"></jsp:include>

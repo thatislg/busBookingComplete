@@ -30,7 +30,8 @@ public class RouteDeleteController {
 	}
 	
 	@RequestMapping("delete")
-	public String delete(@RequestParam String routeId) {
+	public String delete(@RequestParam String routeId, Model model) {
+		
 		routeMapper.deleteByPrimaryKey(Integer.parseInt(routeId));
 		 return "redirect:/routeList/index";
 	}

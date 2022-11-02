@@ -58,7 +58,7 @@ public class RouteInsertController {
 		route.setOperationStartDate(routeForm.getOperationStartDate());
 		route.setOperationEndDate(routeForm.getOperationEndDate());
 		route.setScheduledDepartureTime(routeForm.getScheduledDepartureTime());
-		route.setScheduledDepartureTime(routeForm.getScheduledArrivalTime());
+		route.setScheduledArrivalTime(routeForm.getScheduledArrivalTime());
 		
 		routeMapper.insertSelective(route);
 
