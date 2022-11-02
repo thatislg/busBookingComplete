@@ -6,81 +6,34 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<style>
-#hu {
-	text-align: center;
-	margin:0;
-}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" ></script>
+ <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-.hl {
-	display: inline-block;
-	width: 222px;
-	background-color: white;
-	margin-left: 0.5em;
-	border: 2px solid darkblue;
-	text-align: center;
-	border-radius: 15px;
-	height: 2em;
-	position: relative;
-	bottom: 78px;
-}
-
-.loginButton, .insertButton, .deleteButton, .logoutButton, .returnButton,.okButton,.updateButton{
-	border: 2px solid darkblue;
-	background-color: #82c5eb;
-	border-radius: 13px;
-	width: 11em;
-	height: 3.5em;
-	font-weight: bold;
-}
-
-.logoutButton {
-	position: relative;
-	left: 115em;
-}
-
-.logoImg {
-	width: 190px;
-	border: 2px solid darkblue;
-	border-radius: 15px;
-}
-
-#nav {
-	margin-bottom: 2em;
-	padding: 0;
-	border-bottom: 2px dashed deepskyblue;
-	background-color: lightblue;
-}
-
-#nav {
-	
-}
-
-.logoLink {
-	margin-left: 7em;
-	position: relative;
-	top: 16px;
-}
-
-a {
-	text-decoration: none;
-	color: black;
-}
-</style>
 </head>
 <body>
-	<div id="nav">
-		<form id="logout" action="/login">
-		<input class="logoutButton" type="submit" value="ログアウト">
-	</form>
-		<a class="logoLink" href="/"><img class="logoImg"
-			src="https://www.tmc-creative.jp/works/images/bf64421e58f15749848583244cc66cbe85e7d73e.png" /></a>
-		<ul id="hu">
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+	<div id="container-fluid">
+		<a class="navbar-brand" href="/">
+		<img src="https://www.tmc-creative.jp/works/images/bf64421e58f15749848583244cc66cbe85e7d73e.png" alt="Avatar Logo" style="width:70px;" class="rounded-pill" />
+		</a>
+	</div>
+		<div class="collapse navbar-collapse" id="mynavbar">
+		<ul class="navbar-nav me-auto">
 			<sec:authorize access="hasRole('ROLE_MANAGER')">
-				<li class="hl"><a href="/busList/index">バス管理</a></li>
-				<li class="hl"><a href="/routeList/index">路線管理</a></li>
-				<li class="hl"><a href="/memberList">会員管理</a></li>
+				<li class="nav-item"><a class="nav-link" href="/busList/index">バス管理</a></li>
+				<li class="nav-item"><a class="nav-link" href="/routeList/index">路線管理</a></li>
+				<li class="nav-item"><a class="nav-link" href="/memberList">会員管理</a></li>
 			</sec:authorize>
 		</ul>
-	</div>
+		<form class="d-flex">
+		<input class="btn btn-outline-primary" type="submit" value="ログアウト" formaction="/login">
+		</form>
+		</div>
+	</nav>
 	<p style="margin: auto; width: 200px;"><c:out value="${message}" /></p>
+ </body>
+	
