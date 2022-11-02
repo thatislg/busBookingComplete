@@ -20,24 +20,26 @@ margin: 0 auto;
 			<fieldset>
 			<legend class="insertTitle">路線登録確認</legend>
 			<ul>
-				<li><spring:message code="busForm.rowNum"/>:<c:out value="${busForm.rowNum}"/></li>
-				<li><spring:message code="busForm.columnNum"/>:<c:out value="${busForm.columnNum}"/></li>
-				<li><spring:message code="busForm.numberPlace"/>:<c:out value="${busForm.numberPlace}"/></li>
-				<li><spring:message code="busForm.numberDivision"/>:<c:out value="${busForm.numberDivision}"/></li>
-				<li><spring:message code="busForm.numberKana"/>:<c:out value="${busForm.numberKana}"/></li>
-				<li><spring:message code="busForm.numberFirstHalf"/>:<c:out value="${busForm.numberFirstHalf}"/></li>
-				<li><spring:message code="busForm.numberLatterHalf"/>:<c:out value="${busForm.numberLatterHalf}"/></li>			
+				<li><spring:message code="routeForm.departureId"/>:<c:out value="${routeForm.departureId}"/></li>
+				<li><spring:message code="routeForm.arrivalId"/>:<c:out value="${routeForm.arrivalId}"/></li>
+				<li><spring:message code="routeForm.busId"/>:<c:out value="${routeForm.busId}"/></li>
+				<li><spring:message code="routeForm.price"/>:<c:out value="${routeForm.price}"/></li>
+				<li><spring:message code="routeForm.operationStartDate"/>:<c:out value="${routeForm.operationStartDate}"/></li>
+				<li><spring:message code="routeForm.operationEndDate"/>:<c:out value="${routeForm.operationEndDate}"/></li>
+				<li><spring:message code="routeForm.scheduledDepartureTime"/>:<c:out value="${routeForm.scheduledDepartureTime}"/></li>	
+				<li><spring:message code="routeForm.scheduledArrivalTime"/>:<c:out value="${routeForm.scheduledArrivalTime}"/></li>			
 			</ul>
 			</fieldset>
 	</div>
-	<form:form modelAttribute="busForm">
-		<form:hidden path="rowNum"/>
-		<form:hidden path="columnNum"/>
-		<form:hidden path="numberPlace"/>
-		<form:hidden path="numberDivision"/>
-		<form:hidden path="numberKana"/>
-		<form:hidden path="numberFirstHalf"/>
-		<form:hidden path="numberLatterHalf"/>
+	<form:form modelAttribute="routeForm">
+		<form:hidden path="departureId"/>
+		<form:hidden path="arrivalId"/>
+		<form:hidden path="busId"/>
+		<form:hidden path="price"/>
+		<form:hidden path="operationStartDate"/>
+		<form:hidden path="operationEndDate"/>
+		<form:hidden path="scheduledDepartureTime"/>
+		<form:hidden path="scheduledArrivalTime"/>
 		<input class="okButton" type="submit" value="ＯＫ" formaction="insert">
 		<input class="returnButton" type="submit" value="戻る" formaction="input">
 	</form:form>
