@@ -24,8 +24,8 @@
 		<ul class="navbar-nav me-auto">
 			<sec:authorize access="hasRole('ROLE_MANAGER')">
 				<li class="nav-item"><a class="nav-link" href="/busList/index"><i class="fa fa-bus" style="font-size:18px"></i> バス管理</a></li>
-				<li class="nav-item"><a class="nav-link" href="/routeList/index"><i class='fas fa-route' style='font-size:18px'></i> 路線管理</a></li>
-				<li class="nav-item"><a class="nav-link" href="/memberList"><i class='fas fa-address-book' style='font-size:18px'></i> 会員管理</a></li>
+				<li class="nav-item"><a class="nav-link" href="/routeList/index"><i class="fas fa-route" style="font-size:18px"></i> 路線管理</a></li>
+				<li class="nav-item"><a class="nav-link" href="/memberList"><i class="fas fa-address-book" style="font-size:18px"></i> 会員管理</a></li>
 			</sec:authorize>
 		</ul>
 		<form class="d-flex" action="/login">
