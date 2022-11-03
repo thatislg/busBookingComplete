@@ -11,9 +11,22 @@
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/dataTables.semanticui.min.js"></script>
 <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.8/semantic.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<style>
+h1 {
+	font-size: 30px;
+	color: #777;
+	font-family: "Raleway";
+	font-weight: 200;
+}
+.container {
+	width: 1100px;
+}
+</style>
 <c:out value="${errMsg}"/>
 <div class="container">
-	<div class="mt-3 text-center">
+	<div class="mt-3">
 		<h1>バス一覧</h1>
 	</div>
 	<div class="mb-3 float-end" >
@@ -42,7 +55,7 @@
 			</tr>
 			</c:forEach>
 		</tbody>
-		</table>
+	</table>
 </div>
 <script>
 	$(document).ready(function () {
