@@ -64,9 +64,11 @@ margin: 0 auto;
 				</tr>
 				<c:forEach items="${routeList}" var="route">
 				<tr>
+					<fmt:formatDate value="${route.scheduledDepartureTime}" pattern="HH:mm" var="sDTime"/>
+					<fmt:formatDate value="${route.scheduledArrivalTime}" pattern="HH:mm" var="sATime"/>
 					<td><c:out value="${route.routeId}"/></td>
-					<td><c:out value="${route.departureId}(${route.scheduledDepartureTime})"/></td>
-					<td><c:out value="${route.arrivalId}(${route.scheduledArrivalTime})"/></td>
+					<td><c:out value="${route.departureId}(${sDTime})"/></td>
+					<td><c:out value="${route.arrivalId}(${sATime})"/></td>
 					<td><fmt:formatDate value="${route.operationStartDate}" pattern="yyyy年MM月dd日"/></td>
 					<td><fmt:formatDate value="${route.operationEndDate}" pattern="yyyy年MM月dd日"/></td>
 					<td><c:out value="${route.price}"/></td>
