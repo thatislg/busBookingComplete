@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="vn.com.vti.bus.mapper.RouteCustomMapper">
+	<resultMap id="routeCustom" type="vn.com.vti.bus.entity.RouteCustom">
+		<id column="route_id" jdbcType="INTEGER" property="routeId" />
+    	<result column="departure_id" jdbcType="INTEGER" property="departureId" />
+    	<result column="departure_station_name" jdbcType="VARCHAR" property="departureStationName" />
+    	<result column="arrival_id" jdbcType="INTEGER" property="arrivalId" />
+    	<result column="arrival_station_name" jdbcType="VARCHAR" property="arrivalStationName" />
+   		<result column="price" jdbcType="INTEGER" property="price" />
+   		<result column="bus_id" jdbcType="INTEGER" property="busId" />
+   		<result column="operation_start_date" jdbcType="DATE" property="operationStartDate" />
+    	<result column="operation_end_date" jdbcType="DATE" property="operationEndDate" />
+    	<result column="scheduled_departure_time" jdbcType="TIMESTAMP" property="scheduledDepartureTime" />
+   	 	<result column="scheduled_arrival_time" jdbcType="TIMESTAMP" property="scheduledArrivalTime" />
+	</resultMap>
+	
+	<select id="selectById" resultMap="routeCustom">
+	</select>
+</mapper>

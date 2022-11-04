@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import vn.com.vti.bus.backend.form.RouteForm;
-import vn.com.vti.bus.backend.validator.RouteDuplicateValidator;
 import vn.com.vti.bus.entity.Route;
 import vn.com.vti.bus.mapper.RouteMapper;
 
@@ -21,8 +20,8 @@ public class RouteInsertController {
 	@Autowired
 	private RouteMapper routeMapper;
 	
-	@Autowired
-	private RouteDuplicateValidator routeDuplicateValidator;
+//	@Autowired
+//	private RouteDuplicateValidator routeDuplicateValidator;
 	
 //	@InitBinder
 //	public void validatorBinder(WebDataBinder webDataBinder) {
