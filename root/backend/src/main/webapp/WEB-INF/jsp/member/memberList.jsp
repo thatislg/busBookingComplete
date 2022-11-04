@@ -16,8 +16,7 @@
 <style>
 h1 {
 	font-size: 30px;
-	color: #777;
-	font-family: "Raleway";
+	font-family: "Impact";
 	font-weight: 200;
 }
 .container {
@@ -25,14 +24,9 @@ h1 {
 }
 </style>
 <div class="container">
-	<div class="mt-3">
+	<div class="mt-3 mb-4">
 		<h1>会員一覧</h1>
 	</div>
-	<!--<div class="mb-3 float-end" >
-		<form action="/memberInsert/input">
-			<input class="btn btn-primary" type="submit" value="新規登録">
-		</form>
-	</div>	 -->	
 	<table id="memberList" class="display">
 		<thead>
 			<tr>
@@ -52,7 +46,7 @@ h1 {
 				<td><c:out value="${member.memberName}"/></td>
 				<td><c:out value="${member.phoneNumber}"/></td>
 				<td><c:out value="${member.mailAddress}"/></td>
-				<td><a href="../memberDelete/confirm?memberId=${member.memberId}"><i class="fa fa-trash-o" style="font-size:24px"></i></a></td>
+				<td><a href="../memberDelete/confirm?memberId=${member.memberId}"><i class='fas fa-file-contract' style='font-size:24px'></i></a></td>
 			</tr>
 			</c:forEach>
 		</tbody>

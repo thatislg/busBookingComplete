@@ -16,8 +16,7 @@
 <style>
 h1 {
 	font-size: 30px;
-	color: #777;
-	font-family: "Raleway";
+	font-family: "Impact";
 	font-weight: 200;
 }
 .container {

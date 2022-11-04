@@ -3,66 +3,53 @@
 <%@include file="/WEB-INF/jsp/common/define.jsp"%>
 
 <jsp:include page="/WEB-INF/jsp/common/header.jsp"></jsp:include>
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.8/semantic.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/dataTables.semanticui.min.css">
+<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/dataTables.semanticui.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.8/semantic.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 <style>
-tr.top {
-	background-color: lightblue;
+h1 {
+	font-size: 30px;
+	font-family: "Impact";
+	font-weight: 200;
 }
-
-table, th, td {
-	margin: 24px;
-	border: 2px solid darkblue;
-	border-collapse: collapse;
-	padding: 15px;
-}
-
-.insertButton {
-	position: relative;
-	left: 52em;
-}
-
-.routelistTitle{
-font-size:30px ;
-font-weight: bold;
-}
-#form1{
-position: relative;
-left: 19em;
-}
-#form2{
-position: relative;
-right: 103px;
-}
-.updateButton{
-position: relative;
-left: 250px;
-}
-#section{
-width: 1181px;
-margin: 0 auto;
+.container {
+	width: 1100px;
 }
 </style>
-<div id="section">
-	<div id="article">
-		<fieldset>
-			<legend class="routelistTitle">路線一覧</legend>
-			<div>
-			<form id="form1">
-				<input class="insertButton" type="submit" value="新規登録" formaction="/routeInsert/input">
-				<input class="insertButton" type="submit" value="予約状況" formaction="/reservation/index">
-			</form>
-			</div>
-			<table id="routelistTable">
-				<tr class="top">
-					<th>路線ID</th>
-					<th>出発</th>
-					<th>到着</th>
-					<th>運行開発日</th>
-					<th>運行終了日</th>
-					<th>料金</th>
-					<th>バスID</th>
-					<th>削除</th>
-				</tr>
-				<c:forEach items="${routeList}" var="route">
+
+<c:out value="${errMsg}"/>
+<div class="container">
+	<div class="mt-3">
+		<h1>路線一覧</h1>
+	</div>
+	<div class="mb-3 float-end" >
+		<form>
+			<input class="btn btn-primary" type="submit" value="新規登録" formaction="/routeInsert/input">
+			<input class="btn btn-primary" type="submit" value="予約状況" formaction="/reservation/index">
+		</form>
+	</div>		
+	<table id="routList" class="display">
+		<thead>
+			<tr>
+				<th>路線ID</th>
+				<th>出発</th>
+				<th>到着</th>
+				<th>運行開発日</th>
+				<th>運行終了日</th>
+				<th>料金</th>
+				<th>バスID</th>
+				<th>削除</th>
+			</tr>
+		 </thead>
+		 <tbody>
+			<c:forEach items="${routeList}" var="route">
 				<tr>
 					<fmt:formatDate value="${route.scheduledDepartureTime}" pattern="HH:mm" var="sDTime"/>
 					<fmt:formatDate value="${route.scheduledArrivalTime}" pattern="HH:mm" var="sATime"/>
@@ -76,12 +63,17 @@ margin: 0 auto;
 					<td><a href="../routeDelete/confirm?routeId=${route.routeId}"><em class="fa fa-trash-o" style="font-size:24px"></em></a></td>
 				</tr>
 				</c:forEach>
- 			</table>
-			<form id="form2">
-			<input class="updateButton" type="submit" value="変更" formaction="/routeUpdate/input">
-			<input class="returnButton" type="submit" value="削除" formaction="/routeDelete/confirm">
-			</form>
-		</fieldset>
+		</tbody>
+	</table>
+	<div class="mb-3 mt-4" >
+		<form>
+			<input class="btn btn-primary" type="submit" value="変更" formaction="/routeUpdate/input">
+		</form>
 	</div>
 </div>
+<script>
+	$(document).ready(function () {
+		$('#routList').DataTable();
+	});
+</script>
 <jsp:include page="/WEB-INF/jsp/common/footer.jsp"></jsp:include>

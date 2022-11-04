@@ -46,18 +46,18 @@
 			<div class="card card-container" >
 				<img id="profile-img" class="profile-img-card" src="https://www.tmc-creative.jp/works/images/bf64421e58f15749848583244cc66cbe85e7d73e.png" />
 					<form:form class="form-signin" modelAttribute="loginForm" action="auth">
-					<form:errors path="*"/>
-					${SPRING_SECURITY_LAST_EXCEPTION.message}
-				   	<form:input path="username" type="text" id="loginId" name="loginId" placeholder="ログインID" value=""/>
-					<form:password path="password" placeholder="パスワード" name="password" required="required"  value="" />
-			<div class="form-check d-flex justify-content-center mb-4">
-			<input class="form-check-input me-2" type="checkbox" value="" checked />
-		    <label class="form-check-label">
-		    	I have read and agree to the terms
-		    </label>
-		 	</div>
-		 	<input  type="submit" class="btn btn-primary btn-block mb-4" value="ログイン"/>
-		 	</form:form>
+						<form:errors path="*"/>
+						${SPRING_SECURITY_LAST_EXCEPTION.message}
+					   	<form:input path="username" type="text" id="loginId" name="loginId" placeholder="ログインID" value=""/>
+						<form:password path="password" placeholder="パスワード" name="password" required="required"  value="" />
+							<div class="form-check d-flex justify-content-center mb-4">
+		   						<input class="form-check-input" type="checkbox" value="" id="invalidCheck" required> 
+      							<label class="form-check-label" for="invalidCheck">
+        							Agree to terms and conditions
+      							</label>
+  							</div>
+		 				<input  type="submit" class="btn btn-primary btn-block mb-4" value="ログイン"/>
+		 			</form:form>
 			</div>
 		</div>
 	</div>
