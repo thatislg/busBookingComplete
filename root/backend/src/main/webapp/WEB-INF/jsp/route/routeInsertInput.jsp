@@ -80,7 +80,8 @@ h1 {
 			   		<form:input path="operationEndDate" class="form-control" placeholder="運用終了日を入力"/>
 			 	</div>
 	 		</div>
-		 	<input type="submit" class="btn btn-primary" value="登録" formaction="/routeInsert/confirm"/> <input  type="submit" class="btn btn-primary" value="戻る" formaction="/routeList/index"/>
+		 	<input type="submit" class="btn btn-primary" value="登録" formaction="confirm"/>
+		 	<input  type="submit" class="btn btn-primary" value="戻る" formaction="/routeList/index"/>
 		</form:form>
 	</div>
 </div> 

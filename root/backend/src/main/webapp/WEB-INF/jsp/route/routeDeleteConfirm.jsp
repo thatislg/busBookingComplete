@@ -33,18 +33,20 @@ h1 {
 		<h1>路線削除確認</h1>
 			<div class="row g-3">
 				<div class="col-md-4">
-			  	 	<spring:message code="routeForm.departureId"/>:<c:out value="${routeInfo.departureId}(${sDTime})"/>
+			  	 	<spring:message code="routeForm.departureId"/>:<c:out value="${routeInfo.departureId}"/>
 			 	</div>
 		 		<div class="col-md-4">
-			   		<spring:message code="routeForm.scheduledDepartureTime"/>:<fmt:formatDate value="${routeInfo.scheduledDepartureTime}" pattern="HH:mm" var="sDTime"/>			   		
+			   		<fmt:formatDate value="${routeInfo.scheduledDepartureTime}" pattern="yyyy-mm-dd HH:mm" var="sDTime"/>
+			   		<spring:message code="routeForm.scheduledDepartureTime"/>:<c:out value="${sDTime}"/>			   		
 			 	</div>
 		 	</div>
 		 	<div class="row g-3">
 			 	<div class="col-md-4">
-					<spring:message code="routeForm.arrivalId"/>:<c:out value="${routeInfo.arrivalId}(${sATime})"/>
+					<spring:message code="routeForm.arrivalId"/>:<c:out value="${routeInfo.arrivalId}"/>
 			 	</div>
 			 	<div class="col-md-4">
-				   	<spring:message code="routeForm.scheduledArrivalTime"/>:<fmt:formatDate value="${routeInfo.scheduledArrivalTime}" pattern="HH:mm" var="sATime"/>
+				   	<fmt:formatDate value="${routeInfo.scheduledArrivalTime}" pattern="yyyy-mm-dd HH:mm" var="sATime"/>	
+				   	<spring:message code="routeForm.scheduledArrivalTime"/>:<c:out value="${sATime}"/>
 				 </div>
 		 	</div>			 	
 	 		<div class="mb-3 mt-3">
