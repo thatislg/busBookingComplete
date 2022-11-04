@@ -2,33 +2,10 @@
 	pageEncoding="UTF-8"%>
 <%@include file="/WEB-INF/jsp/common/define.jsp"%>
 <jsp:include page="/WEB-INF/jsp/common/header.jsp"></jsp:include>
-<style>
-h1 {
-	font-size: 30px;
-	font-family: "Impact";
-	font-weight: 200;
-	text-align: center;
-}
+<link rel="stylesheet" type="text/css" href="/css/formLayout.css">
 
-.container {
-	width: 1100px;
-}
-
-.form {
-	background-color: #F7F7F7;
-	padding: 46px 39px 45px;
-	margin: 0 auto 30px;
-	margin-top: 55px;
-	border-radius: 60px;
-	border: solid 2px;
-}
-.g-3 {
-	margin-top: 5px;
-	margin-bottom: 20px;
-}
-</style>
 <div class="container mt-3">
-	<div class="form">
+	<div class="shadow-lg">
 		<h1>バス削除確認</h1>
 		<div>
 			<div class="mb-3 mt-3">

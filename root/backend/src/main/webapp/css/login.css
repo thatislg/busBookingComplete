@@ -1,0 +1,31 @@
+.card {
+	padding: 46px 39px 45px;
+	margin: 0 auto 30px;
+	margin-top: 55px;
+	border-radius: 60px;
+	border: solid 2px;
+}
+
+.profile-img-card {
+	width: 80%;
+	margin: 0 auto 25px;
+}
+
+#wrapper {
+	padding-bottom: 60px;
+}
+
+.form-signin #inputEmail, .form-signin #inputPassword {
+	direction: ltr;
+	height: 44px;
+	font-size: 16px;
+}
+
+.form-signin input[type=email], .form-signin input[type=password],
+	.form-signin input[type=text], .form-signin input[type=submit] {
+	width: 100%;
+	margin-bottom: 12px;
+}
+
+.container {
+	max-width: 430px;
