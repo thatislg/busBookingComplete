@@ -18,7 +18,7 @@
 		 		<div class="col-md-4">
 			 		<form:errors path="scheduledDepartureTime" element="p"/>
 			   		<label for="scheduledDepartureTime" class="form-label"><spring:message code="routeForm.scheduledDepartureTime"/>:</label>
-			   		<fmt:formatDate value="${routeInfo.scheduledDepartureTime}" pattern="yyyy-MM-dd HH:mm" var="sDTime"/>
+			   		<fmt:formatDate value="${routeInfo.scheduledDepartureTime}" pattern="yyyy-MM-dd HH:mm:ss" var="sDTime"/>
 			   		<form:input path="scheduledDepartureTime" class="form-control" value="${sDTime}"/>
 			 	</div>
 		 	</div>
@@ -30,7 +30,7 @@
 			 	</div>
 			 	<div class="col-md-4">
 				 		<form:errors path="scheduledArrivalTime" element="p"/>
-				 		<fmt:formatDate value="${routeInfo.scheduledArrivalTime}" pattern="yyyy-MM-dd HH:mm" var="sATime"/>
+				 		<fmt:formatDate value="${routeInfo.scheduledArrivalTime}" pattern="yyyy-MM-dd HH:mm:ss" var="sATime"/>
 				   		<label for="scheduledArrivalTime" class="form-label"><spring:message code="routeForm.scheduledArrivalTime"/>:</label>
 				   		<form:input path="scheduledArrivalTime" class="form-control" value="${sATime}"/>
 				 </div>

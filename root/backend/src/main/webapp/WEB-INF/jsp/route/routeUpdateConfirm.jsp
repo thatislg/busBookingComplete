@@ -9,19 +9,19 @@
 		<h1>路線変更確認</h1>
 			<div class="row g-3">
 				<div class="col-md-4">
-			  	 	<spring:message code="routeForm.departureId"/>: <c:out value="${routeInfo1.departureStationName}"/>
+			  	 	<spring:message code="routeForm.departureId"/>: <c:out value="${routeInfo.departureId} = ${routeInfo1.departureStationName}"/>
 			 	</div>
 		 		<div class="col-md-4">
-			   		<fmt:formatDate value="${routeInfo.scheduledDepartureTime}" pattern="yyyy-mm-dd HH:mm" var="sDTime"/>
+			   		<fmt:formatDate value="${routeInfo.scheduledDepartureTime}" pattern="yyyy-mm-dd HH:mm:ss" var="sDTime"/>
 			   		<spring:message code="routeForm.scheduledDepartureTime"/>: <c:out value="${sDTime}"/>			   		
 			 	</div>
 		 	</div>
 		 	<div class="row g-3">
 			 	<div class="col-md-4">
-					<spring:message code="routeForm.arrivalId"/>: <c:out value="${routeInfo1.arrivalStationName}"/>
+					<spring:message code="routeForm.arrivalId"/>: <c:out value="${routeInfo.arrivalId} = ${routeInfo1.arrivalStationName}"/>
 			 	</div>
 			 	<div class="col-md-4">
-				   	<fmt:formatDate value="${routeInfo.scheduledArrivalTime}" pattern="yyyy-mm-dd HH:mm" var="sATime"/>	
+				   	<fmt:formatDate value="${routeInfo.scheduledArrivalTime}" pattern="yyyy-mm-dd HH:mm:ss" var="sATime"/>	
 				   	<spring:message code="routeForm.scheduledArrivalTime"/>:<c:out value="${sATime}"/>
 				 </div>
 		 	</div>			 	
@@ -41,9 +41,9 @@
 	 		</div>
 		 	<form>
 			 	<input type="hidden" name="routeId" value="${routeInfo.routeId}">
-			 	<input class="btn btn-dark" type="submit" value="ＯＫ" formaction="/routeDelete/delete">
+			 	<input class="btn btn-dark" type="submit" value="ＯＫ" formaction="/routeUpdate/update">
 			 &nbsp;
-				<input class="btn btn-dark" type="submit" value="戻る" formaction="/routeList/index">
+				<input class="btn btn-dark" type="submit" value="戻る" formaction="../routeUpdate/input?routeId=${routeInfo.routeId}">
 			</form>
 	</div>
 </div> 
