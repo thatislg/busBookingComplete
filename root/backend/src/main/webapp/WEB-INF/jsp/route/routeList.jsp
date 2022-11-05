@@ -35,6 +35,7 @@
 				<th>料金</th>
 				<th>バスID</th>
 				<th>削除</th>
+				<th>変更</th>
 			</tr>
 		 </thead>
 		 <tbody>
@@ -52,15 +53,11 @@
 					<td><c:out value="${route.price}"/></td>
 					<td><c:out value="${route.busId}"/></td>
 					<td><a href="../routeDelete/confirm?routeId=${route.routeId}"><em class="fa fa-trash-o" style="font-size:24px"></em></a></td>
+					<td><a href="../routeUpdate/input?routeId=${route.routeId}"><em class="fa-solid fa-pen-to-square" style="font-size:24px"></em></a></td>
 				</tr>
 				</c:forEach>
 		</tbody>
 	</table>
-	<div class="mb-3 mt-4" >
-		<form>
-			<input class="btn btn-primary" type="submit" value="変更" formaction="/routeUpdate/input">
-		</form>
-	</div>
 </div>
 <script>
 	$(document).ready(function () {
