@@ -16,5 +16,38 @@
 	</resultMap>
 	
 	<select id="selectById" resultMap="routeCustom">
+		SELECT
+			T.*
+			,BS1.BUS_STATION_NAME AS ARRIVAL_STATION_NAME
+		FROM (
+			SELECT
+				R.*
+				,BS.BUS_STATION_NAME AS DEPARTURE_STATION_NAME
+			FROM 
+				BUS_STATION AS BS
+				INNER JOIN ROUTE AS R
+					ON BS.BUS_STATION_ID = R.DEPARTURE_ID)
+			T
+				INNER JOIN BUS_STATION AS BS1
+				ON BS1.BUS_STATION_ID = T.ARRIVAL_ID;
+	</select>
+	
+	<select id="selectByIdForDeleteConfirm" resultMap="routeCustom">
+		SELECT
+			T.*
+			,BS1.BUS_STATION_NAME AS ARRIVAL_STATION_NAME
+		FROM (
+			SELECT
+				R.*
+				,BS.BUS_STATION_NAME AS DEPARTURE_STATION_NAME
+			FROM 
+				BUS_STATION AS BS
+				INNER JOIN ROUTE AS R
+					ON BS.BUS_STATION_ID = R.DEPARTURE_ID)
+			T
+				INNER JOIN BUS_STATION AS BS1
+				ON BS1.BUS_STATION_ID = T.ARRIVAL_ID
+			WHERE
+				T.ROUTE_ID = #{routeId};
 	</select>
 </mapper>

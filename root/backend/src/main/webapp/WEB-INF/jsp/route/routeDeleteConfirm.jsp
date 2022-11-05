@@ -9,16 +9,16 @@
 		<h1>路線削除確認</h1>
 			<div class="row g-3">
 				<div class="col-md-4">
-			  	 	<spring:message code="routeForm.departureId"/>:<c:out value="${routeInfo.departureId}"/>
+			  	 	<spring:message code="routeForm.departureId"/>: <c:out value="${routeInfo1.departureStationName}"/>
 			 	</div>
 		 		<div class="col-md-4">
 			   		<fmt:formatDate value="${routeInfo.scheduledDepartureTime}" pattern="yyyy-mm-dd HH:mm" var="sDTime"/>
-			   		<spring:message code="routeForm.scheduledDepartureTime"/>:<c:out value="${sDTime}"/>			   		
+			   		<spring:message code="routeForm.scheduledDepartureTime"/>: <c:out value="${sDTime}"/>			   		
 			 	</div>
 		 	</div>
 		 	<div class="row g-3">
 			 	<div class="col-md-4">
-					<spring:message code="routeForm.arrivalId"/>:<c:out value="${routeInfo.arrivalId}"/>
+					<spring:message code="routeForm.arrivalId"/>: <c:out value="${routeInfo1.arrivalStationName}"/>
 			 	</div>
 			 	<div class="col-md-4">
 				   	<fmt:formatDate value="${routeInfo.scheduledArrivalTime}" pattern="yyyy-mm-dd HH:mm" var="sATime"/>	

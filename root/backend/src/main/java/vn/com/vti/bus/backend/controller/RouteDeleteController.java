@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import vn.com.vti.bus.entity.Route;
+import vn.com.vti.bus.entity.RouteCustom;
+import vn.com.vti.bus.mapper.RouteCustomMapper;
 import vn.com.vti.bus.mapper.RouteMapper;
 
 @Controller
@@ -14,6 +16,9 @@ import vn.com.vti.bus.mapper.RouteMapper;
 public class RouteDeleteController {
 	@Autowired 
 	private RouteMapper routeMapper;
+	
+	@Autowired
+	private RouteCustomMapper routeCustomMapper;
 	
 	@Autowired RouteListController routeListController;
 	
@@ -24,8 +29,15 @@ public class RouteDeleteController {
 			return "";
 			
 		}
+		
+		// Sử dụng để in ra màn hình các thông tin về Route
 		Route route = routeMapper.selectByPrimaryKey(Integer.parseInt(routeId));
 		model.addAttribute("routeInfo", route);
+		
+		// Bổ xung in thông tin vị trí bus_station cho Route
+		RouteCustom routeCustom = routeCustomMapper.selectByIdForDeleteConfirm(Integer.parseInt(routeId));
+		model.addAttribute("routeInfo1", routeCustom);
+		
 		return "route/routeDeleteConfirm";
 	}
 	

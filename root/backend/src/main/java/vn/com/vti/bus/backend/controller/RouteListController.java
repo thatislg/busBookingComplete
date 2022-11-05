@@ -7,27 +7,41 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import vn.com.vti.bus.entity.Route;
-import vn.com.vti.bus.entity.RouteExample;
-import vn.com.vti.bus.mapper.RouteMapper;
+import vn.com.vti.bus.entity.RouteCustom;
+import vn.com.vti.bus.mapper.RouteCustomMapper;
 
 @Controller
 @RequestMapping("/routeList")
 public class RouteListController {
 	
+//	@Autowired
+//	private RouteMapper routeMapper;
+//	
+//	@RequestMapping("/index")
+//	public String index(Model model) {
+//		
+//		RouteExample routeExample = new RouteExample();
+//		routeExample.setOrderByClause("route_Id");
+//		List<Route> routeList = routeMapper.selectByExample(routeExample);
+//
+//		model.addAttribute("routeList", routeList);
+//		
+//		return "route/routeList";
+//	}
+	
 	@Autowired
-	private RouteMapper routeMapper;
+	private RouteCustomMapper routeCustomMapper;
 	
 	@RequestMapping("/index")
-	public String index(Model model) {
+	public String index( Model model) {
+//		RouteExample routeExample = new RouteExample();
+//		
+//		routeExample.setOrderByClause("route_Id");
 		
-		RouteExample routeExample = new RouteExample();
-		routeExample.setOrderByClause("route_Id");
-		List<Route> routeList = routeMapper.selectByExample(routeExample);
-
+		List<RouteCustom> routeList = routeCustomMapper.selectById();
+		
 		model.addAttribute("routeList", routeList);
 		
 		return "route/routeList";
 	}
-	
 }
