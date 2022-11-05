@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import vn.com.vti.bus.entity.Route;
 import vn.com.vti.bus.entity.RouteCustom;
@@ -42,9 +43,13 @@ public class RouteDeleteController {
 	}
 	
 	@RequestMapping("delete")
-	public String delete(@RequestParam String routeId, Model model) {
+	public String delete(@RequestParam String routeId, Model model, RedirectAttributes redirectAttributes) {
 		
 		routeMapper.deleteByPrimaryKey(Integer.parseInt(routeId));
-		 return "redirect:/routeList/index";
+		
+		// Thông báo hiển thị khi làm thành công.
+		redirectAttributes.addFlashAttribute("message","ID(" + routeId + ")で削除しました。");
+		
+		return "redirect:/routeList/index";
 	}
 }

@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import vn.com.vti.bus.backend.form.RouteForm;
 import vn.com.vti.bus.entity.Route;
@@ -81,10 +82,11 @@ public class RouteUpdateController {
 	}
 	
 	@RequestMapping("update")
-	public String update(@RequestParam String routeId, Model model) {
+	public String update(@RequestParam String routeId, Model model, RedirectAttributes redirectAttributes) {
 		
 		routeMapper.updateByPrimaryKeySelective(route);
 		
+		redirectAttributes.addFlashAttribute("message","ID(" + route.getRouteId() + ")で変更しました。");
 		return "redirect:/routeList/index";
 	}
 	
