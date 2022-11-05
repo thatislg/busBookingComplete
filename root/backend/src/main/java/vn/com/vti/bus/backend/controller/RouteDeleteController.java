@@ -48,7 +48,7 @@ public class RouteDeleteController {
 		routeMapper.deleteByPrimaryKey(Integer.parseInt(routeId));
 		
 		// Thông báo hiển thị khi làm thành công.
-		redirectAttributes.addFlashAttribute("message","ID(" + routeId + ")で削除しました。");
+		redirectAttributes.addFlashAttribute("message","路線ID(" + routeId + ")で削除しました。");
 		
 		return "redirect:/routeList/index";
 	}

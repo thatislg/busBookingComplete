@@ -13,7 +13,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="/css/list.css">
 
-<c:out value="${errMsg}"/>
 <div class="container">
 	<div class="mt-3">
 		<h1>バス一覧</h1>
