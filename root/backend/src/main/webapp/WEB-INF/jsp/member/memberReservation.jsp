@@ -15,17 +15,41 @@
 
 <div class="container">
 	<div class="mt-3 mb-4">
-		<h1>会員一覧</h1>
+		<h1>会員予約状況</h1>
 	</div>
-	<table id="memberList" class="display">
+	<table id="member" class="table table-bordered">
+		 <tbody>
+		 	<tr>
+				<th scope="row">会員ID</th>
+				<td><c:out value="${member.memberId}"/></td>
+			</tr>
+			<tr>
+				<th scope="row">ログインID</th>
+				<td><c:out value="${member.loginId}"/></td>
+			</tr>
+			<tr>
+				<th scope="row">氏名</th>
+				<td><c:out value="${member.memberName}"/></td>
+			</tr>
+			<tr>
+				<th scope="row">電話番号</th>
+				<td><c:out value="${member.phoneNumber}"/></td>
+			<tr>
+				<th scope="row">メールアドレス</th>
+				<td><c:out value="${member.mailAddress}"/></td>	
+			</tr>
+		</tbody>
+	</table>
+	<hr>
+	<table id="memberReservationStatus" class="display">
 		<thead>
 			<tr>
-				<th>会員ID</th>
-				<th>ログインID</th>
-				<th>氏名</th>
-				<th>電話番号</th>
-				<th>メールアドレス</th>
-				<th>予約状況</th>
+				<th>日付</th>
+				<th>路線ID</th>
+				<th>出発</th>
+				<th>到着</th>
+				<th>料金</th>
+				<th>バスID</th>
 			</tr>
 		 </thead>
 		 <tbody>
@@ -36,7 +60,6 @@
 				<td><c:out value="${member.memberName}"/></td>
 				<td><c:out value="${member.phoneNumber}"/></td>
 				<td><c:out value="${member.mailAddress}"/></td>
-				<td><a href="../member/reservationStatus?memberId=${member.memberId}"><i class='fas fa-file-contract' style='font-size:24px'></i></a></td>
 			</tr>
 			</c:forEach>
 		</tbody>
