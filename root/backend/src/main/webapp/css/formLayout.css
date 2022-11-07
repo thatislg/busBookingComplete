@@ -6,7 +6,7 @@ h1 {
 }
 
 .container {
-	width: 1100px;
+	width: 900px;
 }
 
 .g-3 {
@@ -21,4 +21,7 @@ h1 {
 	margin-top: 55px;
 	border-radius: 60px;
 	border: solid 2px;
+}
+.row{
+	justify-content: center;
 }

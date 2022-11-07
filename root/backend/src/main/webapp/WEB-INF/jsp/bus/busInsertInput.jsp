@@ -8,17 +8,19 @@
 	<div class="shadow-lg">
 		<h1>バス登録</h1>
 		<form:form  modelAttribute="busForm">	
-			<div class="mb-3 mt-3">
-		 		<form:errors path="rowNum" element="p"/>
-		  	 	<label for="rowNum" class="form-label"><spring:message code="busForm.rowNum"/>:</label>
-		   		<form:input path="rowNum" class="form-control" placeholder="１列あたりシート数を入力"/>
+			<div class="row g-3">
+				<div class="col-md-4">
+			 		<form:errors path="rowNum" element="p"/>
+			  	 	<label for="rowNum" class="form-label"><spring:message code="busForm.rowNum"/>:</label>
+			   		<form:input path="rowNum" class="form-control" placeholder="１列あたりシート数を入力"/>
+			 	</div>
+			 	<div class="col-md-4">
+			 		<form:errors path="columnNum" element="p"/>
+					<label for="columnNum" class="form-label"><spring:message code="busForm.columnNum"/>:</label>
+				   	<form:input path="columnNum" class="form-control" placeholder="シート列数を入力"/>
+			 	</div>
 		 	</div>
-		 	<div class="mb-3">
-		 		<form:errors path="columnNum" element="p"/>
-				<label for="columnNum" class="form-label"><spring:message code="busForm.columnNum"/>:</label>
-			   	<form:input path="columnNum" class="form-control" placeholder="シート列数を入力"/>
-		 	</div>
-		 	<div class="row g-2">
+		 	<div class="row g-3">
 			 	<div class="col-md-4">
 			 		<form:errors path="numberPlace" element="p"/>
 				  	<label for="numberPlace" class="form-label"><spring:message code="busForm.numberPlace"/>:</label>

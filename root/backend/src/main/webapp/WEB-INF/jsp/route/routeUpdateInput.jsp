@@ -35,15 +35,17 @@
 				   		<form:input path="scheduledArrivalTime" class="form-control" value="${sATime}"/>
 				 </div>
 		 	</div>			 	
-	 		<div class="mb-3 mt-3">
-		 		<form:errors path="busId" element="p"/>
-		   		<label for="busId" class="form-label"><spring:message code="routeForm.busId"/>:</label>
-		   		<form:input path="busId" class="form-control" value="${routeInfo.busId}"/>
-		 	</div>
-		 	<div class="mb-3 mt-3">
-		 		<form:errors path="price" element="p"/>
-		   		<label for="price" class="form-label"><spring:message code="routeForm.price"/>:</label>
-		   		<form:input path="price" class="form-control" value="${routeInfo.price}"/>
+	 		<div class="row g-3">
+		 		<div class="col-md-4">
+			 		<form:errors path="busId" element="p"/>
+			   		<label for="busId" class="form-label"><spring:message code="routeForm.busId"/>:</label>
+			   		<form:input path="busId" class="form-control" value="${routeInfo.busId}"/>
+			 	</div>
+			 	<div class="col-md-4">
+			 		<form:errors path="price" element="p"/>
+			   		<label for="price" class="form-label"><spring:message code="routeForm.price"/>:</label>
+			   		<form:input path="price" class="form-control" value="${routeInfo.price}"/>
+			 	</div>
 		 	</div>
 		 	<div class="row g-3">
 			 	<div class="col-md-4">
@@ -59,7 +61,7 @@
 			   		<form:input path="operationEndDate" class="form-control" value="${oEDate}"/>
 			 	</div>
 	 		</div>
-		 	<input type="submit" class="btn btn-dark" value="変更" formaction="confirm?routeId=${routeInfo.routeId}"/>
+		 	<input type="submit" class="btn btn-primary ms-5" value="変更" formaction="confirm?routeId=${routeInfo.routeId}"/>
 		 	<input  type="submit" class="btn btn-dark" value="戻る" formaction="/routeList/index"/>
 		</form:form>
 	</div>

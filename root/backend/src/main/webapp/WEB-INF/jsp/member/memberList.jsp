@@ -17,7 +17,7 @@
 	<div class="mt-3 mb-4">
 		<h1>会員一覧</h1>
 	</div>
-	<table id="memberList" class="display">
+	<table id="memberList" class="display shadow-lg">
 		<thead>
 			<tr>
 				<th>会員ID</th>

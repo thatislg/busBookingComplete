@@ -25,11 +25,13 @@
 				   	<spring:message code="routeForm.scheduledArrivalTime"/>:<c:out value="${sATime}"/>
 				 </div>
 		 	</div>			 	
-	 		<div class="mb-3 mt-3">
-		   			<spring:message code="routeForm.busId"/>:<c:out value="${routeInfo.busId}"/>		   		
-		 	</div>
-		 	<div class="mb-3 mt-3">
-		 			<spring:message code="routeForm.price"/>:<c:out value="${routeInfo.price}"/>
+	 		<div class="row g-3">
+		 		<div class="col-md-4">
+			   			<spring:message code="routeForm.busId"/>:<c:out value="${routeInfo.busId}"/>		   		
+			 	</div>
+			 	<div class="col-md-4">
+			 			<spring:message code="routeForm.price"/>:<c:out value="${routeInfo.price}"/>
+			 	</div>
 		 	</div>
 		 	<div class="row g-3">
 			 	<div class="col-md-4">
@@ -41,7 +43,7 @@
 	 		</div>
 		 	<form>
 			 	<input type="hidden" name="routeId" value="${routeInfo.routeId}">
-			 	<input class="btn btn-dark" type="submit" value="ＯＫ" formaction="/routeUpdate/update">
+			 	<input class="btn btn-primary ms-5" type="submit" value="ＯＫ" formaction="/routeUpdate/update">
 			 &nbsp;
 				<input class="btn btn-dark" type="submit" value="戻る" formaction="../routeUpdate/input?routeId=${routeInfo.routeId}">
 			</form>

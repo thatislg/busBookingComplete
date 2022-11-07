@@ -22,7 +22,7 @@
 			<input class="btn btn-primary" type="submit" value="新規登録">
 		</form>
 	</div>		
-	<table id="busList" class="display">
+	<table id="busList" class="display shadow-lg">
 		<thead>
 			<tr>
 				<th>バスID</th>

@@ -24,7 +24,7 @@
 			<input class="btn btn-primary" type="submit" value="予約状況" formaction="/reservation/index">
 		</form>
 	</div>		
-	<table id="routList" class="display">
+	<table id="routList" class="display shadow-lg">
 		<thead>
 			<tr>
 				<th>路線ID</th>

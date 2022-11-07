@@ -8,13 +8,15 @@
 	<div class="shadow-lg">
 		<h1>バス登録確認</h1>
 		<div>
-			<div class="mb-3 mt-3">
-				<spring:message code="busForm.rowNum"/>:<c:out value="${busForm.rowNum}"/>
+			<div class="row g-3">
+				<div class="col-md-4">
+					<spring:message code="busForm.rowNum"/>:<c:out value="${busForm.rowNum}"/>
+				</div>
+				<div class="col-md-4">	
+					<spring:message code="busForm.columnNum"/>:<c:out value="${busForm.columnNum}"/>
+				</div>
 			</div>
-			<div class="mb-3">	
-				<spring:message code="busForm.columnNum"/>:<c:out value="${busForm.columnNum}"/>
-			</div>
-			<div class="row g-2">
+			<div class="row g-3">
 		 		<div class="col-md-4">
 					<spring:message code="busForm.numberPlace"/>:<c:out value="${busForm.numberPlace}"/>
 				</div>
@@ -41,8 +43,8 @@
 				<form:hidden path="numberKana"/>
 				<form:hidden path="numberFirstHalf"/>
 				<form:hidden path="numberLatterHalf"/>
-				<input class="btn btn-primary" type="submit" value="ＯＫ" formaction="insert">
-				<input class="btn btn-primary" type="submit" value="戻る" formaction="input">
+				<input class="btn btn-primary ms-5" type="submit" value="ＯＫ" formaction="insert">
+				<input class="btn btn-dark" type="submit" value="戻る" formaction="input">
 			</form:form>		
 		</div>
 	</div>

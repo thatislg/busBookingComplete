@@ -11,7 +11,7 @@
 	<div class="container">
 		<div>
 			<div class="card card-container shadow-lg" >
-				<img id="profile-img" class="profile-img-card" src="https://www.tmc-creative.jp/works/images/bf64421e58f15749848583244cc66cbe85e7d73e.png" />
+				<img id="profile-img" class="profile-img-card" src="img/VTI BUS.png" />
 					<form:form class="form-signin" modelAttribute="loginForm" action="auth">
 						<form:errors path="*"/>
 						${SPRING_SECURITY_LAST_EXCEPTION.message}

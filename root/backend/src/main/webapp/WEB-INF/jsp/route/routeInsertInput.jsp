@@ -33,15 +33,17 @@
 				   		<form:input path="scheduledArrivalTime" class="form-control" placeholder="到着時刻を入力"/>
 				 </div>
 		 	</div>			 	
-	 		<div class="mb-3 mt-3">
-		 		<form:errors path="busId" element="p"/>
-		   		<label for="busId" class="form-label"><spring:message code="routeForm.busId"/>:</label>
-		   		<form:input path="busId" class="form-control" placeholder="バスIDを入力"/>
-		 	</div>
-		 	<div class="mb-3 mt-3">
-		 		<form:errors path="price" element="p"/>
-		   		<label for="price" class="form-label"><spring:message code="routeForm.price"/>:</label>
-		   		<form:input path="price" class="form-control" placeholder="料金を入力"/>
+	 		<div class="row g-3">
+		 		<div class="col-md-4">
+			 		<form:errors path="busId" element="p"/>
+			   		<label for="busId" class="form-label"><spring:message code="routeForm.busId"/>:</label>
+			   		<form:input path="busId" class="form-control" placeholder="バスIDを入力"/>
+			 	</div>
+			 	<div class="col-md-4">
+			 		<form:errors path="price" element="p"/>
+			   		<label for="price" class="form-label"><spring:message code="routeForm.price"/>:</label>
+			   		<form:input path="price" class="form-control" placeholder="料金を入力"/>
+			 	</div>
 		 	</div>
 		 	<div class="row g-3">
 			 	<div class="col-md-4">
@@ -55,8 +57,8 @@
 			   		<form:input path="operationEndDate" class="form-control" placeholder="運用終了日を入力"/>
 			 	</div>
 	 		</div>
-		 	<input type="submit" class="btn btn-primary" value="登録" formaction="/routeInsert/confirm"/>
-		 	<input  type="submit" class="btn btn-primary" value="戻る" formaction="/routeList/index"/>
+		 	<input type="submit" class="btn btn-primary ms-5" value="登録" formaction="/routeInsert/confirm"/>
+		 	<input  type="submit" class="btn btn-dark" value="戻る" formaction="/routeList/index"/>
 		</form:form>
 	</div>
 </div> 

@@ -14,9 +14,9 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-	<div class="container">
+	<div class="container-fluid">">
 		<a class="navbar-brand" href="/">
-		<img src="https://www.tmc-creative.jp/works/images/bf64421e58f15749848583244cc66cbe85e7d73e.png" alt="Avatar Logo" style="width:70px;" class="rounded-pill" />
+		<img src="../img/VTI BUS.png" alt="Avatar Logo" style="width: 60px;height: 50px;" class="rounded-pill" />
 		</a>
 		<div class="collapse navbar-collapse" id="mynavbar">
 		<ul class="navbar-nav me-auto">
@@ -27,7 +27,7 @@
 			</sec:authorize>
 		</ul>
 		<form class="d-flex" action="/login">
-			<input class="btn btn-outline-primary" type="submit" value="ログアウト">
+			<button type="submit" class="btn btn-outline-primary"><i class="fa-solid fa-right-from-bracket"></i>ログアウト</button>
 		</form>
 		</div>
 	</div>

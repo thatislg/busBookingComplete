@@ -8,13 +8,15 @@
 	<div class="shadow-lg">
 		<h1>バス削除確認</h1>
 		<div>
-			<div class="mb-3 mt-3">
-				<spring:message code="busForm.rowNum"/>:<c:out value="${busInfo.rowNum}"/>
+			<div class="row g-3">
+				<div class="col-md-4">
+					<spring:message code="busForm.rowNum"/>:<c:out value="${busInfo.rowNum}"/>
+				</div>
+				<div class="col-md-4">	
+					<spring:message code="busForm.columnNum"/>:<c:out value="${busInfo.columnNum}"/>
+				</div>
 			</div>
-			<div class="mb-3">	
-				<spring:message code="busForm.columnNum"/>:<c:out value="${busInfo.columnNum}"/>
-			</div>
-			<div class="row g-2">
+			<div class="row g-3">
 		 		<div class="col-md-4">
 					<spring:message code="busForm.numberPlace"/>:<c:out value="${busInfo.numberPlace}"/>
 				</div>
@@ -35,9 +37,9 @@
 			</div>
 			<form>
 			 	<input type="hidden" name="busId" value="${busInfo.busId}">
-				<input class="btn btn-primary" type="submit" value="ＯＫ" formaction="/busDelete/delete">
+				<input class="btn btn-primary ms-5" type="submit" value="ＯＫ" formaction="/busDelete/delete">
 	 			&nbsp;
-	 			<input class="btn btn-primary" type="submit" value="戻る" formaction="/busList/index">	
+	 			<input class="btn btn-dark" type="submit" value="戻る" formaction="/busList/index">	
 			</form>
 		</div>
 	</div>
