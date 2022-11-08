@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="vn.com.vti.bus.mapper.ReserveCustomMapper">
+	<resultMap type="vn.com.vti.bus.entity.ReserveCustom" id="reserveCustom">
+		<id column="member_id" jdbcType="INTEGER" property="memberId" />
+		<result column="route_id" jdbcType="INTEGER" property="routeId" />
+		<result column="departure_id" jdbcType="INTEGER" property="departureId" />
+		<result column="arrival_id" jdbcType="INTEGER" property="arrivalId" />
+		<result column="reserved_date" jdbcType="TIMESTAMP" property="reservedDate" />
+		<result column="price" jdbcType="INTEGER" property="price" />
+		<result column="bus_id" jdbcType="INTEGER" property="busId" />
+	</resultMap>
+	
+	<select id="selectMemberReservationByMemberId" resultMap="reserveCustom">
+		SELECT 
+			R.RESERVED_DATE
+			,R.ROUTE_ID
+			,RO.DEPARTURE_ID
+			,RO.ARRIVAL_ID
+			,RO.PRICE
+			,RO.BUS_ID
+		FROM 
+			RESERVE AS R
+			INNER JOIN MEMBER AS M
+				ON R.MEMBER_ID = M.MEMBER_ID
+				INNER JOIN ROUTE AS RO
+					ON R.ROUTE_ID = RO.ROUTE_ID	
+		WHERE 
+			M.MEMBER_ID =  #{memberId};
+	</select>
+</mapper>

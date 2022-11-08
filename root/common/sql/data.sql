@@ -127,6 +127,16 @@ INSERT INTO RESERVE(member_id, route_id, reserved_date, departure_date)
 VALUES (1, 3, '2016-01-13 10:00:00', '2016-01-14');
 
 INSERT INTO RESERVE(member_id, route_id, reserved_date, departure_date)
+VALUES (1, 7, '2015-10-13 10:00:00', '2015-11-14');
+
+INSERT INTO RESERVE(member_id, route_id, reserved_date, departure_date)
+VALUES (1, 10, '2015-10-13 10:00:00', '2015-11-14');
+
+INSERT INTO RESERVE(member_id, route_id, reserved_date, departure_date)
+VALUES (1, 11, '2018-10-13 10:00:00', '2018-11-14');
+
+
+INSERT INTO RESERVE(member_id, route_id, reserved_date, departure_date)
 VALUES (2, 1, '2016-01-11 10:00:00', '2016-01-12');
 
 INSERT INTO RESERVE(member_id, route_id, reserved_date, departure_date)

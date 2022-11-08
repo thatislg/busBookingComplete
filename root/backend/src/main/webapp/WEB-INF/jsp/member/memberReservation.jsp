@@ -41,7 +41,7 @@
 		</tbody>
 	</table>
 	<hr>
-	<table id="memberReservationStatus" class="display">
+	<table id="memberReservationStatus" class="table table-bordered display">
 		<thead>
 			<tr>
 				<th>日付</th>
@@ -53,13 +53,15 @@
 			</tr>
 		 </thead>
 		 <tbody>
-			<c:forEach items="${memberList}" var="member">
+			<c:forEach items="${memberReservationList}" var="memberRL">
 			<tr>
-				<td><c:out value="${member.memberId}"/></td>
-				<td><c:out value="${member.loginId}"/></td>
-				<td><c:out value="${member.memberName}"/></td>
-				<td><c:out value="${member.phoneNumber}"/></td>
-				<td><c:out value="${member.mailAddress}"/></td>
+				<fmt:formatDate value="${memberRL.reservedDate}" pattern="yyyy-mm-dd HH:mm" var="rDate"/>
+				<td><c:out value="${rDate}"/></td>
+				<td><c:out value="${memberRL.routeId}"/></td>
+				<td><c:out value="${memberRL.departureId}"/></td>
+				<td><c:out value="${memberRL.arrivalId}"/></td>
+				<td><c:out value="${memberRL.price}"/></td>
+				<td><c:out value="${memberRL.busId}"/></td>
 			</tr>
 			</c:forEach>
 		</tbody>
