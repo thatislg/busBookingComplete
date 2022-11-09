@@ -57,7 +57,7 @@
 					<td><c:out value="${route.busId}"/></td>
 					<td><a href="../routeDelete/confirm?routeId=${route.routeId}"><em class="fa fa-trash-o" style="font-size:24px"></em></a></td>
 					<td><a href="../routeUpdate/input?routeId=${route.routeId}"><em class="fa-solid fa-pen-to-square" style="font-size:24px"></em></a></td>
-					<td><a href="../reservation/index?routeId=${route.routeId}"><em class="fa-calendar-check-o" style="font-size:24px"></em></a></td>
+					<td><a href="../reservation/index?routeId=${route.routeId}"><em class="fa fa-calendar-check-o" style="font-size:24px"></em></a></td>
 				</tr>
 				</c:forEach>
 		</tbody>
