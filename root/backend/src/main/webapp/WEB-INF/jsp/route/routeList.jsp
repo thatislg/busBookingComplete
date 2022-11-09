@@ -21,7 +21,9 @@
 	<div class="mb-3 float-end" >
 		<form>
 			<input class="btn btn-primary" type="submit" value="新規登録" formaction="/routeInsert/input">
-			<input class="btn btn-primary" type="submit" value="予約状況" formaction="/reservation/index">
+			
+		<%--	<input class="btn btn-primary" type="submit" value="予約状況" formaction="/reservation/index"> --%>
+		
 		</form>
 	</div>		
 	<table id="routList" class="display shadow-lg">
@@ -36,6 +38,7 @@
 				<th>バスID</th>
 				<th>削除</th>
 				<th>変更</th>
+				<th>予約状況</th>
 			</tr>
 		 </thead>
 		 <tbody>
@@ -54,6 +57,7 @@
 					<td><c:out value="${route.busId}"/></td>
 					<td><a href="../routeDelete/confirm?routeId=${route.routeId}"><em class="fa fa-trash-o" style="font-size:24px"></em></a></td>
 					<td><a href="../routeUpdate/input?routeId=${route.routeId}"><em class="fa-solid fa-pen-to-square" style="font-size:24px"></em></a></td>
+					<td><a href="../reservation/index?routeId=${route.routeId}"><em class="fa-calendar-check-o" style="font-size:24px"></em></a></td>
 				</tr>
 				</c:forEach>
 		</tbody>
