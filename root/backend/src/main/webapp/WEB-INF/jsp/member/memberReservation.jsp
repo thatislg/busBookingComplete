@@ -41,6 +41,7 @@
 		</tbody>
 	</table>
 	<hr>
+	
 	<table id="memberReservationStatus" class="table table-bordered display">
 		<thead>
 			<tr>
@@ -53,17 +54,24 @@
 			</tr>
 		 </thead>
 		 <tbody>
-			<c:forEach items="${memberReservationList}" var="memberRL">
-			<tr>
-				<fmt:formatDate value="${memberRL.reservedDate}" pattern="yyyy-mm-dd HH:mm" var="rDate"/>
-				<td><c:out value="${rDate}"/></td>
-				<td><c:out value="${memberRL.routeId}"/></td>
-				<td><c:out value="${memberRL.departureId}"/></td>
-				<td><c:out value="${memberRL.arrivalId}"/></td>
-				<td><c:out value="${memberRL.price}"/></td>
-				<td><c:out value="${memberRL.busId}"/></td>
-			</tr>
-			</c:forEach>
+		 	<c:choose>
+		 		<c:when test="${not empty memberReservationList}">
+					<c:forEach items="${memberReservationList}" var="memberRL">
+					<tr>
+						<fmt:formatDate value="${memberRL.reservedDate}" pattern="yyyy-mm-dd HH:mm" var="rDate"/>
+						<td><c:out value="${rDate}"/></td>
+						<td><c:out value="${memberRL.routeId}"/></td>
+						<td><c:out value="${memberRL.departureId}"/></td>
+						<td><c:out value="${memberRL.arrivalId}"/></td>
+						<td><c:out value="${memberRL.price}"/></td>
+						<td><c:out value="${memberRL.busId}"/></td>
+					</tr>
+				</c:forEach>
+				</c:when>
+				<c:when test="${empty memberReservationList}">
+		 				<tr><td class="align-middle" colspan="6">このメンバーの予約がございません。</td></tr>
+		 		</c:when>
+			</c:choose>
 		</tbody>
 	</table>
 </div>
