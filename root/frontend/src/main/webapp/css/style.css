@@ -193,7 +193,7 @@ header{
 	background-color: #333;
 	color: #fff;
 }
-.section-information h2 span {
+.section-information h2 i {
 	margin-right: 5px; 
 }
 .section-information .wrap-article {
@@ -221,9 +221,9 @@ header{
 	margin-left: 7em; 
 }
 .section .in-section {
-		width: 960px;
-		margin: 0 auto;
-		padding: 40px 0; 
+	width: 960px;
+	margin: 0 auto;
+	padding: 40px 0; 
 }
 
 

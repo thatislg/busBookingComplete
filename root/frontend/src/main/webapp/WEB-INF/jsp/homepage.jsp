@@ -28,7 +28,7 @@
 			</button>
 			<div id = "navbar-collapse">
 				<button type = "button" id = "navbar-close-btn" class = "flex">
-				<i class = "fas fa-times"></i>
+					<i class = "fas fa-times"></i>
 				</button>
 				<ul class = "navbar-nav">
 					<li class = "nav-item">
@@ -70,7 +70,7 @@
 	<section class="contents" >
 		<section class="section section-information">
 		    <div class="in-section">
-		        <h2 class="bg-black"><span class="fa fa-info-circle"></span>お知らせ</h2>
+		        <h2 class="bg-black"><i class="fa fa-info-circle"></i>お知らせ</h2>
 		        <div class="wrap-article">
 	                <article>
 	                        <time datetime="2022.11.15">2022.11.15</time>
