@@ -3,7 +3,7 @@
 		font-size: 1.4rem;
 	}
 }
-@media screen and (min-width: 992px){
+@media screen and (min-width: 768px){
 	.header-title h1{
 		font-size: 4rem;
 	}
@@ -44,20 +44,6 @@
 		color: var(--dark);
 	}
 }
-@media screen and (max-width: 768px) {
-	.section-information h2 {
-		margin-right: -20px;
-		margin-left: -20px; }
-	.section-information .wrap-article {
-		max-height: 100%;
-		margin: 0 -20px;
-		overflow-y: visible; }
-	.section-information .wrap-article article {
-			padding: 20px; }
-	.section-information article time,
-	.section-information article h3 {
-		display: block; }
-	.section-information article .body {
-		margin: 0; }
-}
+
+
 

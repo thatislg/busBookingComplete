@@ -150,7 +150,7 @@ header{
 	font-size: 1.2rem;
 }
 .header-form form{
-	flex-direction: colunm;
+	flex-direction: column;
 	margin-top: 1.8rem;
 }
 .header-form form .form-control{
@@ -186,7 +186,7 @@ header{
 	color: var(--green);
 }
 
-/* section */
+/* section-information */
 .section-information h2 {
 	margin-bottom: 20px;
 	padding: 13px 20px;
@@ -207,7 +207,7 @@ header{
 	letter-spacing: -0.5em; 
 }
 .section-information .wrap-article article > * {
-		letter-spacing: normal; 
+	letter-spacing: normal; 
 }
 .section-information article time {
 	display: inline-block;
@@ -225,6 +225,7 @@ header{
 		margin: 0 auto;
 		padding: 40px 0; 
 }
+
 
 
 

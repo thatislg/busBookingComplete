@@ -103,12 +103,12 @@
 		        </div>
 		    </div>
 		</section>
-	</section>
-	<!-- section -->		
+	</section>	
+	<!-- end ofsection -->		
 	
 	<!-- js -->
 	<script src = "js/script.js"></script>
-	<!-- js -->
+	<!-- end of js -->
 <%@include file="/WEB-INF/jsp/common/footer.jsp"%>
 </body>
 </html>
