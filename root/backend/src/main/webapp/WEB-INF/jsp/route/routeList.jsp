@@ -21,8 +21,6 @@
 	<div class="mb-3 float-end" >
 		<form>
 			<input class="btn btn-primary" type="submit" value="新規登録" formaction="/routeInsert/input">
-			
-		<%--	<input class="btn btn-primary" type="submit" value="予約状況" formaction="/reservation/index"> --%>
 		
 		</form>
 	</div>		
