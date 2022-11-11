@@ -12,7 +12,7 @@
 			  	 	<spring:message code="routeForm.departureId"/>: <c:out value="${routeInfo.departureId} = ${routeInfo1.departureStationName}"/>
 			 	</div>
 		 		<div class="col-md-4">
-			   		<fmt:formatDate value="${routeInfo.scheduledDepartureTime}" pattern="yyyy-mm-dd HH:mm:ss" var="sDTime"/>
+			   		<fmt:formatDate value="${routeInfo.scheduledDepartureTime}" pattern="yyyy-MM-dd HH:mm:ss" var="sDTime"/>
 			   		<spring:message code="routeForm.scheduledDepartureTime"/>: <c:out value="${sDTime}"/>			   		
 			 	</div>
 		 	</div>
@@ -21,7 +21,7 @@
 					<spring:message code="routeForm.arrivalId"/>: <c:out value="${routeInfo.arrivalId} = ${routeInfo1.arrivalStationName}"/>
 			 	</div>
 			 	<div class="col-md-4">
-				   	<fmt:formatDate value="${routeInfo.scheduledArrivalTime}" pattern="yyyy-mm-dd HH:mm:ss" var="sATime"/>	
+				   	<fmt:formatDate value="${routeInfo.scheduledArrivalTime}" pattern="yyyy-MM-dd HH:mm:ss" var="sATime"/>	
 				   	<spring:message code="routeForm.scheduledArrivalTime"/>:<c:out value="${sATime}"/>
 				 </div>
 		 	</div>			 	

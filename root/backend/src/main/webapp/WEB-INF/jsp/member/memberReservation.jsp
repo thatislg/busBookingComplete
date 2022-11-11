@@ -58,7 +58,7 @@
 		 		<c:when test="${not empty memberReservationList}">
 					<c:forEach items="${memberReservationList}" var="memberRL">
 					<tr>
-						<fmt:formatDate value="${memberRL.reservedDate}" pattern="yyyy-mm-dd HH:mm" var="rDate"/>
+						<fmt:formatDate value="${memberRL.reservedDate}" pattern="yyyy-MM-dd HH:mm" var="rDate"/>
 						<td><c:out value="${rDate}"/></td>
 						<td><c:out value="${memberRL.routeId}"/></td>
 						<td><c:out value="${memberRL.departureId}"/></td>
