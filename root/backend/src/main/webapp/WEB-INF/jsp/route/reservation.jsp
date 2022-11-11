@@ -77,28 +77,62 @@
 		</tbody>
 
 	</table>
-	
-	<form:form modelAttribute="bus" var="bus">
-	<table class="table table-bordered">
-	<c:forEach begin="1" end="${bus.rowNum}" step="1" var="i">
-    <tr>
-    <td>
-    <c:out value="${i}" />
-    </td>
-    </tr>
-  	</c:forEach>
-	</table>
-	
-	</form:form>
-	
-  	
 
+		<form:form modelAttribute="bus" var="bus">
+			<table class="table table-bordered">
+			<tr>
+			<th>No</th>
+			<c:forEach begin="1" end="${bus.columnNum}" step="1" var="j">
+					<th><c:out value="${j}"/></th>
+			</c:forEach>
+			
+				<c:forEach begin="1" end="${bus.rowNum}" step="1" var="i">
+					<tr>
+						<td><c:out value="${i}"/></td>
+						<td><button type="button" class="btn btn-primary" ></button> </td>
+						<td><button type="button" class="btn btn-success">空席</button> </td>
+						<td><button type="button" class="btn btn-primary">空席</button> </td>
+						<td><button type="button" class="btn btn-success">空席</button> </td>
+					</tr>
+				</c:forEach>
+			</table>
+		</form:form>
 		
-		
+		<form:form modelAttribute="bus" var="bus">
+			<table class="table table-bordered">
+				<c:forEach begin="0" end="${bus.rowNum}" step="1" var="i">
+				<tr>
+					<c:forEach begin="1" end="${bus.columnNum}" step="1" var="j">	
+							<td><button type="button" class="btn btn-primary" ><c:out value="${i + j}" /></button> </td>
+					</c:forEach>
+				</tr>
+				</c:forEach>
+			</table>
+			
+			<table class="table table-bordered">
+				<c:set var="endNum" value="${bus.rowNum*bus.columnNum}"/>
+				<c:forEach begin="0" end="${endNum}" step="4" var="i">
+				<tr>
+			
+							<td><button type="button" class="btn btn-primary" ><c:out value="${i + 1}" /></button> </td>
+							<td><button type="button" class="btn btn-primary" ><c:out value="${i +2}" /></button> </td>
+							<td><button type="button" class="btn btn-primary" ><c:out value="${i +3}" /></button> </td>
+							<td><button type="button" class="btn btn-primary" ><c:out value="${i +4}" /></button> </td>
+					
+				</tr>
+				</c:forEach>
+			</table>
 
-	
-	
-	<script>
+		</form:form>
+
+
+
+
+
+
+
+
+		<script>
 	$(document).ready(function () {
 		$('#reserveList').DataTable();
 	});
