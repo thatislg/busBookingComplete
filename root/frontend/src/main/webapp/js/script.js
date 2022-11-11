@@ -15,7 +15,7 @@ navbarShowBtn.addEventListener('click',()=>{
 	navbarCollapseDiv.classList.add('navbar-collapse-rmw');
 });
 
-//hide side 
+// hide side 
 navbarCloseBtn.addEventListener('click',()=>{
 	navbarCollapseDiv.classList.remove('navbar-collapse-rmw');
 });
