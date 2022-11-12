@@ -91,15 +91,18 @@
 		<h2>予約状況</h2>
 		<div>
 		<table class="table table-bordered">
+			<c:set var="totalNumberSeat" value="0"/>
 			<c:forEach items="${rowSeatList}" var="rowseat">
 				<tr>
 					<c:forEach items="${rowseat}" var="seat">
 						<c:choose>
 							<c:when test="${not empty seat}">
-								<td><c:out value="${seat.memberName}"/><c:out value=":${seat.seatNumber}"></c:out></td>
+								<c:set var="totalNumberSeat" value="${totalNumberSeat + 1}"/>
+								<td><b><c:out value="${seat.seatNumber}"/></b>    <c:out value="${seat.memberName}"/></td>
 							</c:when>
 							<c:when test="${empty seat}">
-								<td>空席</td>
+								<c:set var="totalNumberSeat" value="${totalNumberSeat + 1}"/>
+								<td><b><c:out value="${totalNumberSeat}"/></b>    空席</td>
 							</c:when>
 						</c:choose>
 					</c:forEach>
