@@ -100,8 +100,9 @@ public class ReservationController {
 		model.addAttribute("bus", bus);
 		
 		List<SeatOrder> seatOrderList = new ArrayList<>();
-
-		for (int i = 0; i < (bus.getRowNum() * bus.getColumnNum()); i++) {
+		Integer countSeat = bus.getRowNum() * bus.getColumnNum();
+		model.addAttribute("countSeat", countSeat);
+		for (int i = 0; i < countSeat ; i++) {
 
 			seatOrderList.add(null);
 
@@ -124,7 +125,19 @@ public class ReservationController {
 
 		}
 
-	
+		//1列ごとにリストの要素としてリストする
+		List<List<SeatOrder>> rowSeatList = new ArrayList<List<SeatOrder>>();
+		for (int i = 1; i < seatOrderList.size(); i++) {
+
+			if ((i % bus.getColumnNum() == 0) || (i == seatOrderList.size() - 1)) {
+				List<SeatOrder> rowSeat = seatOrderList.subList(i - bus.getColumnNum(), i);
+				rowSeatList.add(rowSeat);
+			}
+
+		}
+			
+		model.addAttribute("rowSeatList", rowSeatList);		
+
 	
 	}
 

@@ -22,112 +22,118 @@
 <link rel="stylesheet" type="text/css" href="/css/list.css">
 
 <body>
-<div class="container">
-<div class="mt-3">
-	<h1>日別予約状況</h1>
-</div>
-<div class="reserveData" >
-<table class="table table-bordered">
- <tr>
-    <th>日付</th>
-    <fmt:formatDate value="${date}" pattern="yyyy-MM-dd" var="rDate"/>
-    <td>${rDate}</td>
- </tr>
-  <tr>
-    <th>日付</th>
-    <td>${date}</td>
- </tr>
-  <tr>
-    <th>出発駅・出発時間</th>
-    <td>${departureStation.busStationName }</td>
- </tr>
-  <tr>
-    <th>到着駅・到着時間</th>
-    <td>${arrivalStation.busStationName }</td>
- </tr>
-  <tr>
-    <th>1席料金</th>
-    <td>${routeInfo.price }</td>
- </tr>
-</table>
-</div>
-	<form action="/reservation/search">
-		<label for="fname">日付: </label> <input type="text" id="fname"
-			name="dateStr"><br> <input type="submit" value="再表示">
-	</form>
-
-	<table id="reserveList" class="display">
-		<thead>
-			<tr>
-				<th>予約ID</th>
-				<th>会員ID</th>
-				<th>路線</th>
-				<th>予約日</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach items="${reserveList}" var="reserve">
-				<tr>
-					<td><c:out value="${reserve.reserveId}" /></td>
-					<td><c:out value="${reserve.memberId}" /></td>
-					<td><c:out value="${reserve.routeId}" /></td>
-					<td><c:out value="${reserve.reservedDate}" /></td>
-				</tr>
-			</c:forEach>
-		</tbody>
-
-	</table>
-
-		<form:form modelAttribute="bus" var="bus">
+	<div class="container">
+		<div class="mt-3">
+			<h1>日別予約状況</h1>
+		</div>
+		<br>
+		<br>
+		<div>
+		<form action="/reservation/search">
+			<label for="fname">日付: </label> <input type="text" id="fname"
+				name="dateStr">   <input type="submit" value="再表示">
+		</form>
+		</div>
+		<br>
+		
+		
+		<div class="reserveData">
 			<table class="table table-bordered">
-			<tr>
-			<th>No</th>
-			<c:forEach begin="1" end="${bus.columnNum}" step="1" var="j">
-					<th><c:out value="${j}"/></th>
-			</c:forEach>
-			
-				<c:forEach begin="1" end="${bus.rowNum}" step="1" var="i">
+				<tr>
+					<th>日付</th>
+					<fmt:formatDate value="${date}" pattern="yyyy-MM-dd" var="rDate" />
+					<td>${rDate}</td>
+				</tr>
+				
+				<tr>
+					<th>出発駅・出発時間</th>
+					<td>${departureStation.busStationName }</td>
+				</tr>
+				<tr>
+					<th>到着駅・到着時間</th>
+					<td>${arrivalStation.busStationName }</td>
+				</tr>
+				<tr>
+					<th>1席料金</th>
+					<td>${routeInfo.price }</td>
+				</tr>
+			</table>
+		</div>
+		
+		<br>
+		<br>
+		<h2>予約リスト</h2>
+		<div>
+		<table id="reserveList" class="display">
+			<thead>
+				<tr>
+					<th>予約ID</th>
+					<th>会員ID</th>
+					<th>路線</th>
+					<th>予約日</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach items="${reserveList}" var="reserve">
 					<tr>
-						<td><c:out value="${i}"/></td>
-						<td><button type="button" class="btn btn-primary" ></button> </td>
-						<td><button type="button" class="btn btn-success">空席</button> </td>
-						<td><button type="button" class="btn btn-primary">空席</button> </td>
-						<td><button type="button" class="btn btn-success">空席</button> </td>
+						<td><c:out value="${reserve.reserveId}" /></td>
+						<td><c:out value="${reserve.memberId}" /></td>
+						<td><c:out value="${reserve.routeId}" /></td>
+						<fmt:formatDate value="${reserve.reservedDate}" pattern="yyyy-MM-dd" var="date" />
+						<td><c:out value="${date}" /></td>
 					</tr>
 				</c:forEach>
-			</table>
-		</form:form>
-		
-		<form:form modelAttribute="bus" var="bus">
-			<table class="table table-bordered">
-				<c:forEach begin="0" end="${bus.rowNum}" step="1" var="i">
+			</tbody>
+
+		</table>
+		</div>
+		<br>
+		<h2>予約状況</h2>
+		<div>
+		<table class="table table-bordered">
+			<c:forEach items="${rowSeatList}" var="rowseat">
 				<tr>
-					<c:forEach begin="1" end="${bus.columnNum}" step="1" var="j">	
-							<td><button type="button" class="btn btn-primary" ><c:out value="${i + j}" /></button> </td>
+					<c:forEach items="${rowseat}" var="seat">
+						<c:choose>
+							<c:when test="${not empty seat}">
+								<td><c:out value="${seat.memberName}"/><c:out value=":${seat.seatNumber}"></c:out></td>
+							</c:when>
+							<c:when test="${empty seat}">
+								<td>空席</td>
+							</c:when>
+						</c:choose>
 					</c:forEach>
 				</tr>
-				</c:forEach>
-			</table>
-			
-			<table class="table table-bordered">
-				<c:set var="endNum" value="${bus.rowNum*bus.columnNum}"/>
-				<c:forEach begin="0" end="${endNum}" step="4" var="i">
+			</c:forEach>
+		</table>
+		
+		
+		<table class="table table-bordered">
+			<c:forEach items="${rowSeatList}" var="rowseat">
 				<tr>
-			
-							<td><button type="button" class="btn btn-primary" ><c:out value="${i + 1}" /></button> </td>
-							<td><button type="button" class="btn btn-primary" ><c:out value="${i +2}" /></button> </td>
-							<td><button type="button" class="btn btn-primary" ><c:out value="${i +3}" /></button> </td>
-							<td><button type="button" class="btn btn-primary" ><c:out value="${i +4}" /></button> </td>
-					
+					<c:forEach items="${rowseat}" var="seat">
+						<c:choose>
+							<c:when test="${not empty seat}">
+								<td><c:out value="${seat.memberName}"/><c:out value=":${seat.seatNumber}"></c:out></td>
+							</c:when>
+							<c:when test="${empty seat}">
+								<td>空席</td>
+							</c:when>
+						</c:choose>
+					</c:forEach>
 				</tr>
-				</c:forEach>
-			</table>
-		</form:form>
+			</c:forEach>
+		</table>
+		
+		
+		
+		</div>
 		<script>
-	$(document).ready(function () {
-		$('#reserveList').DataTable();
-	});
-	</script>
-</div>
+			$(document).ready(function() {
+				$('#reserveList').DataTable();
+			});
+		</script>
+
+	</div>
 </body>
 </html>
