@@ -122,22 +122,12 @@
 				</tr>
 				</c:forEach>
 			</table>
-
 		</form:form>
-
-
-
-
-
-
-
-
 		<script>
 	$(document).ready(function () {
 		$('#reserveList').DataTable();
 	});
 	</script>
-	
 </div>
 </body>
 </html>
