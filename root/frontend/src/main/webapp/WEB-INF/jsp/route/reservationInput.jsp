@@ -28,6 +28,5 @@ SHOW THE NAME
 		$('#reserveList').DataTable();
 	});
 </script>
-
 </body>
-</html>
+<jsp:include page="/WEB-INF/jsp/common/footer.jsp"></jsp:include>
