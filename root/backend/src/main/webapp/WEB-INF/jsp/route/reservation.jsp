@@ -106,27 +106,7 @@
 				</tr>
 			</c:forEach>
 		</table>
-		
-		
-		<table class="table table-bordered">
-			<c:forEach items="${rowSeatList}" var="rowseat">
-				<tr>
-					<c:forEach items="${rowseat}" var="seat">
-						<c:choose>
-							<c:when test="${not empty seat}">
-								<td><c:out value="${seat.memberName}"/><c:out value=":${seat.seatNumber}"></c:out></td>
-							</c:when>
-							<c:when test="${empty seat}">
-								<td>空席</td>
-							</c:when>
-						</c:choose>
-					</c:forEach>
-				</tr>
-			</c:forEach>
-		</table>
-		
-		
-		
+
 		</div>
 		<script>
 			$(document).ready(function() {
