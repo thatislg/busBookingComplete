@@ -20,9 +20,53 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="/css/list.css">
-
 <body>
-SHOW THE NAME
+<div>
+	<table class="table table-bordered">
+		<tr>
+			<th>日付</th>
+			<td>Chưa có nội dung</td>
+		</tr>
+		<tr>
+			<th>出発</th>
+			<td>Chưa có nội dung</td>
+		</tr>
+		<tr>
+			<th>到着</th>
+			<td>Chưa có nội dung</td>
+		</tr>
+	</table>
+</div>
+<div>
+	<table class="table table-bordered">
+		<tr>
+			<th>1席あたりの料金</th>
+			<td>Hiển thị giá tiền</td>
+		</tr>
+	</table>
+</div>
+<div>
+	<div>
+		予約する席を選択して、予約ボタンを押下してください。
+	</div>	
+	<table class="table table-bordered">
+		<tr>
+			<th colspan="4">Bản đồ đặt chỗ</th>
+		</tr>
+		<c:set var="totalNumberSeat" value="0"/>
+		<c:forEach begin="1" end="4" step="1" var="i">
+		<tr>
+			<c:forEach begin="1" end="14" step="1" var="j">
+				<c:set var="totalNumberSeat" value="${totalNumberSeat + 1}"/>
+				<td>
+					<c:out value="${totalNumberSeat}"/>
+					<input type="checkbox"/>
+				</td>
+			</c:forEach>
+		</tr>
+		</c:forEach>
+	</table>
+</div>
 <script>
 	$(document).ready(function () {
 		$('#reserveList').DataTable();
