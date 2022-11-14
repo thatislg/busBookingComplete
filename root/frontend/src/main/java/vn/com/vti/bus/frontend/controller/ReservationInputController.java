@@ -1,5 +1,6 @@
 package vn.com.vti.bus.frontend.controller;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -34,9 +35,10 @@ public class ReservationInputController {
 		// Lấy thông tin các ghế được đặt chỗ trên bus theo ngày, theo điểm xuất phát và điểm đến
 		SeatMap seatMap = new SeatMap();
 		List<SeatMap> seatList = seatMapCustomMapper.checkSeatMap(searchedDate, Integer.parseInt(departureId), Integer.parseInt(arrivalId));
-		List<Integer> listSeatNumber = new ArrayList<Integer>;
+		
+		ArrayList<Integer> listSeatNumber = new ArrayList<Integer>();
 		for(SeatMap seat : seatList){
-			
+			listSeatNumber.add(seat.getSeatNumber());
 		}
 		
 		if(seatList.isEmpty()) {
