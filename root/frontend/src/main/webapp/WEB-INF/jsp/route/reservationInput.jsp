@@ -20,22 +20,24 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="/css/list.css">
 <body>
+<form:form modelAttributes="seatMap">
 <div>
 	<table class="table table-bordered">
 		<tr>
 			<th>日付</th>
-			<td>Chưa có nội dung</td>
+			<td>${seatMap.departureDate}</td>
 		</tr>
 		<tr>
 			<th>出発</th>
-			<td>Chưa có nội dung</td>
+			<td>${seatMap.departureId}</td>
 		</tr>
 		<tr>
 			<th>到着</th>
-			<td>Chưa có nội dung</td>
+			<td>${seatMap.arrivalId}</td>
 		</tr>
 	</table>
 </div>
+</form:form>
 <div>
 	<table class="table table-bordered">
 		<tr>
