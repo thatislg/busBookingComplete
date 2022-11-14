@@ -42,7 +42,7 @@
 	<table class="table table-bordered">
 		<tr>
 			<th>1席あたりの料金</th>
-			<td>Hiển thị giá tiền</td>
+			<td>${seatMap.price}</td>
 		</tr>
 	</table>
 </div>
@@ -55,9 +55,9 @@
 			<th colspan="4">Bản đồ đặt chỗ</th>
 		</tr>
 		<c:set var="totalNumberSeat" value="0"/>
-		<c:forEach begin="1" end="4" step="1" var="i">
+		<c:forEach begin="1" end="${busInfo.columnNum}" step="1" var="i">
 		<tr>
-			<c:forEach begin="1" end="14" step="1" var="j">
+			<c:forEach begin="1" end="${busInfo.rowNum}" step="1" var="j">
 				<c:set var="totalNumberSeat" value="${totalNumberSeat + 1}"/>
 				<td>
 					<c:out value="${totalNumberSeat}"/>
