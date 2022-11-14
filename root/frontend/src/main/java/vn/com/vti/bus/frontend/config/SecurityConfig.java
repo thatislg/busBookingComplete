@@ -16,5 +16,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests()
 		.antMatchers("/*","/*/*").permitAll()
 		.anyRequest()
-		.authenticated();	}
+		.authenticated();	
+		
+		http.formLogin()
+		.loginPage("/login")
+		.loginProcessingUrl("/auth")
+		.defaultSuccessUrl("/")
+		;
+	}
 }
