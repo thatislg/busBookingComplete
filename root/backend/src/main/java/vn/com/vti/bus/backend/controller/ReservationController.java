@@ -64,7 +64,7 @@ public class ReservationController {
 			date = new Date();
 
 		} else {
-			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 			date = dateFormat.parse(dateStr);
 		}
 
