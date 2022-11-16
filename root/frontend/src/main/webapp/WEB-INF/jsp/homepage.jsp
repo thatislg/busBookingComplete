@@ -16,7 +16,7 @@
 					<input type = "text" class = "form-control" placeholder = "出発地"/>
 					<input type = "date" class = "form-control" placeholder = "Date"/>
 					<input type = "text" class = "form-control" placeholder = "到着地"/>
-					<input type = "submit" class = "btn" value = "検索" formaction="/routeSearchResult/search">
+					<input type = "submit" class = "btn" value = "検索" formaction="/routeSearch/search">
 				</form>
 			</div>
 		</div>
@@ -65,5 +65,3 @@
 	<script src = "js/script.js"></script>
 	<!-- end of js -->
 <%@include file="/WEB-INF/jsp/common/footer.jsp"%>
-</body>
-</html>
