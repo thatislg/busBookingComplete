@@ -8,5 +8,5 @@ import org.springframework.format.annotation.DateTimeFormat;
 import vn.com.vti.bus.entity.SeatMap;
 
 public interface SeatMapCustomMapper {
-	List <SeatMap>  checkSeatMap(@DateTimeFormat(pattern="yyyy-MM-dd")Date departureDate, int departureId, int arrivalId);
+	List <SeatMap>  checkSeatMap(@DateTimeFormat(pattern="yyyy-MM-dd")Date departureDate, int routeId, int busId);
 }

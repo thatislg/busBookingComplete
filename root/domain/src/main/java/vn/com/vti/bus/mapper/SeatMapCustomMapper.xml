@@ -2,26 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="vn.com.vti.bus.mapper.SeatMapCustomMapper">
 	<resultMap id="seatMapCustom" type="vn.com.vti.bus.entity.SeatMap">
-		<result column="route_id" jdbcType="INTEGER" property="routeId" />
-    	<result column="departure_id" jdbcType="INTEGER" property="departureId" />
-    	<result column="departure_date" jdbcType="DATE" property="departureDate" />
-    	<result column="arrival_id" jdbcType="INTEGER" property="arrivalId" />
-   		<result column="price" jdbcType="INTEGER" property="price" />
-   		<result column="bus_id" jdbcType="INTEGER" property="busId" />
    		<result column="seat_number" jdbcType="INTEGER" property="seatNumber" />
-   		<result column="reserve_id" jdbcType="INTEGER" property="reserveId" />
 	</resultMap>
 	
 	<select id="checkSeatMap" resultMap="seatMapCustom">
 		SELECT 
-			S.BUS_ID
-			,S.SEAT_NUMBER
-			,S.RESERVE_ID
-			,R.ROUTE_ID
-			,R.DEPARTURE_DATE
-			,RO.DEPARTURE_ID
-			,RO.ARRIVAL_ID
-			,RO.PRICE
+			S.SEAT_NUMBER
 		FROM 
 			SEAT AS S
 			INNER JOIN BUS AS B
@@ -31,19 +17,17 @@
 			INNER JOIN ROUTE AS RO
 				ON R.ROUTE_ID = RO.ROUTE_ID
 		GROUP BY 
-			S.BUS_ID
-			,S.SEAT_NUMBER
-			,S.RESERVE_ID
-			,R.ROUTE_ID
+			S.SEAT_NUMBER
+			,RO.ROUTE_ID
+			,S.BUS_ID
 			,R.DEPARTURE_DATE
-			,RO.DEPARTURE_ID
-			,RO.ARRIVAL_ID
-			,RO.PRICE
-		HAVING 
+		HAVING
+			RO.ROUTE_ID = #{routeId, jdbcType=INTEGER}
+			AND 
+			S.BUS_ID = #{busId, jdbcType=INTEGER}
+			AND
 			R.DEPARTURE_DATE = #{departureDate, jdbcType=DATE}
-			AND RO.DEPARTURE_ID = #{departureId, jdbcType=INTEGER}
-			AND RO.ARRIVAL_ID = #{arrivalId, jdbcType=INTEGER}
 		ORDER BY 
-			S.BUS_ID;
+			S.SEAT_NUMBER;
 	</select>
 </mapper>
