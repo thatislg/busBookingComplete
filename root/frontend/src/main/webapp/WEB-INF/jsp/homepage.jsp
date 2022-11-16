@@ -1,52 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
    <%@include file="/WEB-INF/jsp/common/define.jsp"%>
-   
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"> 
-<link rel="stylesheet" href="css/normalize.css"> 
-<link rel="stylesheet" href="css/utility.css"> 
-<link rel="stylesheet" href="css/style.css"> 
-<link rel="stylesheet" href="css/responsive.css"> 
-<title>VTI BUS</title>
-</head>
+<jsp:include page="/WEB-INF/jsp/common/header.jsp"></jsp:include>
+
 <body>
-	<!-- navbar -->
-	<nav class ="navbar">
-		<div class ="container flex">
-			<a href = "" class = "site-brand">
-				VTI<span>BUS</span>
-			</a>
-			
-			<button type ="button" id = "navbar-show-btn" class = "flex">
-				<i class = "fas fa-bars"></i>
-			</button>
-			<div id = "navbar-collapse">
-				<button type = "button" id = "navbar-close-btn" class = "flex">
-					<i class = "fas fa-times"></i>
-				</button>
-				<ul class = "navbar-nav">
-					<li class = "nav-item">
-						<a href = "" class = "nav-link">ホーム</a>
-					</li>
-					<li class = "nav-item">
-						<a href = "" class = "nav-link">会員登録</a>
-					</li>
-					<li class = "nav-item">
-						<a href = "" class = "nav-link">ログイン</a>
-					</li>	
-				</ul>
-			</div>
-		</div>
-	</nav>
-	<!-- end of navbar -->
-	
-	<!-- header -->
 	<header class = "flex">
 		<div class = "container">
 			<div class = "header-title">
@@ -59,13 +16,11 @@
 					<input type = "text" class = "form-control" placeholder = "出発地"/>
 					<input type = "date" class = "form-control" placeholder = "Date"/>
 					<input type = "text" class = "form-control" placeholder = "到着地"/>
-					<input type = "submit" class = "btn" value = "検索">
+					<input type = "submit" class = "btn" value = "検索" formaction="/routeSearchResult/search">
 				</form>
 			</div>
 		</div>
 	</header>
-	<!-- header -->
-	
 	<!-- section -->
 	<section class="contents" >
 		<section class="section section-information">

@@ -44,7 +44,7 @@ public class MemberAuthenticationProvider extends AbstractUserDetailsAuthenticat
 			throw new BadCredentialsException("ログインIDまたはパスワードに誤りがあります。");
 		}
 		List<SimpleGrantedAuthority> authorities = new ArrayList<>();
-		authorities.add(new SimpleGrantedAuthority("ROLE_LOGIN"));
+		authorities.add(new SimpleGrantedAuthority("ROLE_MEMBER"));
 
 		return new MemberDetails(members.get(0), authorities);
 	}
