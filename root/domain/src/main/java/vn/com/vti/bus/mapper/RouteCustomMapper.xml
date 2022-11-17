@@ -13,9 +13,6 @@
     	<result column="operation_end_date" jdbcType="DATE" property="operationEndDate" />
     	<result column="scheduled_departure_time" jdbcType="TIMESTAMP" property="scheduledDepartureTime" />
    	 	<result column="scheduled_arrival_time" jdbcType="TIMESTAMP" property="scheduledArrivalTime" />
-   	 	<result column="departure_Date" jdbcType="DATE" property="departureDate" />
-  
-   	 	
 	</resultMap>
 	
 	<select id="selectById" resultMap="routeCustom">
@@ -53,28 +50,4 @@
 			WHERE
 				T.ROUTE_ID = #{routeId};
 	</select>
-	
-	<select id="selectByNamePart" resultMap="routeCustom">
-		SELECT
-			T.*
-			,BS1.BUS_STATION_NAME AS ARRIVAL_STATION_NAME
-		FROM (
-			SELECT
-				R.*
-				,BS.BUS_STATION_NAME AS DEPARTURE_STATION_NAME
-			FROM 
-				BUS_STATION AS BS
-				INNER JOIN ROUTE AS R
-					ON BS.BUS_STATION_ID = R.DEPARTURE_ID)
-			T
-				INNER JOIN BUS_STATION AS BS1
-				ON BS1.BUS_STATION_ID = T.ARRIVAL_ID
-		WHERE
-			T.DEPARTURE_STATION_NAME LIKE #{departureStationName,jdbcType=VARCHAR}
-			AND BS1.BUS_STATION_NAME LIKE #{arrivalStationName,jdbcType=VARCHAR}
-			AND #{departureDate,jdbcType=DATE} BETWEEN T.OPERATION_START_DATE AND T.OPERATION_END_DATE;
-		 
-	</select>
-	
-	
 </mapper>
