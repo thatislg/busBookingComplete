@@ -1,11 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="/WEB-INF/jsp/common/define.jsp"%>
-
-
-
-	<div class="footer">
+	<div>
 		<p style="text-align:center;text-color:#fff;">Copyright © 2022 Bacs_team</p>
 	</div>
-</body>
-</html>
+

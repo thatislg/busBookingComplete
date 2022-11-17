@@ -23,8 +23,8 @@ public class RouteSearchResultController {
 	public String Search(@RequestParam(value="departureStationName") String departureStationName,
 			@RequestParam(value="arrivalStationName") String arrivalStationName,
 			@RequestParam(value="departureDate") String departureDate,Model model) throws ParseException {
-		String param1 = departureStationName+"%";
-		String param2 = arrivalStationName+"%";
+		String param1 = "%"+departureStationName+"%";
+		String param2 = "%"+arrivalStationName+"%";
 		String param3 = departureDate;
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 		Date dateParam = formatter.parse(param3);

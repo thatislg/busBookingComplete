@@ -12,11 +12,11 @@
 			</div>
 			<div class = "header-form">
 				<h2>路線選択</h2>
-				<form class = "flex">
-					<input type = "text" class = "form-control" placeholder = "出発地"/>
-					<input type = "date" class = "form-control" placeholder = "Date"/>
-					<input type = "text" class = "form-control" placeholder = "到着地"/>
-					<input type = "submit" class = "btn" value = "検索" formaction="/routeSearch/search">
+				<form class = "flex" action = "routeSearch/search">
+					<input type = "text" class = "form-control" placeholder = "出発地" name="departureStationName" required/>
+					<input type = "date" class = "form-control" placeholder = "Date" name="departureDate" required/>
+					<input type = "text" class = "form-control" placeholder = "到着地" name="arrivalStationName" required/>
+					<input type = "submit" class = "btn" value = "検索" />
 				</form>
 			</div>
 		</div>
@@ -64,4 +64,4 @@
 	<!-- js -->
 	<script src = "js/script.js"></script>
 	<!-- end of js -->
-<%@include file="/WEB-INF/jsp/common/footer.jsp"%>
+<jsp:include page="/WEB-INF/jsp/common/footer.jsp"></jsp:include>

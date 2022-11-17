@@ -13,40 +13,6 @@
 <link rel="stylesheet" href="../css/style.css"> 
 <link rel="stylesheet" href="../css/responsive.css"> 
 <title>VTI BUS</title>
-<style>
-	.content-table{
-		border-collapse: collapse;
-		margin: 25px 0;
-		min-width: 400px;	
-		border-radius: 5px 5px 0 0;
-		overflow: hidden;
-		box-shadow: 0 0 20px rgba(0,0,0,0.15);
-	}
-	.content-table thead tr {
-		background-color: #009879;
-		color: #fff;
-		text-align: left;
-		font-weight: bold;
-		text-align: center;
-	}
-	.content-table th, .content-table td{
-		padding: 12px 15px;
-	}
-	.content-table tbody tr{
-		border-bottom: 1px solid #fff;
-	}
-	.content-table tbody tr:ntn-of-type(even){
-		background-color: #f3f3f3;
-	}
-	.content-table tbody tr:hover{
-	    background-color: #ddd;
-	    cursor:pointer;
-	}
-	.content-table em{
-		font-size: 24px;
-		color: #fff;
-	}	
-</style>
 </head>
 <body>
 	<!-- navbar -->
@@ -134,6 +100,6 @@
 	<!-- js -->
 	<script src = "../js/script.js"></script>
 	<!-- end of js -->
-<%@include file="/WEB-INF/jsp/common/footer.jsp"%>
+<jsp:include page="/WEB-INF/jsp/common/footer.jsp"></jsp:include>
 </body>
 </html>
