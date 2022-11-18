@@ -31,7 +31,7 @@
 				<ul class="navbar-nav">
 					<li class="nav-item"><a href="/" class="nav-link">ホーム</a></li>
 					<li class="nav-item"><a href="/reservation/index" class="nav-link">予約一覧</a></li>
-					<li class="nav-item"><a href="/routeSearch/search" class="nav-link">路線検索</a></li>
+					<li class="nav-item"><a href="/routeSearch/index" class="nav-link">路線検索</a></li>
 					<li class="nav-item"><form:form action="/logout"
 							name="logoutForm" id="logoutForm" style="display:inline-flex">
 							<a href="javascript:logoutForm.submit()">ログアウト</a>
