@@ -30,6 +30,13 @@ public class RouteSearchResultController {
 	public String search(@RequestParam(value="departureStationName") String departureStationName,
 			@RequestParam(value="arrivalStationName") String arrivalStationName,
 			@RequestParam(value="departureDate") String departureDate,Model model) throws ParseException {
+		
+		String inputedDepartureNameInfo = departureStationName;
+		String inputedArrivalNameInfo = arrivalStationName;
+		model.addAttribute("inputedDepartureNameInfo", inputedDepartureNameInfo);
+		model.addAttribute("inputedArrivalNameInfo", inputedArrivalNameInfo);
+		
+		
 		String param1 = "%"+departureStationName+"%";
 		String param2 = "%"+arrivalStationName+"%";
 		String param3 = departureDate;

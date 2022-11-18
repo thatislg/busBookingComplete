@@ -41,14 +41,22 @@ public class ReservationController {
 	
 	@RequestMapping("/input")
 	public String input(@RequestParam(value="departureDate")
-
-							@DateTimeFormat(pattern = "yyyy-MM-dd") Date departureDate,
+						@DateTimeFormat(pattern = "yyyy-MM-dd") Date departureDate,
 						@RequestParam(value="routeId") String routeId, 
-						@RequestParam(value="busId") String busId, Model model) {
+						@RequestParam(value="busId") String busId,
+						@RequestParam(value="inputedDepartureName") String inputedDepartureName,
+						@RequestParam(value="inputedArrivalName") String inputedArrivalName,
+						Model model) {
 		
 		// Convert kiểu dữ liệu nhận vào
 		int intRouteId = Integer.parseInt(routeId);
 		int intBusId = Integer.parseInt(busId);
+		String inputedDepartureNameInfo = inputedDepartureName;
+		String inputedArrivalNameInfo = inputedArrivalName;
+		model.addAttribute("inputedDepartureNameInfo", inputedDepartureNameInfo);
+		model.addAttribute("inputedArrivalNameInfo", inputedArrivalNameInfo);
+		
+
 		Date reservedDepartureDate = departureDate;
 		model.addAttribute("reservedDepartureDate", reservedDepartureDate);
 		
@@ -79,6 +87,6 @@ public class ReservationController {
 	
 	@RequestMapping("/confirm")
 	public String confirm() {
-		return "";
+		return "/route/reservationConfirm";
 	}
 }

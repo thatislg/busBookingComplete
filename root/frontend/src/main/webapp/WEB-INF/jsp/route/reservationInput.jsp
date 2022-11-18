@@ -2,7 +2,9 @@
 	pageEncoding="UTF-8"%>
 <%@include file="/WEB-INF/jsp/common/define.jsp"%>
 <jsp:include page="/WEB-INF/jsp/common/header.jsp"></jsp:include>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" 
+	  rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" 
+	  crossorigin="anonymous">
 <body>
 <form:form modelAttributes="seatMap">
 <div>
@@ -35,7 +37,7 @@
 	<div>
 		予約する席を選択して、予約ボタンを押下してください。
 	</div>	
-	<form:form>
+	<form:form method="GET">
 	<table class="table table-bordered">
 		<tr>
 			<th colspan="4">Bản đồ đặt chỗ</th>
@@ -83,8 +85,16 @@
 		</c:forEach>
 	</table>
 	<div class="d-flex justify-content-center" role="group">
-			<button type="button" class="btn btn-primary">予約</button>
-			<button type="button" class="btn btn-secondary">戻る</button>
+	
+	
+			<input type="submit" class="btn btn-primary" value="予約" formaction="/reservation/confirm"/>
+			
+			
+			<input type="hidden" name="departureStationName" value="${inputedDepartureNameInfo}"/>
+			<input type="hidden" name="departureDate" value="${rDDate}"/>
+			<input type="hidden" name="arrivalStationName" value="${inputedArrivalNameInfo}"/>
+			<input type="submit" class="btn btn-secondary" value="戻る" 
+				 formaction="../routeSearch/search?"/>
 	</div>
 	</form:form>
 </div>
