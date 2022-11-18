@@ -6,18 +6,14 @@
      
  }
 body{
-     position: relative;
      width: 100%;
      height: 100vh;
-     display: flex;
      background:linear-gradient(to bottom,#0d78f6 -75%,#b0d5f2 89%);
-     background-size: cover;
-     
+     background-size: cover; 
  }
-
- 
 .content{
      display: flex;
+     transform: translateY(95px);
      justify-content: center;
      align-items: center;
      width: 50%;
@@ -77,3 +73,8 @@ body{
 .content .form .input-form input[type="submit"]:hover{
      background: #f53677;
  }
+.footer{
+	position:fixed;
+	bottom: 0;
+	left: 616px;"
+}
