@@ -2,14 +2,15 @@
 	pageEncoding="UTF-8"%>
 <%@include file="/WEB-INF/jsp/common/define.jsp"%>
 <jsp:include page="/WEB-INF/jsp/common/header.jsp"></jsp:include>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <body>
 <form:form modelAttributes="seatMap">
 <div>
 	<table class="table table-bordered">
-		<tr>
-			<th>日付</th>
+		<tr style="max-width:800px;">
+			<th style="width:100px;">日付</th>
 			<fmt:formatDate value="${reservedDepartureDate}" pattern="yyyy-MM-dd" var="rDDate"/>
-			<td>${rDDate}</td>
+			<td style="width:500px;">${rDDate}</td>
 		</tr>
 		<tr>
 			<th>出発</th>
@@ -34,6 +35,7 @@
 	<div>
 		予約する席を選択して、予約ボタンを押下してください。
 	</div>	
+	<form:form>
 	<table class="table table-bordered">
 		<tr>
 			<th colspan="4">Bản đồ đặt chỗ</th>
@@ -56,16 +58,35 @@
 				</c:forEach>
 				<c:choose>
 							<c:when test="${flag == 0}">
-								<td><b><c:out value="${totalNumberSeat}"/></b>   空席 <input type="checkbox"></td>
+								<td>
+									<div class="form-check">
+  										<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  										<label class="form-check-label" for="flexCheckDefault">
+									   	<b><c:out value="${totalNumberSeat}"/></b>   空席
+									  </label>
+									</div>
+								</td>
 							</c:when>
 							<c:when test="${flag != 0}">
-								<td><b><c:out value="${totalNumberSeat}"/> <u>予約済</u> </b>  </td>
+								<td>
+									<div class="form-check">
+  										<input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedDisabled" checked disabled>
+  										<label class="form-check-label" for="flexCheckCheckedDisabled">
+   											 <b><c:out value="${totalNumberSeat}"/> 予約済 </b>  
+  										</label>
+									</div>
+								</td>
 							</c:when>
 				</c:choose>
 			</c:forEach>
 		</tr>
 		</c:forEach>
 	</table>
+	<div class="d-flex justify-content-center" role="group">
+			<button type="button" class="btn btn-primary">予約</button>
+			<button type="button" class="btn btn-secondary">戻る</button>
+	</div>
+	</form:form>
 </div>
 <script>
 	$(document).ready(function () {
