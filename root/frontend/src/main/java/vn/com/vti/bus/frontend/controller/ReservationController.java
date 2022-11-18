@@ -22,7 +22,7 @@ import vn.com.vti.bus.mapper.SeatMapCustomMapper;
 
 @Controller
 @RequestMapping("/reservation")
-public class ReservationInputController {
+public class ReservationController {
 	
 	@Autowired 
 	private SeatMapCustomMapper seatMapCustomMapper;
@@ -41,6 +41,7 @@ public class ReservationInputController {
 	
 	@RequestMapping("/input")
 	public String input(@RequestParam(value="departureDate")
+
 							@DateTimeFormat(pattern = "yyyy-MM-dd") Date departureDate,
 						@RequestParam(value="routeId") String routeId, 
 						@RequestParam(value="busId") String busId, Model model) {
@@ -74,5 +75,10 @@ public class ReservationInputController {
 		model.addAttribute("seatList", seatList);
 		
 		return "/route/reservationInput";
+	}
+	
+	@RequestMapping("/confirm")
+	public String confirm() {
+		return "";
 	}
 }
