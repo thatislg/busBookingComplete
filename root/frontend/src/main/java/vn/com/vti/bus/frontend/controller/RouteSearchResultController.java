@@ -19,8 +19,15 @@ import vn.com.vti.bus.mapper.RouteCustomMapper;
 public class RouteSearchResultController {
 	@Autowired
 	private RouteCustomMapper routeCustomMapper;
+	
+	@RequestMapping("/index")
+	public String index() {
+		return "route/routeSearchResult";
+	}
+	
+	
 	@RequestMapping("/search")
-	public String Search(@RequestParam(value="departureStationName") String departureStationName,
+	public String search(@RequestParam(value="departureStationName") String departureStationName,
 			@RequestParam(value="arrivalStationName") String arrivalStationName,
 			@RequestParam(value="departureDate") String departureDate,Model model) throws ParseException {
 		String param1 = "%"+departureStationName+"%";
