@@ -155,7 +155,7 @@ header{
 	box-shadow: 0 0 20px rgba(0,0,0,0.15);
 }
 .content-table thead tr {
-	background-color: #009879;
+	background-color: var(--green);
 	color: #fff;
 	text-align: left;
 	font-weight: bold;
@@ -176,7 +176,7 @@ header{
 }
 .content-table em{
 	font-size: 24px;
-	color: #fff;
+	color: skyblue ;
 }
 .footer{
 	color:#fff;

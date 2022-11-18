@@ -8,8 +8,8 @@
 body{
      width: 100%;
      height: 100vh;
-     background:linear-gradient(to bottom,#0d78f6 -75%,#b0d5f2 89%);
      background-size: cover; 
+     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/background6.jpg) center/cover no-repeat;
  }
 .content{
      display: flex;
@@ -21,6 +21,7 @@ body{
      background-color: #fff;
      margin:auto;
      border-radius: 15px;
+     opacity: 0.85;
  }
 .content .form{
      width: 50%;
@@ -31,9 +32,10 @@ body{
      font-size: 1.5em;
      text-transform: uppercase;
      margin-bottom: 20px;
-     border-bottom: 4px solid #214fb1;
+     border-bottom: 4px solid var(--green);
      display: inline-block;
      letter-spacing: 1px;
+     transform: translateX(40px);
  }
  
 .content .form .input-form{
@@ -43,7 +45,7 @@ body{
      font-size: 16px;
      margin-bottom: 5px;
      display: inline-block;
-     color: #607db8;
+     color: #607d8b;
      letter-spacing: 1px;
       }
 .content .form .input-form input{
@@ -58,7 +60,7 @@ body{
      border-radius: 30px;
      }
 .content .form .input-form input[type="submit"]{
-     background: #214fb1;
+     background:var(--green);
      color: #fff;
      outline: none;
      border: none;
@@ -76,5 +78,10 @@ body{
 .footer{
 	position:fixed;
 	bottom: 0;
-	left: 616px;"
+	left: 616px;
+	color:white;
+}
+.site-brand span{
+	font-weight:300;
+	color: var(--green);
 }
