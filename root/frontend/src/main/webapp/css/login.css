@@ -9,7 +9,7 @@ body{
      width: 100%;
      height: 100vh;
      background-size: cover; 
-     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/background6.jpg) center/cover no-repeat;
+     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/background1.jpg) center/cover no-repeat;
  }
 .content{
      display: flex;
