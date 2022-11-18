@@ -43,7 +43,7 @@
 										<td>${param.departureDate}</td>
 										<td>0</td>
 										<td><c:out value="${route.price}"/></td>
-										<td><a href="../route/reservationInput?busId=${route.busId}"><em class="fas fa-file-contract"></em></a></td>
+										<td><a href="../reservation/input?departureDate=${param.departureDate}&routeId=${route.routeId}&busId=${route.busId}"><em class="fas fa-file-contract"></em></a></td>
 									</tr>
 								</c:forEach>
 							</c:when>

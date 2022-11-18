@@ -62,7 +62,7 @@
 									<div class="form-check">
   										<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
   										<label class="form-check-label" for="flexCheckDefault">
-									   	<b><c:out value="${totalNumberSeat}"/></b>   空席
+									   		<b> <c:out value="${totalNumberSeat}"/></b>   空席
 									  </label>
 									</div>
 								</td>
