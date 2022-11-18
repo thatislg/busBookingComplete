@@ -1,0 +1,59 @@
+package vn.com.vti.bus.frontend.form;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+
+public class MemberForm {
+	@NotBlank
+	private String loginId;
+	@NotBlank
+	private String memberName;
+	@NotBlank
+	private String password;
+	@NotBlank
+	@Email
+	private String mailAddress;
+	@NotBlank
+	private String phoneNumber;
+	@NotBlank
+	private String confirmPassword;
+	
+	public String getConfirmPassword() {
+		return confirmPassword;
+	}
+	public void setConfirmPassword(String confirmPassword) {
+		this.confirmPassword = confirmPassword;
+	}
+	public String getLoginId() {
+		return loginId;
+	}
+	public void setLoginId(String loginId) {
+		this.loginId = loginId;
+	}
+	public String getMemberName() {
+		return memberName;
+	}
+	public void setMemberName(String memberName) {
+		this.memberName = memberName;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getMailAddress() {
+		return mailAddress;
+	}
+	public void setMailAddress(String mailAddress) {
+		this.mailAddress = mailAddress;
+	}
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+	
+
+}
