@@ -61,7 +61,5 @@
 	</section>	
 	<!-- end ofsection -->		
 	
-	<!-- js -->
-	<script src = "js/script.js"></script>
-	<!-- end of js -->
+
 <jsp:include page="/WEB-INF/jsp/common/footer.jsp"></jsp:include>
