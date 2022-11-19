@@ -14,6 +14,12 @@
     	<result column="scheduled_departure_time" jdbcType="TIMESTAMP" property="scheduledDepartureTime" />
    	 	<result column="scheduled_arrival_time" jdbcType="TIMESTAMP" property="scheduledArrivalTime" />
    	 	<result column="departure_Date" jdbcType="DATE" property="departureDate" />
+   	 	<result column="row_num" jdbcType="INTEGER" property="rowNum" />
+    	<result column="column_num" jdbcType="INTEGER" property="columnNum" />  	
+   		<result column="total_seats" jdbcType="INTEGER" property="totalSeats" />
+   		<result column="available_seats" jdbcType="INTEGER" property="availableSeats" />
+   		<result column="reserve_id" jdbcType="INTEGER" property="reserveId" />
+  	 	<result column="booked_seats" jdbcType="INTEGER" property="bookedSeats" />
   
    	 	
 	</resultMap>
@@ -58,17 +64,46 @@
 		SELECT
 			T.*
 			,BS1.BUS_STATION_NAME AS ARRIVAL_STATION_NAME
-		FROM (
+			,TS.TOTALSEATS-COALESCE(BOOKEDSEATS,0) AS AVAILABLE_SEATS
+		FROM 
+			(
 			SELECT
 				R.*
 				,BS.BUS_STATION_NAME AS DEPARTURE_STATION_NAME
 			FROM 
 				BUS_STATION AS BS
 				INNER JOIN ROUTE AS R
-					ON BS.BUS_STATION_ID = R.DEPARTURE_ID)
-			T
-				INNER JOIN BUS_STATION AS BS1
+					ON BS.BUS_STATION_ID = R.DEPARTURE_ID
+			) AS T INNER JOIN BUS_STATION AS BS1
 				ON BS1.BUS_STATION_ID = T.ARRIVAL_ID
+				INNER JOIN 
+				
+				(
+				SELECT
+					B.BUS_ID
+					,B.ROW_NUM * B.COLUMN_NUM AS TOTALSEATS
+				 FROM
+					BUS AS B
+				 GROUP BY 	
+					B.BUS_ID 
+				 ORDER BY
+					B.BUS_ID
+				) AS TS
+					ON T.bus_id=TS.bus_id
+					LEFT OUTER JOIN
+			 	 
+				 	(
+					SELECT
+						COUNT(*) AS BOOKEDSEATS
+						,S.BUS_ID
+					FROM
+						RESERVE AS RE
+						INNER JOIN SEAT AS S
+						ON RE.RESERVE_ID=S.RESERVE_ID
+					GROUP BY
+						S.BUS_ID
+					) AS BS
+						ON TS.BUS_ID=BS.BUS_ID
 		WHERE
 			T.DEPARTURE_STATION_NAME LIKE #{departureStationName,jdbcType=VARCHAR}
 			AND BS1.BUS_STATION_NAME LIKE #{arrivalStationName,jdbcType=VARCHAR}

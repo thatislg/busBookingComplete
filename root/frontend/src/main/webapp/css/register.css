@@ -13,15 +13,15 @@
 body{
      width: 100%;
      height: 97vh;
-     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/bus2.jpg) center/cover no-repeat;
+     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/bus1.jpg) center/cover no-repeat;
  }
 .content{
      display: flex;
-     transform: translateY(95px);
+     transform: translateY(100px);
      justify-content: center;
      align-items: center;
      width: 50%;
-     height: 70%;
+     height: 85%;
      background-color: #fff;
      margin:auto;
      border-radius: 15px;
@@ -29,6 +29,7 @@ body{
  }
 .content .form{
      width: 60%;
+     transform: translateX(-18px);
  }
 .content .form h2{
      color: #607d8b;
@@ -39,15 +40,16 @@ body{
      border-bottom: 4px solid var(--green);
      display: inline-block;
      letter-spacing: 1px;
-     transform: translateX(90px);
+     transform: translateX(165px);
  }
  
 .content .form .input-form{
      margin-bottom: 20px;
+     font-size: 16px;
  }
 .content .form .input-form span{
-     font-size: 16px;
-     margin-bottom: 5px;
+     font-size: 1px;
+     margin-bottom: 10px;
      display: inline-block;
      color: #607d8b;
      letter-spacing: 1px;
@@ -63,20 +65,25 @@ body{
      background: transparent;
      border-radius: 30px;
      }
-.content .form .input-form input[type="submit"]{
+.content .form input[type="submit"]{
      background:var(--green);
      color: #fff;
      outline: none;
      border: none;
      font-weight: 500;
+     font-size: 16px;
      cursor: pointer;
      box-shadow: 0 1px 1px rgba(0,0,0,0.12),
                 0 2px 2px rgba(0,0,0,0.12),
                 0 4px 4px rgba(0,0,0,0.12),
                0 8px 8px rgba(0,0,0,0.12),
                0 16px 16px rgba(0,0,0,0.12);
+     padding: 10px 20px;
+     border-radius: 30px;
+     width: 160px;
+     transform: translateX(67px);
  }
-.content .form .input-form input[type="submit"]:hover{
+.content .form input[type="submit"]:hover{
      background: #f53677;
  }
 .footer{

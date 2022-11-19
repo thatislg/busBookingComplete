@@ -2,8 +2,8 @@
     pageEncoding="UTF-8"%>
    <%@include file="/WEB-INF/jsp/common/define.jsp"%>
 <jsp:include page="/WEB-INF/jsp/common/header.jsp"></jsp:include>
+<link rel="stylesheet" href="http://localhost:9082/css/style.css"/>
 
-<body>
 	<header class = "flex">
 		<div class = "container">
 			<div class = "header-title">
@@ -59,7 +59,7 @@
 		    </div>
 		</section>
 	</section>	
-	<!-- end ofsection -->		
+	<!-- end of section -->		
 	
 
 <jsp:include page="/WEB-INF/jsp/common/footer.jsp"></jsp:include>

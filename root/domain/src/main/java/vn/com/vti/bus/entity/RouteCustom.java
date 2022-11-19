@@ -25,6 +25,16 @@ public class RouteCustom {
    private Date scheduledDepartureTime;
 
    private Date scheduledArrivalTime;
+   
+   private Integer availableSeats;
+
+public Integer getAvailableSeats() {
+	return availableSeats;
+}
+
+public void setAvailableSeats(Integer availableSeats) {
+	this.availableSeats = availableSeats;
+}
 
 public Integer getRouteId() {
 	return routeId;

@@ -1,11 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
    <%@include file="/WEB-INF/jsp/common/define.jsp"%>
-  <jsp:include page="/WEB-INF/jsp/common/header.jsp"></jsp:include>
-<link rel="stylesheet" href="../css/normalize.css"> 
-<link rel="stylesheet" href="../css/utility.css"> 
-<link rel="stylesheet" href="/css/style2.css"> 
-<link rel="stylesheet" href="../css/responsive.css"> 
+<jsp:include page="/WEB-INF/jsp/common/header.jsp"></jsp:include>
+<link rel="stylesheet" href="http://localhost:9082/css/style2.css"> 
 <title>路線検索結果</title>
 <body>
 	
@@ -41,7 +38,7 @@
 										<td><c:out value="${route.departureStationName}(${sDTime})"/></td>					
 										<td><c:out value="${route.arrivalStationName}(${sATime})"/></td>
 										<td>${param.departureDate}</td>
-										<td>0</td>
+										<td><c:out value="${route.availableSeats}"/></td>
 										<td><c:out value="${route.price}"/></td>
 										<td><a href="../reservation/input?departureDate=${param.departureDate}
 																		&routeId=${route.routeId}
