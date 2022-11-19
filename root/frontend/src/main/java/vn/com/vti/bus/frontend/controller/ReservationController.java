@@ -1,5 +1,6 @@
 package vn.com.vti.bus.frontend.controller;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -86,7 +87,11 @@ public class ReservationController {
 	}
 	
 	@RequestMapping("/confirm")
-	public String confirm() {
+	public String confirm(@RequestParam(value="currentReservedSeat") List<String> currentReservedSeat,
+																					Model model) {
+		ArrayList<String> inputedCurrentReservedSeat = new ArrayList<>(currentReservedSeat);
+		model.addAttribute("inputedCurrentReservedSeat", inputedCurrentReservedSeat);
+		
 		return "/route/reservationConfirm";
 	}
 }

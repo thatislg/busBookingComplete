@@ -3,8 +3,7 @@
 <%@include file="/WEB-INF/jsp/common/define.jsp"%>
 <jsp:include page="/WEB-INF/jsp/common/header.jsp"></jsp:include>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" 
-	  rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" 
-	  crossorigin="anonymous">
+	  rel="stylesheet">
 <body>
 <form:form modelAttributes="seatMap">
 <div>
@@ -37,7 +36,7 @@
 	<div>
 		予約する席を選択して、予約ボタンを押下してください。
 	</div>	
-	<form:form method="GET">
+	<form:form method="POST">
 	<table class="table table-bordered">
 		<tr>
 			<th colspan="4">Bản đồ đặt chỗ</th>
@@ -62,9 +61,9 @@
 							<c:when test="${flag == 0}">
 								<td>
 									<div class="form-check">
-  										<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  										<input class="form-check-input" type="checkbox" value="${totalNumberSeat}" id="flexCheckDefault" name="currentReservedSeat">
   										<label class="form-check-label" for="flexCheckDefault">
-									   		<b> <c:out value="${totalNumberSeat}"/></b>   空席
+									   		<b> <c:out value="${totalNumberSeat}" /> </b>   空席
 									  </label>
 									</div>
 								</td>
@@ -85,16 +84,20 @@
 		</c:forEach>
 	</table>
 	<div class="d-flex justify-content-center" role="group">
-	
-	
+		<form:form method="POST">
+			<input type="hidden" name="currentReservedSeat" value="${currentReservedSeat}"/>
+			<input type="hidden" name="departureStationName" value="${inputedDepartureNameInfo}"/>
+			<input type="hidden" name="arrivalStationName" value="${inputedArrivalNameInfo}"/>
+			<input type="hidden" name="departureDate" value="${rDDate}"/>
 			<input type="submit" class="btn btn-primary" value="予約" formaction="/reservation/confirm"/>
-			
-			
+		</form:form>
+		<form:form>
 			<input type="hidden" name="departureStationName" value="${inputedDepartureNameInfo}"/>
 			<input type="hidden" name="departureDate" value="${rDDate}"/>
 			<input type="hidden" name="arrivalStationName" value="${inputedArrivalNameInfo}"/>
 			<input type="submit" class="btn btn-secondary" value="戻る" 
-				 formaction="../routeSearch/search?"/>
+				 formaction="../routeSearch/search"/>
+		</form:form>
 	</div>
 	</form:form>
 </div>
