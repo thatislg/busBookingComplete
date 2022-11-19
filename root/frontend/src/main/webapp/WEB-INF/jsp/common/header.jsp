@@ -10,10 +10,10 @@
 <title>VTI BUS</title>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
-<link rel="stylesheet" href="css/normalize.css"/>
-<link rel="stylesheet" href="css/utility.css"/>
-<link rel="stylesheet" href="css/style.css"/>
-<link rel="stylesheet" href="css/responsive.css"/>
+<link rel="stylesheet" href="http://localhost:9082/css/normalize.css"/>
+<link rel="stylesheet" href="http://localhost:9082/css/utility.css"/>
+<link rel="stylesheet" href="http://localhost:9082/css/style.css"/>
+<link rel="stylesheet" href="http://localhost:9082/css/responsive.css"/>
 </head>
 
 	<!-- navbar -->
@@ -36,7 +36,7 @@
 						<li class="nav-item"><a href="/routeSearch/index" class="nav-link">路線検索</a></li>
 						<li class="nav-item">
 							<form:form action="/logout" name="logoutForm" id="logoutForm" style="display:inline-flex">
-								<a class="nav-link" href="javascript:logoutForm.submit()">ログアウト</a>
+								<a class="nav-link" onclick ="document.logoutForm.submit()">ログアウト</a>
 							</form:form>
 						</li>
 					</sec:authorize>
