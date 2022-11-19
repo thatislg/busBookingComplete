@@ -8,3 +8,5 @@
 		<p style="text-align:center;text-color:#fff;">Copyright © 2022 Bacs_team</p>
 	</div>
 
+</body>
+</html>

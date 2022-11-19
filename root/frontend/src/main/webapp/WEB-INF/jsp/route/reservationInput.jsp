@@ -28,7 +28,7 @@
 	<table class="table table-bordered">
 		<tr>
 			<th>1席あたりの料金</th>
-			<td>${routeInfo.price}</td>
+			<td>¥${routeInfo.price}</td>
 		</tr>
 	</table>
 </div>
@@ -85,10 +85,10 @@
 	</table>
 	<div class="d-flex justify-content-center" role="group">
 		<form:form method="POST">
-			<input type="hidden" name="currentReservedSeat" value="${currentReservedSeat}"/>
-			<input type="hidden" name="departureStationName" value="${inputedDepartureNameInfo}"/>
-			<input type="hidden" name="arrivalStationName" value="${inputedArrivalNameInfo}"/>
+			<!--  <input type="hidden" name="currentReservedSeat" value="${currentReservedSeat}"/>-->
 			<input type="hidden" name="departureDate" value="${rDDate}"/>
+			<input type="hidden" name="routeId" value="${routeInfo.routeId}"/>
+			<input type="hidden" name="busId" value="${busInfo.busId}"/>
 			<input type="submit" class="btn btn-primary" value="予約" formaction="/reservation/confirm"/>
 		</form:form>
 		<form:form>
