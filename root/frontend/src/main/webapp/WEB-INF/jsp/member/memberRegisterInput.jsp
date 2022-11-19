@@ -48,7 +48,7 @@
 			   		<form:input path="confirmPassword" class="form-control" placeholder="パスワードを入力(確認)"/>
 			 	</div>
 		 	</div>
-		 	<input class="btn btn-primary" type="submit" value="登録" formaction="confirm"/> <input class="btn btn-primary" type="submit" value="戻る" formaction="/loginOrMemberRegister"/>
+		 	<input class="btn btn-primary" type="submit" value="登録" formaction="confirm"/> <input class="btn btn-primary" type="submit" value="戻る" formaction="/login"/>
 		</form:form>
 	</div>
 </div> 
