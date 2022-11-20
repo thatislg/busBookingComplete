@@ -66,7 +66,6 @@ body{
      border-radius: 30px;
      }
 .content .form input[type="submit"]{
-     background:var(--green);
      color: #fff;
      outline: none;
      border: none;
@@ -83,6 +82,12 @@ body{
      width: 160px;
      transform: translateX(67px);
  }
+.content .form .registBtn{
+	 background:var(--green);
+}
+.content .form .returnBtn{
+	 background:blue;
+}
 .content .form input[type="submit"]:hover{
      background: #f53677;
  }

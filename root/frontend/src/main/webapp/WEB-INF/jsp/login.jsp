@@ -6,8 +6,7 @@
 <body>
 	<div class="content">
 		<div class="form">
-			<form:form class="form-signin" modelAttribute="loginForm"
-				action="auth">
+			<form:form class="form-signin" modelAttribute="loginForm" action="auth">
 				<h2>VTI-BUSへようこそ！</h2>
 				<div class="input-form">
 					<span>ログインID</span>
@@ -22,8 +21,13 @@
 						required="required" value="" />
 				</div>
 				<div class="input-form">
-					<input type="submit" class="btn btn-primary btn-block mt-4 mb-4"
-						value="ログイン" />
+					<input type="submit" class="loginBtn" value="ログイン" />
+				</div>
+			</form:form>
+			<form:form action="/memberRegister/input">
+				<h3>--会員登録をお持ちでない方--</h3>	
+				<div class="input-form">
+						<input type="submit" class="registBtn" value="会員登録" />
 				</div>
 			</form:form>
 		</div>
