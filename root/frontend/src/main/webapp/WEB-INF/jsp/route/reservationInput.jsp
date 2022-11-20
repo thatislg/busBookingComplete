@@ -4,7 +4,8 @@
 <jsp:include page="/WEB-INF/jsp/common/header.jsp"></jsp:include>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" 
 	  rel="stylesheet">
-<body>
+	  
+<!-- BEGIN  -->
 <form:form modelAttributes="seatMap">
 <div>
 	<table class="table table-bordered">
@@ -106,5 +107,6 @@
 		$('#reserveList').DataTable();
 	});
 </script>
-</body>
+
+<!-- END  -->
 <jsp:include page="/WEB-INF/jsp/common/footer.jsp"></jsp:include>

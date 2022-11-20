@@ -6,6 +6,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -124,7 +126,18 @@ public class ReservationController {
 	}
 	
 	@RequestMapping("/insert")
-	public String insert() {
+	public String insert(Model model) {
+		// Lấy loginId của người đang đăng nhập
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		String currentPrincipleName = authentication.getName();
+		
+		if(currentPrincipleName.isEmpty()) {
+			System.out.println("Cần đăng nhập");
+		} else {
+			model.addAttribute("currentLoginId", currentPrincipleName);
+		}
+		
+		
 		
 		return "/route/reservationInsert";
 	}
