@@ -100,6 +100,8 @@
 						RESERVE AS RE
 						INNER JOIN SEAT AS S
 						ON RE.RESERVE_ID=S.RESERVE_ID
+					WHERE 
+						departure_date = #{departureDate,jdbcType=DATE}
 					GROUP BY
 						S.BUS_ID
 					) AS BS

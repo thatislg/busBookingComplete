@@ -25,7 +25,7 @@
 				</div>
 			</form:form>
 			<form:form action="/memberRegister/input">
-				<h3>--会員ではない方--</h3>	
+				<h3>--会員登録をお持ちでない方--</h3>	
 				<div class="input-form">
 						<input type="submit" class="registBtn" value="会員登録" />
 				</div>
