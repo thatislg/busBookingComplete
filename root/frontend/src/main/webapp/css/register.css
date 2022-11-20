@@ -40,7 +40,7 @@ body{
      border-bottom: 4px solid var(--green);
      display: inline-block;
      letter-spacing: 1px;
-     transform: translateX(180px);
+     transform: translateX(165px);
  }
  
 .content .form .input-form{

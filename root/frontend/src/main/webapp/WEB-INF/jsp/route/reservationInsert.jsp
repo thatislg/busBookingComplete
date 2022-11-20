@@ -6,5 +6,11 @@
 	  rel="stylesheet">
 <!-- BEGIN  -->
 Người đang đăng nhập là :<c:out value="${currentLoginId}"/>
+<br>
+
+<c:forEach items="${reserveInfo}" var="routes">
+	<c:out value="${routes.reserveId}"/>
+</c:forEach>
+
 <!-- END  -->
 <jsp:include page="/WEB-INF/jsp/common/footer.jsp"></jsp:include>
