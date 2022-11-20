@@ -92,6 +92,9 @@ body{
 .content .form .input-form .registBtn{
 	background:blue;
 }
+.content .form-regist {
+	 transform: translateY(40px);
+}
 .content .form .input-form input[type="submit"]:hover{
      background: #f53677;
  }

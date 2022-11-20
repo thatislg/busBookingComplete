@@ -24,7 +24,7 @@
 					<input type="submit" class="loginBtn" value="ログイン" />
 				</div>
 			</form:form>
-			<form:form action="/memberRegister/input">
+			<form:form class="form-regist" action="/memberRegister/input">
 				<h3>--会員登録をお持ちでない方--</h3>	
 				<div class="input-form">
 						<input type="submit" class="registBtn" value="会員登録" />
