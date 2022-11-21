@@ -12,34 +12,34 @@
 				<h2>会員登録</h2>
 				<div class="input-form">
 					<form:errors path="memberName" element="p"/>
-			  	 	<label for="memberName" class="form-label"><spring:message code="memberForm.memberName"/>:</label>
+			  	 	<label for="memberName" class="form-label"><spring:message code="memberForm.memberName"/></label>
 			   		<form:input path="memberName" class="form-control" placeholder="氏名を入力"/>
 				 </div>
 				 <div class="input-form">	
 			 		<form:errors path="phoneNumber" element="p"/>
-					<label for="phoneNumber" class="form-label"><spring:message code="memberForm.phoneNumber"/>:</label>
+					<label for="phoneNumber" class="form-label"><spring:message code="memberForm.phoneNumber"/></label>
 				   	<form:input path="phoneNumber" class="form-control" placeholder="電話番号を入力"/>
 				 </div>
 			 	<div class="input-form">				 	
 			 		<form:errors path="mailAddress" element="p"/>
-				  	<label for="mailAddress" class="form-label"><spring:message code="memberForm.mailAddress"/>:</label>
+				  	<label for="mailAddress" class="form-label"><spring:message code="memberForm.mailAddress"/></label>
 				   	<form:input path="mailAddress" class="form-control" placeholder="メールを入力" />
 				 </div>
 			 	<div class="input-form">
 			 		<form:errors path="loginId" element="p"/>
 			 		<p><c:out value="${errMsg2 }"></c:out></p>
-			   		<label for="loginId" class="form-label"><spring:message code="memberForm.loginId"/>:</label>
+			   		<label for="loginId" class="form-label"><spring:message code="memberForm.loginId"/></label>
 			   		<form:input path="loginId" class="form-control" placeholder="ログインIDを入力"/>
 			 	</div>			 	
 			 	<div class="input-form">
 				 		<form:errors path="password" element="p"/>
 				 		<p><c:out value="${errMsg }"></c:out></p>
-				   		<label for="password" class="form-label"><spring:message code="memberForm.password"/>:</label>
+				   		<label for="password" class="form-label"><spring:message code="memberForm.password"/></label>
 				   		<form:input path="password" class="form-control" placeholder="パスワードを入力"/>
 				 </div>
 			 	<div class="input-form">
 			 		<form:errors path="confirmPassword" element="p"/>
-			   		<label for="confirmPassword" class="form-label"><spring:message code="memberForm.confirmPassword"/>:</label>
+			   		<label for="confirmPassword" class="form-label"><spring:message code="memberForm.confirmPassword"/></label>
 			   		<form:input path="confirmPassword" class="form-control" placeholder="パスワードを入力(確認)"/>
 			 	</div>
 			 	

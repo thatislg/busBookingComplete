@@ -24,12 +24,8 @@
 					<input type="submit" class="loginBtn" value="ログイン" />
 				</div>
 			</form:form>
-			<form:form action="/memberRegister/input">
-<<<<<<< HEAD
-				<h3>--会員ではない方--</h3>	
-=======
+			<form:form class="form-regist" action="/memberRegister/input">
 				<h3>--会員登録をお持ちでない方--</h3>	
->>>>>>> parent of c6fd72f (no message)
 				<div class="input-form">
 						<input type="submit" class="registBtn" value="会員登録" />
 				</div>
