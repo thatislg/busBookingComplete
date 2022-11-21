@@ -19,7 +19,7 @@
 	<!-- navbar -->
 	<nav class="navbar">
 		<div class="container flex">
-			<a href="" class="site-brand"> VTI<span>BUS</span>
+			<a href="/" class="site-brand"> VTI<span>BUS</span>
 			</a>
 			<ul class="navbar-nav">
 				<sec:authorize access="hasRole('ROLE_MEMBER')">
