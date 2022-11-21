@@ -9,6 +9,8 @@
 		<result column="reserved_date" jdbcType="TIMESTAMP" property="reservedDate" />
 		<result column="price" jdbcType="INTEGER" property="price" />
 		<result column="bus_id" jdbcType="INTEGER" property="busId" />
+		<result column="departure_name" jdbcType="INTEGER" property="departureName" />
+		<result column="arrival_name" jdbcType="INTEGER" property="arrivalName" />
 	</resultMap>
 	
 	<select id="selectMemberReservationByMemberId" resultMap="reserveCustom">
@@ -19,13 +21,20 @@
 			,RO.ARRIVAL_ID
 			,RO.PRICE
 			,RO.BUS_ID
+			,BS.BUS_STATION_NAME AS DEPARTURE_NAME
+			,BS1.BUS_STATION_NAME AS ARRIVAL_NAME
+		
 		FROM 
 			RESERVE AS R
 			INNER JOIN MEMBER AS M
 				ON R.MEMBER_ID = M.MEMBER_ID
 				INNER JOIN ROUTE AS RO
 					ON R.ROUTE_ID = RO.ROUTE_ID	
+				INNER JOIN BUS_STATION AS BS
+					ON BS.BUS_STATION_ID = RO.DEPARTURE_ID
+					INNER JOIN BUS_STATION AS BS1
+						ON BS1.BUS_STATION_ID = RO.ARRIVAL_ID
 		WHERE 
-			M.MEMBER_ID =  #{memberId};
+			M.MEMBER_ID = #{memberId};
 	</select>
 </mapper>

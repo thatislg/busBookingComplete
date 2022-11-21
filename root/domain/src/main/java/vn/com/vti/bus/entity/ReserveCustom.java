@@ -21,6 +21,26 @@ public class ReserveCustom {
 	private Integer price;
 	
 	private Integer busId;
+	
+	private String departureName;
+	
+	private String arrivalName;
+
+	public String getDepartureName() {
+		return departureName;
+	}
+
+	public void setDepartureName(String departureName) {
+		this.departureName = departureName;
+	}
+
+	public String getArrivalName() {
+		return arrivalName;
+	}
+
+	public void setArrivalName(String arrivalName) {
+		this.arrivalName = arrivalName;
+	}
 
 	public Date getReservedDate() {
 		return reservedDate;
