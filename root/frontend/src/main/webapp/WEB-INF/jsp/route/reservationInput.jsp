@@ -62,7 +62,7 @@
 							<c:when test="${flag == 0}">
 								<td>
 									<div class="form-check">
-  										<input class="form-check-input" type="checkbox" value="${totalNumberSeat}" id="flexCheckDefault" name="currentReservedSeat">
+  										<input class="form-check-input" type="checkbox" value="${totalNumberSeat}" id="flexCheckDefault" name="currentReservedSeat" >
   										<label class="form-check-label" for="flexCheckDefault">
 									   		<b> <c:out value="${totalNumberSeat}" /> </b>   空席
 									  </label>
