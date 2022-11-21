@@ -7,6 +7,8 @@
 		<result column="departure_id" jdbcType="INTEGER" property="departureId" />
 		<result column="arrival_id" jdbcType="INTEGER" property="arrivalId" />
 		<result column="reserved_date" jdbcType="TIMESTAMP" property="reservedDate" />
+		<result column="departure_date" jdbcType="DATE" property="departureDate" />
+		<result column="reserve_id" jdbcType="INTEGER" property="reserveId" />
 		<result column="price" jdbcType="INTEGER" property="price" />
 		<result column="bus_id" jdbcType="INTEGER" property="busId" />
 		<result column="departure_name" jdbcType="INTEGER" property="departureName" />
@@ -23,6 +25,8 @@
 			,RO.BUS_ID
 			,BS.BUS_STATION_NAME AS DEPARTURE_NAME
 			,BS1.BUS_STATION_NAME AS ARRIVAL_NAME
+			,R.DEPARTURE_DATE
+			,R.RESERVE_ID
 		
 		FROM 
 			RESERVE AS R

@@ -24,7 +24,27 @@ public class ReserveCustom {
 	
 	private String departureName;
 	
+	public Date getDepartureDate() {
+		return departureDate;
+	}
+
+	public void setDepartureDate(Date departureDate) {
+		this.departureDate = departureDate;
+	}
+
+	public Integer getReserveId() {
+		return reserveId;
+	}
+
+	public void setReserveId(Integer reserveId) {
+		this.reserveId = reserveId;
+	}
+
 	private String arrivalName;
+	
+	private Date departureDate;
+	
+	private Integer reserveId;
 
 	public String getDepartureName() {
 		return departureName;
