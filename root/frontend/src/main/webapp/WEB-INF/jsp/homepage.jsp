@@ -8,7 +8,7 @@
 		<div class = "container">
 			<div class = "header-title">
 				<h1>ENJOY YOUR JOURNEYS<br>ENJOY YOUR LIFE</h1>
-				<p>いいバスに乗って自分のツアーをより楽しくしよう！</p>
+				<p>心地良いバスに乗り、自分のツアーを最も楽しもう！</p>
 			</div>
 			<div class = "header-form">
 				<h2>路線選択</h2>
