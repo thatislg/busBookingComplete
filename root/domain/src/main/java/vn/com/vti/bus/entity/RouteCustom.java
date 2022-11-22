@@ -27,6 +27,26 @@ public class RouteCustom {
    private Date scheduledArrivalTime;
    
    private Integer availableSeats;
+   
+   private Integer rowNum;
+   
+   private Integer columnNum;
+
+public Integer getRowNum() {
+	return rowNum;
+}
+
+public void setRowNum(Integer rowNum) {
+	this.rowNum = rowNum;
+}
+
+public Integer getColumnNum() {
+	return columnNum;
+}
+
+public void setColumnNum(Integer columnNum) {
+	this.columnNum = columnNum;
+}
 
 public Integer getAvailableSeats() {
 	return availableSeats;

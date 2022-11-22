@@ -20,8 +20,7 @@
    		<result column="available_seats" jdbcType="INTEGER" property="availableSeats" />
    		<result column="reserve_id" jdbcType="INTEGER" property="reserveId" />
   	 	<result column="booked_seats" jdbcType="INTEGER" property="bookedSeats" />
-  
-   	 	
+ 
 	</resultMap>
 	
 	<select id="selectById" resultMap="routeCustom">
@@ -111,6 +110,29 @@
 			AND BS1.BUS_STATION_NAME LIKE #{arrivalStationName,jdbcType=VARCHAR}
 			AND #{departureDate,jdbcType=DATE} BETWEEN T.OPERATION_START_DATE AND T.OPERATION_END_DATE;
 		 
+	</select>
+	
+	<select id="selectRouteInfoByRouteId" resultMap="routeCustom">
+	SELECT
+		RO.PRICE
+		,RO.SCHEDULED_DEPARTURE_TIME
+		,RO.SCHEDULED_ARRIVAL_TIME
+		,B.BUS_STATION_NAME AS DEPARTURE_STATION_NAME
+		,B1.BUS_STATION_NAME AS ARRIVAL_STATION_NAME
+		,BUS.ROW_NUM
+		,BUS.COLUMN_NUM
+	FROM
+		ROUTE AS RO
+		INNER JOIN BUS_STATION AS B
+			ON RO.DEPARTURE_ID = B.BUS_STATION_ID
+		INNER JOIN BUS_STATION AS B1
+			ON RO.ARRIVAL_ID = B1.BUS_STATION_ID
+			INNER JOIN BUS
+			ON RO.BUS_ID = BUS.BUS_ID
+	WHERE
+		RO.ROUTE_ID = #{searchRouteId};
+	
+	
 	</select>
 	
 	

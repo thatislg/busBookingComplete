@@ -14,5 +14,8 @@ public interface RouteCustomMapper {
 	
 	List<RouteCustom> selectByNamePart(String departureStationName,String arrivalStationName,Date departureDate);
 	
+	public RouteCustom selectRouteInfoByRouteId(Integer searchRouteId);
+	
+	
 }
 
