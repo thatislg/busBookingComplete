@@ -4,19 +4,19 @@
 <jsp:include page="/WEB-INF/jsp/common/header.jsp"></jsp:include>
 <link rel="stylesheet" href="http://localhost:9082/css/style.css"/>
 
-	<header class = "flex">
+	<header class = "flex" style="background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/bus5.jpg) center/cover no-repeat;">
 		<div class = "container">
-			<div class = "header-title">
+			<div class = "title">
 				<h1>ENJOY YOUR JOURNEYS<br>ENJOY YOUR LIFE</h1>
 				<p>心地良いバスに乗り、自分のツアーを最も楽しもう！</p>
 			</div>
 			<div class = "header-form">
 				<h2>路線選択</h2>
 				<form class = "flex" action = "routeSearch/search">
-					<input type = "text" class = "form-control" placeholder = "出発地" name="departureStationName" required/>
-					<input type = "date" class = "form-control" placeholder = "Date" name="departureDate" required/>
-					<input type = "text" class = "form-control" placeholder = "到着地" name="arrivalStationName" required/>
-					<input type = "submit" class = "btn" value = "検索" />
+					<input type = "text" class = "form-control" placeholder = "出発地" name="departureStationName" oninvalid="this.setCustomValidity('入力必須')" onchange="this.setCustomValidity('')" required/>
+					<input type = "date" class = "form-control" placeholder = "Date" name="departureDate" oninvalid="this.setCustomValidity('選択必須')" onchange="this.setCustomValidity('')" required/>
+					<input type = "text" class = "form-control" placeholder = "到着地" name="arrivalStationName" oninvalid="this.setCustomValidity('入力必須')" onchange="this.setCustomValidity('')" required/>
+					<input type = "submit" class = "btn" value = "検索"/>
 				</form>
 			</div>
 		</div>

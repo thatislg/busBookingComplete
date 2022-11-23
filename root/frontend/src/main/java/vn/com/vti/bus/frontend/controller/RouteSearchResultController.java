@@ -22,7 +22,7 @@ public class RouteSearchResultController {
 	
 	@RequestMapping("/index")
 	public String index() {
-		return "route/routeSearchResult";
+		return "route/routeSearch";
 	}
 	
 	

@@ -2,16 +2,27 @@
     pageEncoding="UTF-8"%>
    <%@include file="/WEB-INF/jsp/common/define.jsp"%>
 <jsp:include page="/WEB-INF/jsp/common/header.jsp"></jsp:include>
-<link rel="stylesheet" href="http://localhost:9082/css/style2.css"> 
-<title>路線検索結果</title>
-<body>
+<link rel="stylesheet" href="http://localhost:9082/css/style.css"> 
+
+<title>路線検索</title>
+<body style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/bus4.jpg) center/cover no-repeat;">
 	
 	<!-- header -->
 	<header class = "flex">
 		<div class = "container">
-			<div class = "header-title">
-				<h1>路線検索結果</h1>
+			<div class = "title">
+				<h1>路線検索</h1>
 			</div>
+			<div class = "search-form">
+				<h2>路線選択</h2>
+				<form class = "flex" action = "../routeSearch/search" name="searchForm">
+					<input type = "text" class = "form-control" value="${param.departureStationName}" name="departureStationName"  oninvalid="this.setCustomValidity('入力必須')" onchange="this.setCustomValidity('')" required/>
+					<input type = "date" class = "form-control" value="${param.departureDate}" name="departureDate" oninvalid="this.setCustomValidity('選択必須')" onchange="this.setCustomValidity('')" required/>
+					<input type = "text" class = "form-control" value="${param.arrivalStationName}" name="arrivalStationName"  oninvalid="this.setCustomValidity('入力必須')" onchange="this.setCustomValidity('')" required/>
+					<input type = "submit" class = "btn" value = "検索"/>
+				</form>
+			</div>
+			<br>
 			<div class = "header-form">
 				<table id="routeSearchResult" class="content-table">
 					<thead>
@@ -61,5 +72,4 @@
 	</header>
 	<!-- header -->
 <jsp:include page="/WEB-INF/jsp/common/footer.jsp"></jsp:include>
-</body>
-</html>
+
