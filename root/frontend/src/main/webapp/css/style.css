@@ -82,6 +82,12 @@ header{
 	padding: 3rem;
 	border-radius: 0.2rem;
 }
+.list{
+	background: white;
+	padding: 3rem;
+	border-radius: 0.2rem;
+	opacity:0.8;
+}
 .header-form form{
 	flex-direction: row;
 	align-items: stretch;
