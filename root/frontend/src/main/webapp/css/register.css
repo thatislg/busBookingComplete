@@ -7,7 +7,7 @@
 body{
      width: 100%;
      height: 97vh;
-     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/bus8.jpg) center/cover no-repeat;
+     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/bus7.jpeg) center/cover no-repeat;
  }
 .content{
      display: flex;
