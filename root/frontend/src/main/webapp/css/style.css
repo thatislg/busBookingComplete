@@ -63,7 +63,9 @@ header{
 .search-form,.search-form2,.header-form{
 	background: rgba(0,0,0,0.5);
 }
-
+.search-form2 input[type = "date"],.header-form input[type = "date"]{
+	text-transform: uppercase;
+}
 /* home page */
 .header-form{
 	padding: 3rem;
@@ -83,9 +85,6 @@ header{
 }
 .header-form form .form-control{
 	box-shadow: 2px 4px 4px rgba(0,0,0,0.4);
-}
-.header-form input[type = "date"]{
-	text-transform: uppercase;
 }
 .header-form input:not([type = "submit"]) ::placeholder{
 	color: #fff;

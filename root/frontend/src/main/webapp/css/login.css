@@ -5,97 +5,83 @@
 	--trans: all 0.3s ease-in-out;
 }
 body{
-     width: 100%;
-     height: 97vh;
-     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/bus1.jpg) center/cover no-repeat;
- }
-.content{
-     display: flex;
-     transform: translateY(95px);
-     justify-content: center;
-     align-items: center;
-     width: 50%;
-     height: 70%;
-     background-color: #fff;
-     margin:auto;
-     border-radius: 15px;
-     opacity: 0.8;
- }
-.content .form{
-     width: 60%;
- }
-.content .form h2{
-     color: #607d8b;
-     font-weight: 500;
-     font-size: 1.5em;
-     text-transform: uppercase;
-     margin-bottom: 20px;
-     border-bottom: 4px solid var(--green);
-     display: inline-block;
-     letter-spacing: 1px;
-     transform: translateX(90px);
- }
- .content .form h3{
-     font-weight: 500;
-     font-size: 1em;
-     text-transform: uppercase;
-     margin-bottom: 20px;
-     display: inline-block;
-     letter-spacing: 1px;
-     transform: translateX(93px);
- }
- 
-.content .form .input-form{
-     margin-bottom: 20px;
-     transform: translateX(-20px);
- }
-.content .form .input-form span{
-     font-size: 16px;
-     margin-bottom: 5px;
-     display: inline-block;
-     color: #607d8b;
-     letter-spacing: 1px;
-      }
-.content .form .input-form input{
-     width: 100%;
-     padding: 10px 20px;
-     outline: none;
-     border: 1px solid #607d8b;
-     font-size: 16px;
-     letter-spacing: 1px;
-     color: #607d8b;
-     background: transparent;
-     border-radius: 30px;
-     }
-.content .form .input-form input[type="submit"]{
-     transform: translateX(22px);
-     color: #fff;
-     outline: none;
-     border: none;
-     font-weight: 500;
-     cursor: pointer;
-     box-shadow: 0 1px 1px rgba(0,0,0,0.12),
-                0 2px 2px rgba(0,0,0,0.12),
-                0 4px 4px rgba(0,0,0,0.12),
-               0 8px 8px rgba(0,0,0,0.12),
-               0 16px 16px rgba(0,0,0,0.12);
- }
-.content .form .input-form .loginBtn{
-	background:var(--green);
+  	padding-top: 8rem;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/bus1.jpg) center/cover no-repeat;
 }
-.content .form .input-form .registBtn{
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 33rem;
+    background-color: #fff;
+    margin:auto;
+    border-radius: 15px;
+    opacity: 0.8;
+}
+.content .form{
+    width: 60%;
+}
+.content .form h2{
+    color: #607d8b;
+    font-weight: 500;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    border-bottom: 4px solid var(--green);
+    letter-spacing: 1px;
+    text-align: center;
+}
+ .content .form h3{
+	font-weight: 500;
+	margin-top: 60px;
+	letter-spacing: 1px;
+	text-align: center;
+}
+.content .form .input-form,.submitBtn{
+    margin-bottom: 20px;  
+}
+.content .form .input-form span{
+	font-size: 16px;
+	margin-bottom: 5px;
+	display: inline-block;
+	color: #607d8b;
+	letter-spacing: 1px;
+}
+.content .form .input-form input,.submitBtn input{
+	padding: 10px 20px;
+	border: 1px solid #607d8b;
+	letter-spacing: 1px;
+	color: #607d8b;
+	background: transparent;
+	border-radius: 30px;
+	width: 90%;     
+}
+.content .form .submitBtn input[type="submit"]{
+ 	color: #fff;
+	border: none;
+ 	cursor: pointer;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.12),
+            0 2px 2px rgba(0,0,0,0.12),
+            0 4px 4px rgba(0,0,0,0.12),
+           0 8px 8px rgba(0,0,0,0.12),
+           0 16px 16px rgba(0,0,0,0.12); 
+}
+.content .form .submitBtn {
+	display: flex;
+    justify-content: center;   
+}  
+.content .form .submitBtn .loginBtn{
+	background:var(--green);
+	
+}
+.content .form .submitBtn .registBtn{
 	background:blue;
 }
-.content .form-regist {
-	 transform: translateY(40px);
-}
-.content .form .input-form input[type="submit"]:hover{
+.content .form .submitBtn input[type="submit"]:hover{
      background: #f53677;
  }
 .footer{
-	position:fixed;
-	bottom: 0;
-	left: 616px;
+	margin-top: 110px;
 	color:white;
 }
 .site-brand span{
