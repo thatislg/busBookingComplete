@@ -58,7 +58,7 @@ public class ReservationController {
 	@RequestMapping("index")
 	public String index(Model model, @AuthenticationPrincipal MemberDetails memberDetails) {
 		
-		List<ReserveCustom> reservationList = reserveCustomMapper.selectMemberReservationByMemberId(memberDetails.getLogin().getMemberId());
+		List<ReserveCustom> reservationList = reserveCustomMapper.selectReservationByMemberId(memberDetails.getLogin().getMemberId());
 		model.addAttribute("reservationList", reservationList);
 		
 		return "/reservation/reservationList";

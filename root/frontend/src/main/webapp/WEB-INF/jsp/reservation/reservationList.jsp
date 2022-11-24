@@ -5,14 +5,13 @@
 <jsp:include page="/WEB-INF/jsp/common/header.jsp"></jsp:include>
 
 <link rel="stylesheet" href="http://localhost:9082/css/style.css"/>
-<link rel="stylesheet" type="text/css" href="/css/list.css">
-
 <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
 <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/dataTables.semanticui.min.js"></script>
 <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.8/semantic.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.8/semantic.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <header class = "flex"style="background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/bus5.jpg) center/cover no-repeat;" >
 <div class="container">	
@@ -24,24 +23,32 @@
 		<thead>
 			<tr>
 				<th>予約ID</th>
-				<th>路線ID</th>
 				<th>出発名</th>
 				<th>到着名</th>
+				<th>座席番号</th>
+				<th>料金</th>
 				<th>出発日</th>
 				<th>予約日</th>
+				<th>予約キャンセル</th>
 			</tr>
 		 </thead>
 		 <tbody>
 			<c:forEach items="${reservationList}" var="reserve">
 			<tr>
 				<td><c:out value="${reserve.reserveId}"/></td>
-				<td><c:out value="${reserve.routeId}"/></td>
-				<td><c:out value="${reserve.departureName}"/></td>
-				<td><c:out value="${reserve.arrivalName}"/></td>
+				<fmt:formatDate value="${reserve.scheduledDepartureTime}" pattern="HH:mm" var="scheduledDepartureTime" />
+				<td><c:out value="${reserve.departureName}(${scheduledDepartureTime })"/></td>
+				<fmt:formatDate value="${reserve.scheduledArrivalTime }" pattern="HH:mm" var="scheduledArrivalTime" />
+				<td><c:out value="${reserve.arrivalName}(${scheduledArrivalTime })"/></td>
+				<td><c:out value="${reserve.seat}"/></td>
+				<td><c:out value="${reserve.price}円"/></td>
 				<fmt:formatDate value="${reserve.departureDate}" pattern="yyyy年MM月dd日" var="departureDate" />
 				<td><c:out value="${departureDate}"/></td>
 				<fmt:formatDate value="${reserve.reservedDate}" pattern="yyyy年MM月dd日" var="reservedDate" />
 				<td><c:out value="${reservedDate}"/></td>
+				<td><a href="../reservation/cancleConfirm?reserveId=${reserve.reserveId}"><em class="fa fa-window-close-o" style="font-size:24px"></em></a></td>
+				
+				
 			</tr>
 			</c:forEach>
 		</tbody>
@@ -51,6 +58,10 @@
 </header>
 <script>
 	$(document).ready(function () {
+		 $.extend( $.fn.dataTable.defaults, {
+	            language: { url: "http://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Japanese.json" }
+	        });
+			
 		$('#reservationList').DataTable();
 	});
 </script>

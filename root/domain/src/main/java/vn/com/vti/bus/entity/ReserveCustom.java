@@ -24,6 +24,42 @@ public class ReserveCustom {
 	
 	private String departureName;
 	
+	private String arrivalName;
+	
+	private Date departureDate;
+	
+	private Integer reserveId;
+	
+	private Date scheduledDepartureTime;
+
+	private Date scheduledArrivalTime;
+	
+	private Integer seat;
+	
+	public Integer getSeat() {
+		return seat;
+	}
+
+	public void setSeat(Integer seat) {
+		this.seat = seat;
+	}
+
+	public Date getScheduledDepartureTime() {
+		return scheduledDepartureTime;
+	}
+
+	public void setScheduledDepartureTime(Date scheduledDepartureTime) {
+		this.scheduledDepartureTime = scheduledDepartureTime;
+	}
+
+	public Date getScheduledArrivalTime() {
+		return scheduledArrivalTime;
+	}
+
+	public void setScheduledArrivalTime(Date scheduledArrivalTime) {
+		this.scheduledArrivalTime = scheduledArrivalTime;
+	}
+
 	public Date getDepartureDate() {
 		return departureDate;
 	}
@@ -40,11 +76,7 @@ public class ReserveCustom {
 		this.reserveId = reserveId;
 	}
 
-	private String arrivalName;
 	
-	private Date departureDate;
-	
-	private Integer reserveId;
 
 	public String getDepartureName() {
 		return departureName;

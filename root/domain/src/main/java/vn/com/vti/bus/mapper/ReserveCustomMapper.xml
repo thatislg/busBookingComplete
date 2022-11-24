@@ -21,6 +21,9 @@
 			property="departureName" />
 		<result column="arrival_name" jdbcType="INTEGER"
 			property="arrivalName" />
+		<result column="scheduled_departure_time" jdbcType="TIMESTAMP" property="scheduledDepartureTime" />
+   	 	<result column="scheduled_arrival_time" jdbcType="TIMESTAMP" property="scheduledArrivalTime" />
+		<result column="seat_number" jdbcType="INTEGER" property="seat" />
 	</resultMap>
 	
 	<resultMap type="vn.com.vti.bus.entity.SeatOrder"
@@ -28,6 +31,8 @@
 		<result column="member_name" jdbcType="VARCHAR" property="memberName" />
 		<result column="seat_number" jdbcType="VARCHAR" property="seatNumber" />
 	</resultMap>
+	
+	
 	<select id="selectReservationByDepartureDate"
 		resultMap="seatOrder">
 		SELECT
@@ -48,7 +53,6 @@
 	</select>
 
 	
-
 	<select id="selectMemberReservationByMemberId"
 		resultMap="reserveCustom">
 		SELECT
@@ -76,4 +80,36 @@
 		WHERE
 			M.MEMBER_ID = #{memberId};
 	</select>
+	
+	<select id="selectReservationByMemberId" resultMap="reserveCustom" >
+	SELECT
+			R.RESERVED_DATE
+			,RO.PRICE
+			,RO.BUS_ID
+			,BS.BUS_STATION_NAME AS DEPARTURE_NAME
+			,BS1.BUS_STATION_NAME AS ARRIVAL_NAME
+			,R.DEPARTURE_DATE
+			,R.RESERVE_ID
+			,RO.SCHEDULED_DEPARTURE_TIME
+			,RO.SCHEDULED_ARRIVAL_TIME
+			,S.SEAT_NUMBER
+
+		FROM
+			RESERVE AS R
+				INNER JOIN MEMBER AS M
+					ON R.MEMBER_ID = M.MEMBER_ID
+				INNER JOIN ROUTE AS RO
+					ON R.ROUTE_ID = RO.ROUTE_ID
+				INNER JOIN BUS_STATION AS BS
+					ON BS.BUS_STATION_ID = RO.DEPARTURE_ID
+				INNER JOIN BUS_STATION AS BS1
+					ON BS1.BUS_STATION_ID = RO.ARRIVAL_ID
+				INNER JOIN SEAT AS S
+					ON S.RESERVE_ID = R.RESERVE_ID
+		WHERE
+			M.MEMBER_ID  = #{memberId};
+	
+	</select>
+	
+	
 </mapper>
