@@ -3,6 +3,7 @@
 <%@include file="/WEB-INF/jsp/common/define.jsp"%>
 
 <jsp:include page="/WEB-INF/jsp/common/header.jsp"></jsp:include>
+
 <link rel="stylesheet" href="http://localhost:9082/css/style.css"/>
 <link rel="stylesheet" type="text/css" href="/css/list.css">
 
@@ -13,12 +14,12 @@
 <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.8/semantic.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.8/semantic.min.css">
 
-<header class = "flex">
+<header class = "flex"style="background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/bus5.jpg) center/cover no-repeat;" >
 <div class="container">	
-	<div class="header-title">
+	<div class="title">
 		<h1>予約一覧</h1>
 	</div>
-	<div class = "list">
+	<div class = "list" >
 	<table id="reservationList" class="display" style="color:black;text-align:left ">
 		<thead>
 			<tr>
