@@ -35,12 +35,12 @@
 				 		<form:errors path="password" element="p"/>
 				 		<p><c:out value="${errMsg }"></c:out></p>
 				   		<label for="password" class="form-label"><spring:message code="memberForm.password"/></label>
-				   		<form:input path="password" class="form-control" placeholder="パスワードを入力"/>
+				   		<form:password path="password" class="form-control" placeholder="パスワードを入力"/>
 				 </div>
 			 	<div class="input-form">
 			 		<form:errors path="confirmPassword" element="p"/>
 			   		<label for="confirmPassword" class="form-label"><spring:message code="memberForm.confirmPassword"/></label>
-			   		<form:input path="confirmPassword" class="form-control" placeholder="パスワードを入力(確認)"/>
+			   		<form:password path="confirmPassword" class="form-control" placeholder="パスワードを入力(確認)"/>
 			 	</div>
 			 	
 			 		<input class="registBtn" type="submit" value="登録" formaction="confirm"/> 
