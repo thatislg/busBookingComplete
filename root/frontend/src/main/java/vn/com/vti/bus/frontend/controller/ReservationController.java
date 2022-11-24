@@ -9,6 +9,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,11 +20,14 @@ import vn.com.vti.bus.entity.Bus;
 import vn.com.vti.bus.entity.BusStation;
 import vn.com.vti.bus.entity.Member;
 import vn.com.vti.bus.entity.Reserve;
+import vn.com.vti.bus.entity.ReserveCustom;
 import vn.com.vti.bus.entity.Route;
 import vn.com.vti.bus.entity.SeatMap;
+import vn.com.vti.bus.frontend.security.MemberDetails;
 import vn.com.vti.bus.mapper.BusMapper;
 import vn.com.vti.bus.mapper.BusStationMapper;
 import vn.com.vti.bus.mapper.MemberMapper2;
+import vn.com.vti.bus.mapper.ReserveCustomMapper;
 import vn.com.vti.bus.mapper.ReserveCustomMapper2;
 import vn.com.vti.bus.mapper.RouteMapper;
 import vn.com.vti.bus.mapper.SeatMapCustomMapper;
@@ -49,7 +53,18 @@ public class ReservationController {
 	
 	@Autowired
 	private BusStationMapper busStationMapper;
+	@Autowired
+	private ReserveCustomMapper reserveCustomMapper;
 	
+	@RequestMapping("index")
+	public String index(Model model, @AuthenticationPrincipal MemberDetails memberDetails) {
+		
+		List<ReserveCustom> reservationList = reserveCustomMapper.selectMemberReservationByMemberId(memberDetails.getLogin().getMemberId());
+		model.addAttribute("reservationList", reservationList);
+		
+		return "/reservation/reservationList";
+		
+	}
 	
 	@RequestMapping("/input")
 	public String input(@RequestParam(value="departureDate")
