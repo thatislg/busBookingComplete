@@ -40,12 +40,19 @@ public class ReservationController {
 	
 	@Autowired
 	private SeatMapCustomMapper seatMapCustomMapper;
+	@Autowired
 	private BusMapper busMapper;
+	@Autowired
 	private MemberMapper2 memberMapper2;
+	@Autowired
 	private RouteMapper routeMapper;
+	@Autowired
 	private ReserveCustomMapper2 reserveCustomMapper2;
+	@Autowired
 	private BusStationMapper busStationMapper;
+	@Autowired
 	private ReserveCustomMapper reserveCustomMapper;
+	@Autowired
 	private SeatMapper seatMapper;
 	
 	@RequestMapping("index")
