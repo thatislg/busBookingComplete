@@ -22,6 +22,7 @@ import vn.com.vti.bus.entity.Member;
 import vn.com.vti.bus.entity.Reserve;
 import vn.com.vti.bus.entity.ReserveCustom;
 import vn.com.vti.bus.entity.Route;
+import vn.com.vti.bus.entity.Seat;
 import vn.com.vti.bus.entity.SeatMap;
 import vn.com.vti.bus.frontend.security.MemberDetails;
 import vn.com.vti.bus.mapper.BusMapper;
@@ -31,30 +32,21 @@ import vn.com.vti.bus.mapper.ReserveCustomMapper;
 import vn.com.vti.bus.mapper.ReserveCustomMapper2;
 import vn.com.vti.bus.mapper.RouteMapper;
 import vn.com.vti.bus.mapper.SeatMapCustomMapper;
+import vn.com.vti.bus.mapper.SeatMapper;
 
 @Controller
 @RequestMapping("/reservation")
 public class ReservationController {
 	
-	@Autowired 
+	@Autowired
 	private SeatMapCustomMapper seatMapCustomMapper;
-	
-	@Autowired
 	private BusMapper busMapper;
-	
-	@Autowired
 	private MemberMapper2 memberMapper2;
-	
-	@Autowired
 	private RouteMapper routeMapper;
-	
-	@Autowired
 	private ReserveCustomMapper2 reserveCustomMapper2;
-	
-	@Autowired
 	private BusStationMapper busStationMapper;
-	@Autowired
 	private ReserveCustomMapper reserveCustomMapper;
+	private SeatMapper seatMapper;
 	
 	@RequestMapping("index")
 	public String index(Model model, @AuthenticationPrincipal MemberDetails memberDetails) {
@@ -150,33 +142,30 @@ public class ReservationController {
 	}
 	
 	@RequestMapping("/insert")
-	public String insert(@RequestParam(value="departureDate")
+	public String insert(@RequestParam(value="currentReservedSeat") List<String> currentReservedSeat
+						,@RequestParam(value="departureDate")
 							@DateTimeFormat(pattern = "yyyy-MM-dd") Date departureDate
 						,@RequestParam(value="routeId") String routeId
 						,@RequestParam(value="busId") String busId, Model model) {
+		
 		// Lấy loginId của người đang đăng nhập
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		String currentPrincipleName = authentication.getName();
 		
-		if(currentPrincipleName.isEmpty()) {
-			System.out.println("Cần đăng nhập");
-		} else {
-			model.addAttribute("currentLoginId", currentPrincipleName);
-		}
-		
 		Member currentLoginMember = memberMapper2.getMemberIdByMemberLoginId(currentPrincipleName);
-//		List<Reserve> reserve = reserveCustomMapper2.selectReserveByMemberId(currentLoginMember.getMemberId());
-//		model.addAttribute("reserveInfo", reserve);
 		
 		// Lấy các thông tin thiết lập đơn đặt lịch mới
 		int insertMemberId = currentLoginMember.getMemberId();
-		int insertRouteId = 0;
+		int insertRouteId = Integer.parseInt(routeId);
+		int insertBusId = Integer.parseInt(busId);
+		
 		try {
 			insertRouteId = Integer.parseInt(routeId);
 		} catch (NumberFormatException e1) {
 			System.err.println("Đã có lỗi tại phần đổi kiểu dữ liệu RouteId");
 			e1.printStackTrace();
 		}
+		
 		SimpleDateFormat dtf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");  
 		Date now = null;
 		try {
@@ -193,8 +182,21 @@ public class ReservationController {
 		reserve.setDepartureDate(departureDate);
 		int insertedId = reserveCustomMapper2.insert(reserve);
 		
-		System.out.println("insertedId = " + reserve.getReserveId());
+		int reservedId = reserve.getReserveId();
+		System.out.println("insertedId = " + reservedId);
 		System.out.println("insertedId1 = " + insertedId);
+		
+		for(String seatNumber : currentReservedSeat) {
+			int insertSeatNumber = Integer.parseInt(seatNumber); 
+			Seat seat = new Seat();
+			
+			seat.setReserveId(reservedId);
+			seat.setBusId(insertBusId);
+			seat.setSeatNumber(insertSeatNumber);
+			
+			seatMapper.insert(seat);
+		}
+
 		return "/route/reservationInsert";
 	}
 	

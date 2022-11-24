@@ -57,6 +57,7 @@
 	</div>
 <div>
 	<form:form method="POST">
+		<input type="hidden" name="inputedCurrentReservedSeat" value="${inputedCurrentReservedSeat}"/>
 		<input type="hidden" name="departureDate" value="${rDDate}"/>
 		<input type="hidden" name="routeId" value="${routeInfo.routeId}"/>
 		<input type="hidden" name="busId" value="${busInfo.busId}"/>
