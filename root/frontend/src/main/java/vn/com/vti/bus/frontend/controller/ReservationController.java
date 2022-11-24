@@ -122,6 +122,7 @@ public class ReservationController {
 		ArrayList<String> inputedCurrentReservedSeat = new ArrayList<>(currentReservedSeat);
 		String strInputedCurrentReservedSeat =  String.join(", ", inputedCurrentReservedSeat);
 		model.addAttribute("strInputedCurrentReservedSeat", strInputedCurrentReservedSeat);
+		model.addAttribute("insertSeatInfo", currentReservedSeat);
 		model.addAttribute("inputedCurrentReservedSeat", inputedCurrentReservedSeat);
 		
 		// Convert kiểu dữ liệu nhận vào
@@ -193,8 +194,12 @@ public class ReservationController {
 		System.out.println("insertedId = " + reservedId);
 		System.out.println("insertedId1 = " + insertedId);
 		
-		for(String seatNumber : currentReservedSeat) {
+		ArrayList<String> inputedCurrentReservedSeat = new ArrayList<>(currentReservedSeat);
+		for(int i = 0; i < inputedCurrentReservedSeat.size(); i++) {
+			String seatNumber = inputedCurrentReservedSeat.get(i).replaceAll("(^\\[|\\]$)", "");
+
 			int insertSeatNumber = Integer.parseInt(seatNumber); 
+			System.out.println(seatNumber);
 			Seat seat = new Seat();
 			
 			seat.setReserveId(reservedId);
