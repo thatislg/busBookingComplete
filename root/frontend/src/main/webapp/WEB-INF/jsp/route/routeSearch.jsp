@@ -4,7 +4,7 @@
 <jsp:include page="/WEB-INF/jsp/common/header.jsp"></jsp:include>
 <link rel="stylesheet" href="http://localhost:9082/css/style.css"> 
 <title>路線検索</title>
-<body style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/bus6.tiff) center/cover no-repeat;">
+<body style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/bus6.jpg) center/cover no-repeat;">
 	<div class = "routeSearch flex">
 		<div class = "container">
 			<div class = "title">
