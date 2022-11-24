@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="http://localhost:9082/css/style.css"> 
 
 <title>路線検索</title>
-<body style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/bus4.jpg) center/cover no-repeat;">
+<body style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/bus6.tiff) center/cover no-repeat;">
 	
 	<!-- header -->
 	<header class = "flex">
