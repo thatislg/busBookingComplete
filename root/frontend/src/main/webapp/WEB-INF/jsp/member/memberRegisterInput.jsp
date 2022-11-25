@@ -27,13 +27,12 @@
 				 </div>
 			 	<div class="input-form">
 			 		<form:errors path="loginId" element="p"/>
-			 		<p><c:out value="${errMsg2 }"></c:out></p>
 			   		<label for="loginId" class="form-label"><spring:message code="memberForm.loginId"/></label>
 			   		<form:input path="loginId"  placeholder="ログインIDを入力"/>
 			 	</div>			 	
 			 	<div class="input-form">
 				 		<form:errors path="password" element="p"/>
-				 		<p><c:out value="${errMsg }"></c:out></p>
+				 		<form:errors path="passwordSame" element="p"/>
 				   		<label for="password" class="form-label"><spring:message code="memberForm.password"/></label>
 				   		<form:password path="password"  placeholder="パスワードを入力"/>
 				 </div>

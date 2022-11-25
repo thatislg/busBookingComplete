@@ -1,5 +1,6 @@
 package vn.com.vti.bus.frontend.form;
 
+import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
@@ -17,6 +18,14 @@ public class MemberForm {
 	private String phoneNumber;
 	@NotBlank
 	private String confirmPassword;
+	
+	@AssertTrue(message = "{error.passwordNotSame}")
+	public Boolean getPasswordSame() {
+		if(password == null || confirmPassword == null) {
+			return null;
+		}
+		return password.equals(confirmPassword);
+	}
 	
 	public String getConfirmPassword() {
 		return confirmPassword;
