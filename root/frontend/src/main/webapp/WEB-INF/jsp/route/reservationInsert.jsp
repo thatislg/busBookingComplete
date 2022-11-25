@@ -47,7 +47,7 @@
 		予約が完了しました。この画面を印刷して当日持参してください。
 	</div>	
 	<form:form>
-		<input type="submit" value="OK" formaction="../routeSearch/index"/>
+		<input type="submit" value="OK" formaction="../reservation/index"/>
 	</form:form>
 	</div>
 </div>
