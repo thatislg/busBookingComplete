@@ -62,12 +62,11 @@ public class ReservationController {
 		model.addAttribute("reservationList", reservationList);
 		
 		return "/reservation/reservationList";
-		
 	}
 	
 	@RequestMapping("/input")
 	public String input(@RequestParam(value="departureDate")
-						@DateTimeFormat(pattern = "yyyy-MM-dd") Date departureDate,
+							@DateTimeFormat(pattern = "yyyy-MM-dd") Date departureDate,
 						@RequestParam(value="routeId") String routeId, 
 						@RequestParam(value="busId") String busId,
 						@RequestParam(value="inputedDepartureName") String inputedDepartureName,
@@ -151,16 +150,18 @@ public class ReservationController {
 	
 	@RequestMapping("/insert")
 	public String insert(@RequestParam(value="currentReservedSeat") List<String> currentReservedSeat
-						,@RequestParam(value="departureDate")
-							@DateTimeFormat(pattern = "yyyy-MM-dd") Date departureDate
-						,@RequestParam(value="routeId") String routeId
-						,@RequestParam(value="busId") String busId, Model model) {
+							,@RequestParam(value="departureDate")
+								@DateTimeFormat(pattern = "yyyy-MM-dd") Date departureDate
+								,@RequestParam(value="routeId") String routeId	
+								,@RequestParam(value="busId") String busId
+								, Model model) {
 		
 		// Lấy loginId của người đang đăng nhập
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		String currentPrincipleName = authentication.getName();
 		
 		Member currentLoginMember = memberMapper2.getMemberIdByMemberLoginId(currentPrincipleName);
+		model.addAttribute("currentLoginId", currentLoginMember);
 		
 		// Lấy các thông tin thiết lập đơn đặt lịch mới
 		int insertMemberId = currentLoginMember.getMemberId();
@@ -173,6 +174,15 @@ public class ReservationController {
 			System.err.println("Đã có lỗi tại phần đổi kiểu dữ liệu RouteId");
 			e1.printStackTrace();
 		}
+		//　Lấy thông tin về route
+		Route route = routeMapper.selectByPrimaryKey(insertRouteId);
+		model.addAttribute("routeInfo", route);
+				
+		// Lấy thông tin về điểm đến và điểm đi
+		BusStation departureStationName = busStationMapper.selectByPrimaryKey(route.getDepartureId());
+		BusStation arrivalStationName = busStationMapper.selectByPrimaryKey(route.getArrivalId());
+		model.addAttribute("departureStationName", departureStationName);
+		model.addAttribute("arrivalStationName", arrivalStationName);
 		
 		SimpleDateFormat dtf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");  
 		Date now = null;
@@ -195,6 +205,15 @@ public class ReservationController {
 		System.out.println("insertedId1 = " + insertedId);
 		
 		ArrayList<String> inputedCurrentReservedSeat = new ArrayList<>(currentReservedSeat);
+		String strInputedCurrentReservedSeat =  String.join(", ", inputedCurrentReservedSeat);
+		model.addAttribute("strInputedCurrentReservedSeat", strInputedCurrentReservedSeat);
+		model.addAttribute("insertSeatInfo", currentReservedSeat);
+		model.addAttribute("inputedCurrentReservedSeat", inputedCurrentReservedSeat);
+		
+		
+		Date reservedDepartureDate = departureDate;
+		model.addAttribute("reservedDepartureDate", reservedDepartureDate);
+		
 		for(int i = 0; i < inputedCurrentReservedSeat.size(); i++) {
 			String seatNumber = inputedCurrentReservedSeat.get(i).replaceAll("(^\\[|\\]$)", "");
 
@@ -208,7 +227,7 @@ public class ReservationController {
 			
 			seatMapper.insert(seat);
 		}
-
+		
 		return "/route/reservationInsert";
 	}
 	
