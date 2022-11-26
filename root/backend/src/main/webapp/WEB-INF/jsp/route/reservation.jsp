@@ -30,7 +30,7 @@
 		<br>
 		<div>
 		<form action="/reservation/search">
-			<label for="fname">日付: </label> <input type="text" id="fname"
+			<label for="fname">日付: </label> <input type="date" id="fname"
 				name="dateStr">   <input type="submit" value="再表示">
 		</form>
 		</div>
@@ -40,54 +40,31 @@
 		<div class="reserveData">
 			<table class="table table-bordered">
 				<tr>
-					<th>日付</th>
-					<fmt:formatDate value="${date}" pattern="yyyy-MM-dd" var="rDate" />
+					<th>出発日</th>
+					<fmt:formatDate value="${date}" pattern="yyyy年MM月dd日" var="rDate" />
 					<td>${rDate}</td>
 				</tr>
 				
 				<tr>
 					<th>出発駅・出発時間</th>
-					<td>${departureStation.busStationName }</td>
+					<fmt:formatDate value="${routeInfo.scheduledDepartureTime }" pattern="HH:mm" var="departureTime" />
+					<td>${routeInfo.departureStationName}(${departureTime })</td>
 				</tr>
 				<tr>
 					<th>到着駅・到着時間</th>
-					<td>${arrivalStation.busStationName }</td>
+					<fmt:formatDate value="${routeInfo.scheduledArrivalTime }" pattern="HH:mm" var="arrivalTime" />
+					<td>${routeInfo.arrivalStationName }(${arrivalTime})</td>
 				</tr>
 				<tr>
 					<th>1席料金</th>
-					<td>${routeInfo.price }</td>
+					<td>${routeInfo.price }円</td>
 				</tr>
 			</table>
 		</div>
 		
 		<br>
 		<br>
-		<h2>予約リスト</h2>
-		<div>
-		<table id="reserveList" class="display">
-			<thead>
-				<tr>
-					<th>予約ID</th>
-					<th>会員ID</th>
-					<th>路線</th>
-					<th>予約日</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach items="${reserveList}" var="reserve">
-					<tr>
-						<td><c:out value="${reserve.reserveId}" /></td>
-						<td><c:out value="${reserve.memberId}" /></td>
-						<td><c:out value="${reserve.routeId}" /></td>
-						<fmt:formatDate value="${reserve.reservedDate}" pattern="yyyy-MM-dd" var="date" />
-						<td><c:out value="${date}" /></td>
-					</tr>
-				</c:forEach>
-			</tbody>
-
-		</table>
-		</div>
-		<br>
+	
 		<h2>予約状況</h2>
 		<div>
 		<table class="table table-bordered">
@@ -116,7 +93,6 @@
 				$('#reserveList').DataTable();
 			});
 		</script>
-
 	</div>
 </body>
 </html>
