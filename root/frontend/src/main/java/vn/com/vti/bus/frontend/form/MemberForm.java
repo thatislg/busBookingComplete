@@ -3,6 +3,8 @@ package vn.com.vti.bus.frontend.form;
 import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 public class MemberForm {
 	@NotBlank
@@ -10,11 +12,13 @@ public class MemberForm {
 	@NotBlank
 	private String memberName;
 	@NotBlank
+	@Size(min=6)
 	private String password;
 	@NotBlank
 	@Email
 	private String mailAddress;
 	@NotBlank
+	@Pattern(regexp = "0\\d{1,4}\\d{1,4}\\d{4}")
 	private String phoneNumber;
 	@NotBlank
 	private String confirmPassword;
