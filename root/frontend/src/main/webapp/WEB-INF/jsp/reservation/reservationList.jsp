@@ -46,7 +46,7 @@
 				<td><c:out value="${departureDate}"/></td>
 				<fmt:formatDate value="${reserve.reservedDate}" pattern="yyyy年MM月dd日" var="reservedDate" />
 				<td><c:out value="${reservedDate}"/></td>
-				<td><a href="../reservation/cancleConfirm?reserveId=${reserve.reserveId}"><em class="fa fa-window-close-o" style="font-size:24px"></em></a></td>
+				<td><a href="../reservation/cancelConfirm?reserveId=${reserve.reserveId}"><em class="fa fa-window-close-o" style="font-size:24px"></em></a></td>
 				
 				
 			</tr>
