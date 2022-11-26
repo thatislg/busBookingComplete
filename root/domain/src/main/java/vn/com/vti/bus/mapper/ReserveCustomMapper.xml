@@ -15,7 +15,7 @@
 			property="departureDate" />
 		<result column="reserve_id" jdbcType="INTEGER"
 			property="reserveId" />
-		<result column="price" jdbcType="INTEGER" property="price" />
+		<result column="total_price" jdbcType="INTEGER" property="price" />
 		<result column="bus_id" jdbcType="INTEGER" property="busId" />
 		<result column="departure_name" jdbcType="INTEGER"
 			property="departureName" />
@@ -23,7 +23,7 @@
 			property="arrivalName" />
 		<result column="scheduled_departure_time" jdbcType="TIMESTAMP" property="scheduledDepartureTime" />
    	 	<result column="scheduled_arrival_time" jdbcType="TIMESTAMP" property="scheduledArrivalTime" />
-		<result column="seat_number" jdbcType="INTEGER" property="seat" />
+		<result column="seat_number" jdbcType="VARCHAR" property="seat" />
 	</resultMap>
 	
 	<resultMap type="vn.com.vti.bus.entity.SeatOrder"
@@ -82,34 +82,46 @@
 	</select>
 	
 	<select id="selectReservationByMemberId" resultMap="reserveCustom" >
-	SELECT
-			R.RESERVED_DATE
-			,RO.PRICE
-			,RO.BUS_ID
+		SELECT
+			R1.RESERVE_ID
+			,R1.RESERVED_DATE
+			,R1.DEPARTURE_DATE
+			,R1.SEAT_NUMBER
+			,R1.SEAT_COUNT*RO.PRICE AS TOTAL_PRICE
 			,BS.BUS_STATION_NAME AS DEPARTURE_NAME
 			,BS1.BUS_STATION_NAME AS ARRIVAL_NAME
-			,R.DEPARTURE_DATE
-			,R.RESERVE_ID
 			,RO.SCHEDULED_DEPARTURE_TIME
 			,RO.SCHEDULED_ARRIVAL_TIME
-			,S.SEAT_NUMBER
-
 		FROM
-			RESERVE AS R
-				INNER JOIN MEMBER AS M
-					ON R.MEMBER_ID = M.MEMBER_ID
-				INNER JOIN ROUTE AS RO
-					ON R.ROUTE_ID = RO.ROUTE_ID
-				INNER JOIN BUS_STATION AS BS
-					ON BS.BUS_STATION_ID = RO.DEPARTURE_ID
-				INNER JOIN BUS_STATION AS BS1
-					ON BS1.BUS_STATION_ID = RO.ARRIVAL_ID
-				INNER JOIN SEAT AS S
-					ON S.RESERVE_ID = R.RESERVE_ID
-		WHERE
-			M.MEMBER_ID  = #{memberId};
-	
-	</select>
+				ROUTE AS RO
+					INNER JOIN BUS_STATION AS BS
+						ON BS.BUS_STATION_ID = RO.DEPARTURE_ID
+					INNER JOIN BUS_STATION AS BS1
+						ON BS1.BUS_STATION_ID = RO.ARRIVAL_ID
+					INNER JOIN
+						(
+							SELECT
+								 R.RESERVE_ID
+								,R.ROUTE_ID
+								,R.RESERVED_DATE
+								,R.DEPARTURE_DATE
+								,STRING_AGG(CAST(S.SEAT_NUMBER AS VARCHAR), ',') AS SEAT_NUMBER
+								,COUNT(*)AS SEAT_COUNT
+							FROM
+								RESERVE AS R
+									INNER JOIN MEMBER AS M
+										ON R.MEMBER_ID = M.MEMBER_ID
+									INNER JOIN SEAT AS S
+										ON S.RESERVE_ID = R.RESERVE_ID
+						   WHERE
+								M.MEMBER_ID  = #{memberId}
+						   GROUP BY R.RESERVE_ID
+					   ) 
+					   
+					   AS R1
+							ON R1.ROUTE_ID = RO.ROUTE_ID
+		
+		</select>
 	
 	
 </mapper>
