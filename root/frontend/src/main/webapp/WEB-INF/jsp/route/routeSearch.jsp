@@ -11,7 +11,6 @@
 				<h1>路線検索</h1>
 			</div>
 			<div class = "search-form2">
-				<h2>路線選択</h2>
 				<form class = "flex" action = "../routeSearch/search">
 					<input type = "text" class = "form-control" placeholder = "出発地" name="departureStationName" oninvalid="this.setCustomValidity('入力必須')" onchange="this.setCustomValidity('')" required/>
 					<input type = "date" class = "form-control" placeholder = "Date" name="departureDate" oninvalid="this.setCustomValidity('選択必須')" onchange="this.setCustomValidity('')" required/>
@@ -22,4 +21,3 @@
 		</div>
 	</div>
 <jsp:include page="/WEB-INF/jsp/common/footer.jsp"></jsp:include>
-</body>

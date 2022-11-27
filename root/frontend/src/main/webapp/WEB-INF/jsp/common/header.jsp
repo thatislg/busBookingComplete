@@ -24,14 +24,9 @@
 			<ul class="navbar-nav">
 				<sec:authorize access="hasRole('ROLE_MEMBER')">
 					<li class="nav-item"><a href="/" class="nav-link">ホーム</a></li>
-					<li class="nav-item"><a href="/reservation/index" class="nav-link">予約一覧</a></li>
-					
+					<li class="nav-item"><a href="/reservation/index" class="nav-link">予約一覧</a></li>		
 					<li class="nav-item"><a href="/routeSearch/index" class="nav-link">路線検索</a></li>
-					<li class="nav-item">
-						<form:form action="/logout" name="logoutForm" id="logoutForm" style="display:inline-flex">
-							<a class="nav-link" onclick ="document.logoutForm.submit()">ログアウト</a>
-						</form:form>
-					</li>
+					<li class="nav-item"><a class="nav-link" href="/logout">ログアウト</a></li>
 				</sec:authorize>
 					
 				<sec:authorize access="!hasRole('ROLE_MEMBER')">

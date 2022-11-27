@@ -18,9 +18,11 @@ body{
      margin:auto;
      border-radius: 15px;
      opacity: 0.8;
+     overflow: auto;
 }
 .content .form{
-     width: 60%;
+     width: 70%;
+     
 }
 .content .form h2{
      color: #607d8b;
@@ -30,6 +32,9 @@ body{
      border-bottom: 4px solid var(--green);
      letter-spacing: 1px;
      text-align: center;
+}
+.content .form .err{
+	color: red;
 }
 .content .form .input-form{
      margin-bottom: 16px;
@@ -50,7 +55,7 @@ body{
      border-radius: 30px;
      width: 90%;
 }
-.content .form .BTN{
+.content .form .btn-form{
 	display: flex;
     justify-content: center;   
 }  
@@ -68,10 +73,10 @@ body{
      width: 250px;
      margin: 5px;
 }
-.content .form .registBtn{
+.content .form .regist-btn{
 	 background:var(--green);
 }
-.content .form .returnBtn{
+.content .form .return-btn{
 	 background:blue;
 }
 .content .form input[type="submit"]:hover{

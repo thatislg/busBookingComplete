@@ -16,7 +16,6 @@ header{
 	min-height: 97vh;
 	padding-top: 7rem;
 	color: #fff;
-	text-align: center;
 	flex-direction: column;
 }
 .title h1{
@@ -60,7 +59,7 @@ header{
 		animation-timing-function: ease-out;
 	}
 }
-.search-form,.search-form2,.header-form{
+.search-form,.search-form2,.header-form,.seat-form,.seat-infor,.confirm-form{
 	background: rgba(0,0,0,0.5);
 }
 .search-form2 input[type = "date"],.header-form input[type = "date"]{
@@ -70,6 +69,7 @@ header{
 .header-form{
 	padding: 3rem;
 	border-radius: 0.2rem;
+	text-align: center;
 }
 .header-form form{
 	flex-direction: row;
@@ -78,10 +78,9 @@ header{
 }
 .title p{
 	margin: 1.8rem auto;
-	max-width: 700px;
-	font-weight: 500;
 	line-height: 1.7;
 	font-size: 1.4rem;
+	text-align: center;
 }
 .header-form form .form-control{
 	box-shadow: 2px 4px 4px rgba(0,0,0,0.4);
@@ -98,22 +97,18 @@ header{
 /* route search */
 .routeSearch{
 	color: #fff;
-	text-align: center;
 	flex-direction: column;
-	min-height: 79vh;
+	height: 38rem;
 	padding-top: 7rem; 
  }
-.site-brand span{
-	font-weight:300;
-	color: var(--green);
-}
+
 /* route search result */
 .search-form{
-	padding: 1rem;
+	padding: 2rem;
 	width:60%;
 }
 .search-form2{
-	padding: 1rem;
+	padding: 3rem;
 }
 .form-control, .btn{
 	margin: 0 0.5rem;
@@ -214,9 +209,123 @@ header{
 	margin: 0 auto;
 	padding: 40px 0; 
 }
-.list{
-	background: white;
-	padding: 3rem;
-	border-radius: 0.2rem;
-	opacity:0.8;
+
+
+/* reservation input */
+.seat-infor{
+	padding: 1rem;
+	width:60%;
+	border-radius: 1.5rem;
 }
+.seat-info-table{
+	border-collapse: collapse;
+	margin: auto;
+}
+.seat-info-table th, .seat-info-table td{
+	padding: 12px 15px;
+}
+.seat-info-table tr{
+	border-bottom: 1px solid #fff;
+}
+.seat-form{
+	padding: 1.5rem;
+	border-radius: 1.5rem;
+}
+.btn-form{
+	display: flex;
+    justify-content: center;   
+}  
+.btn-form input[type="submit"]{
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.12),
+                0 2px 2px rgba(0,0,0,0.12),
+                0 4px 4px rgba(0,0,0,0.12),
+               0 8px 8px rgba(0,0,0,0.12),
+               0 16px 16px rgba(0,0,0,0.12);
+    padding: 10px 20px;
+    border-radius: 30px;
+    width: 180px;
+   	margin: 20px 10px 20px 10px;
+}
+.btn-form .reserve-btn{
+	background:var(--green);
+}
+.btn-form .return-btn{
+	background:blue;
+}
+.btn-form input[type="submit"]:hover{
+    background: #f53677;
+}
+.seat-form .seat-check-table{
+	margin: 20px 100px;
+    border-left: 80px solid yellow;
+    border-radius: 12px 2px 2px 12px;
+    border-top: 10px solid yellow;
+    border-bottom: 10px solid yellow;
+    border-right: 10px solid yellow;
+    width: 600px;
+    height: 150px;
+}
+.seat-check-table td{
+	padding: 8px;
+}
+input[type=checkbox] {
+	position: absolute;
+	opacity: 0;
+}
+input[type=checkbox]:checked ~label {
+  background: #bada55;      
+}
+input[type=checkbox]:disabled ~ label {
+  background: #dddddd;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+input[type=checkbox]:disabled ~ label:after {
+    content: "済";
+    text-indent: 0;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+input[type=checkbox]:disabled ~ label:hover {
+	box-shadow: none;
+	cursor: not-allowed;
+  }
+label {    
+    display: block;
+    position: relative;    
+    text-align: center;
+    line-height: 1.5rem;
+    padding: 4px 0;
+    background: #F42536;
+    border-radius: 5px;
+}
+label:before {
+      content: "";
+      position: absolute;
+      width: 75%;
+      height: 75%;
+      top: 1px;
+      left: 50%;
+      transform: translate(-50%, 0%);
+      background: rgba(255,255,255,.4);
+      border-radius: 3px;
+}
+label:hover {
+      cursor: pointer;
+      box-shadow: 0 0 0px 2px #5C6AFF;
+}
+
+/* reservation confirm */
+.confirm-form{
+	padding: 1.5rem;
+	border-radius: 1.2rem;
+}
+
+
+
+
+
