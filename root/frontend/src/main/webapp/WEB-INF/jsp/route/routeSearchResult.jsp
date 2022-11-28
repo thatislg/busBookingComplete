@@ -42,33 +42,25 @@
 						</tr>
 					 </thead>
 					 <tbody>
-					 	<c:choose>
-		 					<c:when test="${not empty routeSearchResult}">
-								<c:forEach items="${routeSearchResult}" var="route">
-									<tr>
-										<fmt:formatDate value="${route.scheduledDepartureTime}" pattern="HH:mm" var="sDTime"/>
-										<fmt:formatDate value="${route.scheduledArrivalTime}" pattern="HH:mm" var="sATime"/>
-										<td><c:out value="${route.routeId}"/></td>
-										<td><c:out value="${route.busId}"/></td>
-										<td><c:out value="${route.departureStationName}(${sDTime})"/></td>					
-										<td><c:out value="${route.arrivalStationName}(${sATime})"/></td>
-										<td>${param.departureDate}</td>
-										<td><c:out value="${route.availableSeats}"/></td>
-										<td><c:out value="${route.price}"/></td>
-										<td><a href="../reservation/input?departureDate=${param.departureDate}
-																		&routeId=${route.routeId}
-																		&busId=${route.busId}
-																		&inputedDepartureName=${inputedDepartureNameInfo}
-																		&inputedArrivalName=${inputedArrivalNameInfo}">
-											<em class="fas fa-file-contract"></em></a></td>
-									</tr>
-								</c:forEach>
-							</c:when>
-							<c:when test="${empty routeSearchResult}">
-								<style>.content-table{display: none;}</style>
-		 						<span>検索結果はございません。</span>
-		 					</c:when>
-						</c:choose>
+						<c:forEach items="${routeSearchResult}" var="route">
+							<tr>
+								<fmt:formatDate value="${route.scheduledDepartureTime}" pattern="HH:mm" var="sDTime"/>
+								<fmt:formatDate value="${route.scheduledArrivalTime}" pattern="HH:mm" var="sATime"/>
+								<td><c:out value="${route.routeId}"/></td>
+								<td><c:out value="${route.busId}"/></td>
+								<td><c:out value="${route.departureStationName}(${sDTime})"/></td>					
+								<td><c:out value="${route.arrivalStationName}(${sATime})"/></td>
+								<td>${param.departureDate}</td>
+								<td><c:out value="${route.availableSeats}"/></td>
+								<td><c:out value="${route.price}"/></td>
+								<td><a href="../reservation/input?departureDate=${param.departureDate}
+																&routeId=${route.routeId}
+																&busId=${route.busId}
+																&inputedDepartureName=${inputedDepartureNameInfo}
+																&inputedArrivalName=${inputedArrivalNameInfo}">
+									<em class="fas fa-file-contract"></em></a></td>
+							</tr>
+						</c:forEach>
 					</tbody>
 				</table>	
 			</div>
