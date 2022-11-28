@@ -5,15 +5,15 @@
 <link rel="stylesheet" href="http://localhost:9082/css/register.css"/> 
     
 <body>
-	<div class="content">
+	<div class="content regist-content">
 		<div class="form">
 			<h2>会員登録</h2>
 			<c:out value="${message}"></c:out>
 			<form:form class="form-signin" modelAttribute="memberForm">	
-				<form:errors class="err" path="*" element="p"/>
+				<small><form:errors class="err" path="*" element="p"/></small>
 				<div class="input-form">
 			  	 	<label for="memberName" class="form-label"><spring:message code="memberForm.memberName"/></label>
-			   		<form:input path="memberName" placeholder="氏名を入力"/>
+			   		<form:input path="memberName" placeholder="氏名を入力" id="memberName"/>
 				 </div>
 				 <div class="input-form">	
 					<label for="phoneNumber" class="form-label"><spring:message code="memberForm.phoneNumber"/></label>

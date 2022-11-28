@@ -7,12 +7,14 @@ body{
      justify-content: center;
      align-items: center;
      width: 50%;
-     height: 41rem;
      background-color: #fff;
      margin:auto;
      border-radius: 15px;
      opacity: 0.8;
      overflow: auto;
+}
+.regist-content{
+	height: 41rem;
 }
 .content .form{
      width: 70%;
@@ -32,6 +34,7 @@ body{
 }
 .content .form .input-form{
      margin-bottom: 16px;
+     position: relative;
 }
 .content .form .input-form label{
      font-size: 16px;
@@ -83,4 +86,27 @@ body{
 .site-brand span{
 	font-weight:300;
 	color: var(--green);
+}
+
+/* regist confirm */
+.confirm-content{
+	height: 28rem;
+	transform: translateY(60px);
+}
+.regist-confirm{
+	border-collapse: collapse;
+	margin: auto;
+}
+.regist-confirm th, .regist-confirm td{
+	padding: 12px 15px;
+}
+.regist-confirm tr{
+	border-bottom: 1px solid black;
+}
+.confirm-content form{
+	display: flex;
+    margin-top: 20px;
+}
+.confirm-flex{
+	height: 38rem;
 }
