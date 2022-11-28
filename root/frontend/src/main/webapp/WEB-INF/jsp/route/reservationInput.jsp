@@ -3,7 +3,6 @@
 <%@include file="/WEB-INF/jsp/common/define.jsp"%>
 <jsp:include page="/WEB-INF/jsp/common/header.jsp"></jsp:include>
 <link rel="stylesheet" href="http://localhost:9082/css/style.css"/>
-<!-- BEGIN  -->
 <body style="background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/bus6.jpg) center/cover no-repeat;">
 	<header class = "flex">
 		<div class = "container">
@@ -100,5 +99,4 @@
 		</div>
 		
 	</header>
-<!-- END  -->
 <jsp:include page="/WEB-INF/jsp/common/footer.jsp"></jsp:include>
