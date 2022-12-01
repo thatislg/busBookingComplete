@@ -10,7 +10,6 @@
 		<h1>路線登録</h1>
 		<form:form  modelAttribute="routeForm">	
 			<!-- Thông báo lỗi  -->
-			
 			<form:errors class="error" path="departureId" element="p"/>
 			<form:errors class="error"  path="scheduledDepartureTime" element="p"/>
 			<form:errors class="error" path="arrivalId" element="p"/>
@@ -19,7 +18,6 @@
 			<form:errors class="error" path="operationStartDate" element="p"/>
 			<form:errors class="error" path="operationEndDate" element="p"/>
 			<form:errors class="error" path="scheduledArrivalTime" element="p"/>
-		
 			<!-- Hết phần thông báo lỗi -->
 			
 			<!-- Nội dung trang nhập thông tin tuyến đường -->
