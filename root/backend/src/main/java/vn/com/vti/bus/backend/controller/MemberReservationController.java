@@ -36,7 +36,7 @@ public class MemberReservationController {
 		Member member = memberMapper.selectByPrimaryKey(Integer.parseInt(memberId));
 		model.addAttribute("member", member);
 		
-		List<ReserveCustom> reserveCustomList = reserveCustomMapper.selectMemberReservationByMemberId(Integer.parseInt(memberId));
+		List<ReserveCustom> reserveCustomList = reserveCustomMapper.selectReservationByMemberId(Integer.parseInt(memberId));
 		model.addAttribute("memberReservationList", reserveCustomList);
 		if(reserveCustomList.isEmpty()) {
 			redirectAttributes.addFlashAttribute("message","会員ID(" + memberId + ")が予約していません。");

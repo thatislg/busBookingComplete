@@ -17,6 +17,9 @@
 	<div class="mt-3 mb-4">
 		<h1>会員予約状況</h1>
 	</div>
+	<div class="mt-3 mb-4">
+		<h2>会員情報</h2>
+	</div>
 	<table id="member" class="table table-bordered">
 		 <tbody>
 		 	<tr>
@@ -41,16 +44,22 @@
 		</tbody>
 	</table>
 	<hr>
-	
+	<br>
+	<div class="mt-3 mb-4">
+		<h2>予約情報</h2>
+	</div>
 	<table id="memberReservationStatus" class="table table-bordered display">
 		<thead>
 			<tr>
-				<th>日付</th>
+				<th>予約ID</th>
+				<th>予約日</th>
 				<th>路線ID</th>
-				<th>出発</th>
-				<th>到着</th>
-				<th>料金</th>
 				<th>バスID</th>
+				<th>出発駅</th>
+				<th>到着駅</th>
+				<th>座席番号</th>
+				<th>出発日</th>
+				<th>合計料金</th>	
 			</tr>
 		 </thead>
 		 <tbody>
@@ -58,13 +67,17 @@
 		 		<c:when test="${not empty memberReservationList}">
 					<c:forEach items="${memberReservationList}" var="memberRL">
 					<tr>
-						<fmt:formatDate value="${memberRL.reservedDate}" pattern="yyyy-MM-dd HH:mm" var="rDate"/>
+						<td><c:out value="${memberRL.reserveId}"/></td>
+						<fmt:formatDate value="${memberRL.reservedDate}" pattern="yyyy年MM月dd日 HH:mm" var="rDate"/>
 						<td><c:out value="${rDate}"/></td>
 						<td><c:out value="${memberRL.routeId}"/></td>
-						<td><c:out value="${memberRL.departureId}"/></td>
-						<td><c:out value="${memberRL.arrivalId}"/></td>
-						<td><c:out value="${memberRL.price}"/></td>
 						<td><c:out value="${memberRL.busId}"/></td>
+						<td><c:out value="${memberRL.departureName}"/></td>
+						<td><c:out value="${memberRL.arrivalName}"/></td>
+						<td><c:out value="${memberRL.seat}"/></td>
+						<fmt:formatDate value="${memberRL.departureDate}" pattern="yyyy年MM月dd日 HH:mm" var="departureDate"/>
+						<td><c:out value="${departureDate}"/></td>
+						<td><c:out value="${memberRL.price}円"/></td>
 					</tr>
 				</c:forEach>
 				</c:when>
