@@ -15,7 +15,7 @@
 <body>
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 	<div class="container-fluid">">
-		<a class="navbar-brand" href="/">
+		<a class="navbar-brand" href="/login">
 		<img src="../img/VTI BUS.png" alt="Avatar Logo" style="width: 60px;height: 50px;" class="rounded-pill" />
 		</a>
 		<div class="collapse navbar-collapse" id="mynavbar">
