@@ -43,7 +43,7 @@
 				<form:hidden path="numberKana"/>
 				<form:hidden path="numberFirstHalf"/>
 				<form:hidden path="numberLatterHalf"/>
-				<input class="btn btn-primary ms-5" type="submit" value="ＯＫ" formaction="insert">
+				<input class="btn btn-primary ms-5" type="submit" value="登録確認" formaction="insert">
 				<input class="btn btn-dark" type="submit" value="戻る" formaction="input">
 			</form:form>		
 		</div>

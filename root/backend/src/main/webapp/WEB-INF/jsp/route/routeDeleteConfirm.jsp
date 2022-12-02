@@ -43,7 +43,7 @@
 	 		</div>
 		 	<form>
 			 	<input type="hidden" name="routeId" value="${routeInfo.routeId}">
-			 	<input class="btn btn-primary ms-5" type="submit" value="ＯＫ" formaction="/routeDelete/delete">
+			 	<input class="btn btn-primary ms-5" type="submit" value="削除確認" formaction="/routeDelete/delete">
 			 &nbsp;
 				<input class="btn btn-dark" type="submit" value="戻る" formaction="/routeList/index">
 			</form>

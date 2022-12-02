@@ -40,7 +40,7 @@
 				</table>
 				<div class="btn-form">	
 					<form:form>
-						<input type="submit" class="reserve-btn" value="OK" formaction="../reservation/index"/>
+						<input type="submit" class="reserve-btn" value="予約" formaction="../reservation/index"/>
 					</form:form>
 				</div>
 			</div>

@@ -50,7 +50,7 @@
 				<form:hidden path="operationEndDate"/>
 				<form:hidden path="scheduledDepartureTime"/>
 				<form:hidden path="scheduledArrivalTime"/>
-				<input class="btn btn-primary ms-5" type="submit" value="ＯＫ" formaction="/routeInsert/insert">
+				<input class="btn btn-primary ms-5" type="submit" value="登録確認" formaction="/routeInsert/insert">
 				<input class="btn btn-dark" type="submit" value="戻る" formaction="/routeInsert/input">
 			</form:form>
 	</div>

@@ -46,7 +46,7 @@
 						<input type="hidden" name="departureDate" value="${rDDate}"/>
 						<input type="hidden" name="routeId" value="${routeInfo.routeId}"/>
 						<input type="hidden" name="busId" value="${busInfo.busId}"/>
-						<input type="submit" class="reserve-btn" value="OK" formaction="/reservation/insert"/>
+						<input type="submit" class="reserve-btn" value="予約確認" formaction="/reservation/insert"/>
 					</form:form>
 					<form:form method="POST">
 						<input type="submit" class="return-btn" value="戻る" formaction=""/>

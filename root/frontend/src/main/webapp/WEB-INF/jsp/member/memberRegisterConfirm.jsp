@@ -37,7 +37,7 @@
 						<form:hidden path="mailAddress"/>
 						<form:hidden path="loginId"/>
 						<form:hidden path="password"/>
-						<input class="regist-btn" type="submit" value="ＯＫ" formaction="insert">
+						<input class="regist-btn" type="submit" value="登録確認" formaction="insert">
 						<input class="return-btn" type="submit" value="戻る" formaction="input">
 					</form:form>
 				</div>
