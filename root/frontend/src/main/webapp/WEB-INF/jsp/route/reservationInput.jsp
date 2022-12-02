@@ -15,7 +15,7 @@
 						<table class="seat-info-table">
 							<tr>
 								<th>日付</th>
-								<fmt:formatDate value="${reservedDepartureDate}" pattern="yyyy-MM-dd" var="rDDate"/>
+								<fmt:formatDate value="${searchResultForm.departureDate}" pattern="yyyy-MM-dd" var="rDDate"/>
 								<td>${rDDate}</td>
 							</tr>
 							<tr>
@@ -81,16 +81,12 @@
 					</table>
 						<div class="btn-form">
 						<form:form method="POST">
-							<!--  <input type="hidden" name="currentReservedSeat" value="${currentReservedSeat}"/>-->
-							<input type="hidden" name="departureDate" value="${rDDate}"/>
-							<input type="hidden" name="routeId" value="${routeInfo.routeId}"/>
-							<input type="hidden" name="busId" value="${busInfo.busId}"/>
 							<input type="submit" class="reserve-btn" value="予約" formaction="/reservation/confirm"/>
 						</form:form>
 						<form:form>
-							<input type="hidden" name="departureStationName" value="${inputedDepartureNameInfo}"/>
 							<input type="hidden" name="departureDate" value="${rDDate}"/>
-							<input type="hidden" name="arrivalStationName" value="${inputedArrivalNameInfo}"/>
+							<input type="hidden" name="departureStationName" value="${searchResultForm.searchedDepartureName}"/>
+							<input type="hidden" name="arrivalStationName" value="${searchResultForm.searchedArrivalName}"/>
 							<input type="submit" class="return-btn" value="戻る" formaction="../routeSearch/search"/>
 						</form:form>
 						</div>

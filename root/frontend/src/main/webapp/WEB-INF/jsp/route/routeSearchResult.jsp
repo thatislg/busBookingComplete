@@ -56,8 +56,8 @@
 								<td><a href="../reservation/input?departureDate=${param.departureDate}
 																&routeId=${route.routeId}
 																&busId=${route.busId}
-																&inputedDepartureName=${inputedDepartureNameInfo}
-																&inputedArrivalName=${inputedArrivalNameInfo}">
+																&searchedDepartureName=${inputedDepartureNameInfo}
+																&searchedArrivalName=${inputedArrivalNameInfo}">
 									<em class="fas fa-file-contract"></em></a></td>
 							</tr>
 						</c:forEach>
