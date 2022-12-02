@@ -74,11 +74,12 @@
 			</c:choose>
 		</tbody>
 	</table>
+	<form>
+		<input class="btn btn-dark" type="submit" value="戻る" style="float: right"
+				formaction="/memberList/index">
+	</form>
 </div>
-<script>
-	$(document).ready(function () {
-		$('#memberList').DataTable();
-	});
-</script>
+<br>
+<br>
 <jsp:include page="/WEB-INF/jsp/common/footer.jsp"></jsp:include>
 
