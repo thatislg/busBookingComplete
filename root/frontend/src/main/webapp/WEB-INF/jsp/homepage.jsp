@@ -19,7 +19,7 @@
 				<h2>路線選択</h2>
 				<form class = "flex" action = "routeSearch/search">
 					<input type = "text" class = "form-control" placeholder = "出発地" name="departureStationName" oninvalid="this.setCustomValidity('入力必須')" onchange="this.setCustomValidity('')" required/>
-					<input type = "date" class = "form-control" placeholder = "Date" name="departureDate" oninvalid="this.setCustomValidity('選択必須')" onchange="this.setCustomValidity('')" required/>
+					<input type = "text" onfocus="(this.type='date')" class = "form-control" placeholder = "例：12/31/2022" name="departureDate" oninvalid="this.setCustomValidity('選択必須')" onchange="this.setCustomValidity('')" required/>
 					<input type = "text" class = "form-control" placeholder = "到着地" name="arrivalStationName" oninvalid="this.setCustomValidity('入力必須')" onchange="this.setCustomValidity('')" required/>
 					<input type = "submit" class = "btn" value = "検索"/>
 				</form>
