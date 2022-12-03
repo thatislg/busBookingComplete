@@ -37,7 +37,7 @@
 			 	</div>
 			 	<div class="btn-form">		 	
 			 		<input class="regist-btn" type="submit" value="登録" formaction="confirm"/> 
-			 		<input class="return-btn" type="submit" value="戻る" formaction="/loginOrMemberRegister"/>
+			 		<input class="return-btn" type="submit" value="戻る" formaction="/"/>
 			 	</div>
 			</form:form>
 		</div>
