@@ -7,51 +7,95 @@ import javax.validation.constraints.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
 
 public class RouteForm{
-	@NotNull
-	private Integer departureId;
 	
-	@NotNull
-	private Integer arrivalId;
+	private Integer routeId;
 	
-	@NotNull
+	
 	private Integer busId;
 	
 	@NotNull
 	private Integer price;
 	
+	private String departureStationName;
+	
+	private String arrivalStationName;
+	
+	private Integer arrivalId;
+	
+	private Integer departureId;
+
+	
 	@NotNull
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "yyyy年MM月dd日")
 	private Date operationStartDate;
 	
 	@NotNull
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "yyyy年MM月dd日")
 	private Date operationEndDate;
 	
 	@NotNull
-	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	@DateTimeFormat(pattern = "HH:mm")
 	private Date scheduledDepartureTime;
 	
 	@NotNull
-	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	@DateTimeFormat(pattern = "HH:mm")
 	private Date scheduledArrivalTime;
 	
 	
-	public Integer getDepartureId() {
-		return departureId;
+	private String numberPlate;
+	
+	
+	public String getNumberPlate() {
+		return numberPlate;
 	}
 
-	public void setDepartureId(Integer departureId) {
-		this.departureId = departureId;
+	public void setNumberPlate(String numberPlate) {
+		this.numberPlate = numberPlate;
 	}
 
 	public Integer getArrivalId() {
 		return arrivalId;
 	}
 
+	public Integer getDepartureId() {
+		return departureId;
+	}
+
 	public void setArrivalId(Integer arrivalId) {
 		this.arrivalId = arrivalId;
 	}
 
+	public void setDepartureId(Integer departureId) {
+		this.departureId = departureId;
+	}
+	
+	
+	public String getDepartureStationName() {
+		return departureStationName;
+	}
+
+	public String getArrivalStationName() {
+		return arrivalStationName;
+	}
+
+	public void setDepartureStationName(String departureStationName) {
+		this.departureStationName = departureStationName;
+	}
+
+	public void setArrivalStationName(String arrivalStationName) {
+		this.arrivalStationName = arrivalStationName;
+	}
+
+	
+	public Integer getRouteId() {
+		return routeId;
+	}
+
+	public void setRouteId(Integer routeId) {
+		this.routeId = routeId;
+	}
+	
+	
 	public Integer getBusId() {
 		return busId;
 	}

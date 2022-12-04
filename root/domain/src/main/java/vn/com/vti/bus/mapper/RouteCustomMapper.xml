@@ -121,6 +121,12 @@
 		,B1.BUS_STATION_NAME AS ARRIVAL_STATION_NAME
 		,BUS.ROW_NUM
 		,BUS.COLUMN_NUM
+		,RO.operation_start_date
+		,RO.operation_end_date
+		,RO.BUS_ID
+		,RO.departure_id
+		,RO.arrival_id
+		,RO.route_id
 	FROM
 		ROUTE AS RO
 		INNER JOIN BUS_STATION AS B

@@ -5,9 +5,12 @@ package vn.com.vti.bus.backend.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -32,8 +35,6 @@ import vn.com.vti.bus.mapper.RouteMapper;
 @Controller
 @RequestMapping("/routeUpdate")
 public class RouteUpdateController {
-	@Autowired 
-	private RouteMapper routeMapper;
 	
 	@Autowired
 	private RouteCustomMapper routeCustomMapper;
@@ -44,13 +45,9 @@ public class RouteUpdateController {
 	@Autowired
 	private BusMapper busMapper;
 	
-	@Autowired 
-	private RouteListController routeListController;
+	@Autowired
+	private RouteMapper routeMapper;
 	
-	
-	private Route route;
-	
-	private RouteCustom routeCustom;
 	
 	@ModelAttribute
 	public RouteForm createForm() {
@@ -58,60 +55,64 @@ public class RouteUpdateController {
 	}
 	
 	@RequestMapping("input")
-	public String input(@RequestParam String routeId, Model model) {
-		if(routeId.isEmpty()) {
-			routeListController.index(model);
-			return "";
-			
-		}
+	public String input(@RequestParam Integer routeId, Model model) {
+		Integer searchRouteId =routeId;
+		
 		
 		BusStationExample busStationExample = new BusStationExample();
 		BusExample busExample = new BusExample();
 		
-		// Tạo list danh sách điểm đến và điểm đi
-		List<BusStation> departureStationList = busStationMapper.selectByExample(busStationExample);
-		List<BusStation> arrivalStationList = busStationMapper.selectByExample(busStationExample);
-		
-		// Tạo list danh sách bus
+		List<BusStation> busStationList = busStationMapper.selectByExample(busStationExample);
 		List<Bus> busList = busMapper.selectByExample(busExample);
-		
-		// Thêm vào model addtribute
-		model.addAttribute("departureStationList", departureStationList);
-		model.addAttribute("arrivalStationList", arrivalStationList);
+		model.addAttribute("busStationList", busStationList);
 		model.addAttribute("busList", busList);
 		
-		// Sử dụng để in ra màn hình các thông tin về Route
-		route = routeMapper.selectByPrimaryKey(Integer.parseInt(routeId));
-		model.addAttribute("routeInfo", route);
 		
-		// Bổ xung in thông tin vị trí bus_station cho Route
-		routeCustom = routeCustomMapper.selectByIdForDeleteConfirm(Integer.parseInt(routeId));
-		model.addAttribute("routeInfo1", routeCustom);
+		RouteCustom route = routeCustomMapper.selectRouteInfoByRouteId(searchRouteId);
+		Bus bus = busMapper.selectByPrimaryKey(route.getBusId());
+		String numberPlate = bus.getNumberPlate();
+		
+		model.addAttribute("routeInfo", route);
+		model.addAttribute("busInfo", bus);
+		model.addAttribute("numberPlate", numberPlate);
 		
 		return "route/routeUpdateInput";
+	
 	}
 	
+		
 	@RequestMapping("confirm")
-	public String confirm(@RequestParam String routeId, RouteForm routeForm, Model model) {
+	public String confirm(@Valid RouteForm routeForm, BindingResult bindingResult, Model model) {
 		
-		route.setDepartureId(routeForm.getDepartureId());
-		route.setArrivalId(routeForm.getArrivalId());
-		route.setPrice(routeForm.getPrice());
-		route.setBusId(routeForm.getBusId());
-		route.setOperationStartDate(routeForm.getOperationStartDate());
-		route.setOperationEndDate(routeForm.getOperationEndDate());
-		route.setScheduledDepartureTime(routeForm.getScheduledDepartureTime());
-		route.setScheduledArrivalTime(routeForm.getScheduledArrivalTime());
+		if(bindingResult.hasErrors()) {
+			return input(routeForm.getRouteId(),model);
+		}
 		
-		model.addAttribute("routeInfo", route);
+		String departureStationName = busStationMapper.selectByPrimaryKey(routeForm.getDepartureId()).getBusStationName();
+		String arrivalStationName = busStationMapper.selectByPrimaryKey(routeForm.getArrivalId()).getBusStationName();
+		String numberPlate = busMapper.selectByPrimaryKey(routeForm.getBusId()).getNumberPlate();
+		routeForm.setDepartureStationName(departureStationName);
+		routeForm.setArrivalStationName(arrivalStationName);
+		routeForm.setNumberPlate(numberPlate);
 		
-		model.addAttribute("routeInfo1", routeCustom);
 		
 		return "route/routeUpdateConfirm";
 	}
 	
 	@RequestMapping("update")
-	public String update(@RequestParam String routeId, Model model, RedirectAttributes redirectAttributes) {
+	public String update(RouteForm routeForm, RedirectAttributes redirectAttributes) {
+		
+		Route route = new Route();
+		route.setRouteId(routeForm.getRouteId());
+		route.setDepartureId(routeForm.getDepartureId());
+		route.setArrivalId(routeForm.getArrivalId());
+		route.setPrice(routeForm.getPrice());
+		route.setScheduledArrivalTime(routeForm.getScheduledArrivalTime());
+		route.setScheduledDepartureTime(routeForm.getScheduledDepartureTime());
+		route.setOperationEndDate(routeForm.getOperationEndDate());
+		route.setOperationStartDate(routeForm.getOperationStartDate());
+		route.setBusId(routeForm.getBusId());
+		
 		
 		routeMapper.updateByPrimaryKeySelective(route);
 		

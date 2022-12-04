@@ -80,7 +80,14 @@ public class Bus {
      * @return the value of public.bus.bus_id
      *
      * @mbg.generated Fri Oct 28 23:04:58 JST 2022
+     * 
+     * 
      */
+    
+    public String getNumberPlate(){
+        return numberPlace+numberDivision+numberKana+numberFirstHalf+"-"+numberLatterHalf;
+    	
+    }
     public Integer getBusId() {
         return busId;
     }
