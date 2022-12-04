@@ -55,7 +55,7 @@
 	 		<form:hidden path="scheduledArrivalTime"/>
 	 		<input class="btn btn-primary ms-5" type="submit" value="変更" formaction="update"/>
 			 &nbsp;
-			<input class="btn btn-dark" type="submit" value="戻る" formaction="../routeUpdate/input?routeId=${routeForm.routeId}"/>
+			<input class="btn btn-dark" type="submit" value="戻る" formaction="input"/>
 	 	</form:form>
 	</div>
 </div> 
