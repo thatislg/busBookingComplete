@@ -29,11 +29,11 @@
 					</tr>
 					<tr>
 						<th>座席番号</th>
-						<td><c:forEach items="${seatInfor}" var="seat"><c:out value="${seat.seatNumber}"></c:out></c:forEach></td>	
+						<td><c:out value="${seatInfor}"></c:out></td>	
 					</tr>
 					<tr>
 						<th>料金</th>
-						<td><c:out value="${reservationInfor.price}円"/></td>
+						<td><c:out value="${totalPrice}円"/></td>
 					</tr>
 					<tr>
 						<th>出発日</th>

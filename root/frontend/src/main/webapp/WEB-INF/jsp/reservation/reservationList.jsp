@@ -43,7 +43,7 @@
 								<fmt:formatDate value="${reserve.scheduledArrivalTime }" pattern="HH:mm" var="scheduledArrivalTime" />
 								<td><c:out value="${reserve.arrivalName}(${scheduledArrivalTime })"/></td>
 								<td><c:out value="${reserve.seatNumber}"/></td>
-								<td><c:out value="${reserve.price}円"/></td>
+								<td><c:out value="${reserve.totalPrice}円"/></td>
 								<fmt:formatDate value="${reserve.departureDate}" pattern="yyyy年MM月dd日" var="departureDate" />
 								<td><c:out value="${departureDate}"/></td>
 								<fmt:formatDate value="${reserve.reservedDate}" pattern="yyyy年MM月dd日" var="reservedDate" />

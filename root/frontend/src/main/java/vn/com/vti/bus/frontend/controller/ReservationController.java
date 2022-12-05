@@ -248,32 +248,29 @@ public class ReservationController {
 	
 	@RequestMapping("/cancelConfirm")
 	public String cancelConfirm(@RequestParam(value="reserveId") String reserveId,
-			Model model,@AuthenticationPrincipal MemberDetails memberDetails) {
-		if (reserveId.isEmpty()) {
-			index(model, memberDetails);
-		return "";
-		}
+			Model model) {
 		int intReserveId = Integer.parseInt(reserveId);
 		List<ReserveCustom> reservationInfor = reserveCustomMapper.selectByReserveId(intReserveId);
-//		StringBuilder sb = new StringBuilder();
-//		for (int i = 0; i < reservationInfor.size(); i++)
-//		{ 
-//		    if (i > 0) 
-//		    {
-//		        sb.append(", ");
-//		    }
-//		    sb.append(reservationInfor.get(i));   
-//		}
-//		System.err.println(reservationInfor);
 		model.addAttribute("reservationInfor", reservationInfor.get(0));
-		model.addAttribute("seatInfor", reservationInfor);
+		
+		Integer totalPrice = 0;
+		for(ReserveCustom tp : reservationInfor) {
+			totalPrice+=tp.getPrice();
+		}
+		model.addAttribute("totalPrice", totalPrice);
+		
+		List<String> strSeatList = new ArrayList<>();
+		for(ReserveCustom sl: reservationInfor) {
+			strSeatList.add(String.valueOf(sl.getSeatNumber()));
+		}
+		String strSeatListInfo = String.join(", ", strSeatList);
+		model.addAttribute("seatInfor", strSeatListInfo);
 		return "/reservation/reservationCancelConfirm";
 	}
 	@RequestMapping("cancel")
-	public String cancel(@RequestParam(value="reserveId") String reserveId,@RequestParam(value="seatId") String seatId, Model model,@AuthenticationPrincipal MemberDetails memberDetails, RedirectAttributes redirectAttributes) {
+	public String cancel(@RequestParam(value="reserveId") String reserveId,@RequestParam(value="seatId") String seatId, Model model, RedirectAttributes redirectAttributes) {
 		seatMapper.deleteByPrimaryKey(Integer.parseInt(seatId));
 		reserveMapper.deleteByPrimaryKey(Integer.parseInt(reserveId));
-		
 		// Thông báo hiển thị khi làm thành công.
 		redirectAttributes.addFlashAttribute("message","予約ID(" + reserveId + ")を削除しました。");
 		

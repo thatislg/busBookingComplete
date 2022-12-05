@@ -20,6 +20,8 @@ public class ReserveCustom {
 	
 	private Integer price;
 	
+	private Integer totalPrice;
+	
 	private Integer busId;
 	
 	private String departureName;
@@ -151,5 +153,12 @@ public class ReserveCustom {
 
 	public void setBusId(Integer busId) {
 		this.busId = busId;
+	}
+	public Integer getTotalPrice() {
+		return totalPrice;
+	}
+
+	public void setTotalPrice(Integer totalPrice) {
+		this.totalPrice = totalPrice;
 	}
 }
