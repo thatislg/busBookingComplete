@@ -213,7 +213,7 @@ public class ReservationController {
 			
 			seatMapper.insert(seat);
 		}
-		return complete(model, reservedId);
+		return "redirect:/reservation/complete?reservedId="+reservedId;
 	}
 	
 	@RequestMapping("/complete")
