@@ -24,6 +24,8 @@
 		<result column="scheduled_departure_time" jdbcType="TIMESTAMP" property="scheduledDepartureTime" />
    	 	<result column="scheduled_arrival_time" jdbcType="TIMESTAMP" property="scheduledArrivalTime" />
 		<result column="seat_number" jdbcType="VARCHAR" property="seatNumber" />
+		<result column="seat_id" jdbcType="INTEGER" property="seatId" />
+		
 	</resultMap>
 	
 	<resultMap type="vn.com.vti.bus.entity.SeatOrder"

@@ -36,14 +36,14 @@ public class ReserveCustom {
 	
 	private String seatNumber;
 	
-	private String seatId;
+	private Integer seatId;
 	
 	
-	public String getSeatId() {
+	public Integer getSeatId() {
 		return seatId;
 	}
 
-	public void setSeatId(String seatId) {
+	public void setSeatId(Integer seatId) {
 		this.seatId = seatId;
 	}
 
