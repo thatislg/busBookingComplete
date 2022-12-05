@@ -5,6 +5,11 @@
 <jsp:include page="/WEB-INF/jsp/common/header.jsp"></jsp:include>
 <link rel="stylesheet" href="http://localhost:9082/css/style.css"> 
 <body style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/bus6.jpg) center/cover no-repeat;">
+<script type="text/javascript">
+	window.onbeforeunload = function() {
+   		window.location = "/reservation/reservationList.jsp";
+}
+</script>
 	<div class="routeSearch flex">
 		<div class = "container">
 			<div class = "title">
@@ -14,8 +19,12 @@
 			<div class = "confirm-form">
 				<table class="seat-info-table">
 					<tr>
+						<th>予約ID</th>
+						<td>${reserveInfo.reserveId}</td>
+					</tr>
+					<tr>
 						<th>日付</th>
-						<fmt:formatDate value="${reservedDepartureDate}" pattern="yyyy-MM-dd" var="rDDate"/>
+						<fmt:formatDate value="${reserveInfo.departureDate}" pattern="yyyy-MM-dd"  var="rDDate"/>
 						<td>${rDDate}</td>
 					</tr>
 					<tr>
@@ -29,21 +38,21 @@
 					<tr>
 						<th>予約席</th>
 						<td>
-							<c:out value="${strInputedCurrentReservedSeat}" />
+							<c:out value="${strSeatListInfo}" />
 						</td>
 					</tr>
 					<tr>
 						<th>小計</th>
-						<c:set var="totalPrice" value="${routeInfo.price * fn:length(inputedCurrentReservedSeat)}"/>
-						<td>¥${totalPrice}</td>
+						<td>¥${totalAmount}</td>
 					</tr>	
 				</table>
 				<div class="btn-form">	
 					<form:form>
-						<input type="submit" class="reserve-btn" value="予約" formaction="../reservation/index"/>
+						<input type="submit" class="reserve-btn" value="完了" formaction="../reservation/index"/>
 					</form:form>
 				</div>
 			</div>
 		</div>
 	</div>
+
 <jsp:include page="/WEB-INF/jsp/common/footer.jsp"></jsp:include>
