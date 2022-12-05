@@ -43,7 +43,7 @@
 				<div class="btn-form">
 					<form:form method="POST">
 						<input type="hidden" name="currentReservedSeat" value="${insertSeatInfo}"/>
-						<input type="submit" class="reserve-btn" value="予約確認" formaction="/reservation/insert"/>
+						<input type="submit" class="reserve-btn" value="予約" formaction="/reservation/insert"/>
 					</form:form>
 					<form:form method="POST">
 						<input type="hidden" name="departureDate" value="${rDDate}"/>
