@@ -24,6 +24,7 @@ import vn.com.vti.bus.entity.Reserve;
 import vn.com.vti.bus.entity.ReserveCustom;
 import vn.com.vti.bus.entity.Route;
 import vn.com.vti.bus.entity.Seat;
+import vn.com.vti.bus.entity.SeatExample;
 import vn.com.vti.bus.entity.SeatMap;
 import vn.com.vti.bus.frontend.form.SearchResultForm;
 import vn.com.vti.bus.frontend.security.MemberDetails;
@@ -186,6 +187,8 @@ public class ReservationController {
 		int insertedId = reserveCustomMapper2.insert(reserve);
 		
 		int reservedId = reserve.getReserveId();
+		model.addAttribute("reservedId", reservedId);
+		
 		System.out.println("insertedId = " + reservedId);
 		System.out.println("insertedId1 = " + insertedId);
 		
@@ -210,9 +213,39 @@ public class ReservationController {
 			
 			seatMapper.insert(seat);
 		}
-		
-		return "/route/reservationInsert";
+		return complete(model, reservedId);
 	}
+	
+	@RequestMapping("/complete")
+	public String complete( Model model, Integer reservedId) {
+		//TODO tim kiem dua tren reservedId , su dung model.Ađattribute de hien thi jsp
+		
+		// Lấy danh sách ghế đc đặt theo reserveId
+		SeatExample seatExample = new SeatExample();
+		seatExample.createCriteria().andReserveIdEqualTo(reservedId);
+		List<Seat> seatList = seatMapper.selectByExample(seatExample);
+		
+		// Chuyển danh sách ghế thành str để hiển thị
+		List<String> strSeatList = new ArrayList<>();
+		for(Seat seat: seatList) {
+			strSeatList.add(String.valueOf(seat.getSeatNumber()));
+		}
+		String strSeatListInfo = String.join(", ", strSeatList);
+		
+		// Lấy thông tin về tổng giá tiền
+		Reserve reserve = reserveMapper.selectByPrimaryKey(reservedId);
+		Route reservedRoute = routeMapper.selectByPrimaryKey(reserve.getRouteId());
+		int totalAmount = reservedRoute.getPrice() * seatList.size();
+		
+		// Tạo các model hiển thị thông tin
+		model.addAttribute("strSeatListInfo", strSeatListInfo);
+		model.addAttribute("reserveInfo", reserve);
+		model.addAttribute("totalAmount", totalAmount);
+		model.addAttribute("departureStationName", departureStationName);
+		model.addAttribute("arrivalStationName", arrivalStationName);
+		return "route/reservationInsert";
+	}
+	
 	@RequestMapping("/cancelConfirm")
 	public String cancelConfirm(@RequestParam(value="reserveId") String reserveId,
 			Model model,@AuthenticationPrincipal MemberDetails memberDetails) {
@@ -246,5 +279,4 @@ public class ReservationController {
 		
 		return "redirect:/reservation/index";
 	}
-
 }
