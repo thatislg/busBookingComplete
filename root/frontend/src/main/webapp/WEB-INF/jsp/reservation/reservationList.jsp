@@ -13,10 +13,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 
 <body style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/bus9.jpg) center/cover no-repeat;">
+
 	<header class = "flex">
 		<div class="container">	
 			<div class="title">
 				<h1>予約一覧</h1>
+				<p><c:out value="${message}"/></p>
 			</div>
 			<div class = "data-table-form">
 				<table id="reservationList" class="list-table">
@@ -40,7 +42,7 @@
 								<td><c:out value="${reserve.departureName}(${scheduledDepartureTime })"/></td>
 								<fmt:formatDate value="${reserve.scheduledArrivalTime }" pattern="HH:mm" var="scheduledArrivalTime" />
 								<td><c:out value="${reserve.arrivalName}(${scheduledArrivalTime })"/></td>
-								<td><c:out value="${reserve.seat}"/></td>
+								<td><c:out value="${reserve.seatNumber}"/></td>
 								<td><c:out value="${reserve.price}円"/></td>
 								<fmt:formatDate value="${reserve.departureDate}" pattern="yyyy年MM月dd日" var="departureDate" />
 								<td><c:out value="${departureDate}"/></td>

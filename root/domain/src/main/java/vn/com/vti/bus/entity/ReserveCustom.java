@@ -34,14 +34,25 @@ public class ReserveCustom {
 
 	private Date scheduledArrivalTime;
 	
-	private String seat;
+	private String seatNumber;
 	
-	public String getSeat() {
-		return seat;
+	private String seatId;
+	
+	
+	public String getSeatId() {
+		return seatId;
 	}
 
-	public void setSeat(String seat) {
-		this.seat = seat;
+	public void setSeatId(String seatId) {
+		this.seatId = seatId;
+	}
+
+	public String getSeatNumber() {
+		return seatNumber;
+	}
+
+	public void setSeatNumber(String seatNumber) {
+		this.seatNumber = seatNumber;
 	}
 
 	public Date getScheduledDepartureTime() {

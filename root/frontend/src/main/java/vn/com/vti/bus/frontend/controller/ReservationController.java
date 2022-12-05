@@ -15,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import vn.com.vti.bus.entity.Bus;
 import vn.com.vti.bus.entity.BusStation;
@@ -31,6 +32,7 @@ import vn.com.vti.bus.mapper.BusStationMapper;
 import vn.com.vti.bus.mapper.MemberMapper2;
 import vn.com.vti.bus.mapper.ReserveCustomMapper;
 import vn.com.vti.bus.mapper.ReserveCustomMapper2;
+import vn.com.vti.bus.mapper.ReserveMapper;
 import vn.com.vti.bus.mapper.RouteMapper;
 import vn.com.vti.bus.mapper.SeatMapCustomMapper;
 import vn.com.vti.bus.mapper.SeatMapper;
@@ -55,6 +57,8 @@ public class ReservationController {
 	private ReserveCustomMapper reserveCustomMapper;
 	@Autowired
 	private SeatMapper seatMapper;
+	@Autowired
+	private ReserveMapper reserveMapper;
 	
 	private SearchResultForm searchResultForm;
 
@@ -209,5 +213,38 @@ public class ReservationController {
 		
 		return "/route/reservationInsert";
 	}
-	
+	@RequestMapping("/cancelConfirm")
+	public String cancelConfirm(@RequestParam(value="reserveId") String reserveId,
+			Model model,@AuthenticationPrincipal MemberDetails memberDetails) {
+		if (reserveId.isEmpty()) {
+			index(model, memberDetails);
+		return "";
+		}
+		int intReserveId = Integer.parseInt(reserveId);
+		List<ReserveCustom> reservationInfor = reserveCustomMapper.selectByReserveId(intReserveId);
+//		StringBuilder sb = new StringBuilder();
+//		for (int i = 0; i < reservationInfor.size(); i++)
+//		{ 
+//		    if (i > 0) 
+//		    {
+//		        sb.append(", ");
+//		    }
+//		    sb.append(reservationInfor.get(i));   
+//		}
+//		System.err.println(reservationInfor);
+		model.addAttribute("reservationInfor", reservationInfor.get(0));
+		model.addAttribute("seatInfor", reservationInfor);
+		return "/reservation/reservationCancelConfirm";
+	}
+	@RequestMapping("cancel")
+	public String cancel(@RequestParam(value="reserveId") String reserveId,@RequestParam(value="seatId") String seatId, Model model,@AuthenticationPrincipal MemberDetails memberDetails, RedirectAttributes redirectAttributes) {
+		seatMapper.deleteByPrimaryKey(Integer.parseInt(seatId));
+		reserveMapper.deleteByPrimaryKey(Integer.parseInt(reserveId));
+		
+		// Thông báo hiển thị khi làm thành công.
+		redirectAttributes.addFlashAttribute("message","予約ID(" + reserveId + ")を削除しました。");
+		
+		return "redirect:/reservation/index";
+	}
+
 }

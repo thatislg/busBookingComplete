@@ -15,6 +15,7 @@ import vn.com.vti.bus.entity.SeatOrder;
  */
 public interface ReserveCustomMapper {
 	public List<ReserveCustom> selectMemberReservationByMemberId(Integer parseInt);
-	public List<ReserveCustom> selectReservationByMemberId(Integer parseInt);
+	public List<ReserveCustom> selectReservationByMemberId(int parseInt);
 	public List<SeatOrder> selectReservationByDepartureDate(Date date, Integer searchRouteId);
+	public List<ReserveCustom> selectByReserveId(int parseInt);
 }

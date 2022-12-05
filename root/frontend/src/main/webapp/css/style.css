@@ -189,7 +189,7 @@ input[type=checkbox] {
 	opacity: 0;
 }
 input[type=checkbox]:checked ~ .form-check-label {
-  background: #bada55;      
+  background: #F42536;      
 }
 input[type=checkbox]:disabled ~ .form-check-label {
   background: #dddddd;
@@ -213,7 +213,7 @@ input[type=checkbox]:disabled ~ .form-check-label:hover {
     text-align: center;
     line-height: 1.5rem;
     padding: 4px 0;
-    background: #F42536;
+    background:  #bada55;
     border-radius: 5px;
 }
 .form-check-label:before {
@@ -234,7 +234,7 @@ input[type=checkbox]:disabled ~ .form-check-label:hover {
 
 /* reservation confirm */
 .confirm-form{
-	padding: 1.5rem;
+	padding: 1.5rem 0 0;
 	border-radius: 1.2rem;
 	color:black;
 }
