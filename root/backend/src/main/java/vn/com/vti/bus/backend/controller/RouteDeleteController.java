@@ -1,5 +1,8 @@
 package vn.com.vti.bus.backend.controller;
 
+import java.util.Date;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,8 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import vn.com.vti.bus.entity.Reserve;
+import vn.com.vti.bus.entity.ReserveExample;
 import vn.com.vti.bus.entity.Route;
 import vn.com.vti.bus.entity.RouteCustom;
+import vn.com.vti.bus.mapper.ReserveMapper;
 import vn.com.vti.bus.mapper.RouteCustomMapper;
 import vn.com.vti.bus.mapper.RouteMapper;
 
@@ -21,13 +27,33 @@ public class RouteDeleteController {
 	@Autowired
 	private RouteCustomMapper routeCustomMapper;
 	
+	@Autowired
+	private ReserveMapper reserveMapper;
+	
 	@Autowired RouteListController routeListController;
 	
 	@RequestMapping("confirm")
-	public String confirm(@RequestParam String routeId, Model model) {
+	public String confirm(@RequestParam String routeId, Model model, RedirectAttributes redirectAttributes) {
 		if(routeId.isEmpty()) {
 			routeListController.index(model);
 			return "";
+			
+		}
+		
+		//Check dieu kien de xoa tuyen duong
+		
+		ReserveExample reserveExample = new ReserveExample();
+		reserveExample.createCriteria().andRouteIdEqualTo(Integer.parseInt(routeId));
+		List<Reserve> reserveList = reserveMapper.selectByExample(reserveExample);
+		
+		Date date = new Date();
+	
+		for(Reserve reserve : reserveList) {
+			if(reserve.getDepartureDate().compareTo(date)>0) {
+				redirectAttributes.addFlashAttribute("message","予約されたため、路線ID(" + routeId + ")を変更できません。");
+				return "redirect:/routeList/index";
+			}
+			break;
 			
 		}
 		

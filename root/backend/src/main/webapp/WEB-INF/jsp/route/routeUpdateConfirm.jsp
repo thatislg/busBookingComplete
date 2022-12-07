@@ -9,7 +9,7 @@
 		<h1>路線変更確認</h1>
 			<div class="row g-3">
 				<div class="col-md-4">
-			  	 	<spring:message code="routeForm.departureStationName"/>:<c:out value="${routeForm.departureStationName}"/> 
+			  	 	<spring:message code="routeForm.departureId"/>:<c:out value="${routeForm.departureStationName}"/> 
 			 	</div>
 		 		<div class="col-md-4">
 			   		<fmt:formatDate value="${routeForm.scheduledDepartureTime}" pattern="HH:mm" var="scheduledDepartureTime"/>
@@ -18,7 +18,7 @@
 		 	</div>
 		 	<div class="row g-3">
 			 	<div class="col-md-4">
-					<spring:message code="routeForm.arrivalStationName"/>: <c:out value="${routeForm.arrivalStationName}"/>
+					<spring:message code="routeForm.arrivalId"/>: <c:out value="${routeForm.arrivalStationName}"/>
 			 	</div>
 			 	<div class="col-md-4">
 				   	<fmt:formatDate value="${routeForm.scheduledArrivalTime}" pattern="HH:mm" var="scheduledArrivalTime"/>	
@@ -27,7 +27,7 @@
 		 	</div>			 	
 	 		<div class="row g-3">
 		 		<div class="col-md-4">
-			   			<spring:message code="routeForm.numberPlate"/>:<c:out value="${routeForm.numberPlate}"/>		   		
+			   			<spring:message code="routeForm.busId"/>:<c:out value="${routeForm.numberPlate}"/>		   		
 			 	</div>
 			 	<div class="col-md-4">
 			 			<spring:message code="routeForm.price"/>(円):<c:out value="${routeForm.price}"/>

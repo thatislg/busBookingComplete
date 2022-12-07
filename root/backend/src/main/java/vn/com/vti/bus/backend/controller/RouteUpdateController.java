@@ -3,6 +3,7 @@
  */
 package vn.com.vti.bus.backend.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -21,10 +22,13 @@ import vn.com.vti.bus.entity.Bus;
 import vn.com.vti.bus.entity.BusExample;
 import vn.com.vti.bus.entity.BusStation;
 import vn.com.vti.bus.entity.BusStationExample;
+import vn.com.vti.bus.entity.Reserve;
+import vn.com.vti.bus.entity.ReserveExample;
 import vn.com.vti.bus.entity.Route;
 import vn.com.vti.bus.entity.RouteCustom;
 import vn.com.vti.bus.mapper.BusMapper;
 import vn.com.vti.bus.mapper.BusStationMapper;
+import vn.com.vti.bus.mapper.ReserveMapper;
 import vn.com.vti.bus.mapper.RouteCustomMapper;
 import vn.com.vti.bus.mapper.RouteMapper;
 
@@ -48,6 +52,9 @@ public class RouteUpdateController {
 	@Autowired
 	private RouteMapper routeMapper;
 	
+	@Autowired
+	private ReserveMapper reserveMapper;
+	
 	
 	@ModelAttribute
 	public RouteForm createForm() {
@@ -55,9 +62,27 @@ public class RouteUpdateController {
 	}
 	
 	@RequestMapping("input")
-	public String input(@RequestParam Integer routeId, Model model) {
+	public String input(@RequestParam Integer routeId, Model model, RedirectAttributes redirectAttributes) {
 		Integer searchRouteId =routeId;
 		
+		//Check dieu kien ko xoa dc tuyen duong neu da co trong danh sach dat cho
+		
+		ReserveExample reserveExample = new ReserveExample();
+		reserveExample.createCriteria().andRouteIdEqualTo(searchRouteId);
+		List<Reserve> reserveList = reserveMapper.selectByExample(reserveExample);
+		
+		Date date = new Date();
+	
+		for(Reserve reserve : reserveList) {
+			if(reserve.getDepartureDate().compareTo(date)>0) {
+				redirectAttributes.addFlashAttribute("message","予約されたため、路線ID(" + routeId + ")を変更できません。");
+				return "redirect:/routeList/index";
+			}
+			break;
+			
+		}
+		
+		//Neu khong xoa tuyen duong se tiep tuc cho update
 		
 		BusStationExample busStationExample = new BusStationExample();
 		BusExample busExample = new BusExample();
@@ -82,10 +107,10 @@ public class RouteUpdateController {
 	
 		
 	@RequestMapping("confirm")
-	public String confirm(@Valid RouteForm routeForm, BindingResult bindingResult, Model model) {
+	public String confirm(@Valid RouteForm routeForm, BindingResult bindingResult, Model model,RedirectAttributes redirectAttributes ) {
 		
 		if(bindingResult.hasErrors()) {
-			return input(routeForm.getRouteId(),model);
+			return input(routeForm.getRouteId(),model,redirectAttributes);
 		}
 		
 		String departureStationName = busStationMapper.selectByPrimaryKey(routeForm.getDepartureId()).getBusStationName();

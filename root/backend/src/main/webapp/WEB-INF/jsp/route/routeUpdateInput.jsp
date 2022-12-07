@@ -22,7 +22,7 @@
 		<!-- エラーメッセージ終わり-->
 			<div class="row g-3">
 				<div class="col-md-5">
-			  	 	<label for="departureId" class="form-label"><spring:message code="routeForm.departureStationName"/>:</label> 
+			  	 	<label for="departureId" class="form-label"><spring:message code="routeForm.departureId"/>:</label> 
 			   		<form:select path="departureId">
 			   				<form:option value="${routeInfo.departureId}" label="${routeInfo.departureStationName}"/>
 			   		 		<form:options items="${busStationList}" itemValue="busStationId" itemLabel="busStationName" />
@@ -36,7 +36,7 @@
 		 	</div>
 		 	<div class="row g-3">
 			 	<div class="col-md-5">
-					<label for="arrivalStationName" class="form-label"><spring:message code="routeForm.arrivalStationName"/>:</label> 
+					<label for="arrivalStationName" class="form-label"><spring:message code="routeForm.arrivalId"/>:</label> 
 				   	 <form:select path="arrivalId">
 				   	 		<form:option value="${routeInfo.arrivalId}" label="${routeInfo.arrivalStationName}"/>
 			   		 		<form:options items="${busStationList}" itemValue="busStationId" itemLabel="busStationName" />
@@ -50,7 +50,7 @@
 		 	</div>			 	
 	 		<div class="row g-3">
 		 		<div class="col-md-5">
-			   		<label for="numberPlate" class="form-label"><spring:message code="routeForm.numberPlate"/>:</label>
+			   		<label for="numberPlate" class="form-label"><spring:message code="routeForm.busId"/>:</label>
 			   		<form:select path="busId">
 			   		 		<c:set value="${numberPlate}" var="numberPlate"/>
 			   		 		<form:option value="${routeInfo.busId}" label="${numberPlate}"/>
