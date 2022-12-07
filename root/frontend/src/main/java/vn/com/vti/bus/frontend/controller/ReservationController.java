@@ -149,7 +149,7 @@ public class ReservationController {
 	
 	@RequestMapping("/insert")
 	public String insert(@RequestParam(value="currentReservedSeat") List<String> currentReservedSeat
-								, Model model) {
+								, Model model, RedirectAttributes redirectAttributes) {
 		
 		// Lấy loginId của người đang đăng nhập
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -162,6 +162,10 @@ public class ReservationController {
 		int insertMemberId = currentLoginMember.getMemberId();
 		int insertRouteId = Integer.parseInt(searchResultForm.getRouteId());
 		int insertBusId = Integer.parseInt(searchResultForm.getBusId());
+		
+		// Chuyển các ghế đăng ký thành mảng
+		ArrayList<String> inputedCurrentReservedSeat = new ArrayList<>(currentReservedSeat);
+		String strInputedCurrentReservedSeat =  String.join(", ", inputedCurrentReservedSeat);
 		
 		//　Lấy thông tin về route
 		model.addAttribute("routeInfo", route);
@@ -184,41 +188,82 @@ public class ReservationController {
 		reserve.setMemberId(insertMemberId);
 		reserve.setReservedDate(now);
 		reserve.setDepartureDate(searchResultForm.getDepartureDate());
-		int insertedId = reserveCustomMapper2.insert(reserve);
 		
-		int reservedId = reserve.getReserveId();
-		model.addAttribute("reservedId", reservedId);
+		// Cần check xem đã có bản ghi tương ứng chưa mới cho insert
+		// Lấy danh sách ghế đc đặt theo RouteId, DepartureDate, BusId
+		List<SeatMap> seatListForChecking = seatMapCustomMapper.checkSeatMap(reserve.getDepartureDate()
+																	,reserve.getRouteId()
+																	, insertBusId);
 		
-		System.out.println("insertedId = " + reservedId);
-		System.out.println("insertedId1 = " + insertedId);
-		
-		ArrayList<String> inputedCurrentReservedSeat = new ArrayList<>(currentReservedSeat);
-		String strInputedCurrentReservedSeat =  String.join(", ", inputedCurrentReservedSeat);
-		model.addAttribute("strInputedCurrentReservedSeat", strInputedCurrentReservedSeat);
-		model.addAttribute("insertSeatInfo", currentReservedSeat);
-		model.addAttribute("inputedCurrentReservedSeat", inputedCurrentReservedSeat);
-		
-		model.addAttribute("reservedDepartureDate", searchResultForm.getDepartureDate());
-		
+		// Chuyển chuỗi ghế từ string thành list số
+		List<Integer> registeredSeatList = new ArrayList<>();
 		for(int i = 0; i < inputedCurrentReservedSeat.size(); i++) {
 			String seatNumber = inputedCurrentReservedSeat.get(i).replaceAll("(^\\[|\\]$)", "");
-
 			int insertSeatNumber = Integer.parseInt(seatNumber); 
-			System.out.println(seatNumber);
-			Seat seat = new Seat();
 			
-			seat.setReserveId(reservedId);
-			seat.setBusId(insertBusId);
-			seat.setSeatNumber(insertSeatNumber);
-			
-			seatMapper.insert(seat);
+			registeredSeatList.add(insertSeatNumber);
 		}
-		return "redirect:/reservation/complete?reservedId="+reservedId;
+		// checkingFlag để kiểm tra xem ghế đăng ký tồn tại hay chưa.
+		int checkingFlag = 0;
+		
+		// Check trong chuỗi ghế đăng ký và chuỗi ghế đã tồn tại.
+		for(SeatMap seat : seatListForChecking) {
+			for(Integer seat1 : registeredSeatList) {
+				if(seat1 == seat.getSeatNumber()) {
+					checkingFlag += 1;
+				} else {
+					checkingFlag += 0;
+				}
+			}
+		}
+		
+		// Nếu checkingFlag = 0 thì cho phép đặt chỗ
+		if (checkingFlag == 0) {
+			int insertedId = reserveCustomMapper2.insert(reserve);
+			
+			int reservedId = reserve.getReserveId();
+			model.addAttribute("reservedId", reservedId);
+			
+			System.out.println("insertedId = " + reservedId);
+			System.out.println("insertedId1 = " + insertedId);
+			
+		
+			model.addAttribute("strInputedCurrentReservedSeat", strInputedCurrentReservedSeat);
+			model.addAttribute("insertSeatInfo", currentReservedSeat);
+			model.addAttribute("inputedCurrentReservedSeat", inputedCurrentReservedSeat);
+			
+			model.addAttribute("reservedDepartureDate", searchResultForm.getDepartureDate());
+			
+			for(Integer seat1 : registeredSeatList) {
+
+				System.out.println(seat1);
+				Seat seat = new Seat();
+				
+				seat.setReserveId(reservedId);
+				seat.setBusId(insertBusId);
+				seat.setSeatNumber(seat1);
+				
+				seatMapper.insert(seat);
+			}
+			return "redirect:/reservation/complete?reservedId="+reservedId;
+		
+		// Nếu checkingFlag <> 0 thì cho quay trở lại nơi chọn ghế	
+		} else {
+			StringBuilder parameterForInput = new StringBuilder();
+			parameterForInput.append("?departureDate="+searchResultForm.getDepartureDate());
+			parameterForInput.append("?routeId="+searchResultForm.getRouteId());
+			parameterForInput.append("?busId="+searchResultForm.getBusId());
+			parameterForInput.append("?searchedDepartureName="+searchResultForm.getSearchedDepartureName());
+			parameterForInput.append("?searchedArrivalName="+searchResultForm.getSearchedArrivalName());
+			
+			redirectAttributes.addFlashAttribute("message","予約したい座席" + strInputedCurrentReservedSeat+ ")が予約されました。");
+			return "redirect:/reservation/input"+parameterForInput;
+		}
 	}
 	
 	@RequestMapping("/complete")
 	public String complete( Model model, Integer reservedId) {
-		//TODO tim kiem dua tren reservedId , su dung model.Ađattribute de hien thi jsp
+
 		
 		// Lấy danh sách ghế đc đặt theo reserveId
 		SeatExample seatExample = new SeatExample();
