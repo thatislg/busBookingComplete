@@ -293,32 +293,61 @@ public class ReservationController {
 	
 	@RequestMapping("/cancelConfirm")
 	public String cancelConfirm(@RequestParam(value="reserveId") String reserveId,
-			Model model) {
+			Model model,RedirectAttributes redirectAttributes) {
 		int intReserveId = Integer.parseInt(reserveId);
 		List<ReserveCustom> reservationInfor = reserveCustomMapper.selectByReserveId(intReserveId);
 		model.addAttribute("reservationInfor", reservationInfor.get(0));
 		
+		//Get totalPrice
 		Integer totalPrice = 0;
 		for(ReserveCustom tp : reservationInfor) {
 			totalPrice+=tp.getPrice();
 		}
 		model.addAttribute("totalPrice", totalPrice);
 		
+		//Get seat number list
 		List<String> strSeatList = new ArrayList<>();
 		for(ReserveCustom sl: reservationInfor) {
 			strSeatList.add(String.valueOf(sl.getSeatNumber()));
 		}
 		String strSeatListInfo = String.join(", ", strSeatList);
 		model.addAttribute("seatInfor", strSeatListInfo);
-		return "/reservation/reservationCancelConfirm";
+		
+		//set reservation cancel validation
+		Date date1 = new Date();
+		Reserve getDate = reserveMapper.selectByPrimaryKey(intReserveId);
+		Date date2 = getDate.getDepartureDate();  
+		try {
+	        Date localDate;
+	        Date departureDate;
+	        SimpleDateFormat dates = new SimpleDateFormat("yyyy-MM-dd");
+	        
+	        //Setting dates
+	        localDate = dates.parse(dates.format(date1));
+	        departureDate = dates.parse(dates.format(date2));
+	        
+	        //Comparing dates
+	        long difference = Math.abs(departureDate.getTime() - localDate.getTime());
+	        long differenceDates = difference / (24 * 60 * 60 * 1000);
+	        
+	        //Show to browser
+	        if( differenceDates <= 1 ) {
+				redirectAttributes.addFlashAttribute("errMessage","ご出発前日のため、ご予約がキャンセルできません。");
+				return "redirect:/reservation/index";
+			}	
+	    }
+	    catch (Exception e) {
+	    	System.err.println("DIDN'T WORK");
+			e.printStackTrace();
+	    }
+		return "/reservation/reservationCancelConfirm";	
 	}
 	@RequestMapping("cancel")
 	public String cancel(@RequestParam(value="reserveId") String reserveId,@RequestParam(value="seatId") String seatId, Model model, RedirectAttributes redirectAttributes) {
 		seatMapper.deleteByPrimaryKey(Integer.parseInt(seatId));
 		reserveMapper.deleteByPrimaryKey(Integer.parseInt(reserveId));
-		// Thông báo hiển thị khi làm thành công.
+		// show message if code works
 		redirectAttributes.addFlashAttribute("message","予約ID(" + reserveId + ")を削除しました。");
-		
 		return "redirect:/reservation/index";
 	}
 }
