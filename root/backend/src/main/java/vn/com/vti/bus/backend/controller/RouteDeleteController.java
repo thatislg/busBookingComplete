@@ -50,10 +50,10 @@ public class RouteDeleteController {
 	
 		for(Reserve reserve : reserveList) {
 			if(reserve.getDepartureDate().compareTo(date)>0) {
-				redirectAttributes.addFlashAttribute("message","予約されたため、路線ID(" + routeId + ")を変更できません。");
+				redirectAttributes.addFlashAttribute("message","予約されたため、路線ID(" + routeId + ")を削除できません。");
 				return "redirect:/routeList/index";
 			}
-			break;
+			continue;
 			
 		}
 		

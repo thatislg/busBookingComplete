@@ -74,16 +74,17 @@ public class RouteUpdateController {
 		Date date = new Date();
 	
 		for(Reserve reserve : reserveList) {
-			if(reserve.getDepartureDate().compareTo(date)>0) {
+			if(reserve.getDepartureDate().compareTo(date)>0){
+				
 				redirectAttributes.addFlashAttribute("message","予約されたため、路線ID(" + routeId + ")を変更できません。");
+				
 				return "redirect:/routeList/index";
+				
 			}
-			break;
-			
+			continue;					
 		}
 		
 		//Neu khong xoa tuyen duong se tiep tuc cho update
-		
 		BusStationExample busStationExample = new BusStationExample();
 		BusExample busExample = new BusExample();
 		
@@ -102,6 +103,8 @@ public class RouteUpdateController {
 		model.addAttribute("numberPlate", numberPlate);
 		
 		return "route/routeUpdateInput";
+		
+		
 	
 	}
 	

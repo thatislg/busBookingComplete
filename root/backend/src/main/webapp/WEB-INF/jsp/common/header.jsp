@@ -32,6 +32,6 @@
 		</div>
 	</div>
 	</nav>
-	<p style="margin: auto; width: 200px;"><c:out value="${message}" /></p>
+	<p style="margin: auto; width: 200px; color:red"><c:out value="${message}" /></p>
  </body>
 	
