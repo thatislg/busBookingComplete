@@ -242,4 +242,7 @@ input[type=checkbox]:disabled ~ .form-check-label:hover {
 .complete{
 	min-height:80vh;
 }
-
+/* reservation List */
+.title p.errMessage{
+	color:red;
+}

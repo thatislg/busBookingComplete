@@ -19,6 +19,7 @@
 			<div class="title">
 				<h1>予約一覧</h1>
 				<p><c:out value="${message}"/></p>
+				<p class="errMessage"><c:out value="${errMessage}"/></p>
 			</div>
 			<div class = "data-table-form">
 				<table id="reservationList" class="list-table">

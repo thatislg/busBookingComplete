@@ -318,13 +318,11 @@ public class ReservationController {
 		Reserve getDate = reserveMapper.selectByPrimaryKey(intReserveId);
 		Date date2 = getDate.getDepartureDate();  
 		try {
-	        Date localDate;
-	        Date departureDate;
 	        SimpleDateFormat dates = new SimpleDateFormat("yyyy-MM-dd");
-	        
+        
 	        //Setting dates
-	        localDate = dates.parse(dates.format(date1));
-	        departureDate = dates.parse(dates.format(date2));
+	        Date localDate = dates.parse(dates.format(date1));
+	        Date departureDate = dates.parse(dates.format(date2));
 	        
 	        //Comparing dates
 	        long difference = Math.abs(departureDate.getTime() - localDate.getTime());

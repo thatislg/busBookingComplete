@@ -20,7 +20,7 @@
 			<div class = "search-form">
 				<form class = "flex" action = "../routeSearch/search" name="searchForm">
 					<input type = "text" class = "form-control-2" value="${param.departureStationName}" name="departureStationName"  oninvalid="this.setCustomValidity('入力必須')" onchange="this.setCustomValidity('')" required/>
-					<input type = "date" class = "form-control-2" value="${param.departureDate}" name="departureDate" oninvalid="this.setCustomValidity('選択必須')" onchange="this.setCustomValidity('')" required/>
+					<input type = "date" class = "form-control-2" value="${param.departureDate}" min="${today}" max="${nMonth}" name="departureDate"/>
 					<input type = "text" class = "form-control-2" value="${param.arrivalStationName}" name="arrivalStationName"  oninvalid="this.setCustomValidity('入力必須')" onchange="this.setCustomValidity('')" required/>
 					<input type = "submit" class = "btn" value = "検索"/>
 				</form>
