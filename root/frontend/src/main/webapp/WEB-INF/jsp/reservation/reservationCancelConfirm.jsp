@@ -4,8 +4,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <jsp:include page="/WEB-INF/jsp/common/header.jsp"></jsp:include>
 <link rel="stylesheet" href="http://localhost:9082/css/style.css"> 
-<body style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/bus9.jpg) center/cover no-repeat;">
-	<div class="routeSearch flex">
+	<div class="routeSearch flex" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/bus9.jpg) center/cover no-repeat;">
 		<div class = "container">
 			<div class = "title">
 				<h1>予約削除確認</h1>

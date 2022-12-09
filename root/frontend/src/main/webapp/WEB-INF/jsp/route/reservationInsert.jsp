@@ -4,13 +4,12 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <jsp:include page="/WEB-INF/jsp/common/header.jsp"></jsp:include>
 <link rel="stylesheet" href="http://localhost:9082/css/style.css"> 
-<body style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/bus6.jpg) center/cover no-repeat;">
 <script type="text/javascript">
 	window.onbeforeunload = function() {
    		window.location = "/reservation/reservationList.jsp";
 }
 </script>
-	<div class="routeSearch flex">
+	<div class="routeSearch flex" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/bus6.jpg) center/cover no-repeat;">
 		<div class = "container">
 			<div class = "title">
 				<h1>予約完了</h1>

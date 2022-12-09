@@ -22,14 +22,13 @@
 .routeSearch{
 	color: #fff;
 	flex-direction: column;
-	height: 38rem;
+	height: 42rem;
 	padding-top: 7rem; 
  }
 
 /* route search result */
 .search-form{
 	padding: 2rem;
-	width:60%;
 }
 .search-form2{
 	padding: 3rem;
@@ -41,7 +40,6 @@
 	padding: 0.7rem;
 	background-color: transparent;
 	text-align: center;
-	width:100%;
 	margin: 0 0.5rem;
 }
 /* table */
@@ -49,45 +47,34 @@
 	text-align: center;
 	opacity: 0.8;
 }
-.data-table-form table em{
+.data-table-form table i{
 	font-size:30px;
-	color:#6200ee;
+	color: var(--green);
 }
-.data-table-form table em:hover{
+.data-table-form table i:hover{
 	cursor: pointer;
-    color: var(--green);
+    color: rgb(10, 80, 69);
 }
 .list-table thead tr th {
-	background-color: var(--green);
+	background: linear-gradient(to right,#00093c, #2d0b00);
 	font-weight: bold;
 	text-align: center;
 	font-size: 17px;
+	color: #fff;
+}.list-table thead tr th:hover {
+	color:  var(--green);
 }
-/* footer */
-.footer{
-	color:#fff;
+button.mdc-button.mdc-button--raised.mdc-button--colored {
+	background: var(--green);
 }
-
-/* change background on scroll */
-.navbar-cng{
-	background-color: #fff;
-	box-shadow: 0px 4px 5px 0px rgba(48,48,48,0.2);
-	transition: var(--trans);
+button.mdc-button.mdc-button--raised.mdc-button--colored:hover {
+	background-color: rgb(10, 80, 69);: var(--green);
 }
-.navbar-cng .site-brand{
-	color: var(--dark);
-}
-.navbar-cng .site-brand span{
-	color: var(--green);
-}
-.navbar-cng .navbar-nav .nav-link{
-	color: var(--dark);
-}	
 /* section-information */
 .section-information h2 {
 	margin-bottom: 20px;
 	padding: 13px 20px;
-	background-color: #333;
+	background: linear-gradient(to right,#00093c, #2d0b00);
 	color: #fff;
 }
 .section-information h2 i {
@@ -143,6 +130,7 @@
 	padding: 1.5rem;
 	border-radius: 1.5rem;
 	color:black;
+	margin-bottom: 30px;
 }
 .btn-form{
 	display: flex;
@@ -166,7 +154,7 @@
 	background:var(--green);
 }
 .btn-form .return-btn{
-	background:blue;
+	 background:#808080;
 }
 .btn-form input[type="submit"]:hover{
     background: #f53677;
@@ -197,7 +185,7 @@ input[type=checkbox]:disabled ~ .form-check-label {
   overflow: hidden;
 }
 input[type=checkbox]:disabled ~ .form-check-label:after {
-    content: "済";
+    content: "満";
     text-indent: 0;
     position: absolute;
     left: 50%;
@@ -240,9 +228,12 @@ input[type=checkbox]:disabled ~ .form-check-label:hover {
 }
 /* regist complete */
 .complete{
-	min-height:80vh;
+	height: 43rem;
 }
 /* reservation List */
 .title p.errMessage{
 	color:red;
 }
+
+
+

@@ -1,7 +1,8 @@
-body{
-	padding-top: 5rem;
+.regist-container{
+	height: 43rem;
+	padding-top: 6rem; 
 	background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/bus7.jpeg) center/cover no-repeat;
-}
+ }
 .content{
      display: flex;
      justify-content: center;
@@ -74,23 +75,15 @@ body{
 	 background:var(--green);
 }
 .content .form .return-btn{
-	 background:blue;
+	 background:#808080;
 }
 .content .form input[type="submit"]:hover{
      background: #f53677;
 }
-.footer{
-	margin-top: 30px;
-	color:white;
-}
-.site-brand span{
-	font-weight:300;
-	color: var(--green);
-}
 
 /* regist confirm */
 .confirm-content{
-	height: 28rem;
+	height: 32rem;
 	transform: translateY(60px);
 }
 .regist-confirm{

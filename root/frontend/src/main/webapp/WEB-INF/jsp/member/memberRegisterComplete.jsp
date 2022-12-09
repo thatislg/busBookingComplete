@@ -3,8 +3,7 @@
 <%@include file="/WEB-INF/jsp/common/define.jsp"%>
 <jsp:include page="/WEB-INF/jsp/common/header.jsp"></jsp:include>
 <link rel="stylesheet" href="http://localhost:9082/css/style.css"> 
-<body style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/bus7.jpeg) center/cover no-repeat;">
-<header class="complete flex">
+<header class="complete flex" style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/bus7.jpeg) center/cover no-repeat;">
 	<div class="container">
 		<div class="title">
 			<h1>ご登録ありがとうございます。</h1>

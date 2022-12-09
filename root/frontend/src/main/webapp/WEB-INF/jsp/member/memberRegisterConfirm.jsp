@@ -3,8 +3,7 @@
 <%@include file="/WEB-INF/jsp/common/define.jsp"%>
 <jsp:include page="/WEB-INF/jsp/common/header.jsp"></jsp:include>
 <link rel="stylesheet" href="http://localhost:9082/css/register.css"/> 
-<body>
-	<div class="confirm-flex">
+	<div class = "regist-container">
 		<div class="content confirm-content">
 			<div class="form">
 				<h2>会員登録確認</h2>
@@ -37,7 +36,7 @@
 						<form:hidden path="mailAddress"/>
 						<form:hidden path="loginId"/>
 						<form:hidden path="password"/>
-						<input class="regist-btn" type="submit" value="登録確認" formaction="insert">
+						<input class="regist-btn" type="submit" value="登録" formaction="insert">
 						<input class="return-btn" type="submit" value="戻る" formaction="input">
 					</form:form>
 				</div>

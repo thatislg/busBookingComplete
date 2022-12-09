@@ -22,20 +22,18 @@ public class RouteSearchResultController {
 	@Autowired
 	private RouteCustomMapper routeCustomMapper;
 	@RequestMapping("/index")
-	public String index(Model model) {
+	public String index(Model model)  {
 		DateFormat dates = new SimpleDateFormat("yyyy-MM-dd");
 		Calendar getToday = Calendar.getInstance();
 		
 		
 		//set min date to today
 		String today = dates.format(getToday.getTime());
-		System.err.println(today);
 		model.addAttribute("today", today);
 		
 		//set max date to 90 days after today
 		getToday.add(Calendar.DAY_OF_MONTH, 90); 
 		String nMonth = dates.format(getToday.getTime());
-		System.err.println(nMonth);
 		model.addAttribute("nMonth", nMonth);
 		return "route/routeSearch";
 	}

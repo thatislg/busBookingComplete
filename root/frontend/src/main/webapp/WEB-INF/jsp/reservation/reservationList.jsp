@@ -10,11 +10,8 @@
 <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/dataTables.material.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 
-<body style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/bus9.jpg) center/cover no-repeat;">
-
-	<header class = "flex">
+	<header class = "flex" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/bus9.jpg) center/cover no-repeat;">
 		<div class="container">	
 			<div class="title">
 				<h1>予約一覧</h1>
@@ -49,7 +46,7 @@
 								<td><c:out value="${departureDate}"/></td>
 								<fmt:formatDate value="${reserve.reservedDate}" pattern="yyyy年MM月dd日" var="reservedDate" />
 								<td><c:out value="${reservedDate}"/></td>
-								<td><a href="../reservation/cancelConfirm?reserveId=${reserve.reserveId}"><em class="fa fa-window-close-o"></em></a></td>
+								<td><a href="../reservation/cancelConfirm?reserveId=${reserve.reserveId}"><i class="fa-solid fa-rectangle-xmark"></i></a></td>
 							</tr>
 						</c:forEach>
 					</tbody>
@@ -57,4 +54,5 @@
 			</div>
 		</div>
 	</header>
+	</body>
 <jsp:include page="/WEB-INF/jsp/common/footer.jsp"></jsp:include>

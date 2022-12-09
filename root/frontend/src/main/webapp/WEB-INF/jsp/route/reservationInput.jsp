@@ -3,8 +3,7 @@
 <%@include file="/WEB-INF/jsp/common/define.jsp"%>
 <jsp:include page="/WEB-INF/jsp/common/header.jsp"></jsp:include>
 <link rel="stylesheet" href="http://localhost:9082/css/style.css"/>
-<body style="background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/bus6.jpg) center/cover no-repeat;">
-	<header class = "flex">
+	<header class = "flex" style="background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/bus6.jpg) center/cover no-repeat;">
 		<div class = "container">
 			<div class = "title">
 				<h1>座席指定</h1> 
@@ -35,7 +34,7 @@
 				</div>
 			<br>			
 			<h2>
-				座席をご選択ください。
+				座席をご選択ください
 			</h2>
 			<div class = "seat-form">
 			<h2>座席図</h2>	

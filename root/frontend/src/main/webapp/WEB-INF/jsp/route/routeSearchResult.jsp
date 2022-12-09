@@ -11,18 +11,18 @@
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/dataTables.material.min.js"></script>
 
 <title>路線検索結果</title>
-<body style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/bus6.jpg) center/cover no-repeat;">
-	<header class = "flex">
+	<header class = "flex"  style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/bus6.jpg) center/cover no-repeat;">
 		<div class = "container">
 			<div class = "title">
 				<h1>路線検索結果</h1>
+				
 			</div>
 			<div class = "search-form">
-				<form class = "flex" action = "../routeSearch/search" name="searchForm">
+				<form class = "flex" action = "../routeSearch/search" name="searchForm" id="search-form">
 					<input type = "text" class = "form-control-2" value="${param.departureStationName}" name="departureStationName"  oninvalid="this.setCustomValidity('入力必須')" onchange="this.setCustomValidity('')" required/>
 					<input type = "date" class = "form-control-2" value="${param.departureDate}" min="${today}" max="${nMonth}" name="departureDate"/>
 					<input type = "text" class = "form-control-2" value="${param.arrivalStationName}" name="arrivalStationName"  oninvalid="this.setCustomValidity('入力必須')" onchange="this.setCustomValidity('')" required/>
-					<input type = "submit" class = "btn" value = "検索"/>
+					<button type="submit" form="search-form" class="btn"><i class="fa-solid fa-magnifying-glass"> 検索</i></button>
 				</form>
 			</div>
 			<br>
@@ -58,7 +58,7 @@
 																&busId=${route.busId}
 																&searchedDepartureName=${inputedDepartureNameInfo}
 																&searchedArrivalName=${inputedArrivalNameInfo}">
-									<em class="fas fa-file-contract"></em></a></td>
+									<i class="fa-solid fa-file-contract"></i></a></td>
 							</tr>
 						</c:forEach>
 					</tbody>
