@@ -7,11 +7,13 @@
 	<div class="content">
 		<div class="form">
 			<form:form class="form-signin" modelAttribute="loginForm" action="auth">
+				<div style="color:red;">
+				<form:errors path="*"  />
+					${SPRING_SECURITY_LAST_EXCEPTION.message}
+				</div>
 				<h2>VTI-BUSへようこそ！</h2>
 				<div class="input-form">
 					<span>ログインID</span>
-					<form:errors path="*" />
-					${SPRING_SECURITY_LAST_EXCEPTION.message}
 					<form:input path="username" type="text" id="loginId" name="loginId"
 						placeholder="ログインID" value="" />
 				</div>
