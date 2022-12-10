@@ -235,6 +235,17 @@ input[type=checkbox]:disabled ~ .form-check-label:hover {
 .title p.errMessage{
 	color:red;
 }
+.departured-reserve{
+	opacity: 0.4
+}
+.departured{
+	cursor: not-allowed;
+	color: var(--dark);
+	font-weight:  bold;
+	font-size: 1rem;
+	align-items: center;
+	
+}
 
 
 

@@ -34,7 +34,25 @@
 					 </thead>
 					 <tbody>
 						<c:forEach items="${reservationList}" var="reserve">
-							<tr>
+							<c:choose>
+							<c:when test="${today > reserve.departureDate}">
+							<tr class="departured-reserve">
+								<td><c:out value="${reserve.reserveId}"/></td>							
+								<fmt:formatDate value="${reserve.scheduledDepartureTime}" pattern="HH:mm" var="scheduledDepartureTime" />
+								<td><c:out value="${reserve.departureName}(${scheduledDepartureTime })"/></td>
+								<fmt:formatDate value="${reserve.scheduledArrivalTime }" pattern="HH:mm" var="scheduledArrivalTime" />
+								<td><c:out value="${reserve.arrivalName}(${scheduledArrivalTime })"/></td>
+								<td><c:out value="${reserve.seatNumber}"/></td>
+								<td><c:out value="${reserve.totalPrice}円"/></td>
+								<fmt:formatDate value="${reserve.departureDate}" pattern="yyyy年MM月dd日" var="departureDate" />
+								<td><c:out value="${departureDate}"/></td>
+								<fmt:formatDate value="${reserve.reservedDate}" pattern="yyyy年MM月dd日" var="reservedDate" />
+								<td><c:out value="${reservedDate}"/></td>
+								<td><a class="departured">出発済</a></td>
+							</tr>
+							</c:when>
+							<c:otherwise>
+							<tr>						
 								<td><c:out value="${reserve.reserveId}"/></td>
 								<fmt:formatDate value="${reserve.scheduledDepartureTime}" pattern="HH:mm" var="scheduledDepartureTime" />
 								<td><c:out value="${reserve.departureName}(${scheduledDepartureTime })"/></td>
@@ -48,6 +66,8 @@
 								<td><c:out value="${reservedDate}"/></td>
 								<td><a href="../reservation/cancelConfirm?reserveId=${reserve.reserveId}"><i class="fa-solid fa-rectangle-xmark"></i></a></td>
 							</tr>
+							</c:otherwise>
+							</c:choose>
 						</c:forEach>
 					</tbody>
 				</table>

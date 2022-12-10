@@ -74,7 +74,8 @@ public class ReservationController {
 		
 		List<ReserveCustom> reservationList = reserveCustomMapper.selectReservationByMemberId(memberDetails.getLogin().getMemberId());
 		model.addAttribute("reservationList", reservationList);
-		
+		Date today = new Date();
+		model.addAttribute("today", today);
 		return "/reservation/reservationList";
 	}
 	
