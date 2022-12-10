@@ -20,6 +20,8 @@
    		<result column="available_seats" jdbcType="INTEGER" property="availableSeats" />
    		<result column="reserve_id" jdbcType="INTEGER" property="reserveId" />
   	 	<result column="booked_seats" jdbcType="INTEGER" property="bookedSeats" />
+  	 	<result column="departure_prefecture" jdbcType="VARCHAR" property="departurePrefecture" />
+  	 	<result column="arrival_prefecture" jdbcType="VARCHAR" property="arrivalPrefecture" />
  
 	</resultMap>
 	
@@ -63,12 +65,14 @@
 		SELECT
 			T.*
 			,BS1.BUS_STATION_NAME AS ARRIVAL_STATION_NAME
+			,BS1.PREFECTURE AS ARRIVAL_PREFECTURE
 			,TS.TOTALSEATS-COALESCE(BOOKEDSEATS,0) AS AVAILABLE_SEATS
 		FROM 
 			(
 			SELECT
 				R.*
 				,BS.BUS_STATION_NAME AS DEPARTURE_STATION_NAME
+				,BS.PREFECTURE AS DEPARTURE_PREFECTURE
 			FROM 
 				BUS_STATION AS BS
 				INNER JOIN ROUTE AS R
@@ -106,10 +110,9 @@
 					) AS BS
 						ON TS.BUS_ID=BS.BUS_ID
 		WHERE
-			T.DEPARTURE_STATION_NAME LIKE #{departureStationName,jdbcType=VARCHAR}
-			AND BS1.BUS_STATION_NAME LIKE #{arrivalStationName,jdbcType=VARCHAR}
-			AND #{departureDate,jdbcType=DATE} BETWEEN T.OPERATION_START_DATE AND T.OPERATION_END_DATE;
-		 
+			T.DEPARTURE_PREFECTURE LIKE #{departurePrefecture,jdbcType=VARCHAR}
+			AND BS1.PREFECTURE LIKE #{arrivalPrefecture,jdbcType=VARCHAR}
+			AND #{departureDate,jdbcType=DATE} BETWEEN T.OPERATION_START_DATE AND T.OPERATION_END_DATE; 
 	</select>
 	
 	<select id="selectRouteInfoByRouteId" resultMap="routeCustom">

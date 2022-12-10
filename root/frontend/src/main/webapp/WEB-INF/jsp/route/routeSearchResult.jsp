@@ -19,9 +19,9 @@
 			</div>
 			<div class = "search-form">
 				<form class = "flex" action = "../routeSearch/search" name="searchForm" id="search-form">
-					<input type = "text" class = "form-control-2" value="${param.departureStationName}" name="departureStationName"  oninvalid="this.setCustomValidity('入力必須')" onchange="this.setCustomValidity('')" required/>
+					<input type = "text" class = "form-control-2" value="${param.departurePrefecture}" name="departurePrefecture"  oninvalid="this.setCustomValidity('入力必須')" onchange="this.setCustomValidity('')" required/>
 					<input type = "date" class = "form-control-2" value="${param.departureDate}" min="${today}" max="${nMonth}" name="departureDate"/>
-					<input type = "text" class = "form-control-2" value="${param.arrivalStationName}" name="arrivalStationName"  oninvalid="this.setCustomValidity('入力必須')" onchange="this.setCustomValidity('')" required/>
+					<input type = "text" class = "form-control-2" value="${param.arrivalPrefecture}" name="arrivalPrefecture"  oninvalid="this.setCustomValidity('入力必須')" onchange="this.setCustomValidity('')" required/>
 					<button type="submit" form="search-form" class="btn"><i class="fa-solid fa-magnifying-glass"> 検索</i></button>
 				</form>
 			</div>
@@ -56,8 +56,8 @@
 								<td><a href="../reservation/input?departureDate=${param.departureDate}
 																&routeId=${route.routeId}
 																&busId=${route.busId}
-																&searchedDepartureName=${inputedDepartureNameInfo}
-																&searchedArrivalName=${inputedArrivalNameInfo}">
+																&searchedDepartureName=${route.departureStationName}
+																&searchedArrivalName=${route.arrivalStationName}">
 									<i class="fa-solid fa-file-contract"></i></a></td>
 							</tr>
 						</c:forEach>

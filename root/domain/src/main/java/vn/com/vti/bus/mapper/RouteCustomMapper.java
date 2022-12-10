@@ -12,7 +12,7 @@ public interface RouteCustomMapper {
 	// Lấy thông tin điểm dừng theo ROUTE_ID
 	public RouteCustom selectByIdForDeleteConfirm(int parseInt);
 	
-	List<RouteCustom> selectByNamePart(String departureStationName,String arrivalStationName,Date departureDate);
+	List<RouteCustom> selectByNamePart(String departurePrefecture,String arrivalPrefecture,Date departureDate);
 	
 	public RouteCustom selectRouteInfoByRouteId(Integer searchRouteId);
 	

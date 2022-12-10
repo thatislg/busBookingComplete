@@ -31,6 +31,27 @@ public class RouteCustom {
    private Integer rowNum;
    
    private Integer columnNum;
+   
+   private String departurePrefecture;
+   
+   private String arrivalPrefecture;
+   
+
+public String getDeparturePrefecture() {
+	return departurePrefecture;
+}
+
+public void setDeparturePrefecture(String departurePrefecture) {
+	this.departurePrefecture = departurePrefecture;
+}
+
+public String getArrivalPrefecture() {
+	return arrivalPrefecture;
+}
+
+public void setArrivalPrefecture(String arrivalPrefecture) {
+	this.arrivalPrefecture = arrivalPrefecture;
+}
 
 public Integer getRowNum() {
 	return rowNum;

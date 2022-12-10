@@ -39,23 +39,18 @@ public class RouteSearchResultController {
 	}
 	
 	@RequestMapping("/search")
-	public String search(@RequestParam(value="departureStationName") String departureStationName,
-			@RequestParam(value="arrivalStationName") String arrivalStationName,
+	public String search(
 			@RequestParam(value="departureDate") String departureDate,
+			@RequestParam(value="departurePrefecture") String departurePrefecture,
+			@RequestParam(value="arrivalPrefecture") String arrivalPrefecture,
 			Model model) throws ParseException {
 		
-		String inputedDepartureNameInfo = departureStationName;
-		String inputedArrivalNameInfo = arrivalStationName;
-		
-		model.addAttribute("inputedDepartureNameInfo", inputedDepartureNameInfo);
-		model.addAttribute("inputedArrivalNameInfo", inputedArrivalNameInfo);
-		
-		String param1 = "%"+departureStationName+"%";
-		String param2 = "%"+arrivalStationName+"%";
+		String param1 = "%"+departurePrefecture+"%";
+		String param2 = "%"+arrivalPrefecture+"%";
 		String param3 = departureDate;
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 		Date dateParam = formatter.parse(param3);
-		List<RouteCustom> routeSearchResult  = routeCustomMapper.selectByNamePart(param1, param2, dateParam);
+		List<RouteCustom> routeSearchResult  = routeCustomMapper.selectByNamePart(param1,param2, dateParam);
 		model.addAttribute("routeSearchResult", routeSearchResult);
 		
 		
