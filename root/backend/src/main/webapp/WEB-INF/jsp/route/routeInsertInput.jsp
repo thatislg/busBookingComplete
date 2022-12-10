@@ -24,8 +24,8 @@
 			<div class="row g-3">
 				<div class="col-md-5">
 			  	 	<label for="departureId" class="form-label"><spring:message code="routeForm.departureId"/>:</label>
-			   			 <form:select path="departureId" onmousedown="if(this.options.length>10){this.size=10;}"  onchange='this.size=0;' onblur="this.size=0;" >
-			   		 		<option value="none" selected disabled hidden="true">出発停留所を選択してください。</option>
+			   			 <form:select path="departureId" class="form-control" onmousedown="if(this.options.length>10){this.size=10;}"  onchange='this.size=0;' onblur="this.size=0;" >
+			   		 		<option value="none" selected disabled hidden="true">出発停留所選択🔽</option>
 			   		 		<form:options items="${departureStationList}" itemValue="busStationId" itemLabel="busStationName"/>
 			   		  	</form:select>
 
@@ -38,8 +38,8 @@
 		 	<div class="row g-3">
 			 	<div class="col-md-5">
 					<label for="arrivalId" class="form-label"><spring:message code="routeForm.arrivalId"/>:</label>
-					 <form:select path="arrivalId" onmousedown="if(this.options.length>10){this.size=10;}"  onchange='this.size=0;' onblur="this.size=0;">
-			   		 		<option value="none" selected disabled hidden="true">到着停留所を選択してください。</option>
+					 <form:select class="form-control" path="arrivalId" onmousedown="if(this.options.length>10){this.size=10;}"  onchange='this.size=0;' onblur="this.size=0;">
+			   		 		<option value="none" selected disabled hidden="true">到着停留所選択🔽</option>
 			   		 		<form:options items="${arrivalStationList}" itemValue="busStationId" itemLabel="busStationName"/>
 			   		 </form:select>
 			 	</div>
@@ -51,8 +51,8 @@
 	 		<div class="row g-3">
 		 		<div class="col-md-5">
 			   		<label for="busId" class="form-label"><spring:message code="routeForm.busId"/>:</label>
-			   		<form:select path="numberPlate" onmousedown="if(this.options.length>10){this.size=10;}"  onchange='this.size=0;' onblur="this.size=0;">
-			   		 		<option value="none" selected disabled hidden="true">バスのナンバープレートを選択してください。</option>
+			   		<form:select path="numberPlate" class="form-control" onmousedown="if(this.options.length>10){this.size=10;}"  onchange='this.size=0;' onblur="this.size=0;">
+			   		 		<option value="none" selected disabled hidden="true">バスのナンバープレート選択🔽</option>
 			   		 		<form:options items="${busList}" itemValue="busId" itemLabel="numberPlate"/>
 			   		 </form:select>
 			 	</div>
