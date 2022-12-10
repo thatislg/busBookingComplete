@@ -6,10 +6,14 @@
 
 <body>
 	<div class="container">
-		<div class="mt-3">
+		<div class="d-inline mt-3">
 			<h1>日別予約状況</h1>
 		</div>
-		<br> <br>
+		<div class="d-inline btn-group">
+			<button onclick="window.print()" class="btn btn-primary">印刷</button>	
+		</div>
+		<br> 
+		<br>
 		<div>
 			<form action="/reservation/search">
 				<label for="fname">日付: </label> <input type="text"
