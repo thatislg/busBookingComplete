@@ -8,8 +8,7 @@
 			<div class="form">
 				<form:form class="form-signin" modelAttribute="loginForm" action="auth">
 					<h2>VTI-BUSへようこそ！</h2>
-					<form:errors path="*"  />
-						${SPRING_SECURITY_LAST_EXCEPTION.message}
+					<p>${SPRING_SECURITY_LAST_EXCEPTION.message}<p>
 					<div class="input-form">
 						<span>ログインID</span>
 						<form:input path="username" type="text" id="loginId" name="loginId"

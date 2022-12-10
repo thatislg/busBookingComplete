@@ -14,6 +14,10 @@
     border-radius: 15px;
     opacity: 0.8;
 }
+.content p{
+	 text-align: center;
+	 color:red;
+}
 .content .form{
     width: 60%;
 }

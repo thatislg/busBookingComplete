@@ -33,7 +33,7 @@ public class MemberAuthenticationProvider extends AbstractUserDetailsAuthenticat
 	protected UserDetails retrieveUser(String username, UsernamePasswordAuthenticationToken authentication)
 			throws AuthenticationException {
 		if(username == null || username.isEmpty()) {
-			throw new BadCredentialsException("ログインIDを入力してください。");
+			throw new BadCredentialsException("ログインIDをご入力ください。");
 		}
 
 		MemberExample memberExample = new MemberExample();
