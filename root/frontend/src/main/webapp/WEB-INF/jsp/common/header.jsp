@@ -24,7 +24,8 @@
 					<li class="nav-item"><a href="/" class="nav-link">ホーム</a></li>
 					<li class="nav-item"><a href="/reservation/index" class="nav-link">予約一覧</a></li>		
 					<li class="nav-item"><a href="/routeSearch/index" class="nav-link">路線検索</a></li>
-					<li class="nav-item"><a class="nav-link" href="/logout">ログアウト</a></li>
+					<li class="nav-item"><a class="nav-link" href="/logout">
+											<sec:authentication property="principal.login.memberName"/>ログアウト</a></li>
 				</sec:authorize>
 					
 				<sec:authorize access="!hasRole('ROLE_MEMBER')">
