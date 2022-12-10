@@ -23,7 +23,31 @@
 	</header>
 	<!-- end of header -->
 	<!-- section -->
-	<section class="contents" >
+	<section class="contents" >	
+		<section class="section section-pickup">
+			<div class="in-section">
+	                <h2 class="bg-black"><i class="fa fa-bus"></i>安心・安全への取り組み</h2>
+	                <h3>当サイトは、国から厳しい審査を受けた<br>一般乗合バス事業者の路線バスのみ取り扱っております。</h3>
+	                <div class="clearfix">
+	                    <div class="figure"><img src="../img/photo-noriai.png" alt="安心安全への取り組み"></div>
+	                    <div class="body-noriai">
+	                        <p>道路運送法の規定に関わる審査を受け、国土交通大臣から許可を受けた事業者です。
+	                        <br>安全にバスを運行できるか以下の内容を厳しく審査された後、許可を受けます。</p>
+	                        <ul class="ul ut-margin-1">
+	                            <li>道路運送法に抵触しないような停留所の設置</li>
+	                            <li>運転者の休憩、仮眠施設の設置</li>
+	                            <li>車両の保管、設備施設の設置</li>
+	                            <li>事故を未然に防ぐ為の教育及び、指導体制、社内規定の構築</li>
+	                            <li>損害賠償能力</li>
+	                            <li>財務内容</li>
+	                        </ul>
+	                        <p>運行路線は一つ一つ全て事前に認可を受ける必要があります。運行ルートや時刻表などのほかに、停留所の位置まで届け出て認可を受けております。
+	                        <br>当サイトに掲載している路線バスは全て一般乗合バス事業者による「路線バス」です。非常に高いレベルの安全運行管理を実施しております。ご安心してご利用ください。</p>
+	                    </div>
+	                </div>
+	          </div>
+		</section>
+     
 		<section class="section section-information">
 		    <div class="in-section">
 		        <h2 class="bg-black"><i class="fa fa-info-circle"></i>お知らせ</h2>
@@ -61,6 +85,4 @@
 		</section>
 	</section>	
 	<!-- end of section -->		
-	
-
 <jsp:include page="/WEB-INF/jsp/common/footer.jsp"></jsp:include>
