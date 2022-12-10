@@ -51,9 +51,9 @@
 	 		<div class="row g-3">
 		 		<div class="col-md-5">
 			   		<label for="busId" class="form-label"><spring:message code="routeForm.busId"/>:</label>
-			   		<form:select path="busId" onmousedown="if(this.options.length>10){this.size=10;}"  onchange='this.size=0;' onblur="this.size=0;">
-			   		 		<option value="none" selected disabled hidden="true">バスIDを選択してください。</option>
-			   		 		<form:options items="${busList}" itemValue="busId" itemLabel="busId"/>
+			   		<form:select path="numberPlate" onmousedown="if(this.options.length>10){this.size=10;}"  onchange='this.size=0;' onblur="this.size=0;">
+			   		 		<option value="none" selected disabled hidden="true">バスのナンバープレートを選択してください。</option>
+			   		 		<form:options items="${busList}" itemValue="busId" itemLabel="numberPlate"/>
 			   		 </form:select>
 			 	</div>
 			 	<div class="col-md-5">
@@ -64,11 +64,11 @@
 		 	<div class="row g-3">
 			 	<div class="col-md-5">
 			   		<label for="operationStartDate" class="form-label"><spring:message code="routeForm.operationStartDate"/>:</label>
-			   		<form:input type="Date" path="operationStartDate" class="form-control" placeholder="運用開始日を入力"/>
+			   		<form:input type="text" onfocus="(this.type='date')" path="operationStartDate" class="form-control" placeholder="例：12/31/2022"/>
 			 	</div>
 			 	<div class="col-md-5">
 			   		<label for="operationEndDate" class="form-label"><spring:message code="routeForm.operationEndDate"/>:</label>
-			   		<form:input type="Date" path="operationEndDate" class="form-control" placeholder="運用終了日を入力"/>
+			   		<form:input type="text" onfocus="(this.type='date')" path="operationEndDate" class="form-control" placeholder="例：12/31/2022"/>
 			 	</div>
 	 		</div>
 		 	<input type="submit" class="btn btn-primary ms-5" value="登録" formaction="/routeInsert/confirm"/>
