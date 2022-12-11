@@ -74,10 +74,10 @@
 						<td><c:out value="${memberRL.busId}"/></td>
 						<td><c:out value="${memberRL.departureName}"/></td>
 						<td><c:out value="${memberRL.arrivalName}"/></td>
-						<td><c:out value="${memberRL.seat}"/></td>
+						<td><c:out value="${memberRL.seatNumber}"/></td>
 						<fmt:formatDate value="${memberRL.departureDate}" pattern="yyyy年MM月dd日 HH:mm" var="departureDate"/>
 						<td><c:out value="${departureDate}"/></td>
-						<td><c:out value="${memberRL.price}円"/></td>
+						<td><c:out value="${memberRL.totalPrice}円"/></td>
 					</tr>
 				</c:forEach>
 				</c:when>
