@@ -12,7 +12,7 @@
 			  	 	<spring:message code="routeForm.departureId"/>: <c:out value="${routeInfo1.departureStationName}"/>
 			 	</div>
 		 		<div class="col-md-4">
-			   		<fmt:formatDate value="${routeInfo.scheduledDepartureTime}" pattern="yyyy-MM-dd HH:mm" var="sDTime"/>
+			   		<fmt:formatDate value="${routeInfo.scheduledDepartureTime}" pattern="HH:mm" var="sDTime"/>
 			   		<spring:message code="routeForm.scheduledDepartureTime"/>: <c:out value="${sDTime}"/>			   		
 			 	</div>
 		 	</div>
@@ -21,13 +21,13 @@
 					<spring:message code="routeForm.arrivalId"/>: <c:out value="${routeInfo1.arrivalStationName}"/>
 			 	</div>
 			 	<div class="col-md-4">
-				   	<fmt:formatDate value="${routeInfo.scheduledArrivalTime}" pattern="yyyy-MM-dd HH:mm" var="sATime"/>	
+				   	<fmt:formatDate value="${routeInfo.scheduledArrivalTime}" pattern="HH:mm" var="sATime"/>	
 				   	<spring:message code="routeForm.scheduledArrivalTime"/>:<c:out value="${sATime}"/>
 				 </div>
 		 	</div>			 	
 		 	<div class="row g-3">
 		 		<div class="col-md-4">
-			   			<spring:message code="routeForm.busId"/>:<c:out value="${routeInfo.busId}"/>		   		
+			   			<spring:message code="routeForm.busId"/>:<c:out value="${bus.numberPlate}"/>		   		
 			 	</div>
 			 	<div class="col-md-4">
 			 			<spring:message code="routeForm.price"/>:<c:out value="${routeInfo.price}"/>
@@ -43,7 +43,7 @@
 	 		</div>
 		 	<form>
 			 	<input type="hidden" name="routeId" value="${routeInfo.routeId}">
-			 	<input class="btn btn-primary ms-5" type="submit" value="削除確認" formaction="/routeDelete/delete">
+			 	<input class="btn btn-primary ms-5" type="submit" value="削除" formaction="/routeDelete/delete">
 			 &nbsp;
 				<input class="btn btn-dark" type="submit" value="戻る" formaction="/routeList/index">
 			</form>

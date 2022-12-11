@@ -9,25 +9,25 @@
 		<h1>路線登録確認</h1>
 			<div class="row g-3">
 				<div class="col-md-4">
-			  	 	<spring:message code="routeForm.departureId"/>:<c:out value="${routeForm.departureId}"/>
+			  	 	<spring:message code="routeForm.departureId"/>:<c:out value="${routeForm.departureStationName}"/>
 			 	</div>
 		 		<div class="col-md-4">
-		 			<fmt:formatDate value="${routeForm.scheduledDepartureTime}" pattern="yyyy-MM-dd HH:mm" var="sDTime"/>
+		 			<fmt:formatDate value="${routeForm.scheduledDepartureTime}" pattern="HH:mm" var="sDTime"/>
 			   		<spring:message code="routeForm.scheduledDepartureTime"/>:<c:out value="${sDTime}"/>			   		
 			 	</div>
 		 	</div>
 		 	<div class="row g-3">
 			 	<div class="col-md-4">
-					<spring:message code="routeForm.arrivalId"/>:<c:out value="${routeForm.arrivalId}"/>
+					<spring:message code="routeForm.arrivalId"/>:<c:out value="${routeForm.arrivalStationName}"/>
 			 	</div>
 			 	<div class="col-md-4">
-			 		<fmt:formatDate value="${routeForm.scheduledArrivalTime}" pattern="yyyy-MM-dd HH:mm" var="sATime"/>	
+			 		<fmt:formatDate value="${routeForm.scheduledArrivalTime}" pattern="HH:mm" var="sATime"/>	
 				   	<spring:message code="routeForm.scheduledArrivalTime"/>:<c:out value="${sATime}"/>
 				 </div>
 		 	</div>			 	
 	 		<div class="row g-3">
 		 		<div class="col-md-4">
-			   			<spring:message code="routeForm.busId"/>:<c:out value="${routeForm.busId}"/>		   		
+			   			<spring:message code="routeForm.busId"/>:<c:out value="${routeForm.numberPlate}"/>		   		
 			 	</div>
 			 	<div class="col-md-4">
 			 			<spring:message code="routeForm.price"/>:<c:out value="${routeForm.price}"/>
@@ -50,7 +50,7 @@
 				<form:hidden path="operationEndDate"/>
 				<form:hidden path="scheduledDepartureTime"/>
 				<form:hidden path="scheduledArrivalTime"/>
-				<input class="btn btn-primary ms-5" type="submit" value="登録確認" formaction="/routeInsert/insert">
+				<input class="btn btn-primary ms-5" type="submit" value="登録" formaction="/routeInsert/insert">
 				<input class="btn btn-dark" type="submit" value="戻る" formaction="/routeInsert/input">
 			</form:form>
 	</div>

@@ -67,12 +67,18 @@ public class RouteUpdateController {
 		
 		//Check dieu kien ko xoa dc tuyen duong neu da co trong danh sach dat cho
 		
+		Date date = new Date();
 		ReserveExample reserveExample = new ReserveExample();
-		reserveExample.createCriteria().andRouteIdEqualTo(searchRouteId);
+		reserveExample.createCriteria().andRouteIdEqualTo(searchRouteId).andDepartureDateGreaterThan(date);
 		List<Reserve> reserveList = reserveMapper.selectByExample(reserveExample);
 		
-		Date date = new Date();
-	
+		if(reserveList.size()>0) {
+			redirectAttributes.addFlashAttribute("message","予約されたため、路線ID(" + routeId + ")を変更できません。");
+			
+			return "redirect:/routeList/index";
+		}
+		
+	/*
 		for(Reserve reserve : reserveList) {
 			if(reserve.getDepartureDate().compareTo(date)>0){
 				
@@ -81,8 +87,8 @@ public class RouteUpdateController {
 				return "redirect:/routeList/index";
 				
 			}
-			continue;					
-		}
+							
+		}*/
 		
 		//Neu khong xoa tuyen duong se tiep tuc cho update
 		BusStationExample busStationExample = new BusStationExample();

@@ -53,18 +53,11 @@ public class RouteInsertController {
 		
 		BusStationExample busStationExample = new BusStationExample();
 		BusExample busExample = new BusExample();
-		//busStationExample.setOrderByClause("bus_Id");
 		
-		// Tạo list danh sách điểm đến và điểm đi
-		List<BusStation> departureStationList = busStationMapper.selectByExample(busStationExample);
-		List<BusStation> arrivalStationList = busStationMapper.selectByExample(busStationExample);
-		
-		// Tạo list danh sách bus
+		List<BusStation> busStationList = busStationMapper.selectByExample(busStationExample);
 		List<Bus> busList = busMapper.selectByExample(busExample);
 		
-		// Thêm vào model addtribute
-		model.addAttribute("departureStationList", departureStationList);
-		model.addAttribute("arrivalStationList", arrivalStationList);
+		model.addAttribute("busStationList", busStationList);
 		model.addAttribute("busList", busList);
 		
 		return "route/routeInsertInput";
@@ -75,6 +68,14 @@ public class RouteInsertController {
 		if(bindingResult.hasErrors()) {
 			return input(routeForm, model);
 		}
+		
+		String departureStationName = busStationMapper.selectByPrimaryKey(routeForm.getDepartureId()).getBusStationName();
+		String arrivalStationName = busStationMapper.selectByPrimaryKey(routeForm.getArrivalId()).getBusStationName();
+		String numberPlate = busMapper.selectByPrimaryKey(routeForm.getBusId()).getNumberPlate();
+		routeForm.setDepartureStationName(departureStationName);
+		routeForm.setArrivalStationName(arrivalStationName);
+		routeForm.setNumberPlate(numberPlate);
+		
 		return "route/routeInsertConfirm";
 	}
 	

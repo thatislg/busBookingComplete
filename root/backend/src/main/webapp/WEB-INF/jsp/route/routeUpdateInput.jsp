@@ -23,7 +23,7 @@
 			<div class="row g-3">
 				<div class="col-md-5">
 			  	 	<label for="departureId" class="form-label"><spring:message code="routeForm.departureId"/>:</label> 
-			   		<form:select path="departureId">
+			   		<form:select class="form-control" path="departureId">
 			   				<form:option value="${routeInfo.departureId}" label="${routeInfo.departureStationName}"/>
 			   		 		<form:options items="${busStationList}" itemValue="busStationId" itemLabel="busStationName" />
 			   		 </form:select>
@@ -37,7 +37,7 @@
 		 	<div class="row g-3">
 			 	<div class="col-md-5">
 					<label for="arrivalStationName" class="form-label"><spring:message code="routeForm.arrivalId"/>:</label> 
-				   	 <form:select path="arrivalId">
+				   	 <form:select class="form-control" path="arrivalId">
 				   	 		<form:option value="${routeInfo.arrivalId}" label="${routeInfo.arrivalStationName}"/>
 			   		 		<form:options items="${busStationList}" itemValue="busStationId" itemLabel="busStationName" />
 			   		 </form:select>
@@ -51,7 +51,7 @@
 	 		<div class="row g-3">
 		 		<div class="col-md-5">
 			   		<label for="numberPlate" class="form-label"><spring:message code="routeForm.busId"/>:</label>
-			   		<form:select path="busId">
+			   		<form:select class="form-control" path="busId">
 			   		 		<c:set value="${numberPlate}" var="numberPlate"/>
 			   		 		<form:option value="${routeInfo.busId}" label="${numberPlate}"/>
 			   		 		<form:options items="${busList}" itemValue="busId" itemLabel="numberPlate"/>
@@ -65,14 +65,14 @@
 		 	</div>
 		 	<div class="row g-3">
 			 	<div class="col-md-5">
-			 		<fmt:formatDate value="${routeInfo.operationStartDate}" pattern="yyyy年MM月dd日" var="operationStartDate"/>
+			 		<fmt:formatDate value="${routeInfo.operationStartDate}" pattern="yyyy-MM-dd" var="operationStartDate"/>
 			   		<label for="operationStartDate" class="form-label"><spring:message code="routeForm.operationStartDate"/>:</label>
-			   		<form:input path="operationStartDate" class="form-control" value="${operationStartDate}"/>
+			   		<form:input type="text"  path="operationStartDate" class="form-control" value="${operationStartDate}"/>
 			 	</div>
 			 	<div class="col-md-5">
-			 		<fmt:formatDate value="${routeInfo.operationEndDate}" pattern="yyyy年MM月dd日" var="operationEndDate"/>
+			 		<fmt:formatDate value="${routeInfo.operationEndDate}" pattern="yyyy-MM-dd" var="operationEndDate"/>
 			   		<label for="operationEndDate" class="form-label"><spring:message code="routeForm.operationEndDate"/>:</label>
-			   		<form:input path="operationEndDate" class="form-control" value="${operationEndDate}"/>
+			   		<form:input type="text"  path="operationEndDate" class="form-control" value="${operationEndDate}"/>
 			 	</div>
 	 		</div>
 	 		<input type="hidden" name="routeId" value="${routeInfo.routeId }"/>

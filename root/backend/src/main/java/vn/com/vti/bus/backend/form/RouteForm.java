@@ -26,11 +26,11 @@ public class RouteForm{
 
 	
 	@NotNull
-	@DateTimeFormat(pattern = "yyyy年MM月dd日")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date operationStartDate;
 	
 	@NotNull
-	@DateTimeFormat(pattern = "yyyy年MM月dd日")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date operationEndDate;
 	
 	@NotNull
