@@ -13,10 +13,11 @@
 		<div class = "container">
 			<div class = "title">
 				<h1>予約完了</h1>
-				<h2>ご予約を承りました。<br>この画面を印刷して当日持参してください。</h2>	
+				<h2>この度、ご予約いただきありがとうございます。<br>
+				この画面をご印刷いただきご発車当日チケットと一緒にご持参ください。</h2>	
 			</div>
 			<div class = "confirm-form">
-				<table class="seat-info-table">
+				<table class="insert seat-info-table">
 					<tr>
 						<th>予約ID</th>
 						<td>${reserveInfo.reserveId}</td>
@@ -40,7 +41,7 @@
 							<c:out value="${strSeatListInfo}" />
 						</td>
 					</tr>
-					<tr>
+					<tr class="total-price">
 						<th>小計</th>
 						<td>¥${totalAmount}</td>
 					</tr>	
@@ -48,6 +49,7 @@
 				<div class="btn-form">	
 					<form:form>
 						<input type="submit" class="reserve-btn" value="完了" formaction="../reservation/index"/>
+						<input type="submit" onclick="window.print()" class="return-btn" value="印刷" formaction="/reservation/input"/>
 					</form:form>
 				</div>
 			</div>

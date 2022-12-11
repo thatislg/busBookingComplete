@@ -157,12 +157,23 @@ button.mdc-button.mdc-button--raised.mdc-button--colored:hover {
 .seat-info-table{
 	border-collapse: collapse;
 	margin: auto;
+	width: 350px;
+}
+.insert{
+	width: 500px;
+}
+.insert td {
+	text-align: center;
 }
 .seat-info-table th, .seat-info-table td{
 	padding: 12px 15px;
 }
 .seat-info-table tr{
 	border-bottom: 1px solid black;
+}
+.seat-info-table .total-price{
+	background: linear-gradient(to right,#00093c, #2d0b00);
+	color:#fff;
 }
 .seat-form{
 	padding: 1.5rem;

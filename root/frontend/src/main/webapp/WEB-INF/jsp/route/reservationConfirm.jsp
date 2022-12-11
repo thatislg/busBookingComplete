@@ -33,7 +33,7 @@
 						<th>予約席</th>
 						<td><c:out value="${strInputedCurrentReservedSeat}" /></td>
 					</tr>
-					<tr>
+					<tr class="total-price">
 						<th>小計</th>
 						<c:set var="totalPrice" value="${routeInfo.price * fn:length(inputedCurrentReservedSeat)}"/>
 						<td>¥${totalPrice}</td>

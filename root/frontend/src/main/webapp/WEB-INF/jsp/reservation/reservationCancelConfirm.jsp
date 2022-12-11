@@ -31,10 +31,6 @@
 						<td><c:out value="${seatInfor}"></c:out></td>	
 					</tr>
 					<tr>
-						<th>料金</th>
-						<td><c:out value="${totalPrice}円"/></td>
-					</tr>
-					<tr>
 						<th>出発日</th>
 						<fmt:formatDate value="${reservationInfor.departureDate}" pattern="yyyy年MM月dd日" var="departureDate" />
 						<td><c:out value="${departureDate}"/></td>
@@ -43,6 +39,10 @@
 						<th>予約日</th>
 						<fmt:formatDate value="${reservationInfor.reservedDate}" pattern="yyyy年MM月dd日" var="reservedDate" />
 						<td><c:out value="${reservedDate}"/></td>
+					</tr>
+					<tr class="total-price">
+						<th>料金</th>
+						<td><c:out value="${totalPrice}円"/></td>
 					</tr>
 				</table>
 				<div class="btn-form">
