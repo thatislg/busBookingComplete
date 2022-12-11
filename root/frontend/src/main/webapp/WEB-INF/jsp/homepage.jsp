@@ -26,14 +26,14 @@
 	<section class="contents" >	
 		<section class="section section-pickup">
 			<div class="in-section">
-	                <h2 class="bg-black"><i class="fa fa-bus"></i>安心・安全への取り組み</h2>
+	                <h2><i class="fa fa-bus"></i>安心・安全への取り組み</h2>
 	                <h3>当サイトは、国から厳しい審査を受けた<br>一般乗合バス事業者の路線バスのみ取り扱っております。</h3>
 	                <div class="clearfix">
 	                    <div class="figure"><img src="../img/photo-noriai.png" alt="安心安全への取り組み"></div>
-	                    <div class="body-noriai">
+	                    <div class="info-body">
 	                        <p>道路運送法の規定に関わる審査を受け、国土交通大臣から許可を受けた事業者です。
 	                        <br>安全にバスを運行できるか以下の内容を厳しく審査された後、許可を受けます。</p>
-	                        <ul class="ul ut-margin-1">
+	                        <ul>
 	                            <li>道路運送法に抵触しないような停留所の設置</li>
 	                            <li>運転者の休憩、仮眠施設の設置</li>
 	                            <li>車両の保管、設備施設の設置</li>
@@ -50,31 +50,31 @@
      
 		<section class="section section-information">
 		    <div class="in-section">
-		        <h2 class="bg-black"><i class="fa fa-info-circle"></i>お知らせ</h2>
+		        <h2><i class="fa-solid fa-info"></i>お知らせ</h2>
 		        <div class="wrap-article">
 	                <article>
-	                        <time datetime="2022.11.15">2022.11.15</time>
+	                        <time>2022.11.15</time>
 	                            <h3><a href="">VTI株式会社からのお知らせ</a></h3>
 	                    <div class="body">
 	                        新型コロナウイルスの影響に伴う運行再開情報について
 	                    </div>
 	                </article>
 	                <article>
-	                        <time datetime="2022.06.10">2022.06.10</time>
+	                        <time>2022.06.10</time>
 	                            <h3><a href="">発車オ～ライネットからのお知らせ</a></h3>
 	                    <div class="body">
 	                        ＪＴＢ高速バス　コンビニエンスストアにおける販売休止について
 	                    </div>
 	                </article>
 	                <article>	                  
-	                        <time datetime="2022.8.10">2022.8.10</time>
+	                        <time>2022.8.10</time>
 	                            <h3><a href="">阿佐海岸鉄道からのお知らせ</a></h3>	                   
-	                    <div class="body">
+	                    <div>
 	                        世界初！DMV運行開始に伴うご予約について
 	                    </div>
 	                </article>
 	                <article>          
-	                        <time datetime="2022.16.19">2022.16.19</time>
+	                        <time>2022.16.19</time>
 	                            <h3><a href="">VTI株式会社からのお知らせ</a></h3>	                  
 	                    <div class="body">
 	                        2021年11月10日施行　会員規約改定について

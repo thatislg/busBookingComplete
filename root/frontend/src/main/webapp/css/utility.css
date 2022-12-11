@@ -233,7 +233,6 @@ footer{
 	transform: translateX(0);
 	transition: var(--trans);
 }
-
 .navbar-nav{
 	display: flex;
 	justify-content: flex-end;
@@ -241,6 +240,10 @@ footer{
 .nav-item{
 	margin: 0;
 	margin-left: 2rem;
+}
+.nav-item i{
+	color: var(--green);
+	margin-right: 10px;
 }
 .nav-link{
 	color: #fff;

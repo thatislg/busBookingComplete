@@ -22,14 +22,17 @@
 			<ul class="navbar-nav">
 				<sec:authorize access="hasRole('ROLE_MEMBER')">
 					<li class="nav-item"><a href="/" class="nav-link">ホーム</a></li>
+					<li class="nav-item"><a href="/guideInfor" class="nav-link">ご利用案内</a></li>
 					<li class="nav-item"><a href="/reservation/index" class="nav-link">予約一覧</a></li>		
 					<li class="nav-item"><a href="/routeSearch/index" class="nav-link">路線検索</a></li>
 					<li class="nav-item"><a class="nav-link" href="/logout">
-						<i style="color:red"><b><sec:authentication property="principal.login.memberName"/></b></i>様  ログアウト</a></li>
+						<i class="userName"><b><sec:authentication property="principal.login.memberName"/></b></i>様  ログアウト</a>
+					</li>
 				</sec:authorize>
 					
 				<sec:authorize access="!hasRole('ROLE_MEMBER')">
 					<li class="nav-item"><a href="/" class="nav-link">ホーム</a></li>
+					<li class="nav-item"><a href="/guideInfor" class="nav-link">ご利用案内</a></li>
 					<li class="nav-item"><a href="/routeSearch/index" class="nav-link">路線検索</a></li>
 					<li class="nav-item"><a href="/memberRegister/input" class="nav-link">会員登録</a></li>
 					<li class="nav-item"><a href="/login" class="nav-link">ログイン</a></li>

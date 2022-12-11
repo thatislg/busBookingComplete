@@ -24,4 +24,8 @@ public class HomePageController {
 		model.addAttribute("nMonth", nMonth);
 		return "homepage";
 	}
+	@RequestMapping("/guideInfor")
+	public String guideInfor(Model model) {
+		return "guideInfor";
+	}
 }

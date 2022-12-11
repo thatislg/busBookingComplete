@@ -62,7 +62,8 @@
 	text-align: center;
 	font-size: 17px;
 	color: #fff;
-}.list-table thead tr th:hover {
+}
+.list-table thead tr th:hover {
 	color:  var(--green);
 }
 button.mdc-button.mdc-button--raised.mdc-button--colored {
@@ -79,7 +80,13 @@ button.mdc-button.mdc-button--raised.mdc-button--colored:hover {
 	color: #fff;
 }
 .section-information h2 i {
-	margin-right: 5px; 
+	margin-right: 5px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    color: #000;
+    background: #fff;
+    line-height: 35px;
 }
 .section-information .wrap-article {
 	height: 100%;
@@ -117,20 +124,26 @@ button.mdc-button.mdc-button--raised.mdc-button--colored:hover {
 	color: #fff;
 }
 .section-pickup h2 i {
-	margin-right: 5px; 
+	margin-right: 5px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    color: #000;
+    background: #fff;
+    line-height: 35px;
 }
 .section-pickup .clearfix .figure {
 	float: left;
 	margin-right: 30px; 
 }
-.section-pickup .clearfix  .body-noriai {
+.section-pickup .clearfix  .info-body {
 	padding-left: 334px;
 }
 .section-pickup h3 {
 	margin-bottom: 20px;
 	font-size: 1.75rem; 
 }
-.section-pickup .clearfix  .body-noriai ul {
+.section-pickup .clearfix  .info-body  ul {
 	list-style: disc; 
     margin: 30px 0 30px 30px;
 }
@@ -267,10 +280,60 @@ input[type=checkbox]:disabled ~ .form-check-label:hover {
 	color: var(--dark);
 	font-weight:  bold;
 	font-size: 1rem;
-	align-items: center;
-	
+	align-items: center;	
 }
 
+/* guide contents */
+.main-contents{
+	margin: 40px 100px;
+}
+.main-contents h2{
+	padding: 13px 20px;
+	background: linear-gradient(to right,#00093c, #2d0b00);
+	color: #fff;
+	position: relative;
+}
+.main-contents h2::before{
+	content: attr(data-label);
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 13px 1em;
+	background-color: rgb(38, 139, 187);
+	color: #fff;
+	font-weight: bold; 
+}
+.main-contents h2 span{
+	margin-right: 5px;
+    width: 35px;
+    height: 35px;
+    color: #000;
+    background: #fff;
+    line-height: 35px;
+}
+.subsection-howto .in-subsection {
+	padding: 20px; 
+	opacity: 0.8;
+	background: rgba(255,255,255,0.8);
+}
+.subsection-howto .in-subsection {
+	background-color: rgb(242, 242, 242);
+}
+.in-subsection .info-layout > * {
+	display: table-cell;
+	vertical-align: top; 
+}
+.subsection-howto .info-layout > .body {
+	padding: 30px 57px;
+	color: #000;
+}
+.subsection-howto .info-layout > .body ul   {
+	list-style: disc; 
+}
+.main-contents h3{
+	color: rgb(38, 139, 186);
+}
 
 
 
