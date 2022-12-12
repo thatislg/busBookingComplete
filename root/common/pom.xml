@@ -20,6 +20,5 @@
 		</dependency>
 	</dependencies>
 	<artifactId>common</artifactId>
-	<packaging>jar</packaging>
 
 </project>
