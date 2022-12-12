@@ -10,7 +10,7 @@
 <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/dataTables.material.min.js"></script>
-
+<script type="text/javascript" charset="utf8" src="<c:url value="/js/datatables.js"/>"></script>
 	<header class = "flex" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/bus9.jpg) center/cover no-repeat;">
 		<div class="container">	
 			<div class="title">
@@ -19,7 +19,7 @@
 				<p class="errMessage"><c:out value="${errMessage}"/></p>
 			</div>
 			<div class = "data-table-form">
-				<table id="reservationList" class="list-table">
+				<table id="dataTable" class="list-table">
 					<thead>
 						<tr>
 							<th>予約ID</th>

@@ -26,6 +26,9 @@ button, input[type = "submit"]{
 	cursor: pointer;
 	font-family: 'RaleWay', sans-serif;
 }
+.search-form2 input[type = "text"],.header-form input[type = "text"]{
+	width: 167px;
+}
 .container{
 	max-width: 1320px;
 	padding: 0 1rem;
@@ -67,7 +70,6 @@ form .form-control{
 	margin: 0 0.5rem;
 	width: 191px;
 }
-
 .site-brand{
 	color: #fff;
 	font-size: 2.4rem;
@@ -122,13 +124,13 @@ header{
 		animation-timing-function: ease-out;
 	}
 }
-.search-form2,.header-form,.confirm-form{
+.header-form,.search-form2{
 	background: rgba(0,0,0,0.5);
 }
 .seat-infor,.seat-form,.confirm-form,.search-form{
 	background: rgba(255,255,255,0.8);
 }
-.search-form2 input[type = "date"],.header-form input[type = "date"]{
+.search-form2 input[type = "date"],.header-form input[type = "date"],.search-form input[type = "date"]{
 	text-transform: uppercase;
 	width: 167px;
 }

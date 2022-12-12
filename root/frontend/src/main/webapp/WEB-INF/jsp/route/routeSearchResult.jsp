@@ -37,7 +37,7 @@
 			<br>
 			<h2>路線選択</h2>
 			<div class = "data-table-form">
-				<table id="routeSearchResult" class="list-table">
+				<table id="dataTable" class="list-table">
 					<thead>
 						<tr>
 							<th>路線ID</th>

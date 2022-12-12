@@ -285,7 +285,7 @@ input[type=checkbox]:disabled ~ .form-check-label:hover {
 	color:red;
 }
 .departured-reserve{
-	opacity: 0.4
+	opacity: 0.6;
 }
 .departured{
 	cursor: not-allowed;
