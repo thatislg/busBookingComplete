@@ -37,7 +37,7 @@
 			</div>
 			<form>
 			 	<input type="hidden" name="busId" value="${busInfo.busId}">
-				<input class="btn btn-primary ms-5" type="submit" value="削除確認" formaction="/busDelete/delete">
+				<input class="btn btn-primary ms-5" type="submit" value="削除" formaction="/busDelete/delete">
 	 			&nbsp;
 	 			<input class="btn btn-dark" type="submit" value="戻る" formaction="/busList/index">	
 			</form>
