@@ -2,7 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@include file="/WEB-INF/jsp/common/define.jsp"%>
 <jsp:include page="/WEB-INF/jsp/common/header.jsp"></jsp:include>
-<link rel="stylesheet" href="./css/style.css"> 
+<!-- <link rel="stylesheet" href="./css/style.css">  -->
+<link rel="stylesheet" href="http://localhost:9082/css/style.css"/>
 <title>路線検索</title>
 	<div class = "routeSearch flex" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/bus6.jpg) center/cover no-repeat;">
 		<div class = "container">

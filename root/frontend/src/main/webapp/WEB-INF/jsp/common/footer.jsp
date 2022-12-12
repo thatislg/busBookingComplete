@@ -1,15 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="/WEB-INF/jsp/common/define.jsp"%>
-	<script src = "./js/script.js"></script>	
+	<script src = "http://localhost:9082/js/script.js"></script>	
+	
 	<footer>
 		<div class="footer-content">
 			<h3>VTI BUS <br> ENJOY YOUR JOURNEYS ENJOY YOUR LIFE</h3>
 			<p>誠実を旨とし、関わる全ての人を大切にする。 商品、サービスを常に磨き、事業を通じて御客様をより満足させる。 一つ一つの旅を楽しみ、私達の幸せを追求する</p>
 			<p class="contact-text">お問い合わせ</p>
-			<p>東京本社：〒162-0067 東京都新宿区富久町８番21 T＆Tビル ４階<br>
-				Tel: (+81) 3-6261-5698<br>
-				Fax: (+81) 3-6261-5637
+			<p>東京本社：〒162-0067 東京都新宿区富久町4番20 T＆Tビル 2階<br>
+				Tel: (+81) 3-7374-5198<br>
+				Fax: (+81) 3-7374-5197
 			</p>	
 			<ul class="socials">
 				<li><a href="https://www.facebook.com/vtijapan"><i class="fa-brands fa-facebook-f"></i></a></li>

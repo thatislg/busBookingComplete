@@ -2,7 +2,8 @@
     pageEncoding="UTF-8"%>
    <%@include file="/WEB-INF/jsp/common/define.jsp"%>
 <jsp:include page="/WEB-INF/jsp/common/header.jsp"></jsp:include>
-<link rel="stylesheet" href="./css/style.css"/>
+<!-- <link rel="stylesheet" href="./css/style.css"/> -->
+<link rel="stylesheet" href="http://localhost:9082/css/style.css"/>
 <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css"/>
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/material-components-web/4.0.0/material-components-web.min.css"/>
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.material.min.css"/>

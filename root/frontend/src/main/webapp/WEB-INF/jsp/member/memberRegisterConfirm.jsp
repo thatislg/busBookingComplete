@@ -2,7 +2,8 @@
     pageEncoding="UTF-8"%>  
 <%@include file="/WEB-INF/jsp/common/define.jsp"%>
 <jsp:include page="/WEB-INF/jsp/common/header.jsp"></jsp:include>
-<link rel="stylesheet" href="./css/register.css"/> 
+<!-- <link rel="stylesheet" href="./css/register.css"/>  -->
+<link rel="stylesheet" href="http://localhost:9082/css/register.css"/>
 	<div class = "regist-container">
 		<div class="content confirm-content">
 			<div class="form">

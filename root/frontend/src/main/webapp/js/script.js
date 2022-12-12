@@ -38,6 +38,7 @@ $(document).ready(function () {
 	            language: { url: "http://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Japanese.json" }
 	        });		
 		 $('#reservationList').DataTable({
+				"order": [[5, "desc"]],
 		        autoWidth: false,
 		        columnDefs: [
 		            {

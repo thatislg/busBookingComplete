@@ -2,7 +2,8 @@
     pageEncoding="UTF-8"%>
    <%@include file="/WEB-INF/jsp/common/define.jsp"%>
 <jsp:include page="/WEB-INF/jsp/common/header.jsp"></jsp:include>
-<link rel="stylesheet" href="./css/style.css"/>
+<!-- <link rel="stylesheet" href="./css/style.css"/> -->
+<link rel="stylesheet" href="http://localhost:9082/css/style.css"/>
 <header class = "flex"  style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/bus3.jpg) center/cover no-repeat;">
 	<div class = "container">
 		<div class = "title">
@@ -44,7 +45,7 @@
                     <div class="figure"><img src="../img/pic-howto-step03.png" alt="乗車チケットを手に"></div>
                     <div class="body">
                         <h3>チケットとをご用意ください。</h3>
-                        <p>各コンビニ、VTI株式会社の各支店の窓口で購入する乗車券のほか、いくつかのチケットサービスを提供しております。</p>
+                        <p>各コンビニ、VTI-BUS株式会社の各支店の窓口で購入する乗車券のほか、いくつかのチケットサービスを提供しております。</p>
                         <ul>
                             <li>決済後に送信されるメールのサービス</li>
                             <li>チケット画面のサービス</li>

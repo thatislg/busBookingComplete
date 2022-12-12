@@ -2,7 +2,8 @@
     pageEncoding="UTF-8"%>
    <%@include file="/WEB-INF/jsp/common/define.jsp"%>
 <jsp:include page="/WEB-INF/jsp/common/header.jsp"></jsp:include>
-<link rel="stylesheet" href="./css/style.css"/>
+<!-- <link rel="stylesheet" href="./css/style.css"/> -->
+<link rel="stylesheet" href="http://localhost:9082/css/style.css"/>
 	<!-- header -->
 	<header class = "flex" style="background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/bus5.jpg) center/cover no-repeat;">
 		<div class = "container">
@@ -64,7 +65,7 @@
 		        <div class="wrap-article">
 	                <article>
 	                        <time>2022.11.15</time>
-	                            <h3><a href="">VTI株式会社からのお知らせ</a></h3>
+	                            <h3><a href="">VTI-BUS株式会社からのお知らせ</a></h3>
 	                    <div class="body">
 	                        新型コロナウイルスの影響に伴う運行再開情報について
 	                    </div>
@@ -85,7 +86,7 @@
 	                </article>
 	                <article>          
 	                        <time>2022.16.19</time>
-	                            <h3><a href="">VTI株式会社からのお知らせ</a></h3>	                  
+	                            <h3><a href="">VTI-BUS株式会社からのお知らせ</a></h3>	                  
 	                    <div class="body">
 	                        2021年11月10日施行　会員規約改定について
 	                    </div>
