@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@include file="/WEB-INF/jsp/common/define.jsp"%>
 <jsp:include page="/WEB-INF/jsp/common/header.jsp"></jsp:include>
-<link rel="stylesheet" href="http://localhost:9082/css/login.css"/> 
+<link rel="stylesheet" href="./css/login.css"/> 
 	<div class = "login-container">
 		<div class="content">
 			<div class="form">

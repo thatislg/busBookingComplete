@@ -3,7 +3,7 @@
 <%@include file="/WEB-INF/jsp/common/define.jsp"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <jsp:include page="/WEB-INF/jsp/common/header.jsp"></jsp:include>
-<link rel="stylesheet" href="http://localhost:9082/css/style.css"> 
+<link rel="stylesheet" href="./css/style.css"> 
 <script type="text/javascript">
 	window.onbeforeunload = function() {
    		window.location = "/reservation/reservationList.jsp";
