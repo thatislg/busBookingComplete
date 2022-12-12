@@ -9,10 +9,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>VTI BUS</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
-<!-- <link rel="stylesheet" href="./css/normalize.css"/>
-<link rel="stylesheet" href="./css/utility.css"/> -->
-<link rel="stylesheet" href="http://localhost:9082/css/normalize.css"/>
-<link rel="stylesheet" href="http://localhost:9082/css/utility.css"/>
+<link rel="stylesheet" href="<c:out value="/css/normalize.css"/>"/>
+<link rel="stylesheet" href="<c:out value="/css/utility.css"/>"/>
 </head>
 <body>
 	<!-- navbar -->

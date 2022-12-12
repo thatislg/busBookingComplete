@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="/WEB-INF/jsp/common/define.jsp"%>
-	<script src = "http://localhost:9082/js/script.js"></script>	
-	
 	<footer>
 		<div class="footer-content">
 			<h3>VTI BUS <br> ENJOY YOUR JOURNEYS ENJOY YOUR LIFE</h3>
@@ -24,5 +22,6 @@
 			<p> © 2022 VTI_BACS_TEAM</p> 
 		</div>
 	</footer>
+	<script src="<c:out value="/js/script.js"/>"></script>
 </body>
 </html>

@@ -2,8 +2,7 @@
     pageEncoding="UTF-8"%>
    <%@include file="/WEB-INF/jsp/common/define.jsp"%>
 <jsp:include page="/WEB-INF/jsp/common/header.jsp"></jsp:include>
-<!-- <link rel="stylesheet" href="./css/style.css"/> -->
-<link rel="stylesheet" href="http://localhost:9082/css/style.css"/>
+<link rel="stylesheet" href="<c:out value="/css/style.css"/>"/>
 	<!-- header -->
 	<header class = "flex" style="background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/bus5.jpg) center/cover no-repeat;">
 		<div class = "container">
