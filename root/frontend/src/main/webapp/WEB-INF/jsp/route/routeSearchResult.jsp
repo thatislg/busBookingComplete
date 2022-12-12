@@ -18,9 +18,19 @@
 			</div>
 			<div class = "search-form">
 				<form class = "flex" action = "../routeSearch/search" name="searchForm" id="search-form">
-					<input type = "text" class = "form-control-2" value="${param.departurePrefecture}" name="departurePrefecture"  oninvalid="this.setCustomValidity('入力必須')" onchange="this.setCustomValidity('')" required/>
+					<select class = "form-control-2" name="departurePrefecture" id="departurePrefecture-select" oninvalid="this.setCustomValidity('選択必須')" onchange="this.setCustomValidity('')" required>
+					    <option value="">${param.departurePrefecture}</option>
+					    <c:forEach items="${prefectureList}" var="pf">
+					    	<option value="${pf.prefecture}"><c:out value="${pf.prefecture}"/></option>
+					 	</c:forEach>
+					</select>
 					<input type = "date" class = "form-control-2" value="${param.departureDate}" min="${today}" max="${nMonth}" name="departureDate"/>
-					<input type = "text" class = "form-control-2" value="${param.arrivalPrefecture}" name="arrivalPrefecture"  oninvalid="this.setCustomValidity('入力必須')" onchange="this.setCustomValidity('')" required/>
+					<select class = "form-control-2" name="arrivalPrefecture" id="arrivalPrefecture-select" oninvalid="this.setCustomValidity('選択必須')" onchange="this.setCustomValidity('')" required>
+					    <option value="">${param.arrivalPrefecture}</option>
+					    <c:forEach items="${prefectureList}" var="pf">
+					    	<option value="${pf.prefecture}"><c:out value="${pf.prefecture}"/></option>
+					 	</c:forEach>
+					</select>
 					<button type="submit" form="search-form" class="btn"><i class="fa-solid fa-magnifying-glass"> 検索</i></button>
 				</form>
 			</div>

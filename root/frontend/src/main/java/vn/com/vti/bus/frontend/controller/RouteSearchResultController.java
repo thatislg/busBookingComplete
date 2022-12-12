@@ -13,7 +13,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import vn.com.vti.bus.entity.BusStationCustom;
 import vn.com.vti.bus.entity.RouteCustom;
+import vn.com.vti.bus.mapper.BusStationCustomMapper;
 import vn.com.vti.bus.mapper.RouteCustomMapper;
 
 @Controller
@@ -21,6 +23,8 @@ import vn.com.vti.bus.mapper.RouteCustomMapper;
 public class RouteSearchResultController {
 	@Autowired
 	private RouteCustomMapper routeCustomMapper;
+	@Autowired
+	private BusStationCustomMapper busStationCustomMapper;
 	@RequestMapping("/index")
 	public String index(Model model)  {
 		DateFormat dates = new SimpleDateFormat("yyyy-MM-dd");
@@ -35,6 +39,10 @@ public class RouteSearchResultController {
 		getToday.add(Calendar.DAY_OF_MONTH, 90); 
 		String nMonth = dates.format(getToday.getTime());
 		model.addAttribute("nMonth", nMonth);
+		
+		//get prefecture list
+		List<BusStationCustom> prefectureList =  busStationCustomMapper.selectPrefecture();
+		model.addAttribute("prefectureList",prefectureList);
 		return "route/routeSearch";
 	}
 	
@@ -64,6 +72,10 @@ public class RouteSearchResultController {
 		getToday.add(Calendar.DAY_OF_MONTH, 90); 
 		String nMonth = formatter.format(getToday.getTime());
 		model.addAttribute("nMonth", nMonth);
+		
+		//get prefecture list
+		List<BusStationCustom> prefectureList =  busStationCustomMapper.selectPrefecture();
+		model.addAttribute("prefectureList",prefectureList);
 		return "route/routeSearchResult";
 	}
 }
