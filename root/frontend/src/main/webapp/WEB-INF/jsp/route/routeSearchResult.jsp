@@ -19,14 +19,14 @@
 			<div class = "search-form">
 				<form class = "flex" action = "../routeSearch/search" name="searchForm" id="search-form">
 					<select class = "form-control-2" name="departurePrefecture" id="departurePrefecture-select" oninvalid="this.setCustomValidity('選択必須')" onchange="this.setCustomValidity('')" required>
-					    <option value="">${param.departurePrefecture}</option>
+					    <option value="${param.departurePrefecture}">${param.departurePrefecture}</option>
 					    <c:forEach items="${prefectureList}" var="pf">
 					    	<option value="${pf.prefecture}"><c:out value="${pf.prefecture}"/></option>
 					 	</c:forEach>
 					</select>
 					<input type = "date" class = "form-control-2" value="${param.departureDate}" min="${today}" max="${nMonth}" name="departureDate"/>
 					<select class = "form-control-2" name="arrivalPrefecture" id="arrivalPrefecture-select" oninvalid="this.setCustomValidity('選択必須')" onchange="this.setCustomValidity('')" required>
-					    <option value="">${param.arrivalPrefecture}</option>
+					    <option value="${param.arrivalPrefecture}">${param.arrivalPrefecture}</option>
 					    <c:forEach items="${prefectureList}" var="pf">
 					    	<option value="${pf.prefecture}"><c:out value="${pf.prefecture}"/></option>
 					 	</c:forEach>
