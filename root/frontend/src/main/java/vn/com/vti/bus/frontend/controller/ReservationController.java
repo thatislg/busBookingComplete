@@ -86,6 +86,8 @@ public class ReservationController {
 						@RequestParam(value="busId") String busId,
 						@RequestParam(value="searchedDepartureName") String searchedDepartureName,
 						@RequestParam(value="searchedArrivalName") String searchedArrivalName,
+						@RequestParam(value="searchedDeparturePrefecture") String searchedDeparturePrefecture,
+						@RequestParam(value="searchedArrivalPrefecture") String searchedArrivalPrefecture,
 						Model model) {
 		
 		// Convert kiểu dữ liệu nhận vào
@@ -93,7 +95,7 @@ public class ReservationController {
 		int intBusId = Integer.parseInt(busId);
 		
 		searchResultForm = new SearchResultForm(departureDate,searchedDepartureName
-												,searchedArrivalName, routeId, busId);
+												,searchedArrivalName, routeId, busId,searchedDeparturePrefecture,searchedArrivalPrefecture);
 		
 		model.addAttribute("searchResultForm", searchResultForm);
 		

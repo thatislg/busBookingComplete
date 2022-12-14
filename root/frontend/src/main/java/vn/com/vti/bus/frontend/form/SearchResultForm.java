@@ -23,7 +23,35 @@ public class SearchResultForm {
 	@NotNull
 	private String busId;
 	
+	@NotNull
+	private String searchedDeparturePrefecture;
 	
+	@NotNull
+	private String searchedArrivalPrefecture;
+	
+	
+	
+	
+	public String getSearchedDeparturePrefecture() {
+		return searchedDeparturePrefecture;
+	}
+
+
+	public void setSearchedDeparturePrefecture(String searchedDeparturePrefecture) {
+		this.searchedDeparturePrefecture = searchedDeparturePrefecture;
+	}
+
+
+	public String getSearchedArrivalPrefecture() {
+		return searchedArrivalPrefecture;
+	}
+
+
+	public void setSearchedArrivalPrefecture(String searchedArrivalPrefecture) {
+		this.searchedArrivalPrefecture = searchedArrivalPrefecture;
+	}
+
+
 	public String getRouteId() {
 		return routeId;
 	}
@@ -45,12 +73,14 @@ public class SearchResultForm {
 
 
 	public SearchResultForm(Date departureDate, String searchedDepartureName, String searchedArrivalName
-							,String routeId, String busId) {
+							,String routeId, String busId,String searchedDeparturePrefecture, String searchedArrivalPrefecture) {
 		this.departureDate = departureDate;
 		this.searchedDepartureName = searchedDepartureName;
 		this.searchedArrivalName = searchedArrivalName;
 		this.routeId = routeId;
 		this.busId = busId;
+		this.searchedDeparturePrefecture = searchedDeparturePrefecture;
+		this.searchedArrivalPrefecture = searchedArrivalPrefecture;
 	}
 	
 	

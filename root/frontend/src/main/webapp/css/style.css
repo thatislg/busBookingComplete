@@ -43,6 +43,9 @@
 	margin: 0 0.5rem;
 	width: 191px;
 }
+.mdc-data-table{
+	width: 100%;
+}
 /* table */
 .data-table-form{
 	text-align: center;

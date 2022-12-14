@@ -86,6 +86,8 @@
 							<input type="hidden" name="departureDate" value="${rDDate}"/>
 							<input type="hidden" name="departureStationName" value="${searchResultForm.searchedDepartureName}"/>
 							<input type="hidden" name="arrivalStationName" value="${searchResultForm.searchedArrivalName}"/>
+							<input type="hidden" name="departurePrefecture" value="${searchResultForm.searchedDeparturePrefecture}"/>
+							<input type="hidden" name="arrivalPrefecture" value="${searchResultForm.searchedArrivalPrefecture}"/>
 							<input type="submit" class="return-btn" value="戻る" formaction="../routeSearch/search"/>
 						</form:form>
 						</div>

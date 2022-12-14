@@ -66,7 +66,11 @@
 																&routeId=${route.routeId}
 																&busId=${route.busId}
 																&searchedDepartureName=${route.departureStationName}
-																&searchedArrivalName=${route.arrivalStationName}">
+																&searchedArrivalName=${route.arrivalStationName}
+																&searchedDeparturePrefecture=${param.departurePrefecture}
+																&searchedArrivalPrefecture=${param.arrivalPrefecture}"
+																>
+																
 									<i class="fa-solid fa-file-contract"></i></a></td>
 							</tr>
 						</c:forEach>
