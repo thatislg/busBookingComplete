@@ -154,7 +154,6 @@ header{
 footer{
 	background: linear-gradient(to right,#00093c, #2d0b00);
 	height: auto;
-	width: 100vw;
 	color: #fff;
 }
 .footer-content{
@@ -171,7 +170,6 @@ footer{
 	color: var(--green);
 }
 .footer-content p{
-	max-width: 525px;
 	margin: 10px auto;
 	line-height: 28px;
 	font-size: 14px;
@@ -200,7 +198,6 @@ footer{
 }
 .footer-bottom{
 	background: linear-gradient(to right,#00093c, #2d0b00);
-	width: 100vw;
 	padding-bottom: 20px;
 	text-align: center;
 }
@@ -282,3 +279,7 @@ footer{
 	color: var(--dark);
 }	
 
+/*css on select.option tag*/
+select option{
+	color:black;
+}
