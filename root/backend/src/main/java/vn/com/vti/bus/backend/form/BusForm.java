@@ -17,16 +17,16 @@ public class BusForm {
 	@NotBlank
 	private String numberPlace;
 	@NotBlank
-	@Pattern(regexp = "^\\d\\d$",message = "{error.num2digit}")
+	@Pattern(regexp = "^([0-9]{1,3})$",message = "{error.numDigit}")
 	private String numberDivision;
 	@NotBlank
 	@Pattern(regexp = "^[\\u3041-\\u3096]$",message = "{error.hiragana1digit}")
 	private String numberKana;
 	@NotBlank
-	@Pattern(regexp = "^\\d\\d$",message = "{error.num2digit}")
+	@Pattern(regexp = "^([0-9]{1,3})$",message = "{error.numDigit}")
 	private String numberFirstHalf;
 	@NotBlank
-	@Pattern(regexp = "^\\d\\d$",message = "{error.num2digit}")
+	@Pattern(regexp = "^([0-9]{1,3})$",message = "{error.numDigit}")
 	private String numberLatterHalf;
 
 	public Integer getRowNum() {
