@@ -38,7 +38,8 @@
 			</h2>
 			<div class = "seat-form">
 			<h2>座席図</h2>	
-				<form:form method="POST">
+			<form:form method="POST">
+				<div class="exit">
 					<table  class="seat-check-table">
 						<c:set var="totalNumberSeat" value="0"/>
 						<c:forEach begin="1" end="${busInfo.columnNum}" step="1" var="i">
@@ -79,18 +80,19 @@
 						</c:forEach>
 					</table>
 						<div class="btn-form">
-						<form:form method="POST">
-							<input type="submit" class="reserve-btn" value="予約" formaction="/reservation/confirm"/>
-						</form:form>
-						<form:form>
-							<input type="hidden" name="departureDate" value="${rDDate}"/>
-							<input type="hidden" name="departureStationName" value="${searchResultForm.searchedDepartureName}"/>
-							<input type="hidden" name="arrivalStationName" value="${searchResultForm.searchedArrivalName}"/>
-							<input type="hidden" name="departurePrefecture" value="${searchResultForm.searchedDeparturePrefecture}"/>
-							<input type="hidden" name="arrivalPrefecture" value="${searchResultForm.searchedArrivalPrefecture}"/>
-							<input type="submit" class="return-btn" value="戻る" formaction="../routeSearch/search"/>
-						</form:form>
+							<form:form method="POST">
+								<input type="submit" class="reserve-btn" value="予約" formaction="/reservation/confirm"/>
+							</form:form>
+							<form:form>
+								<input type="hidden" name="departureDate" value="${rDDate}"/>
+								<input type="hidden" name="departureStationName" value="${searchResultForm.searchedDepartureName}"/>
+								<input type="hidden" name="arrivalStationName" value="${searchResultForm.searchedArrivalName}"/>
+								<input type="hidden" name="departurePrefecture" value="${searchResultForm.searchedDeparturePrefecture}"/>
+								<input type="hidden" name="arrivalPrefecture" value="${searchResultForm.searchedArrivalPrefecture}"/>
+								<input type="submit" class="return-btn" value="戻る" formaction="../routeSearch/search"/>
+							</form:form>
 						</div>
+					</div>
 				</form:form>
 			</div>
 		</div>

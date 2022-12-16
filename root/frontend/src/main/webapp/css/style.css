@@ -216,8 +216,8 @@ button.mdc-button.mdc-button--raised.mdc-button--colored:hover {
 	margin: 20px 100px;
     border-left: 80px solid yellow;
     border-radius: 12px 2px 2px 12px;
-    border-top: 10px solid yellow;
-    border-bottom: 10px solid yellow;
+    border-top: 15px solid yellow;
+    border-bottom: 15px solid yellow;
     border-right: 10px solid yellow;
     width: 600px;
     height: 150px;
@@ -349,6 +349,33 @@ input[type=checkbox]:disabled ~ .form-check-label:hover {
 .main-contents h3{
 	color: rgb(38, 139, 186);
 }
+
+
+.exit {
+  position: relative;
+}
+.exit:before{
+	content: "ENTRY";
+	line-height: 18px;
+	padding: 0px 2px;
+	position: absolute;
+	background: green;
+	color: white;	
+	left: 210px;
+	transform: translateY(-1px);
+  }
+.exit:after{
+	content: "EXIT";
+	line-height: 18px;
+	padding: 0px 2px;
+	position: absolute;
+	background: green;
+	color: white;	
+	right: 178px;
+	transform: translateY(-331px);
+  }
+
+
 
 
 
