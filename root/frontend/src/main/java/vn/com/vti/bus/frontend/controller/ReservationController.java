@@ -177,7 +177,7 @@ public class ReservationController {
 		model.addAttribute("departureStationName", departureStationName);
 		model.addAttribute("arrivalStationName", arrivalStationName);
 		
-		SimpleDateFormat dtf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");  
+		SimpleDateFormat dtf = new SimpleDateFormat("yyyy-MM-dd hh:MM:ss");  
 		Date now = null;
 		try {
 			now = dtf.parse(dtf.format(new Date()));
@@ -253,15 +253,21 @@ public class ReservationController {
 		// Nếu checkingFlag <> 0 thì cho quay trở lại nơi chọn ghế	
 		} else {
 			StringBuilder parameterForInput = new StringBuilder();
-			parameterForInput.append("?departureDate="+searchResultForm.getDepartureDate());
-			parameterForInput.append("?routeId="+searchResultForm.getRouteId());
-			parameterForInput.append("?busId="+searchResultForm.getBusId());
-			parameterForInput.append("?searchedDepartureName="+searchResultForm.getSearchedDepartureName());
-			parameterForInput.append("?searchedArrivalName="+searchResultForm.getSearchedArrivalName());
-			parameterForInput.append("?searchedDeparturePrefecture="+searchResultForm.getSearchedDeparturePrefecture());
-			parameterForInput.append("?searchedArrivalPrefecture="+searchResultForm.getSearchedArrivalPrefecture());
+			SimpleDateFormat dtf1 = new SimpleDateFormat("yyyy-MM-dd");  
+			String departureDate=null;
+			if(searchResultForm.getDepartureDate()!=null) {
+				departureDate = dtf1.format(searchResultForm.getDepartureDate());
+			}
+			parameterForInput.append("?departureDate="+departureDate);
 			
-			redirectAttributes.addFlashAttribute("message","予約したい座席" + strInputedCurrentReservedSeat+ ")が予約されました。");
+			parameterForInput.append("&routeId="+searchResultForm.getRouteId());
+			parameterForInput.append("&busId="+searchResultForm.getBusId());
+			parameterForInput.append("&searchedDepartureName="+searchResultForm.getSearchedDepartureName());
+			parameterForInput.append("&searchedArrivalName="+searchResultForm.getSearchedArrivalName());
+			parameterForInput.append("&searchedDeparturePrefecture="+searchResultForm.getSearchedDeparturePrefecture());
+			parameterForInput.append("&searchedArrivalPrefecture="+searchResultForm.getSearchedArrivalPrefecture());
+			
+			redirectAttributes.addFlashAttribute("message","予約したい座席" + strInputedCurrentReservedSeat+ ")が予約されましたため、予約出来ませんでした。");
 			return "redirect:/reservation/input"+parameterForInput;
 		}
 	}
