@@ -39,7 +39,7 @@
 	                <h2><i class="fa fa-bus"></i>安心・安全への取り組み</h2>
 	                <h3>VTI-BUSは、国から厳しい審査を受けた<br>承認済の路線バスのみ取り扱っております。</h3>
 	                <div class="clearfix">
-	                    <div class="figure"><img  style="width: 327px;" src="../img/VTI BUS.png" alt="安心安全への取り組み"></div>
+	                    <div class="figure"><img class="figure-img" src="../img/VTI BUS.png" alt="安心安全への取り組み"></div>
 	                    <div class="info-body">
 	                        <p>VTI-BUSは道路運送法の規定に関わる審査を受け、国土交通大臣から許可を受けた事業者です。
 	                        <br>安全にバスを運行できるか以下の内容を厳しく審査された後、許可を受けます。</p>

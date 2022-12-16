@@ -18,6 +18,9 @@
 .header-form input:not([type = "submit"]) ::placeholder{
 	color: #fff;
 }
+.section-pickup .figure-img{
+	width: 327px;
+}
 /* route search */
 .routeSearch{
 	color: #fff;
@@ -272,7 +275,29 @@ input[type=checkbox]:disabled ~ .form-check-label:hover {
       cursor: pointer;
       box-shadow: 0 0 0px 2px #5C6AFF;
 }
-
+.exit {
+  position: relative;
+}
+.exit:before{
+	content: "ENTRY";
+	line-height: 18px;
+	padding: 0px 2px;
+	position: absolute;
+	background: green;
+	color: white;	
+	left: 210px;
+	transform: translateY(-1px);
+  }
+.exit:after{
+	content: "EXIT";
+	line-height: 18px;
+	padding: 0px 2px;
+	position: absolute;
+	background: green;
+	color: white;	
+	right: 178px;
+	transform: translateY(-331px);
+  }
 /* reservation confirm */
 .confirm-form{
 	padding: 1.5rem 0 0;
@@ -350,30 +375,6 @@ input[type=checkbox]:disabled ~ .form-check-label:hover {
 	color: rgb(38, 139, 186);
 }
 
-
-.exit {
-  position: relative;
-}
-.exit:before{
-	content: "ENTRY";
-	line-height: 18px;
-	padding: 0px 2px;
-	position: absolute;
-	background: green;
-	color: white;	
-	left: 210px;
-	transform: translateY(-1px);
-  }
-.exit:after{
-	content: "EXIT";
-	line-height: 18px;
-	padding: 0px 2px;
-	position: absolute;
-	background: green;
-	color: white;	
-	right: 178px;
-	transform: translateY(-331px);
-  }
 
 
 
