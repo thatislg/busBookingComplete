@@ -258,6 +258,8 @@ public class ReservationController {
 			parameterForInput.append("?busId="+searchResultForm.getBusId());
 			parameterForInput.append("?searchedDepartureName="+searchResultForm.getSearchedDepartureName());
 			parameterForInput.append("?searchedArrivalName="+searchResultForm.getSearchedArrivalName());
+			parameterForInput.append("?searchedDeparturePrefecture="+searchResultForm.getSearchedDeparturePrefecture());
+			parameterForInput.append("?searchedArrivalPrefecture="+searchResultForm.getSearchedArrivalPrefecture());
 			
 			redirectAttributes.addFlashAttribute("message","予約したい座席" + strInputedCurrentReservedSeat+ ")が予約されました。");
 			return "redirect:/reservation/input"+parameterForInput;
