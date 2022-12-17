@@ -322,7 +322,9 @@ input[type=checkbox]:disabled ~ .form-check-label:hover {
 	font-size: 1rem;
 	align-items: center;	
 }
-
+.reservation-list{
+	max-width: 1363px;
+}
 /* guide contents */
 .main-contents{
 	margin: 40px 100px;

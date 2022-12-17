@@ -12,7 +12,7 @@
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/dataTables.material.min.js"></script>
 <script type="text/javascript" charset="utf8" src="<c:url value="/js/datatables.js"/>"></script>
 	<header class = "flex" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/bus9.jpg) center/cover no-repeat;">
-		<div class="container">	
+		<div class="container reservation-list">	
 			<div class="title">
 				<h1>予約一覧</h1>
 				<p><c:out value="${message}"/></p>
