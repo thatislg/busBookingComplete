@@ -11,61 +11,60 @@
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/dataTables.semanticui.min.js"></script>
 <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.8/semantic.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="/css/list.css">
+<link rel="stylesheet" type="text/css" href="/css/formLayout.css">
 
 <div class="container">
 	<div class="mt-3 mb-4">
 		<h1>会員予約状況</h1>
 	</div>
-	<div class="mt-3 mb-4">
-		<h2>会員情報</h2>
+	<div class="member-infor shadow-lg ">
+		<div class="mt-3 mb-4">
+			<h2>会員情報</h2>
+		</div>
+		<table id="member" class="table table-bordered">
+			 <tbody>
+			 	<tr>
+					<th scope="row">会員ID</th>
+					<td><c:out value="${member.memberId}"/></td>
+				</tr>
+				<tr>
+					<th scope="row">ログインID</th>
+					<td><c:out value="${member.loginId}"/></td>
+				</tr>
+				<tr>
+					<th scope="row">氏名</th>
+					<td><c:out value="${member.memberName}"/></td>
+				</tr>
+				<tr>
+					<th scope="row">電話番号</th>
+					<td><c:out value="${member.phoneNumber}"/></td>
+				<tr>
+					<th scope="row">メールアドレス</th>
+					<td><c:out value="${member.mailAddress}"/></td>	
+				</tr>
+			</tbody>
+		</table>
 	</div>
-	<table id="member" class="table table-bordered">
-		 <tbody>
-		 	<tr>
-				<th scope="row">会員ID</th>
-				<td><c:out value="${member.memberId}"/></td>
-			</tr>
-			<tr>
-				<th scope="row">ログインID</th>
-				<td><c:out value="${member.loginId}"/></td>
-			</tr>
-			<tr>
-				<th scope="row">氏名</th>
-				<td><c:out value="${member.memberName}"/></td>
-			</tr>
-			<tr>
-				<th scope="row">電話番号</th>
-				<td><c:out value="${member.phoneNumber}"/></td>
-			<tr>
-				<th scope="row">メールアドレス</th>
-				<td><c:out value="${member.mailAddress}"/></td>	
-			</tr>
-		</tbody>
-	</table>
-	<hr>
-	<br>
-	<div class="mt-3 mb-4">
-		<h2>予約情報</h2>
-	</div>
-	<table id="memberReservationStatus" class="table table-bordered display">
-		<thead>
-			<tr>
-				<th>予約ID</th>
-				<th>予約日</th>
-				<th>路線ID</th>
-				<th>バスID</th>
-				<th>出発駅</th>
-				<th>到着駅</th>
-				<th>座席番号</th>
-				<th>出発日</th>
-				<th>合計料金</th>	
-			</tr>
-		 </thead>
-		 <tbody>
-		 	<c:choose>
-		 		<c:when test="${not empty memberReservationList}">
-					<c:forEach items="${memberReservationList}" var="memberRL">
+	<div class="shadow-lg">
+		<div class="mt-3 mb-4">
+			<h2>予約情報</h2>
+		</div>
+		<table id="memberReservationStatus" class="table table-bordered display">
+			<thead>
+				<tr>
+					<th>予約ID</th>
+					<th>予約日</th>
+					<th>路線ID</th>
+					<th>バスID</th>
+					<th>出発駅</th>
+					<th>到着駅</th>
+					<th>座席番号</th>
+					<th>出発日</th>
+					<th>合計料金</th>	
+				</tr>
+			 </thead>
+			 <tbody>
+				<c:forEach items="${memberReservationList}" var="memberRL">
 					<tr>
 						<td><c:out value="${memberRL.reserveId}"/></td>
 						<fmt:formatDate value="${memberRL.reservedDate}" pattern="yyyy年MM月dd日 HH:mm" var="rDate"/>
@@ -80,19 +79,20 @@
 						<td><c:out value="${memberRL.totalPrice}円"/></td>
 					</tr>
 				</c:forEach>
-				</c:when>
-				<c:when test="${empty memberReservationList}">
-		 				<tr><td class="align-middle" colspan="6">このメンバーの予約がございません。</td></tr>
-		 		</c:when>
-			</c:choose>
-		</tbody>
-	</table>
-	<form>
-		<input class="btn btn-dark" type="submit" value="戻る" style="float: right"
-				formaction="/memberList/index">
+			</tbody>
+		</table>
+	</div>
+	<form class="btn-form">
+		<input class="btn btn-dark" type="submit" value="戻る" formaction="/memberList/index">
 	</form>
 </div>
-<br>
-<br>
+<script>
+$(document).ready(function () {
+	$.extend( $.fn.dataTable.defaults, {
+        language: { url: "http://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Japanese.json" }
+    });
+	$('#memberReservationStatus').DataTable();
+});
+</script>
 <jsp:include page="/WEB-INF/jsp/common/footer.jsp"></jsp:include>
 

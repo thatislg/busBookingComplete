@@ -7,8 +7,14 @@ h1 {
 
 .container {
 	width: 900px;
+    margin-bottom: 100px;
 }
-
+.reservation-infor{
+	width: 38%;
+}
+.member-infor{
+	width: 60%;
+}
 .g-3 {
 	margin-top: 5px;
 	margin-bottom: 20px;
@@ -17,7 +23,7 @@ h1 {
 .shadow-lg {
 	background-color: #F7F7F7;
 	padding: 46px 39px 45px;
-	margin: 0 auto 30px;
+	margin-bottom: 30px;
 	margin-top: 55px;
 	border-radius: 60px;
 	border: solid 2px;
@@ -28,4 +34,10 @@ h1 {
 
 .error {
 	color:red;
+}
+.shadow-lg h2{
+	text-align:center;
+}
+.btn-form{
+	float: right;
 }
