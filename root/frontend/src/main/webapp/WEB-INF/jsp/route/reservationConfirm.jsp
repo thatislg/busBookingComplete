@@ -49,6 +49,8 @@
 						<input type="hidden" name="departureDate" value="${rDDate}"/>
 						<input type="hidden" name="routeId" value="${searchResultForm.routeId}"/>
 						<input type="hidden" name="busId" value="${searchResultForm.busId}"/>
+						<input type="hidden" name="searchedDeparturePrefecture" value="${searchResultForm.searchedDeparturePrefecture}"/>
+						<input type="hidden" name="searchedArrivalPrefecture" value="${searchResultForm.searchedArrivalPrefecture}"/>
 						<input type="hidden" name="searchedDepartureName" value="${searchResultForm.searchedDepartureName}"/>
 						<input type="hidden" name="searchedArrivalName" value="${searchResultForm.searchedArrivalName}"/>
 						<input type="submit" class="return-btn" value="戻る" formaction="/reservation/input"/>
