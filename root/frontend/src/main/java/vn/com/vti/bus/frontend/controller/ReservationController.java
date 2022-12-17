@@ -267,7 +267,7 @@ public class ReservationController {
 			parameterForInput.append("&searchedDeparturePrefecture="+searchResultForm.getSearchedDeparturePrefecture());
 			parameterForInput.append("&searchedArrivalPrefecture="+searchResultForm.getSearchedArrivalPrefecture());
 			
-			redirectAttributes.addFlashAttribute("message","予約したい座席" + strInputedCurrentReservedSeat+ ")が予約されましたため、予約出来ませんでした。");
+			redirectAttributes.addFlashAttribute("errMessage","ご指定された座席 (" + strInputedCurrentReservedSeat + ") が予約されたため、予約出来ませんでした。");
 			return "redirect:/reservation/input"+parameterForInput;
 		}
 	}

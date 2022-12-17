@@ -14,7 +14,8 @@
 	<header class = "flex"  style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../img/bus6.jpg) center/cover no-repeat;">
 		<div class = "container">
 			<div class = "title">
-				<h1>路線検索結果</h1>			
+				<h1>路線検索結果</h1>
+				<p class="errMessage"><c:out value="${errMessage}"/></p>			
 			</div>
 			<div class = "search-form">
 				<form class = "flex" action = "../routeSearch/search" name="searchForm" id="search-form">
