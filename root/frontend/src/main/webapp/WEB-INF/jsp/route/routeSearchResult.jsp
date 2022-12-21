@@ -25,7 +25,7 @@
 					    	<option value="${pf.prefecture}"><c:out value="${pf.prefecture}"/></option>
 					 	</c:forEach>
 					</select>
-					<input type = "date" class = "form-control-2" value="${param.departureDate}" min="${today}" max="${nMonth}" name="departureDate"/>
+					<input type = "date" class = "form-control-2" value="${param.departureDate}" min="${today}" max="${nMonth}" name="departureDate" oninvalid="this.setCustomValidity('選択必須')" onchange="this.setCustomValidity('')" required/>
 					<select class = "form-control-2" name="arrivalPrefecture" id="arrivalPrefecture-select" oninvalid="this.setCustomValidity('選択必須')" onchange="this.setCustomValidity('')" required>
 					    <option value="${param.arrivalPrefecture}">${param.arrivalPrefecture}</option>
 					    <c:forEach items="${prefectureList}" var="pf">
